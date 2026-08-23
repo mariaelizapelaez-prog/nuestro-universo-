@@ -725,7 +725,212 @@ document.getElementById("cerrarRazon").addEventListener("click",function(){
 document.getElementById("mensaje-razon").style.display="none";
 
 });
+<!-- CARTA ESPECIAL PARA COCO -->
 
+<section id="carta-coco">
+
+  <div class="carta-coco-contenido">
+
+    <div class="coco-luna">🌙</div>
+
+    <h2>Una carta para ti ❤️</h2>
+
+    <p class="coco-intro">
+      Porque hay cosas que simplemente quiero que sepas...
+    </p>
+
+    <div class="carta-coco-texto">
+
+      <p>
+        No hay persona más rara, encantadora y linda como tú.
+        Eres especial y único, y me encanta cada detalle que tienes.
+        Eres todo un mundo desconocido que me encanta seguir descubriendo.
+      </p>
+
+      <p>
+        Tu sola existencia me hace querer compartir más días a tu lado.
+        No sabes lo feliz que soy de poder tener a alguien como tú en mi vida,
+        y no hablo solamente de ahora. Siempre fuiste diferente.
+      </p>
+
+      <p>
+        Eres una persona única, y me encantan tus locuras.
+        Eres todo eso que todavía no termino de descubrir:
+        una persona fuerte, valiente y muy capaz de hacer todo lo que se propone.
+      </p>
+
+      <p>
+        Quiero que descubras por qué eres alguien tan especial
+        y que puedas ver lo feliz que me hace el hecho de que estés aquí,
+        en este mundo terrenal, donde para mí resaltas sobre el resto.
+      </p>
+
+      <p class="despedida-coco">
+        Te quiero mucho, mi lindo y encantador Coco.
+        <br>
+        ❤️ 🐊
+      </p>
+
+    </div>
+
+    <div class="cocodrilo-coco">
+      🐊
+    </div>
+
+    <p class="coco-final">
+      Mi pequeño Coco...
+    </p>
+
+    <button class="boton" id="irGaleria">
+      🐊 Continuar
+    </button>
+
+  </div>
+#carta-coco{
+  display:none;
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:75px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      #28345f 0%,
+      #111936 35%,
+      #070a19 70%,
+      #02030a 100%
+    );
+}
+
+.carta-coco-contenido{
+  position:relative;
+  z-index:5;
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+
+.coco-luna{
+  font-size:75px;
+  margin-bottom:15px;
+
+  filter:
+    drop-shadow(0 0 12px white)
+    drop-shadow(0 0 30px #91a7ff);
+
+  animation:lunaCoco 4s ease-in-out infinite;
+}
+
+@keyframes lunaCoco{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+.carta-coco-contenido h2{
+  font-size:42px;
+  margin-bottom:12px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 30px #8295e8;
+}
+
+.coco-intro{
+  font-size:19px;
+  opacity:.85;
+  margin-bottom:35px;
+}
+
+.carta-coco-texto{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:28px;
+  padding:35px;
+
+  text-align:left;
+
+  font-size:18px;
+  line-height:1.9;
+
+  backdrop-filter:blur(7px);
+
+  box-shadow:
+    0 0 35px rgba(0,0,0,.3),
+    0 0 25px rgba(120,145,230,.08);
+}
+
+.carta-coco-texto p{
+  margin-bottom:22px;
+}
+
+.despedida-coco{
+  text-align:center;
+  font-size:23px;
+  font-style:italic;
+  margin-top:30px;
+  margin-bottom:0 !important;
+}
+
+.cocodrilo-coco{
+  font-size:65px;
+  margin-top:35px;
+
+  filter:
+    drop-shadow(0 0 10px #8fa7ff)
+    drop-shadow(0 0 25px rgba(255,255,255,.5));
+
+  animation:cocodriloFlota 3s ease-in-out infinite;
+}
+
+@keyframes cocodriloFlota{
+  0%,100%{
+    transform:translateY(0) rotate(-2deg);
+  }
+
+  50%{
+    transform:translateY(-7px) rotate(2deg);
+  }
+}
+
+.coco-final{
+  margin-top:10px;
+  margin-bottom:25px;
+  font-size:17px;
+  opacity:.75;
+  font-style:italic;
+}
+
+@media(max-width:600px){
+
+  .carta-coco-contenido h2{
+    font-size:34px;
+  }
+
+  .carta-coco-texto{
+    padding:25px;
+    font-size:17px;
+  }
+
+  .cocodrilo-coco{
+    font-size:58px;
+  }
+}
+  document.querySelector("#razones .boton").addEventListener("click", function(){
+
+  document.getElementById("razones").style.display = "none";
+
+  document.getElementById("carta-coco").style.display = "block";
+
+  window.scrollTo(0, 0);
+
+});
+</section>
 </script>
 
 </body>
