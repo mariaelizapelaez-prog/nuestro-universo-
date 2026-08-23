@@ -1,7 +1,4 @@
 
-
-Sí ❤️. Pega todo esto dentro de tu index.html, reemplazando lo que tienes ahora:
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,250 +14,541 @@ Sí ❤️. Pega todo esto dentro de tu index.html, reemplazando lo que tienes a
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
-      background: #050714;
+      background: #03050f;
       color: white;
       overflow-x: hidden;
     }
 
-    /* ===== PANTALLA DE INICIO ===== */
+    /* =================================
+       PANTALLA DE BIENVENIDA
+    ================================= */
 
     #inicio {
       min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       text-align: center;
       padding: 30px;
-      position: relative;
-      overflow: hidden;
+
       background:
-        radial-gradient(circle at 50% 35%, #172044 0%, #080b1c 45%, #02030a 100%);
+        radial-gradient(
+          circle at 50% 38%,
+          #202b58 0%,
+          #101631 28%,
+          #070a19 58%,
+          #02030a 100%
+        );
     }
 
-    .luna {
-      width: 150px;
-      height: 150px;
+    /* Luna grande */
+
+    .luna-grande {
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
-      background: #fffbea;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #ffffff 0%,
+          #fffef0 35%,
+          #eee8c9 75%,
+          #c9c19e 100%
+        );
+
       box-shadow:
-        0 0 30px #fff,
-        0 0 70px rgba(255, 255, 255, 0.5);
-      margin-bottom: 35px;
+        0 0 20px #fff,
+        0 0 45px rgba(255, 255, 255, 0.8),
+        0 0 90px rgba(180, 200, 255, 0.45);
+
+      margin-bottom: 40px;
+
+      animation: brilloLuna 4s ease-in-out infinite;
     }
 
-    .titulo {
-      font-size: 42px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    @keyframes brilloLuna {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow:
+          0 0 20px #fff,
+          0 0 45px rgba(255,255,255,0.8),
+          0 0 90px rgba(180,200,255,0.45);
+      }
+
+      50% {
+        transform: scale(1.03);
+        box-shadow:
+          0 0 30px #fff,
+          0 0 65px rgba(255,255,255,0.9),
+          0 0 120px rgba(180,200,255,0.6);
+      }
     }
 
-    .subtitulo {
-      font-size: 20px;
-      opacity: 0.85;
-      margin-bottom: 35px;
+    /* Texto inicial */
+
+    .texto-inicio h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 25px rgba(150,170,255,0.5);
     }
+
+    .texto-inicio p {
+      font-size: 22px;
+      opacity: 0.9;
+      margin-bottom: 38px;
+    }
+
+    /* Botón */
 
     #entrar {
       border: none;
-      border-radius: 30px;
-      padding: 15px 35px;
-      font-size: 18px;
+      padding: 16px 38px;
+
+      border-radius: 40px;
+
+      background: rgba(255,255,255,0.95);
+      color: #11152b;
+
+      font-size: 19px;
+      font-family: Georgia, "Times New Roman", serif;
+
       cursor: pointer;
-      background: #ffffff;
-      color: #111;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-      transition: 0.3s;
+
+      box-shadow:
+        0 0 15px rgba(255,255,255,0.7),
+        0 0 35px rgba(170,190,255,0.35);
+
+      transition: all 0.35s ease;
     }
 
     #entrar:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 35px rgba(255,255,255,0.8);
+
+      box-shadow:
+        0 0 25px rgba(255,255,255,0.9),
+        0 0 55px rgba(170,190,255,0.6);
     }
 
-    /* ===== CARTA ===== */
+    /* =================================
+       ESTRELLAS
+    ================================= */
+
+    .estrella {
+      position: absolute;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 0 6px white,
+        0 0 12px rgba(180,200,255,0.8);
+
+      animation: parpadear 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes parpadear {
+      0% {
+        opacity: 0.15;
+        transform: scale(0.7);
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+
+    /* Diferentes velocidades */
+
+    .lenta {
+      animation-duration: 4s;
+    }
+
+    .rapida {
+      animation-duration: 1.5s;
+    }
+
+    /* =================================
+       CARTA
+    ================================= */
 
     #carta {
       display: none;
+
       min-height: 100vh;
-      padding: 60px 20px;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 70px 20px;
+
       background:
-        linear-gradient(
-          rgba(5, 7, 20, 0.92),
-          rgba(10, 5, 20, 0.96)
+        radial-gradient(
+          circle at 75% 15%,
+          #20264c 0%,
+          #10142d 25%,
+          #080a19 55%,
+          #02030a 100%
         );
     }
 
     .contenido-carta {
-      max-width: 750px;
-      margin: auto;
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+
+      margin: 0 auto;
+
       text-align: center;
     }
 
-    .contenido-carta h1 {
-      font-size: 40px;
-      margin-bottom: 30px;
-    }
+    /* Media luna */
 
-    .corazon {
-      font-size: 55px;
-      margin-bottom: 25px;
-    }
+    .media-luna {
+      width: 120px;
+      height: 120px;
 
-    .texto {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 30px;
-      line-height: 1.8;
-      font-size: 18px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.05);
-    }
-
-    /* ===== ESTRELLAS ===== */
-
-    .estrella {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background: white;
       border-radius: 50%;
-      box-shadow: 0 0 8px white;
-      animation: parpadear 2s infinite alternate;
+
+      background: #fffbe8;
+
+      box-shadow:
+        0 0 20px white,
+        0 0 50px rgba(255,255,255,0.55);
+
+      position: relative;
+
+      margin: 0 auto 35px;
+
+      overflow: hidden;
+
+      animation: aparecerLuna 2s ease;
     }
 
-    @keyframes parpadear {
+    .media-luna::after {
+      content: "";
+
+      position: absolute;
+
+      width: 125px;
+      height: 125px;
+
+      border-radius: 50%;
+
+      background: #10142d;
+
+      left: 38px;
+      top: -8px;
+    }
+
+    @keyframes aparecerLuna {
       from {
-        opacity: 0.2;
+        opacity: 0;
+        transform: translateY(-20px);
       }
 
       to {
         opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* ===== BOTÓN VOLVER ===== */
+    /* Título */
+
+    .contenido-carta h1 {
+      font-size: 44px;
+
+      margin-bottom: 15px;
+
+      text-shadow:
+        0 0 12px rgba(255,255,255,0.65),
+        0 0 25px rgba(160,180,255,0.4);
+    }
+
+    .subtitulo-carta {
+      font-size: 20px;
+
+      opacity: 0.85;
+
+      margin-bottom: 35px;
+    }
+
+    /* Caja de la carta */
+
+    .texto-carta {
+      background: rgba(255,255,255,0.07);
+
+      border: 1px solid rgba(255,255,255,0.16);
+
+      border-radius: 25px;
+
+      padding: 35px;
+
+      line-height: 1.9;
+
+      font-size: 18px;
+
+      text-align: left;
+
+      box-shadow:
+        0 0 30px rgba(0,0,0,0.25),
+        inset 0 0 25px rgba(255,255,255,0.02);
+
+      backdrop-filter: blur(5px);
+    }
+
+    .texto-carta p {
+      margin-bottom: 20px;
+    }
+
+    .firma {
+      text-align: center;
+
+      font-size: 22px;
+
+      margin-top: 30px;
+
+      font-style: italic;
+    }
+
+    /* Botón volver */
 
     #volver {
       margin-top: 35px;
-      padding: 12px 25px;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 25px;
-      background: transparent;
+
+      padding: 13px 28px;
+
+      border-radius: 30px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+
+      background: rgba(255,255,255,0.06);
+
       color: white;
-      cursor: pointer;
+
       font-size: 16px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
     }
 
     #volver:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.15);
+
+      transform: scale(1.05);
     }
 
+    /* =================================
+       ESTRELLAS DE LA CARTA
+    ================================= */
+
+    .estrella-carta {
+      position: absolute;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow: 0 0 8px white;
+
+      animation: parpadear 3s infinite alternate;
+    }
+
+    /* =================================
+       MÓVILES
+    ================================= */
+
     @media (max-width: 600px) {
-      .titulo {
-        font-size: 32px;
+
+      .luna-grande {
+        width: 150px;
+        height: 150px;
       }
 
-      .subtitulo {
-        font-size: 18px;
+      .texto-inicio h1 {
+        font-size: 36px;
       }
 
-      .luna {
-        width: 120px;
-        height: 120px;
+      .texto-inicio p {
+        font-size: 19px;
       }
 
       .contenido-carta h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
-      .texto {
+      .texto-carta {
+        padding: 25px;
+
         font-size: 17px;
-        padding: 22px;
+      }
+
+      .media-luna {
+        width: 100px;
+        height: 100px;
+      }
+
+      .media-luna::after {
+        width: 105px;
+        height: 105px;
+        left: 32px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- ============================= -->
-  <!-- PANTALLA DE BIENVENIDA -->
-  <!-- ============================= -->
+  <!-- =================================
+       INICIO
+  ================================= -->
 
   <section id="inicio">
 
     <!-- Estrellas -->
-    <span class="estrella" style="top:10%; left:15%;"></span>
-    <span class="estrella" style="top:20%; left:75%;"></span>
-    <span class="estrella" style="top:35%; left:10%;"></span>
-    <span class="estrella" style="top:15%; left:50%;"></span>
-    <span class="estrella" style="top:45%; left:85%;"></span>
-    <span class="estrella" style="top:70%; left:20%;"></span>
-    <span class="estrella" style="top:80%; left:75%;"></span>
-    <span class="estrella" style="top:60%; left:90%;"></span>
-    <span class="estrella" style="top:75%; left:50%;"></span>
-    <span class="estrella" style="top:30%; left:65%;"></span>
 
-    <div class="luna"></div>
+    <span class="estrella" style="top:8%; left:12%;"></span>
+    <span class="estrella lenta" style="top:15%; left:30%;"></span>
+    <span class="estrella rapida" style="top:10%; left:65%;"></span>
+    <span class="estrella" style="top:20%; left:85%;"></span>
 
-    <h1 class="titulo">
-      Para ti ❤️
-    </h1>
+    <span class="estrella lenta" style="top:32%; left:8%;"></span>
+    <span class="estrella" style="top:28%; left:22%;"></span>
+    <span class="estrella rapida" style="top:35%; left:78%;"></span>
+    <span class="estrella" style="top:42%; left:91%;"></span>
 
-    <p class="subtitulo">
-      Hay algo que quiero enseñarte...
-    </p>
+    <span class="estrella lenta" style="top:55%; left:7%;"></span>
+    <span class="estrella" style="top:65%; left:17%;"></span>
+    <span class="estrella rapida" style="top:72%; left:84%;"></span>
+    <span class="estrella" style="top:82%; left:68%;"></span>
 
-    <button id="entrar">
-      Entrar ❤️
-    </button>
+    <span class="estrella lenta" style="top:88%; left:25%;"></span>
+    <span class="estrella" style="top:75%; left:48%;"></span>
+    <span class="estrella rapida" style="top:52%; left:95%;"></span>
+
+    <!-- Luna -->
+
+    <div class="luna-grande"></div>
+
+    <!-- Texto -->
+
+    <div class="texto-inicio">
+
+      <h1>Para ti ❤️</h1>
+
+      <p>
+        Hay algo que quiero enseñarte...
+      </p>
+
+      <button id="entrar">
+        Entrar ❤️
+      </button>
+
+    </div>
 
   </section>
 
 
-  <!-- ============================= -->
-  <!-- CARTA -->
-  <!-- ============================= -->
+  <!-- =================================
+       CARTA
+  ================================= -->
 
   <section id="carta">
 
+    <!-- Estrellas -->
+
+    <span class="estrella-carta" style="top:8%; left:10%;"></span>
+    <span class="estrella-carta" style="top:18%; left:25%;"></span>
+    <span class="estrella-carta" style="top:12%; left:55%;"></span>
+    <span class="estrella-carta" style="top:25%; left:90%;"></span>
+
+    <span class="estrella-carta" style="top:50%; left:7%;"></span>
+    <span class="estrella-carta" style="top:65%; left:15%;"></span>
+    <span class="estrella-carta" style="top:78%; left:88%;"></span>
+
+    <span class="estrella-carta" style="top:90%; left:45%;"></span>
+    <span class="estrella-carta" style="top:45%; left:95%;"></span>
+
+
     <div class="contenido-carta">
 
-      <div class="corazon">
-        ❤️
-      </div>
+      <!-- Media luna -->
+
+      <div class="media-luna"></div>
+
+      <!-- Título -->
 
       <h1>
-        Mi carta para ti
+        Feliz cumpleaños, mi amor ❤️
       </h1>
 
-      <div class="texto">
+      <p class="subtitulo-carta">
+        Esta noche quiero celebrar algo muy especial: tu existencia.
+      </p>
+
+
+      <!-- Carta -->
+
+      <div class="texto-carta">
 
         <p>
           Quiero que sepas que preparé este pequeño espacio
           especialmente para ti.
         </p>
 
-        <br>
-
         <p>
-          Aquí iremos guardando nuestras palabras,
-          nuestros recuerdos, nuestras fotos
-          y todos esos momentos que hacen especial
-          nuestra historia.
+          Hoy no quiero celebrar solamente tu cumpleaños.
+          Quiero celebrar que existes, que llegaste a mi vida
+          y todos esos momentos que poco a poco se han convertido
+          en recuerdos que guardo con muchísimo cariño.
         </p>
 
-        <br>
+        <p>
+          Nuestras noches, nuestras conversaciones,
+          nuestras risas y cada pequeño momento compartido
+          tienen un lugar especial en mi corazón.
+        </p>
 
         <p>
-          Esto apenas comienza...
+          Y esto apenas comienza...
+          Porque todavía nos quedan muchas noches,
+          muchas historias y muchos recuerdos por crear.
+        </p>
+
+        <p class="firma">
+          Feliz cumpleaños ❤️
         </p>
 
       </div>
+
 
       <button id="volver">
         ← Volver
@@ -271,22 +559,25 @@ Sí ❤️. Pega todo esto dentro de tu index.html, reemplazando lo que tienes a
   </section>
 
 
-  <!-- ============================= -->
-  <!-- JAVASCRIPT -->
-  <!-- ============================= -->
+  <!-- =================================
+       JAVASCRIPT
+  ================================= -->
 
   <script>
 
-    const botonEntrar = document.getElementById("entrar");
-    const botonVolver = document.getElementById("volver");
+    const entrar = document.getElementById("entrar");
+
+    const volver = document.getElementById("volver");
 
     const inicio = document.getElementById("inicio");
+
     const carta = document.getElementById("carta");
 
 
-    botonEntrar.addEventListener("click", function() {
+    entrar.addEventListener("click", function() {
 
       inicio.style.display = "none";
+
       carta.style.display = "block";
 
       window.scrollTo({
@@ -297,9 +588,10 @@ Sí ❤️. Pega todo esto dentro de tu index.html, reemplazando lo que tienes a
     });
 
 
-    botonVolver.addEventListener("click", function() {
+    volver.addEventListener("click", function() {
 
       carta.style.display = "none";
+
       inicio.style.display = "flex";
 
       window.scrollTo({
@@ -313,7 +605,3 @@ Sí ❤️. Pega todo esto dentro de tu index.html, reemplazando lo que tienes a
 
 </body>
 </html>
-
-Por ahora haz solamente esto: pega el código, guarda con Commit changes y abre tu página. No borres carta.html todavía; lo dejamos como copia de seguridad.
-
-Cuando veas que aparece la luna → “Entrar ❤️” → la carta, me dices “ya funciona” y seguimos con la siguiente parte.
