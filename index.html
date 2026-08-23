@@ -1,5 +1,3 @@
-
-  
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -172,7 +170,8 @@ body{
    ESTRELLAS
 ========================================= */
 
-.estrella{
+.estrella,
+.estrella-carta{
   position:absolute;
 
   width:3px;
@@ -203,7 +202,7 @@ body{
 }
 
 /* =========================================
-   CARTA DE CUMPLEAÑOS
+   CARTA
 ========================================= */
 
 #carta{
@@ -235,23 +234,6 @@ body{
   margin:auto;
 
   text-align:center;
-}
-
-.estrella-carta{
-  position:absolute;
-
-  width:3px;
-  height:3px;
-
-  background:white;
-
-  border-radius:50%;
-
-  box-shadow:
-    0 0 8px white,
-    0 0 15px #cbb2ff;
-
-  animation:parpadear 2s infinite alternate;
 }
 
 .media-luna{
@@ -291,7 +273,6 @@ body{
 
 .contenido-carta h1{
   font-size:43px;
-
   margin-bottom:15px;
 
   text-shadow:
@@ -301,9 +282,7 @@ body{
 
 .subtitulo-carta{
   font-size:20px;
-
   opacity:.85;
-
   margin-bottom:35px;
 }
 
@@ -340,9 +319,7 @@ body{
 
 .firma{
   text-align:center;
-
   font-size:23px;
-
   font-style:italic;
 }
 
@@ -373,19 +350,15 @@ body{
 
 .razones-contenido{
   position:relative;
-
   z-index:5;
 
   max-width:950px;
-
   margin:auto;
-
   text-align:center;
 }
 
 .razones-contenido h2{
   font-size:43px;
-
   margin-bottom:12px;
 
   text-shadow:
@@ -395,13 +368,9 @@ body{
 
 .razones-subtitulo{
   font-size:19px;
-
   opacity:.85;
-
   margin-bottom:45px;
 }
-
-/* NUBES */
 
 .nube{
   position:absolute;
@@ -420,7 +389,6 @@ body{
   border-radius:50%;
 
   filter:blur(8px);
-
   opacity:.7;
 
   animation:moverNube 28s linear infinite;
@@ -433,14 +401,12 @@ body{
   position:absolute;
 
   background:rgba(220,190,255,.10);
-
   border-radius:50%;
 }
 
 .nube::before{
   width:100px;
   height:100px;
-
   left:35px;
   bottom:15px;
 }
@@ -448,7 +414,6 @@ body{
 .nube::after{
   width:120px;
   height:120px;
-
   right:25px;
   bottom:10px;
 }
@@ -490,8 +455,6 @@ body{
 
 }
 
-/* ESTRELLAS */
-
 .estrellas-razones{
   display:grid;
 
@@ -506,9 +469,7 @@ body{
 
 .estrella-razon{
   border:none;
-
   background:none;
-
   color:white;
 
   font-size:35px;
@@ -541,8 +502,6 @@ body{
   }
 
 }
-
-/* VENTANA */
 
 #mensaje-razon{
   display:none;
@@ -579,20 +538,17 @@ body{
 
 .estrella-grande{
   font-size:50px;
-
   margin-bottom:15px;
 }
 
 #texto-razon{
   font-size:21px;
-
   line-height:1.6;
-
   margin-bottom:25px;
 }
 
 /* =========================================
-   CARTA ESPECIAL PARA COCO
+   CARTA COCO
 ========================================= */
 
 #carta-coco{
@@ -618,19 +574,15 @@ body{
 
 .carta-coco-contenido{
   position:relative;
-
   z-index:5;
 
   max-width:760px;
-
   margin:auto;
-
   text-align:center;
 }
 
 .coco-luna{
   font-size:75px;
-
   margin-bottom:15px;
 
   filter:
@@ -654,7 +606,6 @@ body{
 
 .carta-coco-contenido h2{
   font-size:42px;
-
   margin-bottom:12px;
 
   text-shadow:
@@ -664,9 +615,7 @@ body{
 
 .coco-intro{
   font-size:19px;
-
   opacity:.85;
-
   margin-bottom:35px;
 }
 
@@ -687,7 +636,6 @@ body{
   text-align:left;
 
   font-size:18px;
-
   line-height:1.9;
 
   backdrop-filter:blur(8px);
@@ -705,11 +653,9 @@ body{
   text-align:center;
 
   font-size:23px;
-
   font-style:italic;
 
   margin-top:30px;
-
   margin-bottom:0 !important;
 
   text-shadow:
@@ -718,7 +664,6 @@ body{
 
 .cocodrilo-coco{
   font-size:65px;
-
   margin-top:35px;
 
   filter:
@@ -742,13 +687,10 @@ body{
 
 .coco-final{
   margin-top:10px;
-
   margin-bottom:25px;
 
   font-size:17px;
-
   opacity:.75;
-
   font-style:italic;
 }
 
@@ -779,6 +721,7 @@ body{
 
 #distancia::before{
   content:"";
+
   position:absolute;
 
   width:400px;
@@ -796,6 +739,7 @@ body{
 
 #distancia::after{
   content:"";
+
   position:absolute;
 
   width:350px;
@@ -816,15 +760,12 @@ body{
   z-index:5;
 
   max-width:950px;
-
   margin:auto;
-
   text-align:center;
 }
 
 .distancia-titulo{
   font-size:43px;
-
   margin-bottom:12px;
 
   text-shadow:
@@ -834,14 +775,12 @@ body{
 
 .distancia-subtitulo{
   font-size:20px;
-
   opacity:.88;
-
   margin-bottom:35px;
 }
 
 /* =========================================
-   NUBES DE LA DISTANCIA
+   NUBES
 ========================================= */
 
 .nube-distancia{
@@ -925,7 +864,7 @@ body{
 }
 
 /* =========================================
-   ESTRELLITAS DE LA DISTANCIA
+   ESTRELLAS DISTANCIA
 ========================================= */
 
 .estrella-distancia{
@@ -983,7 +922,7 @@ body{
 }
 
 /* =========================================
-   TARJETA DEL MAPA
+   MAPA
 ========================================= */
 
 .mapa-card{
@@ -1013,15 +952,13 @@ body{
     inset 0 0 45px rgba(210,170,255,.05);
 }
 
-/* =========================================
-   CUADRÍCULA
-========================================= */
+/* MAPA DIFUMINADO */
 
 .mapa-grid{
   position:absolute;
   inset:0;
 
-  opacity:.13;
+  opacity:.09;
 
   background-image:
     linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),
@@ -1032,42 +969,37 @@ body{
   transform:perspective(500px) rotateX(35deg) scale(1.3);
 }
 
-/* =========================================
-   MAPAMUNDI
-========================================= */
+/*
+   El mapa no pretende ser geográficamente exacto.
+   Es una silueta suave para dar la sensación
+   de dos lugares separados.
+*/
 
 .mapamundi{
   position:absolute;
 
   left:50%;
-  top:50%;
+  top:51%;
 
   transform:translate(-50%,-50%);
 
   width:min(850px,95%);
-
   height:310px;
 
   border-radius:50%;
 
   background:
     radial-gradient(
-      circle at 50% 45%,
-      rgba(126,180,255,.18),
-      rgba(75,91,180,.10) 45%,
-      rgba(20,25,70,.18) 75%,
-      transparent 76%
+      ellipse at center,
+      rgba(164,145,255,.12),
+      rgba(92,80,170,.08) 48%,
+      transparent 72%
     );
 
-  border:1px solid rgba(190,190,255,.16);
+  filter:blur(.2px);
 
-  box-shadow:
-    0 0 45px rgba(120,130,255,.15);
-
-  opacity:.95;
+  opacity:.8;
 }
-
-/* CONTINENTES */
 
 .continente{
   position:absolute;
@@ -1075,23 +1007,23 @@ body{
   background:
     linear-gradient(
       135deg,
-      rgba(219,190,255,.28),
-      rgba(128,104,185,.17)
+      rgba(219,190,255,.20),
+      rgba(128,104,185,.10)
     );
 
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.07);
 
-  filter:blur(.2px);
+  filter:blur(1px);
 
-  opacity:.8;
+  opacity:.65;
 }
 
 .europa{
-  width:110px;
-  height:65px;
+  width:105px;
+  height:60px;
 
-  top:52px;
-  left:50%;
+  top:48px;
+  left:51%;
 
   border-radius:55% 40% 45% 30%;
 
@@ -1099,8 +1031,8 @@ body{
 }
 
 .america-norte{
-  width:170px;
-  height:115px;
+  width:165px;
+  height:110px;
 
   top:65px;
   left:9%;
@@ -1123,8 +1055,8 @@ body{
 }
 
 .africa{
-  width:125px;
-  height:160px;
+  width:120px;
+  height:155px;
 
   top:130px;
   left:51%;
@@ -1135,7 +1067,7 @@ body{
 }
 
 .asia{
-  width:250px;
+  width:245px;
   height:105px;
 
   top:60px;
@@ -1165,14 +1097,13 @@ body{
 .lugar{
   position:absolute;
 
-  z-index:15;
+  z-index:30;
 
   display:flex;
   flex-direction:column;
   align-items:center;
 
   font-size:17px;
-
   font-weight:bold;
 
   text-shadow:
@@ -1181,14 +1112,14 @@ body{
 }
 
 /* =========================================
-   PERSONAJES BONITOS
+   PERSONAJES
 ========================================= */
 
 .personaje{
   position:relative;
 
-  width:78px;
-  height:92px;
+  width:88px;
+  height:100px;
 
   display:flex;
 
@@ -1205,17 +1136,101 @@ body{
     drop-shadow(0 0 22px rgba(202,155,255,.75));
 }
 
-/* CONEJITA */
+/* =========================================
+   CONEJITA MÁS DELICADA
+========================================= */
 
 .conejita{
-  font-size:70px;
+  position:relative;
 
-  line-height:1;
+  width:60px;
+  height:68px;
 
-  transform:translateY(-2px);
+  animation:
+    respirarConejita 3.5s ease-in-out infinite;
 }
 
-/* COCO */
+/* CABEZA */
+
+.conejita::before{
+  content:"";
+
+  position:absolute;
+
+  width:54px;
+  height:50px;
+
+  left:3px;
+  top:18px;
+
+  border-radius:50% 50% 46% 46%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff,
+      #f6eaff 55%,
+      #d8c4ef
+    );
+
+  box-shadow:
+    inset -5px -6px 8px rgba(120,80,150,.13),
+    0 0 8px rgba(255,255,255,.8);
+}
+
+/* OREJAS */
+
+.conejita::after{
+  content:"";
+
+  position:absolute;
+
+  width:17px;
+  height:43px;
+
+  left:8px;
+  top:-3px;
+
+  border-radius:60% 60% 45% 45%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #eee2ff,
+      #f9f0ff
+    );
+
+  box-shadow:
+    27px 0 0 -1px #eee2ff,
+    27px 0 0 0 #eee2ff;
+
+  transform:rotate(-8deg);
+}
+
+/* OJITOS Y DETALLES */
+
+.conejita{
+  background:
+    radial-gradient(circle at 22px 40px,#4b355d 0 2px,transparent 3px),
+    radial-gradient(circle at 40px 40px,#4b355d 0 2px,transparent 3px),
+    radial-gradient(circle at 31px 48px,#c78dbd 0 3px,transparent 4px);
+}
+
+@keyframes respirarConejita{
+
+  0%,100%{
+    transform:translateY(0) scale(1);
+  }
+
+  50%{
+    transform:translateY(-4px) scale(1.03);
+  }
+
+}
+
+/* =========================================
+   COCO
+========================================= */
 
 .cocodrilo-distancia{
   font-size:68px;
@@ -1241,168 +1256,119 @@ body{
 
 }
 
-/* POSICIONES */
+/* =========================================
+   POSICIONES
+========================================= */
 
 .lugar-maria{
-  top:83px;
-  left:55%;
+  top:75px;
+  left:57%;
 
   transform:translateX(-50%);
 }
 
 .lugar-coco{
-  top:270px;
-  left:30%;
+  top:285px;
+  left:29%;
 
   transform:translateX(-50%);
 }
 
 /* =========================================
-   LÍNEA CURVA DEL CORAZÓN
+   RUTA EXACTA ENTRE ELLOS
 ========================================= */
 
-.linea-distancia{
+.ruta-corazon{
   position:absolute;
 
-  z-index:12;
+  z-index:22;
 
-  width:345px;
-  height:175px;
+  width:520px;
+  height:250px;
 
-  top:165px;
-  left:31%;
+  left:18%;
+  top:115px;
 
-  border-top:3px solid rgba(235,205,255,.9);
-
-  border-radius:50%;
-
-  transform:rotate(12deg);
-
-  filter:
-    drop-shadow(0 0 5px #e7c7ff)
-    drop-shadow(0 0 13px rgba(200,145,255,.9));
-
-  animation:
-    brilloLinea 2.4s ease-in-out infinite alternate;
+  overflow:visible;
 
   pointer-events:none;
 }
 
-@keyframes brilloLinea{
+.ruta-base{
+  fill:none;
 
-  from{
-    opacity:.45;
-  }
+  stroke:rgba(232,204,255,.78);
 
-  to{
-    opacity:1;
-  }
+  stroke-width:3;
 
-}
-
-/* SEGUNDA LÍNEA SUAVE PARA DAR EFECTO MÁGICO */
-
-.linea-distancia::after{
-  content:"";
-
-  position:absolute;
-
-  width:100%;
-  height:100%;
-
-  left:0;
-  top:0;
-
-  border-top:1px solid rgba(255,255,255,.45);
-
-  border-radius:50%;
-
-  transform:translateY(4px);
-
-  opacity:.5;
-}
-
-/* =========================================
-   CORAZÓN QUE VIAJA POR LA LÍNEA
-========================================= */
-
-.corazon-viajero{
-  position:absolute;
-
-  z-index:20;
-
-  font-size:25px;
-
-  top:-17px;
-  left:-5px;
+  stroke-linecap:round;
 
   filter:
-    drop-shadow(0 0 5px white)
-    drop-shadow(0 0 12px #ff9fdf);
-
-  animation:
-    viajarCorazon 4.5s ease-in-out infinite;
+    drop-shadow(0 0 5px #e7c7ff)
+    drop-shadow(0 0 12px rgba(200,145,255,.9));
 }
 
-@keyframes viajarCorazon{
+.ruta-brillo{
+  fill:none;
 
-  0%{
-    left:-5px;
-    transform:scale(.75);
-    opacity:.6;
-  }
+  stroke:rgba(255,255,255,.55);
 
-  10%{
-    opacity:1;
-  }
+  stroke-width:1.2;
 
-  50%{
-    transform:scale(1.3);
-  }
+  stroke-linecap:round;
+}
 
-  90%{
-    opacity:1;
-  }
+/* CORAZÓN */
 
-  100%{
-    left:calc(100% - 18px);
-    transform:scale(.75);
-    opacity:.6;
-  }
-
+.corazon-svg{
+  filter:
+    drop-shadow(0 0 5px white)
+    drop-shadow(0 0 10px #ff9fdf);
 }
 
 /* =========================================
-   PEQUEÑOS CORAZONES DE LUZ
+   DESTELLOS
 ========================================= */
 
 .brillito-linea{
   position:absolute;
 
-  z-index:13;
+  z-index:25;
 
   color:#f5ddff;
 
-  font-size:13px;
+  font-size:15px;
 
-  animation:brillarLinea 2s ease-in-out infinite alternate;
+  animation:
+    brillarLinea 2s ease-in-out infinite alternate;
+
+  pointer-events:none;
 }
 
 .brillito1{
-  top:210px;
-  left:47%;
+  top:215px;
+  left:46%;
 }
 
 .brillito2{
-  top:250px;
+  top:270px;
   left:39%;
+
   animation-delay:.8s;
 }
 
 .brillito3{
-  top:180px;
-  left:58%;
+  top:185px;
+  left:59%;
+
   animation-delay:1.4s;
+}
+
+.brillito4{
+  top:320px;
+  left:49%;
+
+  animation-delay:.4s;
 }
 
 @keyframes brillarLinea{
@@ -1426,10 +1392,10 @@ body{
 .kilometros{
   position:absolute;
 
-  z-index:20;
+  z-index:40;
 
   left:50%;
-  top:205px;
+  top:245px;
 
   transform:translateX(-50%);
 
@@ -1567,59 +1533,81 @@ body{
   }
 
   .mapa-card{
-    min-height:600px;
-    padding:15px;
+    min-height:620px;
+    padding:10px;
   }
 
   .mapamundi{
     width:700px;
     height:300px;
-    transform:translate(-50%,-50%) scale(.85);
+
+    transform:
+      translate(-50%,-50%)
+      scale(.72);
   }
 
+  /* CONEJITA */
+
   .lugar-maria{
-    top:115px;
-    left:66%;
+    top:105px;
+    left:69%;
   }
 
   .lugar-coco{
-    top:315px;
-    left:27%;
+    top:355px;
+    left:25%;
   }
 
   .personaje{
-    width:70px;
-    height:82px;
+    width:72px;
+    height:85px;
   }
 
   .conejita{
-    font-size:62px;
+    transform:scale(.9);
   }
 
   .cocodrilo-distancia{
-    font-size:60px;
+    font-size:58px;
   }
 
-  .linea-distancia{
-    width:260px;
-    height:155px;
+  /*
+     En móvil la ruta se hace más alta
+     para unir visualmente los dos personajes.
+  */
 
-    top:235px;
-    left:25%;
+  .ruta-corazon{
+    width:340px;
+    height:240px;
 
-    transform:rotate(8deg);
-  }
-
-  .corazon-viajero{
-    font-size:22px;
+    left:7%;
+    top:205px;
   }
 
   .kilometros{
-    top:250px;
-
+    top:300px;
     font-size:14px;
-
     white-space:nowrap;
+  }
+
+  .brillito1{
+    top:270px;
+    left:45%;
+  }
+
+  .brillito2{
+    top:325px;
+    left:35%;
+  }
+
+  .brillito3{
+    top:255px;
+    left:60%;
+  }
+
+  .brillito4{
+    top:370px;
+    left:48%;
   }
 
   .frase-mapa{
@@ -1645,21 +1633,6 @@ body{
   .frase-4{
     bottom:20px;
     right:5%;
-  }
-
-  .brillito1{
-    top:280px;
-    left:47%;
-  }
-
-  .brillito2{
-    top:330px;
-    left:38%;
-  }
-
-  .brillito3{
-    top:255px;
-    left:60%;
   }
 
   .distancia-frase-final{
@@ -1716,7 +1689,7 @@ body{
 
 
 <!-- =========================================
-     CARTA DE CUMPLEAÑOS
+     CARTA
 ========================================= -->
 
 <section id="carta">
@@ -1963,8 +1936,6 @@ body{
 
 <section id="distancia">
 
-  <!-- ESTRELLAS -->
-
   <span class="estrella-distancia" style="top:8%;left:9%"></span>
   <span class="estrella-distancia" style="top:14%;left:22%"></span>
   <span class="estrella-distancia" style="top:7%;left:45%"></span>
@@ -1979,8 +1950,6 @@ body{
   <span class="estrella-distancia" style="top:76%;left:26%"></span>
   <span class="estrella-distancia" style="top:70%;left:75%"></span>
   <span class="estrella-distancia" style="top:84%;left:92%"></span>
-
-  <!-- NUBES -->
 
   <div class="nube-distancia nube-d1"></div>
   <div class="nube-distancia nube-d2"></div>
@@ -2013,26 +1982,9 @@ body{
       </div>
 
 
-      <!-- CONEJITA -->
-
-      <div class="lugar lugar-maria">
-
-        <div class="personaje">
-
-          <div class="conejita">
-            🐰
-          </div>
-
-        </div>
-
-        <div>
-          🇧🇪 Bélgica
-        </div>
-
-      </div>
-
-
-      <!-- COCODRILO -->
+      <!-- =====================================
+           COCO EN COLOMBIA
+      ====================================== -->
 
       <div class="lugar lugar-coco">
 
@@ -2051,18 +2003,87 @@ body{
       </div>
 
 
-      <!-- LÍNEA QUE LOS UNE -->
+      <!-- =====================================
+           MARIA EN BÉLGICA
+      ====================================== -->
 
-      <div class="linea-distancia">
+      <div class="lugar lugar-maria">
 
-        <div class="corazon-viajero">
-          ❤️
+        <div class="personaje">
+
+          <div class="conejita"></div>
+
+        </div>
+
+        <div>
+          🇧🇪 Bélgica
         </div>
 
       </div>
 
 
-      <!-- DESTELLOS SOBRE LA LÍNEA -->
+      <!-- =====================================
+           RUTA CURVA
+           DEL COCODRILO AL CONEJITO
+      ====================================== -->
+
+      <svg
+        class="ruta-corazon"
+        viewBox="0 0 520 250"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+
+        <path
+          id="rutaAmor"
+          class="ruta-base"
+          d="M 55 190
+             C 150 230,
+               205 40,
+               300 90
+             C 370 125,
+               410 35,
+               475 45"
+        />
+
+        <path
+          class="ruta-brillo"
+          d="M 55 190
+             C 150 230,
+               205 40,
+               300 90
+             C 370 125,
+               410 35,
+               475 45"
+        />
+
+        <!-- CORAZÓN QUE RECORRE LA MISMA RUTA -->
+
+        <g class="corazon-svg">
+
+          <text
+            font-size="25"
+            text-anchor="middle"
+            dominant-baseline="middle"
+          >
+            ❤️
+
+            <animateMotion
+              dur="4.8s"
+              repeatCount="indefinite"
+              rotate="auto"
+            >
+              <mpath href="#rutaAmor"></mpath>
+            </animateMotion>
+
+          </text>
+
+        </g>
+
+      </svg>
+
+
+      <!-- DESTELLOS -->
 
       <div class="brillito-linea brillito1">
         ✦
@@ -2074,6 +2095,10 @@ body{
 
       <div class="brillito-linea brillito3">
         ✦
+      </div>
+
+      <div class="brillito-linea brillito4">
+        ✧
       </div>
 
 
@@ -2178,7 +2203,7 @@ document.querySelectorAll(".estrella-razon").forEach(function(estrella){
 });
 
 
-/* CERRAR UNA RAZÓN */
+/* CERRAR */
 
 document.getElementById("cerrarRazon").addEventListener("click",function(){
 
@@ -2187,7 +2212,7 @@ document.getElementById("cerrarRazon").addEventListener("click",function(){
 });
 
 
-/* 50 ESTRELLAS → CARTA DE COCO */
+/* ESTRELLAS → COCO */
 
 document.getElementById("irCoco").addEventListener("click",function(){
 
@@ -2200,7 +2225,7 @@ document.getElementById("irCoco").addEventListener("click",function(){
 });
 
 
-/* CARTA DE COCO → DISTANCIA */
+/* COCO → DISTANCIA */
 
 document.getElementById("irDistancia").addEventListener("click",function(){
 
