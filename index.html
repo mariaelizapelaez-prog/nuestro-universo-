@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para ti ❤️</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -23,80 +25,26 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================
-   PORTADA
-========================= */
-
-#inicio{
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
-
-  background:
-    radial-gradient(circle at 50% 40%,
-    #28335f 0%,
-    #121a3b 32%,
-    #070a19 65%,
-    #02030a 100%);
-}
-
-.luna-grande{
-  width:200px;
-  height:200px;
-  border-radius:50%;
-
-  background:
-    radial-gradient(circle at 35% 30%,
-    #ffffff,
-    #fffde9 42%,
-    #e7dfbd 75%,
-    #bdb58f);
-
-  box-shadow:
-    0 0 25px white,
-    0 0 60px rgba(255,255,255,.75),
-    0 0 110px rgba(150,180,255,.45);
-
-  margin-bottom:42px;
-  animation:brilloLuna 4s ease-in-out infinite;
-}
-
-@keyframes brilloLuna{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-}
-
-.texto-inicio h1{
-  font-size:48px;
-  margin-bottom:18px;
-  text-shadow:0 0 15px white,0 0 35px #8295e8;
-}
-
-.texto-inicio p{
-  font-size:22px;
-  opacity:.9;
-  margin-bottom:38px;
-}
+/* =========================================
+   BOTONES
+========================================= */
 
 .boton{
-  padding:15px 36px;
   border:none;
+  padding:15px 36px;
   border-radius:40px;
+
   background:white;
   color:#11152b;
-  font-size:18px;
+
   font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+
   cursor:pointer;
 
   box-shadow:
     0 0 20px rgba(255,255,255,.8),
-    0 0 45px rgba(140,170,255,.45);
+    0 0 45px rgba(150,180,255,.45);
 
   transition:.3s;
 }
@@ -105,57 +53,170 @@ body{
   transform:scale(1.08);
 }
 
-/* ESTRELLAS DEL CIELO */
+/* =========================================
+   PORTADA
+========================================= */
+
+#inicio{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  padding:30px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #28345f 0%,
+      #121a3b 32%,
+      #070a19 65%,
+      #02030a 100%
+    );
+}
+
+.luna-grande{
+  width:200px;
+  height:200px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffffff,
+      #fffde9 42%,
+      #e7dfbd 75%,
+      #bdb58f
+    );
+
+  box-shadow:
+    0 0 25px white,
+    0 0 60px rgba(255,255,255,.75),
+    0 0 110px rgba(150,180,255,.45);
+
+  margin-bottom:42px;
+
+  animation:brilloLuna 4s ease-in-out infinite;
+}
+
+@keyframes brilloLuna{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+}
+
+.texto-inicio h1{
+  font-size:48px;
+  margin-bottom:18px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 35px #8295e8;
+}
+
+.texto-inicio p{
+  font-size:22px;
+  opacity:.9;
+  margin-bottom:38px;
+}
+
+/* =========================================
+   ESTRELLAS
+========================================= */
 
 .estrella{
   position:absolute;
+
   width:3px;
   height:3px;
+
   background:white;
   border-radius:50%;
-  box-shadow:0 0 8px white,0 0 16px #9eb4ff;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 16px #9eb4ff;
+
   animation:parpadear 2.5s infinite alternate;
 }
 
 @keyframes parpadear{
-  from{opacity:.2;transform:scale(.7);}
-  to{opacity:1;transform:scale(1.4);}
+
+  from{
+    opacity:.2;
+    transform:scale(.7);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.4);
+  }
+
 }
 
-/* =========================
-   CARTA
-========================= */
+/* =========================================
+   CARTA DE CUMPLEAÑOS
+========================================= */
 
 #carta{
   display:none;
+
   min-height:100vh;
+
   position:relative;
   overflow:hidden;
+
   padding:70px 20px;
 
   background:
-    radial-gradient(circle at 75% 15%,
-    #252c55,
-    #111633 35%,
-    #070a19 70%,
-    #02030a);
+    radial-gradient(
+      circle at 75% 15%,
+      #252c55,
+      #111633 35%,
+      #070a19 70%,
+      #02030a
+    );
 }
 
 .contenido-carta{
   position:relative;
   z-index:2;
+
   max-width:760px;
+
   margin:auto;
+
   text-align:center;
 }
 
+/* ESTRELLAS DE LA CARTA */
+
 .estrella-carta{
   position:absolute;
+
   width:3px;
   height:3px;
+
   background:white;
+
   border-radius:50%;
-  box-shadow:0 0 8px white,0 0 15px #9eb4ff;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 15px #9eb4ff;
+
   animation:parpadear 2s infinite alternate;
 }
 
@@ -164,47 +225,75 @@ body{
 .media-luna{
   width:130px;
   height:130px;
+
   border-radius:50%;
+
   background:#fffbe8;
-  box-shadow:0 0 25px white,0 0 55px rgba(255,255,255,.55);
+
+  box-shadow:
+    0 0 25px white,
+    0 0 55px rgba(255,255,255,.55);
+
   position:relative;
+
   margin:0 auto 35px;
+
   overflow:hidden;
 }
 
 .media-luna::after{
   content:"";
+
   position:absolute;
+
   width:135px;
   height:135px;
+
   border-radius:50%;
+
   background:#111633;
+
   left:42px;
   top:-8px;
 }
 
 .contenido-carta h1{
   font-size:43px;
+
   margin-bottom:15px;
-  text-shadow:0 0 14px white,0 0 30px #8295e8;
+
+  text-shadow:
+    0 0 14px white,
+    0 0 30px #8295e8;
 }
 
 .subtitulo-carta{
   font-size:20px;
+
   opacity:.85;
+
   margin-bottom:35px;
 }
 
 .texto-carta{
   background:rgba(255,255,255,.07);
+
   border:1px solid rgba(255,255,255,.16);
+
   border-radius:25px;
+
   padding:35px;
+
   line-height:1.9;
+
   font-size:18px;
+
   text-align:left;
+
   backdrop-filter:blur(6px);
-  box-shadow:0 0 35px rgba(0,0,0,.3);
+
+  box-shadow:
+    0 0 35px rgba(0,0,0,.3);
 }
 
 .texto-carta p{
@@ -213,45 +302,63 @@ body{
 
 .firma{
   text-align:center;
+
   font-size:23px;
+
   font-style:italic;
 }
 
-/* =========================
+/* =========================================
    50 ESTRELLAS
-========================= */
+========================================= */
 
 #razones{
   display:none;
+
   min-height:100vh;
+
   position:relative;
+
   overflow:hidden;
+
   padding:75px 20px;
 
   background:
-    linear-gradient(180deg,
-    #060918,
-    #111936,
-    #080b1c);
+    linear-gradient(
+      180deg,
+      #060918,
+      #111936,
+      #080b1c
+    );
 }
 
 .razones-contenido{
   position:relative;
+
   z-index:5;
+
   max-width:950px;
+
   margin:auto;
+
   text-align:center;
 }
 
 .razones-contenido h2{
   font-size:43px;
+
   margin-bottom:12px;
-  text-shadow:0 0 15px white,0 0 35px #8295e8;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 35px #8295e8;
 }
 
 .razones-subtitulo{
   font-size:19px;
+
   opacity:.85;
+
   margin-bottom:45px;
 }
 
@@ -259,26 +366,36 @@ body{
 
 .nube{
   position:absolute;
+
   width:230px;
   height:70px;
+
   background:rgba(255,255,255,.08);
+
   border-radius:50%;
+
   filter:blur(8px);
+
   opacity:.7;
+
   animation:moverNube 28s linear infinite;
 }
 
 .nube::before,
 .nube::after{
   content:"";
+
   position:absolute;
+
   background:rgba(255,255,255,.08);
+
   border-radius:50%;
 }
 
 .nube::before{
   width:100px;
   height:100px;
+
   left:35px;
   bottom:15px;
 }
@@ -286,6 +403,7 @@ body{
 .nube::after{
   width:120px;
   height:120px;
+
   right:25px;
   bottom:10px;
 }
@@ -298,7 +416,9 @@ body{
 .nube2{
   top:55%;
   left:-350px;
+
   transform:scale(.7);
+
   animation-duration:36s;
   animation-delay:5s;
 }
@@ -306,31 +426,48 @@ body{
 .nube3{
   top:78%;
   left:-300px;
+
   transform:scale(1.2);
+
   animation-duration:32s;
   animation-delay:10s;
 }
 
 @keyframes moverNube{
-  from{left:-350px;}
-  to{left:110%;}
+
+  from{
+    left:-350px;
+  }
+
+  to{
+    left:110%;
+  }
+
 }
 
-/* ESTRELLAS CLICABLES */
+/* ESTRELLAS */
 
 .estrellas-razones{
   display:grid;
+
   grid-template-columns:repeat(5,1fr);
+
   gap:28px;
+
   max-width:800px;
+
   margin:auto;
 }
 
 .estrella-razon{
   border:none;
+
   background:none;
+
   color:white;
+
   font-size:35px;
+
   cursor:pointer;
 
   text-shadow:
@@ -338,7 +475,9 @@ body{
     0 0 20px #aabfff,
     0 0 40px #7289d8;
 
-  animation:brilloEstrella 2.5s ease-in-out infinite alternate;
+  animation:
+    brilloEstrella 2.5s ease-in-out infinite alternate;
+
   transition:.3s;
 }
 
@@ -347,45 +486,222 @@ body{
 }
 
 @keyframes brilloEstrella{
-  from{opacity:.45;}
-  to{opacity:1;}
+
+  from{
+    opacity:.45;
+  }
+
+  to{
+    opacity:1;
+  }
+
 }
 
-/* MENSAJE */
+/* VENTANA */
 
 #mensaje-razon{
   display:none;
+
   position:fixed;
+
   z-index:100;
+
   left:50%;
   top:50%;
+
   transform:translate(-50%,-50%);
 
   width:min(90%,500px);
+
   padding:35px;
 
-  background:linear-gradient(145deg,#182046,#070a1c);
+  background:
+    linear-gradient(
+      145deg,
+      #182046,
+      #070a1c
+    );
+
   border:1px solid rgba(255,255,255,.2);
+
   border-radius:25px;
+
   text-align:center;
 
-  box-shadow:0 0 45px rgba(100,130,220,.45);
+  box-shadow:
+    0 0 45px rgba(100,130,220,.45);
 }
 
 .estrella-grande{
   font-size:50px;
+
   margin-bottom:15px;
 }
 
 #texto-razon{
   font-size:21px;
+
   line-height:1.6;
+
   margin-bottom:25px;
 }
 
-/* =========================
+/* =========================================
+   CARTA ESPECIAL PARA COCO
+========================================= */
+
+#carta-coco{
+  display:none;
+
+  min-height:100vh;
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:75px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      #28345f 0%,
+      #111936 35%,
+      #070a19 70%,
+      #02030a 100%
+    );
+}
+
+.carta-coco-contenido{
+  position:relative;
+
+  z-index:5;
+
+  max-width:760px;
+
+  margin:auto;
+
+  text-align:center;
+}
+
+.coco-luna{
+  font-size:75px;
+
+  margin-bottom:15px;
+
+  filter:
+    drop-shadow(0 0 12px white)
+    drop-shadow(0 0 30px #91a7ff);
+
+  animation:lunaCoco 4s ease-in-out infinite;
+}
+
+@keyframes lunaCoco{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+}
+
+.carta-coco-contenido h2{
+  font-size:42px;
+
+  margin-bottom:12px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 30px #8295e8;
+}
+
+.coco-intro{
+  font-size:19px;
+
+  opacity:.85;
+
+  margin-bottom:35px;
+}
+
+.carta-coco-texto{
+  background:rgba(255,255,255,.07);
+
+  border:1px solid rgba(255,255,255,.18);
+
+  border-radius:28px;
+
+  padding:35px;
+
+  text-align:left;
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  backdrop-filter:blur(7px);
+
+  box-shadow:
+    0 0 35px rgba(0,0,0,.3),
+    0 0 25px rgba(120,145,230,.08);
+}
+
+.carta-coco-texto p{
+  margin-bottom:22px;
+}
+
+.despedida-coco{
+  text-align:center;
+
+  font-size:23px;
+
+  font-style:italic;
+
+  margin-top:30px;
+
+  margin-bottom:0 !important;
+}
+
+.cocodrilo-coco{
+  font-size:65px;
+
+  margin-top:35px;
+
+  filter:
+    drop-shadow(0 0 10px #8fa7ff)
+    drop-shadow(0 0 25px rgba(255,255,255,.5));
+
+  animation:cocodriloFlota 3s ease-in-out infinite;
+}
+
+@keyframes cocodriloFlota{
+
+  0%,100%{
+    transform:translateY(0) rotate(-2deg);
+  }
+
+  50%{
+    transform:translateY(-7px) rotate(2deg);
+  }
+
+}
+
+.coco-final{
+  margin-top:10px;
+
+  margin-bottom:25px;
+
+  font-size:17px;
+
+  opacity:.75;
+
+  font-style:italic;
+}
+
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
 @media(max-width:600px){
 
@@ -415,325 +731,302 @@ body{
     grid-template-columns:repeat(4,1fr);
     gap:22px;
   }
+
+  .carta-coco-contenido h2{
+    font-size:34px;
+  }
+
+  .carta-coco-texto{
+    padding:25px;
+    font-size:17px;
+  }
+
+  .cocodrilo-coco{
+    font-size:58px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- =========================
+<!-- =========================================
      PORTADA
-========================= -->
+========================================= -->
 
 <section id="inicio">
 
-<span class="estrella" style="top:8%;left:12%"></span>
-<span class="estrella" style="top:15%;left:30%"></span>
-<span class="estrella" style="top:10%;left:65%"></span>
-<span class="estrella" style="top:20%;left:85%"></span>
-<span class="estrella" style="top:32%;left:8%"></span>
-<span class="estrella" style="top:28%;left:22%"></span>
-<span class="estrella" style="top:35%;left:78%"></span>
-<span class="estrella" style="top:42%;left:91%"></span>
-<span class="estrella" style="top:55%;left:7%"></span>
-<span class="estrella" style="top:65%;left:17%"></span>
-<span class="estrella" style="top:72%;left:84%"></span>
-<span class="estrella" style="top:82%;left:68%"></span>
+  <span class="estrella" style="top:8%;left:12%"></span>
+  <span class="estrella" style="top:15%;left:30%"></span>
+  <span class="estrella" style="top:10%;left:65%"></span>
+  <span class="estrella" style="top:20%;left:85%"></span>
+  <span class="estrella" style="top:32%;left:8%"></span>
+  <span class="estrella" style="top:28%;left:22%"></span>
+  <span class="estrella" style="top:35%;left:78%"></span>
+  <span class="estrella" style="top:42%;left:91%"></span>
+  <span class="estrella" style="top:55%;left:7%"></span>
+  <span class="estrella" style="top:65%;left:17%"></span>
+  <span class="estrella" style="top:72%;left:84%"></span>
+  <span class="estrella" style="top:82%;left:68%"></span>
 
-<div class="luna-grande"></div>
+  <div class="luna-grande"></div>
 
-<div class="texto-inicio">
-  <h1>Para ti ❤️</h1>
+  <div class="texto-inicio">
 
-  <p>
-    Hay algo que quiero enseñarte...
-  </p>
+    <h1>Para ti ❤️</h1>
 
-  <button class="boton" id="entrar">
-    Entrar ❤️
-  </button>
-</div>
+    <p>
+      Hay algo que quiero enseñarte...
+    </p>
+
+    <button class="boton" id="entrar">
+      Entrar ❤️
+    </button>
+
+  </div>
 
 </section>
 
 
-<!-- =========================
-     CARTA
-========================= -->
+<!-- =========================================
+     CARTA DE CUMPLEAÑOS
+========================================= -->
 
 <section id="carta">
 
-<span class="estrella-carta" style="top:8%;left:10%"></span>
-<span class="estrella-carta" style="top:18%;left:25%"></span>
-<span class="estrella-carta" style="top:12%;left:55%"></span>
-<span class="estrella-carta" style="top:25%;left:90%"></span>
-<span class="estrella-carta" style="top:50%;left:7%"></span>
-<span class="estrella-carta" style="top:65%;left:15%"></span>
-<span class="estrella-carta" style="top:78%;left:88%"></span>
-<span class="estrella-carta" style="top:90%;left:45%"></span>
+  <span class="estrella-carta" style="top:8%;left:10%"></span>
+  <span class="estrella-carta" style="top:18%;left:25%"></span>
+  <span class="estrella-carta" style="top:12%;left:55%"></span>
+  <span class="estrella-carta" style="top:25%;left:90%"></span>
+  <span class="estrella-carta" style="top:50%;left:7%"></span>
+  <span class="estrella-carta" style="top:65%;left:15%"></span>
+  <span class="estrella-carta" style="top:78%;left:88%"></span>
+  <span class="estrella-carta" style="top:90%;left:45%"></span>
 
-<div class="contenido-carta">
+  <div class="contenido-carta">
 
-<div class="media-luna"></div>
+    <div class="media-luna"></div>
 
-<h1>
-Feliz cumpleaños, mi amor ❤️
-</h1>
+    <h1>
+      Feliz cumpleaños, mi amor ❤️
+    </h1>
 
-<p class="subtitulo-carta">
-Esta noche quiero celebrar algo muy especial: tu existencia.
-</p>
+    <p class="subtitulo-carta">
+      Esta noche quiero celebrar algo muy especial: tu existencia.
+    </p>
 
-<div class="texto-carta">
+    <div class="texto-carta">
 
-<p>
-Quiero que sepas que preparé este pequeño espacio
-especialmente para ti.
-</p>
+      <p>
+        Quiero que sepas que preparé este pequeño espacio
+        especialmente para ti.
+      </p>
 
-<p>
-Hoy no quiero celebrar solamente tu cumpleaños.
-Quiero celebrar que existes, que llegaste a mi vida
-y todos esos momentos que poco a poco se han convertido
-en recuerdos que guardo con muchísimo cariño.
-</p>
+      <p>
+        Hoy no quiero celebrar solamente tu cumpleaños.
+        Quiero celebrar que existes, que llegaste a mi vida
+        y todos esos momentos que poco a poco se han convertido
+        en recuerdos que guardo con muchísimo cariño.
+      </p>
 
-<p>
-Nuestras noches, nuestras conversaciones,
-nuestras risas y cada pequeño momento compartido
-tienen un lugar especial en mi corazón.
-</p>
+      <p>
+        Nuestras noches, nuestras conversaciones,
+        nuestras risas y cada pequeño momento compartido
+        tienen un lugar especial en mi corazón.
+      </p>
 
-<p>
-Y esto apenas comienza...
-Porque todavía nos quedan muchas noches,
-muchas historias y muchos recuerdos por crear.
-</p>
+      <p>
+        Y esto apenas comienza...
+        Porque todavía nos quedan muchas noches,
+        muchas historias y muchos recuerdos por crear.
+      </p>
 
-<p class="firma">
-Feliz cumpleaños ❤️
-</p>
+      <p class="firma">
+        Feliz cumpleaños ❤️
+      </p>
 
-</div>
+    </div>
 
-<br>
+    <br>
 
-<button class="boton" id="irRazones">
-✨ Continuar
-</button>
+    <button class="boton" id="irRazones">
+      ✨ Continuar
+    </button>
 
-</div>
+  </div>
+
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      50 ESTRELLAS
-========================= -->
+========================================= -->
 
 <section id="razones">
 
-<div class="nube nube1"></div>
-<div class="nube nube2"></div>
-<div class="nube nube3"></div>
+  <div class="nube nube1"></div>
+  <div class="nube nube2"></div>
+  <div class="nube nube3"></div>
 
-<div class="razones-contenido">
+  <div class="razones-contenido">
 
-<h2>
-50 estrellas en mi cielo ✨
-</h2>
+    <h2>
+      50 estrellas en mi cielo ✨
+    </h2>
 
-<p class="razones-subtitulo">
-Toca una estrella y descubre una razón.
-</p>
+    <p class="razones-subtitulo">
+      Toca una estrella y descubre una razón.
+    </p>
 
-<div class="estrellas-razones">
+    <div class="estrellas-razones">
 
-<button class="estrella-razon" data-razon="Porque contigo hasta una noche sencilla puede convertirse en un recuerdo precioso.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo hasta una noche sencilla puede convertirse en un recuerdo precioso.">★</button>
 
-<button class="estrella-razon" data-razon="Porque tu sonrisa tiene una forma muy especial de alegrarme el día.">★</button>
+      <button class="estrella-razon" data-razon="Porque tu sonrisa tiene una forma muy especial de alegrarme el día.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta escuchar todo lo que tienes para contarme.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta escuchar todo lo que tienes para contarme.">★</button>
 
-<button class="estrella-razon" data-razon="Porque nuestras conversaciones hacen que el tiempo pase demasiado rápido.">★</button>
+      <button class="estrella-razon" data-razon="Porque nuestras conversaciones hacen que el tiempo pase demasiado rápido.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo las noches tienen otro significado.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo las noches tienen otro significado.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me haces sonreír incluso sin darte cuenta.">★</button>
+      <button class="estrella-razon" data-razon="Porque me haces sonreír incluso sin darte cuenta.">★</button>
 
-<button class="estrella-razon" data-razon="Porque cada recuerdo contigo tiene un lugar especial en mi corazón.">★</button>
+      <button class="estrella-razon" data-razon="Porque cada recuerdo contigo tiene un lugar especial en mi corazón.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta la tranquilidad que siento cuando estoy contigo.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta la tranquilidad que siento cuando estoy contigo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque haces que los pequeños momentos importen.">★</button>
+      <button class="estrella-razon" data-razon="Porque haces que los pequeños momentos importen.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo puedo ser yo misma.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo puedo ser yo misma.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta descubrir nuevas cosas de ti.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta descubrir nuevas cosas de ti.">★</button>
 
-<button class="estrella-razon" data-razon="Porque tienes una manera única de hacerme sentir especial.">★</button>
+      <button class="estrella-razon" data-razon="Porque tienes una manera única de hacerme sentir especial.">★</button>
 
-<button class="estrella-razon" data-razon="Porque nuestras risas son de mis sonidos favoritos.">★</button>
+      <button class="estrella-razon" data-razon="Porque nuestras risas son de mis sonidos favoritos.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta imaginar todas las historias que todavía nos faltan por vivir.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta imaginar todas las historias que todavía nos faltan por vivir.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo incluso el silencio puede sentirse bonito.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo incluso el silencio puede sentirse bonito.">★</button>
 
-<button class="estrella-razon" data-razon="Porque cada cita nocturna tiene algo que quiero guardar para siempre.">★</button>
+      <button class="estrella-razon" data-razon="Porque cada cita nocturna tiene algo que quiero guardar para siempre.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me haces apreciar los pequeños detalles.">★</button>
+      <button class="estrella-razon" data-razon="Porque me haces apreciar los pequeños detalles.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta cómo eres cuando estás feliz.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta cómo eres cuando estás feliz.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me haces querer crear más recuerdos contigo.">★</button>
+      <button class="estrella-razon" data-razon="Porque me haces querer crear más recuerdos contigo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque hay momentos contigo que quisiera guardar en una cajita.">★</button>
+      <button class="estrella-razon" data-razon="Porque hay momentos contigo que quisiera guardar en una cajita.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta la persona que soy cuando estoy contigo.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta la persona que soy cuando estoy contigo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque haces que esperar el próximo encuentro valga la pena.">★</button>
+      <button class="estrella-razon" data-razon="Porque haces que esperar el próximo encuentro valga la pena.">★</button>
 
-<button class="estrella-razon" data-razon="Porque tu existencia merece ser celebrada.">★</button>
+      <button class="estrella-razon" data-razon="Porque tu existencia merece ser celebrada.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta compartir mis pensamientos contigo.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta compartir mis pensamientos contigo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo siempre hay algo nuevo que descubrir.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo siempre hay algo nuevo que descubrir.">★</button>
 
-<button class="estrella-razon" data-razon="Porque nuestros recuerdos son pequeñas luces que puedo volver a mirar.">★</button>
+      <button class="estrella-razon" data-razon="Porque nuestros recuerdos son pequeñas luces que puedo volver a mirar.">★</button>
 
-<button class="estrella-razon" data-razon="Porque una conversación contigo puede convertirse en horas sin darnos cuenta.">★</button>
+      <button class="estrella-razon" data-razon="Porque una conversación contigo puede convertirse en horas sin darnos cuenta.">★</button>
 
-<button class="estrella-razon" data-razon="Porque haces que una noche cualquiera pueda sentirse extraordinaria.">★</button>
+      <button class="estrella-razon" data-razon="Porque haces que una noche cualquiera pueda sentirse extraordinaria.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta conocer tus sueños.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta conocer tus sueños.">★</button>
 
-<button class="estrella-razon" data-razon="Porque quiero seguir conociendo cada pequeña parte de ti.">★</button>
+      <button class="estrella-razon" data-razon="Porque quiero seguir conociendo cada pequeña parte de ti.">★</button>
 
-<button class="estrella-razon" data-razon="Porque tu forma de ser tiene algo que me atrae muchísimo.">★</button>
+      <button class="estrella-razon" data-razon="Porque tu forma de ser tiene algo que me atrae muchísimo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta cuando nos reímos por cualquier tontería.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta cuando nos reímos por cualquier tontería.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo los momentos simples se convierten en historias.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo los momentos simples se convierten en historias.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta sentir que estamos construyendo algo bonito.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta sentir que estamos construyendo algo bonito.">★</button>
 
-<button class="estrella-razon" data-razon="Porque tu cumpleaños es una oportunidad para celebrar que llegaste al mundo.">★</button>
+      <button class="estrella-razon" data-razon="Porque tu cumpleaños es una oportunidad para celebrar que llegaste al mundo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me encanta la magia que tienen nuestras noches.">★</button>
+      <button class="estrella-razon" data-razon="Porque me encanta la magia que tienen nuestras noches.">★</button>
 
-<button class="estrella-razon" data-razon="Porque hay miradas que dicen más que muchas palabras.">★</button>
+      <button class="estrella-razon" data-razon="Porque hay miradas que dicen más que muchas palabras.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me haces tener ganas de vivir más momentos especiales.">★</button>
+      <button class="estrella-razon" data-razon="Porque me haces tener ganas de vivir más momentos especiales.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta imaginar todos los lugares que todavía podríamos conocer juntos.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta imaginar todos los lugares que todavía podríamos conocer juntos.">★</button>
 
-<button class="estrella-razon" data-razon="Porque cada nuevo recuerdo contigo es otra estrella en nuestro cielo.">★</button>
+      <button class="estrella-razon" data-razon="Porque cada nuevo recuerdo contigo es otra estrella en nuestro cielo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque nuestras historias se van escribiendo poquito a poquito.">★</button>
+      <button class="estrella-razon" data-razon="Porque nuestras historias se van escribiendo poquito a poquito.">★</button>
 
-<button class="estrella-razon" data-razon="Porque quiero seguir compartiendo noches, risas y conversaciones contigo.">★</button>
+      <button class="estrella-razon" data-razon="Porque quiero seguir compartiendo noches, risas y conversaciones contigo.">★</button>
 
-<button class="estrella-razon" data-razon="Porque contigo todavía quedan muchísimas aventuras por vivir.">★</button>
+      <button class="estrella-razon" data-razon="Porque contigo todavía quedan muchísimas aventuras por vivir.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me gusta tener recuerdos que llevan tu nombre.">★</button>
+      <button class="estrella-razon" data-razon="Porque me gusta tener recuerdos que llevan tu nombre.">★</button>
 
-<button class="estrella-razon" data-razon="Porque haces que quiera guardar cada pequeño detalle.">★</button>
+      <button class="estrella-razon" data-razon="Porque haces que quiera guardar cada pequeño detalle.">★</button>
 
-<button class="estrella-razon" data-razon="Porque todavía tenemos muchísimo por descubrir.">★</button>
+      <button class="estrella-razon" data-razon="Porque todavía tenemos muchísimo por descubrir.">★</button>
 
-<button class="estrella-razon" data-razon="Porque quiero que esta sea solamente una de muchas noches especiales.">★</button>
+      <button class="estrella-razon" data-razon="Porque quiero que esta sea solamente una de muchas noches especiales.">★</button>
 
-<button class="estrella-razon" data-razon="Porque me haces ilusionarme con el futuro.">★</button>
+      <button class="estrella-razon" data-razon="Porque me haces ilusionarme con el futuro.">★</button>
 
-<button class="estrella-razon" data-razon="Porque simplemente me encanta que seas tú. ❤️">★</button>
+      <button class="estrella-razon" data-razon="Porque simplemente me encanta que seas tú. ❤️">★</button>
 
-</div>
+    </div>
 
-<br><br>
+    <br><br>
 
-<button class="boton" onclick="alert('Esta historia apenas comienza... ❤️')">
-Continuar ✨
-</button>
+    <button class="boton" id="irCoco">
+      🐊 Continuar
+    </button>
 
-</div>
+  </div>
 
 
-<!-- VENTANA DE RAZÓN -->
+  <!-- VENTANA DE RAZÓN -->
 
-<div id="mensaje-razon">
+  <div id="mensaje-razon">
 
-<div class="estrella-grande">✨</div>
+    <div class="estrella-grande">
+      ✨
+    </div>
 
-<p id="texto-razon"></p>
+    <p id="texto-razon"></p>
 
-<button class="boton" id="cerrarRazon">
-Cerrar
-</button>
+    <br>
 
-</div>
+    <button class="boton" id="cerrarRazon">
+      Cerrar
+    </button>
+
+  </div>
 
 </section>
 
 
-<script>
-
-/* PORTADA → CARTA */
-
-document.getElementById("entrar").addEventListener("click",function(){
-
-document.getElementById("inicio").style.display="none";
-
-document.getElementById("carta").style.display="block";
-
-window.scrollTo(0,0);
-
-});
-
-
-/* CARTA → 50 RAZONES */
-
-document.getElementById("irRazones").addEventListener("click",function(){
-
-document.getElementById("carta").style.display="none";
-
-document.getElementById("razones").style.display="block";
-
-window.scrollTo(0,0);
-
-});
-
-
-/* ABRIR RAZÓN */
-
-document.querySelectorAll(".estrella-razon").forEach(function(estrella){
-
-estrella.addEventListener("click",function(){
-
-document.getElementById("texto-razon").textContent=
-this.getAttribute("data-razon");
-
-document.getElementById("mensaje-razon").style.display="block";
-
-});
-
-});
-
-
-/* CERRAR RAZÓN */
-
-document.getElementById("cerrarRazon").addEventListener("click",function(){
-
-document.getElementById("mensaje-razon").style.display="none";
-
-});
-<!-- CARTA ESPECIAL PARA COCO -->
+<!-- =========================================
+     CARTA PARA COCO
+========================================= -->
 
 <section id="carta-coco">
 
   <div class="carta-coco-contenido">
 
-    <div class="coco-luna">🌙</div>
+    <div class="coco-luna">
+      🌙
+    </div>
 
-    <h2>Una carta para ti ❤️</h2>
+    <h2>
+      Una carta para ti ❤️
+    </h2>
 
     <p class="coco-intro">
       Porque hay cosas que simplemente quiero que sepas...
@@ -781,156 +1074,107 @@ document.getElementById("mensaje-razon").style.display="none";
       Mi pequeño Coco...
     </p>
 
+    <!-- ESTE BOTÓN SERÁ PARA LA GALERÍA -->
+
     <button class="boton" id="irGaleria">
       🐊 Continuar
     </button>
 
   </div>
-#carta-coco{
-  display:none;
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-  padding:75px 20px;
 
-  background:
-    radial-gradient(
-      circle at 50% 15%,
-      #28345f 0%,
-      #111936 35%,
-      #070a19 70%,
-      #02030a 100%
-    );
-}
+</section>
 
-.carta-coco-contenido{
-  position:relative;
-  z-index:5;
-  max-width:760px;
-  margin:auto;
-  text-align:center;
-}
 
-.coco-luna{
-  font-size:75px;
-  margin-bottom:15px;
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
-  filter:
-    drop-shadow(0 0 12px white)
-    drop-shadow(0 0 30px #91a7ff);
+<script>
 
-  animation:lunaCoco 4s ease-in-out infinite;
-}
+/* =========================================
+   PORTADA → CARTA
+========================================= */
 
-@keyframes lunaCoco{
-  0%,100%{
-    transform:translateY(0);
-  }
+document.getElementById("entrar").addEventListener("click",function(){
 
-  50%{
-    transform:translateY(-8px);
-  }
-}
+  document.getElementById("inicio").style.display="none";
 
-.carta-coco-contenido h2{
-  font-size:42px;
-  margin-bottom:12px;
+  document.getElementById("carta").style.display="block";
 
-  text-shadow:
-    0 0 15px white,
-    0 0 30px #8295e8;
-}
-
-.coco-intro{
-  font-size:19px;
-  opacity:.85;
-  margin-bottom:35px;
-}
-
-.carta-coco-texto{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:28px;
-  padding:35px;
-
-  text-align:left;
-
-  font-size:18px;
-  line-height:1.9;
-
-  backdrop-filter:blur(7px);
-
-  box-shadow:
-    0 0 35px rgba(0,0,0,.3),
-    0 0 25px rgba(120,145,230,.08);
-}
-
-.carta-coco-texto p{
-  margin-bottom:22px;
-}
-
-.despedida-coco{
-  text-align:center;
-  font-size:23px;
-  font-style:italic;
-  margin-top:30px;
-  margin-bottom:0 !important;
-}
-
-.cocodrilo-coco{
-  font-size:65px;
-  margin-top:35px;
-
-  filter:
-    drop-shadow(0 0 10px #8fa7ff)
-    drop-shadow(0 0 25px rgba(255,255,255,.5));
-
-  animation:cocodriloFlota 3s ease-in-out infinite;
-}
-
-@keyframes cocodriloFlota{
-  0%,100%{
-    transform:translateY(0) rotate(-2deg);
-  }
-
-  50%{
-    transform:translateY(-7px) rotate(2deg);
-  }
-}
-
-.coco-final{
-  margin-top:10px;
-  margin-bottom:25px;
-  font-size:17px;
-  opacity:.75;
-  font-style:italic;
-}
-
-@media(max-width:600px){
-
-  .carta-coco-contenido h2{
-    font-size:34px;
-  }
-
-  .carta-coco-texto{
-    padding:25px;
-    font-size:17px;
-  }
-
-  .cocodrilo-coco{
-    font-size:58px;
-  }
-}
-  document.querySelector("#razones .boton").addEventListener("click", function(){
-
-  document.getElementById("razones").style.display = "none";
-
-  document.getElementById("carta-coco").style.display = "block";
-
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 
 });
-</section>
+
+
+/* =========================================
+   CARTA → 50 ESTRELLAS
+========================================= */
+
+document.getElementById("irRazones").addEventListener("click",function(){
+
+  document.getElementById("carta").style.display="none";
+
+  document.getElementById("razones").style.display="block";
+
+  window.scrollTo(0,0);
+
+});
+
+
+/* =========================================
+   ABRIR UNA RAZÓN
+========================================= */
+
+document.querySelectorAll(".estrella-razon").forEach(function(estrella){
+
+  estrella.addEventListener("click",function(){
+
+    document.getElementById("texto-razon").textContent =
+      this.getAttribute("data-razon");
+
+    document.getElementById("mensaje-razon").style.display="block";
+
+  });
+
+});
+
+
+/* =========================================
+   CERRAR UNA RAZÓN
+========================================= */
+
+document.getElementById("cerrarRazon").addEventListener("click",function(){
+
+  document.getElementById("mensaje-razon").style.display="none";
+
+});
+
+
+/* =========================================
+   50 ESTRELLAS → CARTA DE COCO
+========================================= */
+
+document.getElementById("irCoco").addEventListener("click",function(){
+
+  document.getElementById("razones").style.display="none";
+
+  document.getElementById("carta-coco").style.display="block";
+
+  window.scrollTo(0,0);
+
+});
+
+
+/* =========================================
+   GALERÍA — PREPARADA PARA DESPUÉS
+========================================= */
+
+document.getElementById("irGaleria").addEventListener("click",function(){
+
+  alert("Nuestra galería de recuerdos llegará aquí... 📸❤️");
+
+});
+
 </script>
 
 </body>
