@@ -1,3 +1,5 @@
+
+  
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,109 +35,26 @@ body{
   border:none;
   padding:15px 36px;
   border-radius:40px;
-  background:linear-gradient(135deg,#ffffff,#eadfff);
+
+  background:
+    linear-gradient(135deg,#ffffff,#eadfff);
+
   color:#17102c;
+
   font-family:Georgia,"Times New Roman",serif;
   font-size:18px;
+
   cursor:pointer;
+
   box-shadow:
     0 0 20px rgba(255,255,255,.8),
     0 0 45px rgba(190,130,255,.45);
+
   transition:.3s;
 }
 
 .boton:hover{
   transform:scale(1.08);
-}
-
-/* =========================================
-   ESTRELLAS GENERALES
-========================================= */
-
-.estrella,
-.estrella-carta,
-.estrella-extra{
-  position:absolute;
-  width:4px;
-  height:4px;
-  background:white;
-  border-radius:50%;
-  box-shadow:
-    0 0 8px white,
-    0 0 16px #cbb2ff,
-    0 0 28px rgba(190,130,255,.8);
-  animation:parpadear 2.5s infinite alternate;
-  pointer-events:none;
-}
-
-.estrella-extra{
-  width:3px;
-  height:3px;
-  animation-duration:3.5s;
-}
-
-@keyframes parpadear{
-  from{
-    opacity:.2;
-    transform:scale(.7);
-  }
-  to{
-    opacity:1;
-    transform:scale(1.6);
-  }
-}
-
-/* =========================================
-   NUBES GENERALES
-========================================= */
-
-.nube-suave{
-  position:absolute;
-  width:230px;
-  height:65px;
-  border-radius:50%;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.025),
-      rgba(220,190,255,.12),
-      rgba(255,255,255,.025)
-    );
-  filter:blur(7px);
-  opacity:.65;
-  animation:moverNubeSuave 32s linear infinite;
-  pointer-events:none;
-}
-
-.nube-suave::before,
-.nube-suave::after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  background:rgba(220,190,255,.08);
-}
-
-.nube-suave::before{
-  width:95px;
-  height:95px;
-  left:35px;
-  bottom:10px;
-}
-
-.nube-suave::after{
-  width:110px;
-  height:110px;
-  right:25px;
-  bottom:5px;
-}
-
-@keyframes moverNubeSuave{
-  from{
-    transform:translateX(-350px);
-  }
-  to{
-    transform:translateX(calc(100vw + 400px));
-  }
 }
 
 /* =========================================
@@ -192,6 +111,7 @@ body{
 .luna-grande{
   width:200px;
   height:200px;
+
   border-radius:50%;
 
   background:
@@ -217,12 +137,15 @@ body{
 }
 
 @keyframes brilloLuna{
+
   0%,100%{
     transform:scale(1);
   }
+
   50%{
     transform:scale(1.05);
   }
+
 }
 
 .texto-inicio{
@@ -246,6 +169,40 @@ body{
 }
 
 /* =========================================
+   ESTRELLAS
+========================================= */
+
+.estrella{
+  position:absolute;
+
+  width:3px;
+  height:3px;
+
+  background:white;
+  border-radius:50%;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 16px #cbb2ff;
+
+  animation:parpadear 2.5s infinite alternate;
+}
+
+@keyframes parpadear{
+
+  from{
+    opacity:.2;
+    transform:scale(.7);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.4);
+  }
+
+}
+
+/* =========================================
    CARTA DE CUMPLEAÑOS
 ========================================= */
 
@@ -253,8 +210,10 @@ body{
   display:none;
 
   min-height:100vh;
+
   position:relative;
   overflow:hidden;
+
   padding:70px 20px;
 
   background:
@@ -270,15 +229,37 @@ body{
 .contenido-carta{
   position:relative;
   z-index:2;
+
   max-width:760px;
+
   margin:auto;
+
   text-align:center;
+}
+
+.estrella-carta{
+  position:absolute;
+
+  width:3px;
+  height:3px;
+
+  background:white;
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 15px #cbb2ff;
+
+  animation:parpadear 2s infinite alternate;
 }
 
 .media-luna{
   width:130px;
   height:130px;
+
   border-radius:50%;
+
   background:#fffbe8;
 
   box-shadow:
@@ -286,23 +267,31 @@ body{
     0 0 55px rgba(255,255,255,.55);
 
   position:relative;
+
   margin:0 auto 35px;
+
   overflow:hidden;
 }
 
 .media-luna::after{
   content:"";
+
   position:absolute;
+
   width:135px;
   height:135px;
+
   border-radius:50%;
+
   background:#241c49;
+
   left:42px;
   top:-8px;
 }
 
 .contenido-carta h1{
   font-size:43px;
+
   margin-bottom:15px;
 
   text-shadow:
@@ -312,7 +301,9 @@ body{
 
 .subtitulo-carta{
   font-size:20px;
+
   opacity:.85;
+
   margin-bottom:35px;
 }
 
@@ -325,11 +316,17 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.18);
+
   border-radius:25px;
+
   padding:35px;
+
   line-height:1.9;
+
   font-size:18px;
+
   text-align:left;
+
   backdrop-filter:blur(8px);
 
   box-shadow:
@@ -343,7 +340,9 @@ body{
 
 .firma{
   text-align:center;
+
   font-size:23px;
+
   font-style:italic;
 }
 
@@ -355,8 +354,11 @@ body{
   display:none;
 
   min-height:100vh;
+
   position:relative;
+
   overflow:hidden;
+
   padding:75px 20px;
 
   background:
@@ -371,14 +373,19 @@ body{
 
 .razones-contenido{
   position:relative;
+
   z-index:5;
+
   max-width:950px;
+
   margin:auto;
+
   text-align:center;
 }
 
 .razones-contenido h2{
   font-size:43px;
+
   margin-bottom:12px;
 
   text-shadow:
@@ -388,7 +395,9 @@ body{
 
 .razones-subtitulo{
   font-size:19px;
+
   opacity:.85;
+
   margin-bottom:45px;
 }
 
@@ -396,6 +405,7 @@ body{
 
 .nube{
   position:absolute;
+
   width:230px;
   height:70px;
 
@@ -408,23 +418,29 @@ body{
     );
 
   border-radius:50%;
+
   filter:blur(8px);
+
   opacity:.7;
+
   animation:moverNube 28s linear infinite;
-  pointer-events:none;
 }
 
 .nube::before,
 .nube::after{
   content:"";
+
   position:absolute;
+
   background:rgba(220,190,255,.10);
+
   border-radius:50%;
 }
 
 .nube::before{
   width:100px;
   height:100px;
+
   left:35px;
   bottom:15px;
 }
@@ -432,6 +448,7 @@ body{
 .nube::after{
   width:120px;
   height:120px;
+
   right:25px;
   bottom:10px;
 }
@@ -444,7 +461,9 @@ body{
 .nube2{
   top:55%;
   left:-350px;
+
   transform:scale(.7);
+
   animation-duration:36s;
   animation-delay:5s;
 }
@@ -452,35 +471,48 @@ body{
 .nube3{
   top:78%;
   left:-300px;
+
   transform:scale(1.2);
+
   animation-duration:32s;
   animation-delay:10s;
 }
 
 @keyframes moverNube{
+
   from{
     left:-350px;
   }
+
   to{
     left:110%;
   }
+
 }
 
 /* ESTRELLAS */
 
 .estrellas-razones{
   display:grid;
+
   grid-template-columns:repeat(5,1fr);
+
   gap:28px;
+
   max-width:800px;
+
   margin:auto;
 }
 
 .estrella-razon{
   border:none;
+
   background:none;
+
   color:white;
+
   font-size:35px;
+
   cursor:pointer;
 
   text-shadow:
@@ -499,12 +531,15 @@ body{
 }
 
 @keyframes brilloEstrella{
+
   from{
     opacity:.45;
   }
+
   to{
     opacity:1;
   }
+
 }
 
 /* VENTANA */
@@ -513,12 +548,16 @@ body{
   display:none;
 
   position:fixed;
+
   z-index:100;
+
   left:50%;
   top:50%;
+
   transform:translate(-50%,-50%);
 
   width:min(90%,500px);
+
   padding:35px;
 
   background:
@@ -529,7 +568,9 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.2);
+
   border-radius:25px;
+
   text-align:center;
 
   box-shadow:
@@ -538,12 +579,15 @@ body{
 
 .estrella-grande{
   font-size:50px;
+
   margin-bottom:15px;
 }
 
 #texto-razon{
   font-size:21px;
+
   line-height:1.6;
+
   margin-bottom:25px;
 }
 
@@ -555,8 +599,11 @@ body{
   display:none;
 
   min-height:100vh;
+
   position:relative;
+
   overflow:hidden;
+
   padding:75px 20px;
 
   background:
@@ -571,14 +618,19 @@ body{
 
 .carta-coco-contenido{
   position:relative;
+
   z-index:5;
+
   max-width:760px;
+
   margin:auto;
+
   text-align:center;
 }
 
 .coco-luna{
   font-size:75px;
+
   margin-bottom:15px;
 
   filter:
@@ -589,16 +641,20 @@ body{
 }
 
 @keyframes lunaCoco{
+
   0%,100%{
     transform:translateY(0);
   }
+
   50%{
     transform:translateY(-8px);
   }
+
 }
 
 .carta-coco-contenido h2{
   font-size:42px;
+
   margin-bottom:12px;
 
   text-shadow:
@@ -608,7 +664,9 @@ body{
 
 .coco-intro{
   font-size:19px;
+
   opacity:.85;
+
   margin-bottom:35px;
 }
 
@@ -621,11 +679,17 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.18);
+
   border-radius:28px;
+
   padding:35px;
+
   text-align:left;
+
   font-size:18px;
+
   line-height:1.9;
+
   backdrop-filter:blur(8px);
 
   box-shadow:
@@ -639,171 +703,52 @@ body{
 
 .despedida-coco{
   text-align:center;
+
   font-size:23px;
+
   font-style:italic;
+
   margin-top:30px;
+
   margin-bottom:0 !important;
 
   text-shadow:
     0 0 12px rgba(255,210,255,.45);
 }
 
-/* =========================================
-   PERSONAJITO COCODRILO
-========================================= */
-
 .cocodrilo-coco{
-  position:relative;
-  width:125px;
-  height:100px;
-  margin:38px auto 8px;
+  font-size:65px;
 
-  animation:cocodriloFlota 3s ease-in-out infinite;
+  margin-top:35px;
 
   filter:
     drop-shadow(0 0 10px #c5a1ff)
     drop-shadow(0 0 25px rgba(255,255,255,.5));
-}
 
-.coco-cuerpo{
-  position:absolute;
-  width:92px;
-  height:62px;
-  left:18px;
-  top:28px;
-
-  background:linear-gradient(
-    145deg,
-    #8bd39a,
-    #4b9c70
-  );
-
-  border-radius:48% 45% 42% 55%;
-
-  border:2px solid rgba(20,70,45,.7);
-}
-
-.coco-cola{
-  position:absolute;
-  width:58px;
-  height:25px;
-  left:-18px;
-  top:48px;
-
-  background:#4b9c70;
-  border-radius:80% 20% 20% 80%;
-  transform:rotate(-20deg);
-}
-
-.coco-cabeza{
-  position:absolute;
-  width:72px;
-  height:58px;
-  right:3px;
-  top:13px;
-
-  background:linear-gradient(
-    145deg,
-    #9ce0a4,
-    #5ba876
-  );
-
-  border-radius:55% 60% 45% 50%;
-  border:2px solid rgba(20,70,45,.7);
-}
-
-.coco-hocico{
-  position:absolute;
-  width:65px;
-  height:27px;
-  right:-22px;
-  top:36px;
-
-  background:#70b982;
-  border-radius:50%;
-  border:2px solid rgba(20,70,45,.5);
-}
-
-.coco-ojo{
-  position:absolute;
-  width:13px;
-  height:13px;
-  border-radius:50%;
-  background:#fff;
-  top:25px;
-  z-index:3;
-}
-
-.coco-ojo::after{
-  content:"";
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:#21142f;
-  border-radius:50%;
-  left:4px;
-  top:4px;
-}
-
-.coco-ojo1{
-  right:25px;
-}
-
-.coco-ojo2{
-  right:42px;
-}
-
-.coco-nariz{
-  position:absolute;
-  width:7px;
-  height:5px;
-  background:#263f31;
-  border-radius:50%;
-  right:-7px;
-  top:47px;
-}
-
-.coco-sonrisa{
-  position:absolute;
-  width:25px;
-  height:12px;
-  border-bottom:2px solid #244532;
-  border-radius:50%;
-  right:-7px;
-  top:51px;
-}
-
-.coco-patita{
-  position:absolute;
-  width:27px;
-  height:14px;
-  background:#65ae7d;
-  border-radius:50%;
-  bottom:3px;
-}
-
-.coco-patita1{
-  left:28px;
-}
-
-.coco-patita2{
-  left:76px;
+  animation:cocodriloFlota 3s ease-in-out infinite;
 }
 
 @keyframes cocodriloFlota{
+
   0%,100%{
     transform:translateY(0) rotate(-2deg);
   }
+
   50%{
-    transform:translateY(-8px) rotate(2deg);
+    transform:translateY(-7px) rotate(2deg);
   }
+
 }
 
 .coco-final{
-  margin-top:5px;
+  margin-top:10px;
+
   margin-bottom:25px;
+
   font-size:17px;
+
   opacity:.75;
+
   font-style:italic;
 }
 
@@ -815,8 +760,11 @@ body{
   display:none;
 
   min-height:100vh;
+
   position:relative;
+
   overflow:hidden;
+
   padding:70px 18px;
 
   background:
@@ -835,9 +783,11 @@ body{
 
   width:400px;
   height:400px;
+
   border-radius:50%;
 
   background:rgba(216,155,255,.10);
+
   filter:blur(90px);
 
   top:-150px;
@@ -850,9 +800,11 @@ body{
 
   width:350px;
   height:350px;
+
   border-radius:50%;
 
   background:rgba(115,135,255,.10);
+
   filter:blur(90px);
 
   bottom:-150px;
@@ -864,12 +816,15 @@ body{
   z-index:5;
 
   max-width:950px;
+
   margin:auto;
+
   text-align:center;
 }
 
 .distancia-titulo{
   font-size:43px;
+
   margin-bottom:12px;
 
   text-shadow:
@@ -879,20 +834,167 @@ body{
 
 .distancia-subtitulo{
   font-size:20px;
+
   opacity:.88;
+
   margin-bottom:35px;
 }
 
 /* =========================================
-   MAPA
+   NUBES DE LA DISTANCIA
+========================================= */
+
+.nube-distancia{
+  position:absolute;
+
+  width:240px;
+  height:75px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.03),
+      rgba(220,190,255,.14),
+      rgba(255,255,255,.03)
+    );
+
+  filter:blur(7px);
+
+  opacity:.65;
+
+  pointer-events:none;
+
+  animation:
+    nubeDistancia 32s linear infinite;
+}
+
+.nube-distancia::before,
+.nube-distancia::after{
+  content:"";
+
+  position:absolute;
+
+  border-radius:50%;
+
+  background:rgba(225,205,255,.09);
+}
+
+.nube-distancia::before{
+  width:105px;
+  height:105px;
+
+  left:35px;
+  bottom:15px;
+}
+
+.nube-distancia::after{
+  width:125px;
+  height:125px;
+
+  right:20px;
+  bottom:8px;
+}
+
+.nube-d1{
+  top:14%;
+  left:-300px;
+}
+
+.nube-d2{
+  top:68%;
+  left:-350px;
+
+  transform:scale(.75);
+
+  animation-duration:40s;
+  animation-delay:8s;
+}
+
+@keyframes nubeDistancia{
+
+  from{
+    left:-350px;
+  }
+
+  to{
+    left:110%;
+  }
+
+}
+
+/* =========================================
+   ESTRELLITAS DE LA DISTANCIA
+========================================= */
+
+.estrella-distancia{
+  position:absolute;
+
+  width:4px;
+  height:4px;
+
+  border-radius:50%;
+
+  background:white;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 18px #d8b7ff,
+    0 0 30px rgba(190,140,255,.7);
+
+  animation:
+    estrellaDistancia 2.8s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+.estrella-distancia::after{
+  content:"✦";
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  font-size:13px;
+
+  color:white;
+
+  text-shadow:
+    0 0 8px white,
+    0 0 18px #cda8ff;
+}
+
+@keyframes estrellaDistancia{
+
+  from{
+    opacity:.25;
+    transform:scale(.7);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.35);
+  }
+
+}
+
+/* =========================================
+   TARJETA DEL MAPA
 ========================================= */
 
 .mapa-card{
   position:relative;
+
   min-height:510px;
 
   border-radius:35px;
+
   overflow:hidden;
+
   padding:30px;
 
   background:
@@ -911,6 +1013,10 @@ body{
     inset 0 0 45px rgba(210,170,255,.05);
 }
 
+/* =========================================
+   CUADRÍCULA
+========================================= */
+
 .mapa-grid{
   position:absolute;
   inset:0;
@@ -926,7 +1032,9 @@ body{
   transform:perspective(500px) rotateX(35deg) scale(1.3);
 }
 
-/* MAPAMUNDI */
+/* =========================================
+   MAPAMUNDI
+========================================= */
 
 .mapamundi{
   position:absolute;
@@ -937,6 +1045,7 @@ body{
   transform:translate(-50%,-50%);
 
   width:min(850px,95%);
+
   height:310px;
 
   border-radius:50%;
@@ -971,77 +1080,99 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.10);
+
   filter:blur(.2px);
+
   opacity:.8;
 }
 
 .europa{
   width:110px;
   height:65px;
+
   top:52px;
   left:50%;
+
   border-radius:55% 40% 45% 30%;
+
   transform:rotate(-12deg);
 }
 
 .america-norte{
   width:170px;
   height:115px;
+
   top:65px;
   left:9%;
+
   border-radius:60% 35% 55% 40%;
+
   transform:rotate(15deg);
 }
 
 .america-sur{
   width:105px;
   height:180px;
+
   top:145px;
   left:29%;
+
   border-radius:60% 45% 55% 35%;
+
   transform:rotate(18deg);
 }
 
 .africa{
   width:125px;
   height:160px;
+
   top:130px;
   left:51%;
+
   border-radius:45% 55% 45% 50%;
+
   transform:rotate(8deg);
 }
 
 .asia{
   width:250px;
   height:105px;
+
   top:60px;
   right:8%;
+
   border-radius:45% 55% 35% 50%;
+
   transform:rotate(8deg);
 }
 
 .australia{
   width:100px;
   height:55px;
+
   bottom:45px;
   right:15%;
+
   border-radius:50% 45% 55% 40%;
+
   transform:rotate(12deg);
 }
 
 /* =========================================
-   PERSONAJITOS DEL MAPA
+   LUGARES
 ========================================= */
 
 .lugar{
   position:absolute;
-  z-index:8;
+
+  z-index:15;
 
   display:flex;
   flex-direction:column;
   align-items:center;
 
   font-size:17px;
+
   font-weight:bold;
 
   text-shadow:
@@ -1049,392 +1180,253 @@ body{
     0 0 10px rgba(255,255,255,.5);
 }
 
+/* =========================================
+   PERSONAJES BONITOS
+========================================= */
+
+.personaje{
+  position:relative;
+
+  width:78px;
+  height:92px;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  margin-bottom:5px;
+
+  animation:
+    flotarPersonaje 3.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.9))
+    drop-shadow(0 0 22px rgba(202,155,255,.75));
+}
+
 /* CONEJITA */
 
 .conejita{
-  position:relative;
-  width:75px;
-  height:100px;
-  margin-bottom:5px;
+  font-size:70px;
 
-  animation:flotarConejita 3.2s ease-in-out infinite;
+  line-height:1;
+
+  transform:translateY(-2px);
+}
+
+/* COCO */
+
+.cocodrilo-distancia{
+  font-size:68px;
+
+  line-height:1;
+
+  transform:translateY(-1px);
 
   filter:
-    drop-shadow(0 0 8px white)
-    drop-shadow(0 0 18px #d5a8ff);
+    drop-shadow(0 0 7px rgba(255,255,255,.9))
+    drop-shadow(0 0 18px rgba(174,135,255,.8));
 }
 
-.conejo-cabeza{
-  position:absolute;
-  width:55px;
-  height:53px;
-  left:10px;
-  top:28px;
+@keyframes flotarPersonaje{
 
-  background:linear-gradient(
-    145deg,
-    #fffaff,
-    #e8dff5
-  );
-
-  border-radius:50%;
-  border:2px solid rgba(190,165,215,.7);
-}
-
-.oreja{
-  position:absolute;
-  width:22px;
-  height:48px;
-  top:-17px;
-
-  background:linear-gradient(
-    90deg,
-    #fdf9ff,
-    #e9dff3
-  );
-
-  border-radius:60% 60% 45% 45%;
-  border:2px solid rgba(190,165,215,.6);
-}
-
-.oreja::after{
-  content:"";
-  position:absolute;
-  width:9px;
-  height:32px;
-  left:5px;
-  top:6px;
-  border-radius:50%;
-  background:#e5cbe9;
-}
-
-.oreja1{
-  left:7px;
-  transform:rotate(-10deg);
-}
-
-.oreja2{
-  right:7px;
-  transform:rotate(10deg);
-}
-
-.ojo-conejo{
-  position:absolute;
-  width:7px;
-  height:9px;
-  border-radius:50%;
-  background:#35213d;
-  top:49px;
-}
-
-.ojo-conejo1{
-  left:22px;
-}
-
-.ojo-conejo2{
-  right:22px;
-}
-
-.nariz-conejo{
-  position:absolute;
-  width:7px;
-  height:5px;
-  background:#d58caf;
-  border-radius:50%;
-  left:24px;
-  top:58px;
-}
-
-.boca-conejo{
-  position:absolute;
-  width:13px;
-  height:8px;
-  left:20px;
-  top:63px;
-  border-bottom:2px solid #8b536d;
-  border-radius:50%;
-}
-
-.cuerpo-conejo{
-  position:absolute;
-  width:52px;
-  height:38px;
-  left:12px;
-  top:70px;
-
-  background:#eee6f5;
-  border-radius:50%;
-  border:2px solid rgba(190,165,215,.5);
-}
-
-.patita-conejo{
-  position:absolute;
-  width:19px;
-  height:11px;
-  background:#e7ddef;
-  border-radius:50%;
-  bottom:0;
-}
-
-.patita-conejo1{
-  left:15px;
-}
-
-.patita-conejo2{
-  right:8px;
-}
-
-.colita-conejo{
-  position:absolute;
-  width:18px;
-  height:18px;
-  right:-2px;
-  top:75px;
-  background:#fffaff;
-  border-radius:50%;
-}
-
-@keyframes flotarConejita{
   0%,100%{
     transform:translateY(0);
   }
+
   50%{
-    transform:translateY(-8px);
+    transform:translateY(-9px);
   }
+
 }
 
-/* COCODRILITO */
-
-.cocodrilo-mapa{
-  position:relative;
-  width:95px;
-  height:95px;
-  margin-bottom:5px;
-
-  animation:flotarCocoMapa 3.4s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 8px white)
-    drop-shadow(0 0 18px #d5a8ff);
-}
-
-.cuerpo-mapa-coco{
-  position:absolute;
-  width:70px;
-  height:48px;
-  left:8px;
-  top:35px;
-
-  background:linear-gradient(
-    145deg,
-    #91d79d,
-    #4d9d71
-  );
-
-  border-radius:50%;
-  border:2px solid rgba(20,70,45,.7);
-}
-
-.cabeza-mapa-coco{
-  position:absolute;
-  width:58px;
-  height:50px;
-  right:3px;
-  top:20px;
-
-  background:linear-gradient(
-    145deg,
-    #a0e0a7,
-    #5baa77
-  );
-
-  border-radius:55%;
-  border:2px solid rgba(20,70,45,.7);
-}
-
-.hocico-mapa-coco{
-  position:absolute;
-  width:55px;
-  height:21px;
-  right:-20px;
-  top:42px;
-
-  background:#70b982;
-  border-radius:50%;
-}
-
-.ojo-mapa-coco{
-  position:absolute;
-  width:10px;
-  height:10px;
-  background:white;
-  border-radius:50%;
-  top:33px;
-  z-index:3;
-}
-
-.ojo-mapa-coco::after{
-  content:"";
-  position:absolute;
-  width:5px;
-  height:5px;
-  background:#21142f;
-  border-radius:50%;
-  left:3px;
-  top:3px;
-}
-
-.ojo-mapa1{
-  right:25px;
-}
-
-.ojo-mapa2{
-  right:39px;
-}
-
-.nariz-mapa-coco{
-  position:absolute;
-  width:6px;
-  height:4px;
-  border-radius:50%;
-  background:#263f31;
-  right:-15px;
-  top:51px;
-}
-
-.colita-mapa-coco{
-  position:absolute;
-  width:45px;
-  height:20px;
-  left:-24px;
-  top:47px;
-  background:#4d9d71;
-  border-radius:80% 20% 20% 80%;
-  transform:rotate(-20deg);
-}
-
-.patita-mapa-coco{
-  position:absolute;
-  width:21px;
-  height:11px;
-  background:#65ae7d;
-  border-radius:50%;
-  bottom:5px;
-}
-
-.patita-mapa1{
-  left:20px;
-}
-
-.patita-mapa2{
-  left:52px;
-}
-
-@keyframes flotarCocoMapa{
-  0%,100%{
-    transform:translateY(0) rotate(-2deg);
-  }
-  50%{
-    transform:translateY(-8px) rotate(2deg);
-  }
-}
-
-/* LUGARES */
+/* POSICIONES */
 
 .lugar-maria{
-  top:90px;
-  left:48%;
+  top:83px;
+  left:55%;
+
   transform:translateX(-50%);
 }
 
 .lugar-coco{
-  top:250px;
-  left:32%;
+  top:270px;
+  left:30%;
+
   transform:translateX(-50%);
 }
 
 /* =========================================
-   LÍNEA DEL CORAZÓN
+   LÍNEA CURVA DEL CORAZÓN
 ========================================= */
 
 .linea-distancia{
   position:absolute;
-  z-index:6;
 
-  width:290px;
-  height:110px;
+  z-index:12;
 
-  top:188px;
-  left:39%;
+  width:345px;
+  height:175px;
 
-  border-top:2px dashed rgba(255,210,255,.85);
+  top:165px;
+  left:31%;
 
-  transform:rotate(18deg);
+  border-top:3px solid rgba(235,205,255,.9);
+
+  border-radius:50%;
+
+  transform:rotate(12deg);
 
   filter:
-    drop-shadow(0 0 6px #e1b8ff);
+    drop-shadow(0 0 5px #e7c7ff)
+    drop-shadow(0 0 13px rgba(200,145,255,.9));
 
-  animation:brilloLinea 2.5s ease-in-out infinite alternate;
+  animation:
+    brilloLinea 2.4s ease-in-out infinite alternate;
+
+  pointer-events:none;
 }
 
 @keyframes brilloLinea{
+
   from{
     opacity:.45;
   }
+
   to{
     opacity:1;
   }
+
 }
+
+/* SEGUNDA LÍNEA SUAVE PARA DAR EFECTO MÁGICO */
+
+.linea-distancia::after{
+  content:"";
+
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  left:0;
+  top:0;
+
+  border-top:1px solid rgba(255,255,255,.45);
+
+  border-radius:50%;
+
+  transform:translateY(4px);
+
+  opacity:.5;
+}
+
+/* =========================================
+   CORAZÓN QUE VIAJA POR LA LÍNEA
+========================================= */
 
 .corazon-viajero{
   position:absolute;
-  z-index:9;
+
+  z-index:20;
 
   font-size:25px;
 
   top:-17px;
-  left:0;
+  left:-5px;
 
   filter:
-    drop-shadow(0 0 7px white)
-    drop-shadow(0 0 15px #ff9ee8);
+    drop-shadow(0 0 5px white)
+    drop-shadow(0 0 12px #ff9fdf);
 
-  animation:viajarCorazon 4s ease-in-out infinite;
+  animation:
+    viajarCorazon 4.5s ease-in-out infinite;
 }
 
 @keyframes viajarCorazon{
 
   0%{
-    left:0;
-    transform:scale(.75) rotate(-10deg);
+    left:-5px;
+    transform:scale(.75);
+    opacity:.6;
   }
 
-  25%{
-    transform:scale(1.15) rotate(5deg);
+  10%{
+    opacity:1;
   }
 
   50%{
-    transform:scale(1.35) rotate(-5deg);
+    transform:scale(1.3);
   }
 
-  75%{
-    transform:scale(1.15) rotate(5deg);
+  90%{
+    opacity:1;
   }
 
   100%{
-    left:calc(100% - 25px);
-    transform:scale(.75) rotate(-10deg);
+    left:calc(100% - 18px);
+    transform:scale(.75);
+    opacity:.6;
   }
 
 }
 
 /* =========================================
-   KM
+   PEQUEÑOS CORAZONES DE LUZ
+========================================= */
+
+.brillito-linea{
+  position:absolute;
+
+  z-index:13;
+
+  color:#f5ddff;
+
+  font-size:13px;
+
+  animation:brillarLinea 2s ease-in-out infinite alternate;
+}
+
+.brillito1{
+  top:210px;
+  left:47%;
+}
+
+.brillito2{
+  top:250px;
+  left:39%;
+  animation-delay:.8s;
+}
+
+.brillito3{
+  top:180px;
+  left:58%;
+  animation-delay:1.4s;
+}
+
+@keyframes brillarLinea{
+
+  from{
+    opacity:.2;
+    transform:scale(.7);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.3);
+  }
+
+}
+
+/* =========================================
+   KILÓMETROS
 ========================================= */
 
 .kilometros{
   position:absolute;
-  z-index:10;
+
+  z-index:20;
 
   left:50%;
   top:205px;
@@ -1457,16 +1449,23 @@ body{
     0 0 20px rgba(190,130,255,.18);
 }
 
-/* FRASES */
+/* =========================================
+   FRASES
+========================================= */
 
 .frase-mapa{
   position:absolute;
+
   z-index:9;
 
   max-width:220px;
+
   font-size:14px;
+
   line-height:1.5;
+
   font-style:italic;
+
   opacity:.82;
 
   text-shadow:
@@ -1495,7 +1494,9 @@ body{
 
 .distancia-frase-final{
   margin-top:30px;
+
   font-size:24px;
+
   font-style:italic;
 
   text-shadow:
@@ -1505,7 +1506,9 @@ body{
 
 .distancia-frase-final strong{
   display:block;
+
   font-size:28px;
+
   margin-top:10px;
 }
 
@@ -1552,7 +1555,7 @@ body{
   }
 
   .cocodrilo-coco{
-    transform:scale(.9);
+    font-size:58px;
   }
 
   .distancia-titulo{
@@ -1576,23 +1579,46 @@ body{
 
   .lugar-maria{
     top:115px;
-    left:63%;
+    left:66%;
   }
 
   .lugar-coco{
-    top:300px;
-    left:28%;
+    top:315px;
+    left:27%;
+  }
+
+  .personaje{
+    width:70px;
+    height:82px;
+  }
+
+  .conejita{
+    font-size:62px;
+  }
+
+  .cocodrilo-distancia{
+    font-size:60px;
   }
 
   .linea-distancia{
-    width:250px;
-    top:225px;
-    left:30%;
+    width:260px;
+    height:155px;
+
+    top:235px;
+    left:25%;
+
+    transform:rotate(8deg);
+  }
+
+  .corazon-viajero{
+    font-size:22px;
   }
 
   .kilometros{
-    top:240px;
+    top:250px;
+
     font-size:14px;
+
     white-space:nowrap;
   }
 
@@ -1619,6 +1645,21 @@ body{
   .frase-4{
     bottom:20px;
     right:5%;
+  }
+
+  .brillito1{
+    top:280px;
+    left:47%;
+  }
+
+  .brillito2{
+    top:330px;
+    left:38%;
+  }
+
+  .brillito3{
+    top:255px;
+    left:60%;
   }
 
   .distancia-frase-final{
@@ -1655,9 +1696,6 @@ body{
   <span class="estrella" style="top:72%;left:84%"></span>
   <span class="estrella" style="top:82%;left:68%"></span>
 
-  <div class="nube-suave" style="top:18%;left:-250px;"></div>
-  <div class="nube-suave" style="top:75%;left:-400px;animation-delay:10s;"></div>
-
   <div class="luna-grande"></div>
 
   <div class="texto-inicio">
@@ -1691,9 +1729,6 @@ body{
   <span class="estrella-carta" style="top:65%;left:15%"></span>
   <span class="estrella-carta" style="top:78%;left:88%"></span>
   <span class="estrella-carta" style="top:90%;left:45%"></span>
-
-  <div class="nube-suave" style="top:12%;left:-300px;"></div>
-  <div class="nube-suave" style="top:82%;left:-350px;animation-delay:8s;"></div>
 
   <div class="contenido-carta">
 
@@ -1759,12 +1794,6 @@ body{
   <div class="nube nube1"></div>
   <div class="nube nube2"></div>
   <div class="nube nube3"></div>
-
-  <span class="estrella-extra" style="top:7%;left:8%"></span>
-  <span class="estrella-extra" style="top:13%;left:72%"></span>
-  <span class="estrella-extra" style="top:38%;left:94%"></span>
-  <span class="estrella-extra" style="top:70%;left:6%"></span>
-  <span class="estrella-extra" style="top:88%;left:80%"></span>
 
   <div class="razones-contenido">
 
@@ -1863,14 +1892,6 @@ body{
 
 <section id="carta-coco">
 
-  <span class="estrella-extra" style="top:8%;left:9%"></span>
-  <span class="estrella-extra" style="top:15%;left:82%"></span>
-  <span class="estrella-extra" style="top:55%;left:5%"></span>
-  <span class="estrella-extra" style="top:82%;left:92%"></span>
-
-  <div class="nube-suave" style="top:18%;left:-300px;"></div>
-  <div class="nube-suave" style="top:78%;left:-400px;animation-delay:12s;"></div>
-
   <div class="carta-coco-contenido">
 
     <div class="coco-luna">
@@ -1919,33 +1940,12 @@ body{
 
     </div>
 
-    <!-- COCODRILITO BONITO -->
-
     <div class="cocodrilo-coco">
-
-      <div class="coco-cola"></div>
-
-      <div class="coco-cuerpo"></div>
-
-      <div class="coco-cabeza">
-
-        <div class="coco-ojo coco-ojo1"></div>
-        <div class="coco-ojo coco-ojo2"></div>
-
-        <div class="coco-hocico"></div>
-
-        <div class="coco-nariz"></div>
-        <div class="coco-sonrisa"></div>
-
-      </div>
-
-      <div class="coco-patita coco-patita1"></div>
-      <div class="coco-patita coco-patita2"></div>
-
+      🐊
     </div>
 
     <p class="coco-final">
-      Mi pequeño Coco... 🐊💜
+      Mi pequeño Coco...
     </p>
 
     <button class="boton" id="irDistancia">
@@ -1963,15 +1963,28 @@ body{
 
 <section id="distancia">
 
-  <span class="estrella-extra" style="top:7%;left:8%"></span>
-  <span class="estrella-extra" style="top:12%;left:76%"></span>
-  <span class="estrella-extra" style="top:35%;left:94%"></span>
-  <span class="estrella-extra" style="top:75%;left:5%"></span>
-  <span class="estrella-extra" style="top:88%;left:84%"></span>
-  <span class="estrella-extra" style="top:62%;left:92%"></span>
+  <!-- ESTRELLAS -->
 
-  <div class="nube-suave" style="top:14%;left:-300px;"></div>
-  <div class="nube-suave" style="top:70%;left:-450px;animation-delay:9s;"></div>
+  <span class="estrella-distancia" style="top:8%;left:9%"></span>
+  <span class="estrella-distancia" style="top:14%;left:22%"></span>
+  <span class="estrella-distancia" style="top:7%;left:45%"></span>
+  <span class="estrella-distancia" style="top:19%;left:72%"></span>
+  <span class="estrella-distancia" style="top:11%;left:91%"></span>
+
+  <span class="estrella-distancia" style="top:36%;left:5%"></span>
+  <span class="estrella-distancia" style="top:42%;left:17%"></span>
+  <span class="estrella-distancia" style="top:47%;left:87%"></span>
+
+  <span class="estrella-distancia" style="top:67%;left:10%"></span>
+  <span class="estrella-distancia" style="top:76%;left:26%"></span>
+  <span class="estrella-distancia" style="top:70%;left:75%"></span>
+  <span class="estrella-distancia" style="top:84%;left:92%"></span>
+
+  <!-- NUBES -->
+
+  <div class="nube-distancia nube-d1"></div>
+  <div class="nube-distancia nube-d2"></div>
+
 
   <div class="distancia-contenido">
 
@@ -1982,6 +1995,7 @@ body{
     <p class="distancia-subtitulo">
       Porque estar lejos no significa estar separados.
     </p>
+
 
     <div class="mapa-card">
 
@@ -1999,31 +2013,15 @@ body{
       </div>
 
 
-      <!-- MARÍA / CONEJITA -->
+      <!-- CONEJITA -->
 
       <div class="lugar lugar-maria">
 
-        <div class="conejita">
+        <div class="personaje">
 
-          <div class="oreja oreja1"></div>
-          <div class="oreja oreja2"></div>
-
-          <div class="conejo-cabeza">
-
-            <div class="ojo-conejo ojo-conejo1"></div>
-            <div class="ojo-conejo ojo-conejo2"></div>
-
-            <div class="nariz-conejo"></div>
-            <div class="boca-conejo"></div>
-
+          <div class="conejita">
+            🐰
           </div>
-
-          <div class="cuerpo-conejo"></div>
-
-          <div class="patita-conejo patita-conejo1"></div>
-          <div class="patita-conejo patita-conejo2"></div>
-
-          <div class="colita-conejo"></div>
 
         </div>
 
@@ -2034,28 +2032,15 @@ body{
       </div>
 
 
-      <!-- COCO / COCODRILITO -->
+      <!-- COCODRILO -->
 
       <div class="lugar lugar-coco">
 
-        <div class="cocodrilo-mapa">
+        <div class="personaje">
 
-          <div class="colita-mapa-coco"></div>
-
-          <div class="cuerpo-mapa-coco"></div>
-
-          <div class="cabeza-mapa-coco">
-
-            <div class="ojo-mapa-coco ojo-mapa1"></div>
-            <div class="ojo-mapa-coco ojo-mapa2"></div>
-
-            <div class="hocico-mapa-coco"></div>
-            <div class="nariz-mapa-coco"></div>
-
+          <div class="cocodrilo-distancia">
+            🐊
           </div>
-
-          <div class="patita-mapa-coco patita-mapa1"></div>
-          <div class="patita-mapa-coco patita-mapa2"></div>
 
         </div>
 
@@ -2066,7 +2051,7 @@ body{
       </div>
 
 
-      <!-- LÍNEA DEL CORAZÓN -->
+      <!-- LÍNEA QUE LOS UNE -->
 
       <div class="linea-distancia">
 
@@ -2076,6 +2061,23 @@ body{
 
       </div>
 
+
+      <!-- DESTELLOS SOBRE LA LÍNEA -->
+
+      <div class="brillito-linea brillito1">
+        ✦
+      </div>
+
+      <div class="brillito-linea brillito2">
+        ✧
+      </div>
+
+      <div class="brillito-linea brillito3">
+        ✦
+      </div>
+
+
+      <!-- KILÓMETROS -->
 
       <div class="kilometros">
         ✈️ ≈ 8.700 km
@@ -2134,9 +2136,7 @@ body{
 
 <script>
 
-/* =========================================
-   PORTADA → CARTA
-========================================= */
+/* PORTADA → CARTA */
 
 document.getElementById("entrar").addEventListener("click",function(){
 
@@ -2149,9 +2149,7 @@ document.getElementById("entrar").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   CARTA → 50 ESTRELLAS
-========================================= */
+/* CARTA → 50 ESTRELLAS */
 
 document.getElementById("irRazones").addEventListener("click",function(){
 
@@ -2164,9 +2162,7 @@ document.getElementById("irRazones").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   ABRIR UNA RAZÓN
-========================================= */
+/* ABRIR UNA RAZÓN */
 
 document.querySelectorAll(".estrella-razon").forEach(function(estrella){
 
@@ -2182,9 +2178,7 @@ document.querySelectorAll(".estrella-razon").forEach(function(estrella){
 });
 
 
-/* =========================================
-   CERRAR UNA RAZÓN
-========================================= */
+/* CERRAR UNA RAZÓN */
 
 document.getElementById("cerrarRazon").addEventListener("click",function(){
 
@@ -2193,9 +2187,7 @@ document.getElementById("cerrarRazon").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   50 ESTRELLAS → CARTA DE COCO
-========================================= */
+/* 50 ESTRELLAS → CARTA DE COCO */
 
 document.getElementById("irCoco").addEventListener("click",function(){
 
@@ -2208,9 +2200,7 @@ document.getElementById("irCoco").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   CARTA DE COCO → DISTANCIA
-========================================= */
+/* CARTA DE COCO → DISTANCIA */
 
 document.getElementById("irDistancia").addEventListener("click",function(){
 
@@ -2223,9 +2213,7 @@ document.getElementById("irDistancia").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   BOTÓN FINAL
-========================================= */
+/* BOTÓN FINAL */
 
 document.getElementById("finActual").addEventListener("click",function(){
 
