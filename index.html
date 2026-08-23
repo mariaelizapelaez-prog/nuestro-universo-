@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,9 +9,9 @@
 
 <style>
 
-/* =========================================
+/* =====================================================
    GENERAL
-========================================= */
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -32,29 +30,21 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================================
-   BOTONES
-========================================= */
+button{
+  font-family:Georgia,"Times New Roman",serif;
+}
 
 .boton{
   border:none;
   padding:15px 36px;
   border-radius:40px;
-
-  background:
-    linear-gradient(135deg,#ffffff,#eadfff);
-
+  background:linear-gradient(135deg,#ffffff,#eadfff);
   color:#17102c;
-
-  font-family:Georgia,"Times New Roman",serif;
   font-size:18px;
-
   cursor:pointer;
-
   box-shadow:
     0 0 20px rgba(255,255,255,.8),
     0 0 45px rgba(190,130,255,.45);
-
   transition:.3s;
 }
 
@@ -62,9 +52,9 @@ body{
   transform:scale(1.08);
 }
 
-/* =========================================
+/* =====================================================
    PORTADA
-========================================= */
+===================================================== */
 
 #inicio{
   min-height:100vh;
@@ -92,16 +82,11 @@ body{
 #inicio::before{
   content:"";
   position:absolute;
-
   width:420px;
   height:420px;
-
   border-radius:50%;
-
   background:rgba(190,120,255,.12);
-
   filter:blur(80px);
-
   top:-100px;
   right:-100px;
 }
@@ -109,16 +94,11 @@ body{
 #inicio::after{
   content:"";
   position:absolute;
-
   width:350px;
   height:350px;
-
   border-radius:50%;
-
   background:rgba(100,120,255,.12);
-
   filter:blur(80px);
-
   bottom:-100px;
   left:-100px;
 }
@@ -126,7 +106,6 @@ body{
 .luna-grande{
   width:200px;
   height:200px;
-
   border-radius:50%;
 
   background:
@@ -144,7 +123,6 @@ body{
     0 0 110px rgba(210,160,255,.45);
 
   margin-bottom:42px;
-
   animation:brilloLuna 4s ease-in-out infinite;
 
   position:relative;
@@ -152,15 +130,8 @@ body{
 }
 
 @keyframes brilloLuna{
-
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.05);
-  }
-
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
 }
 
 .texto-inicio{
@@ -183,17 +154,18 @@ body{
   margin-bottom:38px;
 }
 
-/* =========================================
+/* =====================================================
    ESTRELLAS
-========================================= */
+===================================================== */
 
 .estrella,
-.estrella-carta{
+.estrella-carta,
+.estrella-juego,
+.estrella-distancia,
+.yg-estrella{
   position:absolute;
-
   width:3px;
   height:3px;
-
   background:white;
   border-radius:50%;
 
@@ -205,7 +177,6 @@ body{
 }
 
 @keyframes parpadear{
-
   from{
     opacity:.2;
     transform:scale(.7);
@@ -215,21 +186,30 @@ body{
     opacity:1;
     transform:scale(1.4);
   }
-
 }
 
-/* =========================================
-   CARTA
-========================================= */
+/* =====================================================
+   CARTAS GENERALES
+===================================================== */
+
+#carta,
+#razones,
+#carta-coco,
+#juego,
+#distancia,
+#carta-yugioh,
+#galeria{
+  display:none;
+}
+
+/* =====================================================
+   CARTA DE CUMPLEAÑOS
+===================================================== */
 
 #carta{
-  display:none;
-
   min-height:100vh;
-
   position:relative;
   overflow:hidden;
-
   padding:70px 20px;
 
   background:
@@ -245,20 +225,15 @@ body{
 .contenido-carta{
   position:relative;
   z-index:2;
-
   max-width:760px;
-
   margin:auto;
-
   text-align:center;
 }
 
 .media-luna{
   width:130px;
   height:130px;
-
   border-radius:50%;
-
   background:#fffbe8;
 
   box-shadow:
@@ -266,24 +241,17 @@ body{
     0 0 55px rgba(255,255,255,.55);
 
   position:relative;
-
   margin:0 auto 35px;
-
   overflow:hidden;
 }
 
 .media-luna::after{
   content:"";
-
   position:absolute;
-
   width:135px;
   height:135px;
-
   border-radius:50%;
-
   background:#241c49;
-
   left:42px;
   top:-8px;
 }
@@ -303,7 +271,8 @@ body{
   margin-bottom:35px;
 }
 
-.texto-carta{
+.texto-carta,
+.carta-coco-texto{
   background:
     linear-gradient(
       135deg,
@@ -312,15 +281,10 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.18);
-
   border-radius:25px;
-
   padding:35px;
-
   line-height:1.9;
-
   font-size:18px;
-
   text-align:left;
 
   backdrop-filter:blur(8px);
@@ -330,7 +294,8 @@ body{
     0 0 30px rgba(180,120,255,.08);
 }
 
-.texto-carta p{
+.texto-carta p,
+.carta-coco-texto p{
   margin-bottom:20px;
 }
 
@@ -340,19 +305,14 @@ body{
   font-style:italic;
 }
 
-/* =========================================
+/* =====================================================
    50 ESTRELLAS
-========================================= */
+===================================================== */
 
 #razones{
-  display:none;
-
   min-height:100vh;
-
   position:relative;
-
   overflow:hidden;
-
   padding:75px 20px;
 
   background:
@@ -368,7 +328,6 @@ body{
 .razones-contenido{
   position:relative;
   z-index:5;
-
   max-width:950px;
   margin:auto;
   text-align:center;
@@ -389,9 +348,9 @@ body{
   margin-bottom:45px;
 }
 
-.nube{
+.nube,
+.nube-distancia{
   position:absolute;
-
   width:230px;
   height:70px;
 
@@ -404,7 +363,6 @@ body{
     );
 
   border-radius:50%;
-
   filter:blur(8px);
   opacity:.7;
 
@@ -412,23 +370,25 @@ body{
 }
 
 .nube::before,
-.nube::after{
+.nube::after,
+.nube-distancia::before,
+.nube-distancia::after{
   content:"";
-
   position:absolute;
-
   background:rgba(220,190,255,.10);
   border-radius:50%;
 }
 
-.nube::before{
+.nube::before,
+.nube-distancia::before{
   width:100px;
   height:100px;
   left:35px;
   bottom:15px;
 }
 
-.nube::after{
+.nube::after,
+.nube-distancia::after{
   width:120px;
   height:120px;
   right:25px;
@@ -443,9 +403,7 @@ body{
 .nube2{
   top:55%;
   left:-350px;
-
   transform:scale(.7);
-
   animation-duration:36s;
   animation-delay:5s;
 }
@@ -453,34 +411,21 @@ body{
 .nube3{
   top:78%;
   left:-300px;
-
   transform:scale(1.2);
-
   animation-duration:32s;
   animation-delay:10s;
 }
 
 @keyframes moverNube{
-
-  from{
-    left:-350px;
-  }
-
-  to{
-    left:110%;
-  }
-
+  from{left:-350px;}
+  to{left:110%;}
 }
 
 .estrellas-razones{
   display:grid;
-
   grid-template-columns:repeat(5,1fr);
-
   gap:28px;
-
   max-width:800px;
-
   margin:auto;
 }
 
@@ -488,9 +433,7 @@ body{
   border:none;
   background:none;
   color:white;
-
   font-size:35px;
-
   cursor:pointer;
 
   text-shadow:
@@ -509,31 +452,18 @@ body{
 }
 
 @keyframes brilloEstrella{
-
-  from{
-    opacity:.45;
-  }
-
-  to{
-    opacity:1;
-  }
-
+  from{opacity:.45;}
+  to{opacity:1;}
 }
 
 #mensaje-razon{
   display:none;
-
   position:fixed;
-
   z-index:100;
-
   left:50%;
   top:50%;
-
   transform:translate(-50%,-50%);
-
   width:min(90%,500px);
-
   padding:35px;
 
   background:
@@ -544,9 +474,7 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.2);
-
   border-radius:25px;
-
   text-align:center;
 
   box-shadow:
@@ -564,19 +492,14 @@ body{
   margin-bottom:25px;
 }
 
-/* =========================================
+/* =====================================================
    CARTA COCO
-========================================= */
+===================================================== */
 
 #carta-coco{
-  display:none;
-
   min-height:100vh;
-
   position:relative;
-
   overflow:hidden;
-
   padding:75px 20px;
 
   background:
@@ -592,7 +515,6 @@ body{
 .carta-coco-contenido{
   position:relative;
   z-index:5;
-
   max-width:760px;
   margin:auto;
   text-align:center;
@@ -610,15 +532,8 @@ body{
 }
 
 @keyframes lunaCoco{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-8px);
-  }
-
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
 }
 
 .carta-coco-contenido h2{
@@ -637,46 +552,13 @@ body{
 }
 
 .carta-coco-texto{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.11),
-      rgba(190,130,255,.08)
-    );
-
-  border:1px solid rgba(255,255,255,.18);
-
   border-radius:28px;
-
-  padding:35px;
-
-  text-align:left;
-
-  font-size:18px;
-  line-height:1.9;
-
-  backdrop-filter:blur(8px);
-
-  box-shadow:
-    0 0 35px rgba(0,0,0,.3),
-    0 0 25px rgba(180,120,255,.10);
-}
-
-.carta-coco-texto p{
-  margin-bottom:22px;
 }
 
 .despedida-coco{
   text-align:center;
-
   font-size:23px;
   font-style:italic;
-
-  margin-top:30px;
-  margin-bottom:0 !important;
-
-  text-shadow:
-    0 0 12px rgba(255,210,255,.45);
 }
 
 .cocodrilo-coco{
@@ -691,7 +573,6 @@ body{
 }
 
 @keyframes cocodriloFlota{
-
   0%,100%{
     transform:translateY(0) rotate(-2deg);
   }
@@ -699,31 +580,233 @@ body{
   50%{
     transform:translateY(-7px) rotate(2deg);
   }
-
 }
 
 .coco-final{
   margin-top:10px;
   margin-bottom:25px;
-
   font-size:17px;
   opacity:.75;
   font-style:italic;
 }
 
-/* =========================================
-   DISTANCIA
-========================================= */
+/* =====================================================
+   🎮 JUEGO INTERACTIVO
+===================================================== */
 
-#distancia{
+#juego{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:65px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      #604c91 0%,
+      #302252 32%,
+      #100b2b 68%,
+      #03030d 100%
+    );
+}
+
+.juego-contenido{
+  position:relative;
+  z-index:5;
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+
+.juego-titulo{
+  font-size:43px;
+  margin-bottom:12px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 35px #d0a4ff;
+}
+
+.juego-subtitulo{
+  font-size:19px;
+  opacity:.88;
+  margin-bottom:30px;
+}
+
+.juego-corazon{
+  font-size:70px;
+  margin:10px 0 25px;
+
+  animation:
+    latido 1.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 10px white)
+    drop-shadow(0 0 25px #ff9fe5);
+}
+
+@keyframes latido{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+}
+
+.progreso-juego{
+  width:100%;
+  height:10px;
+  background:rgba(255,255,255,.12);
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+
+.progreso-juego div{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#cda5ff,#fff);
+  border-radius:20px;
+  transition:.5s;
+  box-shadow:0 0 15px #d6b6ff;
+}
+
+.pregunta-card{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.13),
+      rgba(150,100,220,.08)
+    );
+
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:30px;
+  padding:32px 25px;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 0 45px rgba(0,0,0,.3),
+    0 0 30px rgba(190,130,255,.12);
+}
+
+.numero-pregunta{
+  font-size:14px;
+  opacity:.65;
+  margin-bottom:12px;
+}
+
+#pregunta{
+  font-size:25px;
+  line-height:1.5;
+  margin-bottom:28px;
+}
+
+.opciones{
+  display:grid;
+  gap:15px;
+}
+
+.opcion{
+  width:100%;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;
+  padding:17px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(190,130,255,.06)
+    );
+
+  cursor:pointer;
+  font-size:17px;
+  transition:.3s;
+}
+
+.opcion:hover{
+  transform:translateY(-3px) scale(1.02);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.18),
+      rgba(190,130,255,.14)
+    );
+
+  box-shadow:
+    0 0 20px rgba(190,130,255,.2);
+}
+
+.opcion.correcta{
+  background:rgba(80,190,130,.22);
+  border-color:#a5ffd1;
+}
+
+.opcion.incorrecta{
+  background:rgba(255,90,130,.18);
+  border-color:#ffabc0;
+}
+
+#respuesta-juego{
+  min-height:50px;
+  margin-top:22px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+#siguientePregunta{
+  display:none;
+  margin-top:18px;
+}
+
+#resultado-juego{
   display:none;
 
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.14),
+      rgba(170,110,240,.09)
+    );
+
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:30px;
+  padding:35px;
+
+  box-shadow:
+    0 0 50px rgba(190,130,255,.2);
+}
+
+#resultado-juego h3{
+  font-size:32px;
+  margin-bottom:20px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 30px #d1a5ff;
+}
+
+#resultado-juego p{
+  font-size:19px;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.corazones-resultado{
+  font-size:35px;
+  margin-bottom:25px;
+  letter-spacing:5px;
+}
+
+/* =====================================================
+   DISTANCIA
+===================================================== */
+
+#distancia{
   min-height:100vh;
-
   position:relative;
-
   overflow:hidden;
-
   padding:70px 18px;
 
   background:
@@ -736,46 +819,9 @@ body{
     );
 }
 
-#distancia::before{
-  content:"";
-
-  position:absolute;
-
-  width:400px;
-  height:400px;
-
-  border-radius:50%;
-
-  background:rgba(216,155,255,.10);
-
-  filter:blur(90px);
-
-  top:-150px;
-  left:-150px;
-}
-
-#distancia::after{
-  content:"";
-
-  position:absolute;
-
-  width:350px;
-  height:350px;
-
-  border-radius:50%;
-
-  background:rgba(115,135,255,.10);
-
-  filter:blur(90px);
-
-  bottom:-150px;
-  right:-100px;
-}
-
 .distancia-contenido{
   position:relative;
   z-index:5;
-
   max-width:950px;
   margin:auto;
   text-align:center;
@@ -796,61 +842,10 @@ body{
   margin-bottom:35px;
 }
 
-/* =========================================
-   NUBES DISTANCIA
-========================================= */
-
 .nube-distancia{
-  position:absolute;
-
   width:240px;
   height:75px;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.03),
-      rgba(220,190,255,.14),
-      rgba(255,255,255,.03)
-    );
-
-  filter:blur(7px);
-
-  opacity:.65;
-
-  pointer-events:none;
-
-  animation:
-    nubeDistancia 32s linear infinite;
-}
-
-.nube-distancia::before,
-.nube-distancia::after{
-  content:"";
-
-  position:absolute;
-
-  border-radius:50%;
-
-  background:rgba(225,205,255,.09);
-}
-
-.nube-distancia::before{
-  width:105px;
-  height:105px;
-
-  left:35px;
-  bottom:15px;
-}
-
-.nube-distancia::after{
-  width:125px;
-  height:125px;
-
-  right:20px;
-  bottom:8px;
+  animation:nubeDistancia 32s linear infinite;
 }
 
 .nube-d1{
@@ -861,96 +856,21 @@ body{
 .nube-d2{
   top:68%;
   left:-350px;
-
   transform:scale(.75);
-
   animation-duration:40s;
   animation-delay:8s;
 }
 
 @keyframes nubeDistancia{
-
-  from{
-    left:-350px;
-  }
-
-  to{
-    left:110%;
-  }
-
+  from{left:-350px;}
+  to{left:110%;}
 }
-
-/* =========================================
-   ESTRELLAS DISTANCIA
-========================================= */
-
-.estrella-distancia{
-  position:absolute;
-
-  width:4px;
-  height:4px;
-
-  border-radius:50%;
-
-  background:white;
-
-  box-shadow:
-    0 0 8px white,
-    0 0 18px #d8b7ff,
-    0 0 30px rgba(190,140,255,.7);
-
-  animation:
-    estrellaDistancia 2.8s ease-in-out infinite alternate;
-
-  pointer-events:none;
-}
-
-.estrella-distancia::after{
-  content:"✦";
-
-  position:absolute;
-
-  left:50%;
-  top:50%;
-
-  transform:translate(-50%,-50%);
-
-  font-size:13px;
-
-  color:white;
-
-  text-shadow:
-    0 0 8px white,
-    0 0 18px #cda8ff;
-}
-
-@keyframes estrellaDistancia{
-
-  from{
-    opacity:.25;
-    transform:scale(.7);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1.35);
-  }
-
-}
-
-/* =========================================
-   MAPA
-========================================= */
 
 .mapa-card{
   position:relative;
-
   min-height:510px;
-
   border-radius:35px;
-
   overflow:hidden;
-
   padding:30px;
 
   background:
@@ -972,7 +892,6 @@ body{
 .mapa-grid{
   position:absolute;
   inset:0;
-
   opacity:.09;
 
   background-image:
@@ -981,12 +900,14 @@ body{
 
   background-size:50px 50px;
 
-  transform:perspective(500px) rotateX(35deg) scale(1.3);
+  transform:
+    perspective(500px)
+    rotateX(35deg)
+    scale(1.3);
 }
 
 .mapamundi{
   position:absolute;
-
   left:50%;
   top:51%;
 
@@ -1004,10 +925,6 @@ body{
       rgba(92,80,170,.08) 48%,
       transparent 72%
     );
-
-  filter:blur(.2px);
-
-  opacity:.8;
 }
 
 .continente{
@@ -1021,91 +938,66 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.07);
-
   filter:blur(1px);
-
   opacity:.65;
 }
 
 .europa{
   width:105px;
   height:60px;
-
   top:48px;
   left:51%;
-
   border-radius:55% 40% 45% 30%;
-
   transform:rotate(-12deg);
 }
 
 .america-norte{
   width:165px;
   height:110px;
-
   top:65px;
   left:9%;
-
   border-radius:60% 35% 55% 40%;
-
   transform:rotate(15deg);
 }
 
 .america-sur{
   width:105px;
   height:180px;
-
   top:145px;
   left:29%;
-
   border-radius:60% 45% 55% 35%;
-
   transform:rotate(18deg);
 }
 
 .africa{
   width:120px;
   height:155px;
-
   top:130px;
   left:51%;
-
   border-radius:45% 55% 45% 50%;
-
   transform:rotate(8deg);
 }
 
 .asia{
   width:245px;
   height:105px;
-
   top:60px;
   right:8%;
-
   border-radius:45% 55% 35% 50%;
-
   transform:rotate(8deg);
 }
 
 .australia{
   width:100px;
   height:55px;
-
   bottom:45px;
   right:15%;
-
   border-radius:50% 45% 55% 40%;
-
   transform:rotate(12deg);
 }
 
-/* =========================================
-   LUGARES
-========================================= */
-
 .lugar{
   position:absolute;
-
   z-index:30;
 
   display:flex;
@@ -1120,18 +1012,24 @@ body{
     0 0 10px rgba(255,255,255,.5);
 }
 
-/* =========================================
-   PERSONAJES
-========================================= */
+.lugar-maria{
+  top:75px;
+  left:57%;
+  transform:translateX(-50%);
+}
+
+.lugar-coco{
+  top:285px;
+  left:29%;
+  transform:translateX(-50%);
+}
 
 .personaje{
   position:relative;
-
   width:88px;
   height:100px;
 
   display:flex;
-
   justify-content:center;
   align-items:center;
 
@@ -1145,18 +1043,15 @@ body{
     drop-shadow(0 0 22px rgba(202,155,255,.75));
 }
 
-/* =========================================
-   CONEJITA
-========================================= */
+@keyframes flotarPersonaje{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-9px);}
+}
 
 .conejita{
   position:relative;
-
   width:60px;
   height:68px;
-
-  animation:
-    respirarConejita 3.5s ease-in-out infinite;
 
   background:
     radial-gradient(circle at 22px 40px,#4b355d 0 2px,transparent 3px),
@@ -1166,12 +1061,9 @@ body{
 
 .conejita::before{
   content:"";
-
   position:absolute;
-
   width:54px;
   height:50px;
-
   left:3px;
   top:18px;
 
@@ -1184,20 +1076,13 @@ body{
       #f6eaff 55%,
       #d8c4ef
     );
-
-  box-shadow:
-    inset -5px -6px 8px rgba(120,80,150,.13),
-    0 0 8px rgba(255,255,255,.8);
 }
 
 .conejita::after{
   content:"";
-
   position:absolute;
-
   width:17px;
   height:43px;
-
   left:8px;
   top:-3px;
 
@@ -1211,77 +1096,17 @@ body{
     );
 
   box-shadow:
-    27px 0 0 -1px #eee2ff,
-    27px 0 0 0 #eee2ff;
+    27px 0 0 -1px #eee2ff;
 
   transform:rotate(-8deg);
 }
 
-@keyframes respirarConejita{
-
-  0%,100%{
-    transform:translateY(0) scale(1);
-  }
-
-  50%{
-    transform:translateY(-4px) scale(1.03);
-  }
-
-}
-
-/* =========================================
-   COCO
-========================================= */
-
 .cocodrilo-distancia{
   font-size:68px;
-
-  line-height:1;
-
-  transform:translateY(-1px);
-
-  filter:
-    drop-shadow(0 0 7px rgba(255,255,255,.9))
-    drop-shadow(0 0 18px rgba(174,135,255,.8));
 }
-
-@keyframes flotarPersonaje{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-9px);
-  }
-
-}
-
-/* =========================================
-   POSICIONES
-========================================= */
-
-.lugar-maria{
-  top:75px;
-  left:57%;
-
-  transform:translateX(-50%);
-}
-
-.lugar-coco{
-  top:285px;
-  left:29%;
-
-  transform:translateX(-50%);
-}
-
-/* =========================================
-   RUTA
-========================================= */
 
 .ruta-corazon{
   position:absolute;
-
   z-index:22;
 
   width:520px;
@@ -1291,17 +1116,13 @@ body{
   top:115px;
 
   overflow:visible;
-
   pointer-events:none;
 }
 
 .ruta-base{
   fill:none;
-
   stroke:rgba(232,204,255,.78);
-
   stroke-width:3;
-
   stroke-linecap:round;
 
   filter:
@@ -1311,88 +1132,14 @@ body{
 
 .ruta-brillo{
   fill:none;
-
   stroke:rgba(255,255,255,.55);
-
   stroke-width:1.2;
-
   stroke-linecap:round;
 }
 
-.corazon-svg{
-  filter:
-    drop-shadow(0 0 5px white)
-    drop-shadow(0 0 10px #ff9fdf);
-}
-
-/* =========================================
-   DESTELLOS
-========================================= */
-
-.brillito-linea{
-  position:absolute;
-
-  z-index:25;
-
-  color:#f5ddff;
-
-  font-size:15px;
-
-  animation:
-    brillarLinea 2s ease-in-out infinite alternate;
-
-  pointer-events:none;
-}
-
-.brillito1{
-  top:215px;
-  left:46%;
-}
-
-.brillito2{
-  top:270px;
-  left:39%;
-
-  animation-delay:.8s;
-}
-
-.brillito3{
-  top:185px;
-  left:59%;
-
-  animation-delay:1.4s;
-}
-
-.brillito4{
-  top:320px;
-  left:49%;
-
-  animation-delay:.4s;
-}
-
-@keyframes brillarLinea{
-
-  from{
-    opacity:.2;
-    transform:scale(.7);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1.3);
-  }
-
-}
-
-/* =========================================
-   KILÓMETROS
-========================================= */
-
 .kilometros{
   position:absolute;
-
   z-index:40;
-
   left:50%;
   top:245px;
 
@@ -1401,40 +1148,21 @@ body{
   padding:8px 18px;
 
   border-radius:30px;
-
   background:rgba(20,12,45,.72);
-
   border:1px solid rgba(255,255,255,.18);
 
-  backdrop-filter:blur(6px);
-
   font-size:16px;
-
-  box-shadow:
-    0 0 20px rgba(190,130,255,.18);
 }
-
-/* =========================================
-   FRASES MAPA
-========================================= */
 
 .frase-mapa{
   position:absolute;
-
   z-index:9;
-
   max-width:220px;
 
   font-size:14px;
-
   line-height:1.5;
-
   font-style:italic;
-
   opacity:.82;
-
-  text-shadow:
-    0 0 10px rgba(255,190,255,.45);
 }
 
 .frase-1{
@@ -1459,9 +1187,7 @@ body{
 
 .distancia-frase-final{
   margin-top:30px;
-
   font-size:24px;
-
   font-style:italic;
 
   text-shadow:
@@ -1471,23 +1197,17 @@ body{
 
 .distancia-frase-final strong{
   display:block;
-
   font-size:28px;
-
   margin-top:10px;
 }
 
-/* =========================================
-   CARTA YU-GI-OH!
-========================================= */
+/* =====================================================
+   YU-GI-OH!
+===================================================== */
 
 #carta-yugioh{
-  display:none;
-
   min-height:100vh;
-
   position:relative;
-
   overflow:hidden;
 
   padding:55px 18px 80px;
@@ -1502,92 +1222,16 @@ body{
     );
 }
 
-#carta-yugioh::before{
-  content:"";
-
-  position:absolute;
-
-  width:500px;
-  height:500px;
-
-  border-radius:50%;
-
-  background:rgba(177,110,255,.16);
-
-  filter:blur(100px);
-
-  top:-220px;
-  left:-180px;
-}
-
-#carta-yugioh::after{
-  content:"";
-
-  position:absolute;
-
-  width:450px;
-  height:450px;
-
-  border-radius:50%;
-
-  background:rgba(90,120,255,.13);
-
-  filter:blur(100px);
-
-  bottom:-200px;
-  right:-180px;
-}
-
-.yg-estrella{
-  position:absolute;
-
-  width:4px;
-  height:4px;
-
-  border-radius:50%;
-
-  background:white;
-
-  box-shadow:
-    0 0 8px white,
-    0 0 18px #d5b7ff,
-    0 0 30px rgba(180,130,255,.8);
-
-  animation:
-    ygParpadear 2.5s ease-in-out infinite alternate;
-
-  pointer-events:none;
-}
-
-@keyframes ygParpadear{
-
-  from{
-    opacity:.25;
-    transform:scale(.65);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1.5);
-  }
-
-}
-
 .yugioh-contenido{
   position:relative;
-
   z-index:5;
-
   max-width:900px;
-
   margin:auto;
-
   text-align:center;
 }
 
 .yugioh-titulo{
   font-size:43px;
-
   margin-bottom:10px;
 
   text-shadow:
@@ -1598,25 +1242,15 @@ body{
 
 .yugioh-subtitulo{
   font-size:19px;
-
   opacity:.88;
-
   margin-bottom:35px;
 }
 
-/* =========================================
-   CARTA HOLOGRÁFICA
-========================================= */
-
 .carta-holografica{
   position:relative;
-
   width:min(100%,560px);
-
   margin:0 auto;
-
   padding:10px;
-
   border-radius:25px;
 
   background:
@@ -1635,33 +1269,19 @@ body{
 
   box-shadow:
     0 0 25px rgba(255,255,255,.55),
-    0 0 60px rgba(177,120,255,.55),
-    0 0 110px rgba(115,90,255,.25);
+    0 0 60px rgba(177,120,255,.55);
 }
 
 @keyframes holograma{
-
-  0%{
-    background-position:0% 50%;
-  }
-
-  50%{
-    background-position:100% 50%;
-  }
-
-  100%{
-    background-position:0% 50%;
-  }
-
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 .carta-interior{
   position:relative;
-
   overflow:hidden;
-
   border-radius:18px;
-
   padding:18px;
 
   background:
@@ -1675,70 +1295,16 @@ body{
   border:2px solid rgba(255,255,255,.65);
 }
 
-.carta-interior::before{
-  content:"";
-
-  position:absolute;
-
-  width:220px;
-  height:600px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.12),
-      transparent
-    );
-
-  transform:rotate(25deg);
-
-  left:-300px;
-  top:-100px;
-
-  animation:reflejoCarta 5s linear infinite;
-}
-
-@keyframes reflejoCarta{
-
-  0%{
-    left:-300px;
-  }
-
-  55%,100%{
-    left:750px;
-  }
-
-}
-
-/* =========================================
-   CABECERA CARTA
-========================================= */
-
 .carta-nombre{
-  position:relative;
-
-  z-index:3;
-
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
-
   gap:10px;
 
   padding:8px 10px 13px;
 
-  color:#fff;
-
   font-size:22px;
-
   font-weight:bold;
-
-  text-shadow:
-    0 0 8px white,
-    0 0 15px #c99aff;
 }
 
 .carta-nombre small{
@@ -1746,49 +1312,24 @@ body{
   opacity:.85;
 }
 
-/* =========================================
-   ILUSTRACIÓN
-========================================= */
-
 .carta-ilustracion{
-  position:relative;
-
   overflow:hidden;
-
   border-radius:10px;
-
   border:2px solid rgba(255,255,255,.7);
-
-  box-shadow:
-    inset 0 0 25px rgba(255,255,255,.15),
-    0 0 20px rgba(190,130,255,.3);
-
-  background:#080512;
 }
 
 .carta-ilustracion img{
   display:block;
-
   width:100%;
-
-  height:auto;
-
-  aspect-ratio:1 / 1;
-
+  aspect-ratio:1/1;
   object-fit:cover;
 }
 
-/* =========================================
-   INFORMACIÓN CARTA
-========================================= */
-
 .carta-info{
   margin-top:12px;
-
   padding:12px;
 
   border:1px solid rgba(255,255,255,.55);
-
   border-radius:9px;
 
   background:
@@ -1803,59 +1344,35 @@ body{
 
 .carta-tipo{
   font-size:14px;
-
   font-weight:bold;
-
   margin-bottom:9px;
-
   color:#eadbff;
 }
 
 .carta-efecto{
   font-size:14px;
-
   line-height:1.6;
-
-  color:#f8f3ff;
-}
-
-.carta-efecto strong{
-  color:#dcbaff;
 }
 
 .carta-stats{
   display:flex;
-
   justify-content:flex-end;
-
   gap:20px;
-
   margin-top:12px;
-
   font-size:14px;
-
   font-weight:bold;
 }
 
-/* =========================================
-   FRASES YU-GI-OH!
-========================================= */
-
 .frases-yugioh{
   position:relative;
-
   max-width:700px;
-
   margin:35px auto 0;
-
   display:grid;
-
   gap:18px;
 }
 
 .frase-ygo{
   padding:23px;
-
   border-radius:20px;
 
   background:
@@ -1867,65 +1384,132 @@ body{
 
   border:1px solid rgba(255,255,255,.18);
 
-  backdrop-filter:blur(8px);
-
-  box-shadow:
-    0 0 25px rgba(160,110,255,.12);
-
   font-size:18px;
-
   line-height:1.7;
-
   font-style:italic;
 }
 
 .frase-ygo::before{
   content:"✦";
-
   display:block;
-
   margin-bottom:8px;
-
   font-size:25px;
-
-  color:#e5caff;
-
-  text-shadow:
-    0 0 10px white,
-    0 0 20px #bd8aff;
 }
-
-/* =========================================
-   FINAL YU-GI-OH!
-========================================= */
 
 .yugioh-final{
   margin:38px auto 25px;
-
   max-width:680px;
-
   font-size:22px;
-
   line-height:1.7;
-
   font-style:italic;
-
-  text-shadow:
-    0 0 12px white,
-    0 0 28px #c99aff;
 }
 
 .yugioh-final strong{
   display:block;
-
   margin-top:10px;
-
   font-size:27px;
 }
 
-/* =========================================
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+#galeria{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:70px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #594a91,
+      #292052 35%,
+      #100d29 70%,
+      #03030d
+    );
+}
+
+.galeria-contenido{
+  position:relative;
+  z-index:5;
+  max-width:950px;
+  margin:auto;
+  text-align:center;
+}
+
+.galeria-titulo{
+  font-size:43px;
+  margin-bottom:12px;
+
+  text-shadow:
+    0 0 15px white,
+    0 0 35px #c49aff;
+}
+
+.galeria-subtitulo{
+  font-size:19px;
+  opacity:.85;
+  margin-bottom:40px;
+}
+
+.fotos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.foto{
+  min-height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,255,255,.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.12),
+      rgba(170,110,240,.08)
+    );
+
+  box-shadow:
+    0 0 30px rgba(180,120,255,.12);
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+.foto img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.foto span{
+  font-size:50px;
+  opacity:.7;
+}
+
+.final-galeria{
+  margin-top:45px;
+  font-size:24px;
+  font-style:italic;
+  line-height:1.7;
+
+  text-shadow:
+    0 0 12px white,
+    0 0 25px #d0a4ff;
+}
+
+/* =====================================================
    RESPONSIVE
-========================================= */
+===================================================== */
 
 @media(max-width:700px){
 
@@ -1942,7 +1526,8 @@ body{
     font-size:34px;
   }
 
-  .texto-carta{
+  .texto-carta,
+  .carta-coco-texto{
     padding:25px;
     font-size:17px;
   }
@@ -1960,21 +1545,20 @@ body{
     font-size:34px;
   }
 
-  .carta-coco-texto{
-    padding:25px;
-    font-size:17px;
+  .juego-titulo{
+    font-size:34px;
   }
 
-  .cocodrilo-coco{
-    font-size:58px;
+  #pregunta{
+    font-size:21px;
+  }
+
+  .opcion{
+    font-size:16px;
   }
 
   .distancia-titulo{
     font-size:34px;
-  }
-
-  .distancia-subtitulo{
-    font-size:18px;
   }
 
   .mapa-card{
@@ -2006,10 +1590,6 @@ body{
     height:85px;
   }
 
-  .conejita{
-    transform:scale(.9);
-  }
-
   .cocodrilo-distancia{
     font-size:58px;
   }
@@ -2017,7 +1597,6 @@ body{
   .ruta-corazon{
     width:340px;
     height:240px;
-
     left:7%;
     top:205px;
   }
@@ -2026,26 +1605,6 @@ body{
     top:300px;
     font-size:14px;
     white-space:nowrap;
-  }
-
-  .brillito1{
-    top:270px;
-    left:45%;
-  }
-
-  .brillito2{
-    top:325px;
-    left:35%;
-  }
-
-  .brillito3{
-    top:255px;
-    left:60%;
-  }
-
-  .brillito4{
-    top:370px;
-    left:48%;
   }
 
   .frase-mapa{
@@ -2073,20 +1632,8 @@ body{
     right:5%;
   }
 
-  .distancia-frase-final{
-    font-size:20px;
-  }
-
-  .distancia-frase-final strong{
-    font-size:23px;
-  }
-
   .yugioh-titulo{
     font-size:34px;
-  }
-
-  .yugioh-subtitulo{
-    font-size:17px;
   }
 
   .carta-holografica{
@@ -2101,10 +1648,6 @@ body{
     font-size:18px;
   }
 
-  .carta-nombre small{
-    font-size:10px;
-  }
-
   .frase-ygo{
     padding:19px;
     font-size:16px;
@@ -2114,10 +1657,35 @@ body{
     font-size:19px;
   }
 
-  .yugioh-final strong{
-    font-size:23px;
+  .fotos{
+    grid-template-columns:1fr;
   }
 
+}
+
+/* =====================================================
+   ANIMACIÓN FINAL
+===================================================== */
+
+.corazones-finales{
+  font-size:38px;
+  letter-spacing:8px;
+  margin:25px 0;
+
+  animation:
+    aparecerCorazones 2s ease-in-out infinite alternate;
+}
+
+@keyframes aparecerCorazones{
+  from{
+    opacity:.45;
+    transform:scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.05);
+  }
 }
 
 </style>
@@ -2127,9 +1695,9 @@ body{
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      PORTADA
-========================================= -->
+===================================================== -->
 
 <section id="inicio">
 
@@ -2165,9 +1733,9 @@ body{
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      CARTA
-========================================= -->
+===================================================== -->
 
 <section id="carta">
 
@@ -2178,7 +1746,6 @@ body{
   <span class="estrella-carta" style="top:50%;left:7%"></span>
   <span class="estrella-carta" style="top:65%;left:15%"></span>
   <span class="estrella-carta" style="top:78%;left:88%"></span>
-  <span class="estrella-carta" style="top:90%;left:45%"></span>
 
   <div class="contenido-carta">
 
@@ -2235,9 +1802,9 @@ body{
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      50 ESTRELLAS
-========================================= -->
+===================================================== -->
 
 <section id="razones">
 
@@ -2258,101 +1825,53 @@ body{
     <div class="estrellas-razones">
 
       <button class="estrella-razon" data-razon="Porque contigo hasta una noche sencilla puede convertirse en un recuerdo precioso.">★</button>
-
       <button class="estrella-razon" data-razon="Porque tu sonrisa tiene una forma muy especial de alegrarme el día.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta escuchar todo lo que tienes para contarme.">★</button>
-
       <button class="estrella-razon" data-razon="Porque nuestras conversaciones hacen que el tiempo pase demasiado rápido.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo las noches tienen otro significado.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me haces sonreír incluso sin darte cuenta.">★</button>
-
       <button class="estrella-razon" data-razon="Porque cada recuerdo contigo tiene un lugar especial en mi corazón.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta la tranquilidad que siento cuando estoy contigo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque haces que los pequeños momentos importen.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo puedo ser yo misma.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta descubrir nuevas cosas de ti.">★</button>
-
       <button class="estrella-razon" data-razon="Porque tienes una manera única de hacerme sentir especial.">★</button>
-
       <button class="estrella-razon" data-razon="Porque nuestras risas son de mis sonidos favoritos.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta imaginar todas las historias que todavía nos faltan por vivir.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo incluso el silencio puede sentirse bonito.">★</button>
-
       <button class="estrella-razon" data-razon="Porque cada cita nocturna tiene algo que quiero guardar para siempre.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me haces apreciar los pequeños detalles.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta cómo eres cuando estás feliz.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me haces querer crear más recuerdos contigo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque hay momentos contigo que quisiera guardar en una cajita.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta la persona que soy cuando estoy contigo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque haces que esperar el próximo encuentro valga la pena.">★</button>
-
       <button class="estrella-razon" data-razon="Porque tu existencia merece ser celebrada.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta compartir mis pensamientos contigo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo siempre hay algo nuevo que descubrir.">★</button>
-
       <button class="estrella-razon" data-razon="Porque nuestros recuerdos son pequeñas luces que puedo volver a mirar.">★</button>
-
       <button class="estrella-razon" data-razon="Porque una conversación contigo puede convertirse en horas sin darnos cuenta.">★</button>
-
       <button class="estrella-razon" data-razon="Porque haces que una noche cualquiera pueda sentirse extraordinaria.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta conocer tus sueños.">★</button>
-
       <button class="estrella-razon" data-razon="Porque quiero seguir conociendo cada pequeña parte de ti.">★</button>
-
       <button class="estrella-razon" data-razon="Porque tu forma de ser tiene algo que me atrae muchísimo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta cuando nos reímos por cualquier tontería.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo los momentos simples se convierten en historias.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta sentir que estamos construyendo algo bonito.">★</button>
-
       <button class="estrella-razon" data-razon="Porque tu cumpleaños es una oportunidad para celebrar que llegaste al mundo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me encanta la magia que tienen nuestras noches.">★</button>
-
       <button class="estrella-razon" data-razon="Porque hay miradas que dicen más que muchas palabras.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me haces tener ganas de vivir más momentos especiales.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta imaginar todos los lugares que todavía podríamos conocer juntos.">★</button>
-
       <button class="estrella-razon" data-razon="Porque cada nuevo recuerdo contigo es otra estrella en nuestro cielo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque nuestras historias se van escribiendo poquito a poquito.">★</button>
-
       <button class="estrella-razon" data-razon="Porque quiero seguir compartiendo noches, risas y conversaciones contigo.">★</button>
-
       <button class="estrella-razon" data-razon="Porque contigo todavía quedan muchísimas aventuras por vivir.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me gusta tener recuerdos que llevan tu nombre.">★</button>
-
       <button class="estrella-razon" data-razon="Porque haces que quiera guardar cada pequeño detalle.">★</button>
-
       <button class="estrella-razon" data-razon="Porque todavía tenemos muchísimo por descubrir.">★</button>
-
       <button class="estrella-razon" data-razon="Porque quiero que esta sea solamente una de muchas noches especiales.">★</button>
-
       <button class="estrella-razon" data-razon="Porque me haces ilusionarme con el futuro.">★</button>
-
       <button class="estrella-razon" data-razon="Porque simplemente me encanta que seas tú. ❤️">★</button>
 
     </div>
@@ -2365,7 +1884,6 @@ body{
 
   </div>
 
-
   <div id="mensaje-razon">
 
     <div class="estrella-grande">
@@ -2373,8 +1891,6 @@ body{
     </div>
 
     <p id="texto-razon"></p>
-
-    <br>
 
     <button class="boton" id="cerrarRazon">
       Cerrar
@@ -2385,9 +1901,9 @@ body{
 </section>
 
 
-<!-- =========================================
-     CARTA PARA COCO
-========================================= -->
+<!-- =====================================================
+     CARTA COCO
+===================================================== -->
 
 <section id="carta-coco">
 
@@ -2447,8 +1963,8 @@ body{
       Mi pequeño Coco...
     </p>
 
-    <button class="boton" id="irDistancia">
-      🌍 Nuestra distancia
+    <button class="boton" id="irJuego">
+      🎮 Tengo algo para ti
     </button>
 
   </div>
@@ -2456,9 +1972,90 @@ body{
 </section>
 
 
-<!-- =========================================
-     DOS LUGARES, UN MISMO CORAZÓN
-========================================= -->
+<!-- =====================================================
+     JUEGO INTERACTIVO
+===================================================== -->
+
+<section id="juego">
+
+  <span class="estrella-juego" style="top:8%;left:10%"></span>
+  <span class="estrella-juego" style="top:16%;left:25%"></span>
+  <span class="estrella-juego" style="top:12%;left:70%"></span>
+  <span class="estrella-juego" style="top:27%;left:90%"></span>
+  <span class="estrella-juego" style="top:75%;left:8%"></span>
+  <span class="estrella-juego" style="top:85%;left:80%"></span>
+
+  <div class="juego-contenido">
+
+    <div class="juego-corazon">
+      💜
+    </div>
+
+    <h2 class="juego-titulo">
+      Un pequeño juego para ti 🎮
+    </h2>
+
+    <p class="juego-subtitulo">
+      A ver cuánto recuerdas de nuestra pequeña historia...
+    </p>
+
+    <div class="progreso-juego">
+      <div id="barraProgreso"></div>
+    </div>
+
+    <div id="pregunta-container">
+
+      <div class="pregunta-card">
+
+        <div class="numero-pregunta" id="numeroPregunta">
+          Pregunta 1
+        </div>
+
+        <div id="pregunta">
+          ...
+        </div>
+
+        <div class="opciones" id="opciones"></div>
+
+        <div id="respuesta-juego"></div>
+
+        <button
+          class="boton"
+          id="siguientePregunta"
+        >
+          Siguiente ❤️
+        </button>
+
+      </div>
+
+    </div>
+
+    <div id="resultado-juego">
+
+      <div class="corazones-resultado">
+        ❤️ 💜 ❤️
+      </div>
+
+      <h3>
+        ¡Llegaste al final! ✨
+      </h3>
+
+      <p id="textoResultado"></p>
+
+      <button class="boton" id="irDistancia">
+        🌍 Continuar nuestro viaje
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISTANCIA
+===================================================== -->
 
 <section id="distancia">
 
@@ -2467,11 +2064,9 @@ body{
   <span class="estrella-distancia" style="top:7%;left:45%"></span>
   <span class="estrella-distancia" style="top:19%;left:72%"></span>
   <span class="estrella-distancia" style="top:11%;left:91%"></span>
-
   <span class="estrella-distancia" style="top:36%;left:5%"></span>
   <span class="estrella-distancia" style="top:42%;left:17%"></span>
   <span class="estrella-distancia" style="top:47%;left:87%"></span>
-
   <span class="estrella-distancia" style="top:67%;left:10%"></span>
   <span class="estrella-distancia" style="top:76%;left:26%"></span>
   <span class="estrella-distancia" style="top:70%;left:75%"></span>
@@ -2479,7 +2074,6 @@ body{
 
   <div class="nube-distancia nube-d1"></div>
   <div class="nube-distancia nube-d2"></div>
-
 
   <div class="distancia-contenido">
 
@@ -2490,7 +2084,6 @@ body{
     <p class="distancia-subtitulo">
       Porque estar lejos no significa estar separados.
     </p>
-
 
     <div class="mapa-card">
 
@@ -2506,7 +2099,6 @@ body{
         <div class="continente australia"></div>
 
       </div>
-
 
       <div class="lugar lugar-coco">
 
@@ -2524,7 +2116,6 @@ body{
 
       </div>
 
-
       <div class="lugar lugar-maria">
 
         <div class="personaje">
@@ -2539,12 +2130,10 @@ body{
 
       </div>
 
-
       <svg
         class="ruta-corazon"
         viewBox="0 0 520 250"
         preserveAspectRatio="none"
-        aria-hidden="true"
       >
 
         <path
@@ -2570,54 +2159,31 @@ body{
                475 45"
         />
 
-        <g class="corazon-svg">
+        <text
+          font-size="25"
+          text-anchor="middle"
+          dominant-baseline="middle"
+        >
 
-          <text
-            font-size="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
+          ❤️
+
+          <animateMotion
+            dur="4.8s"
+            repeatCount="indefinite"
+            rotate="auto"
           >
 
-            ❤️
+            <mpath href="#rutaAmor"></mpath>
 
-            <animateMotion
-              dur="4.8s"
-              repeatCount="indefinite"
-              rotate="auto"
-            >
+          </animateMotion>
 
-              <mpath href="#rutaAmor"></mpath>
-
-            </animateMotion>
-
-          </text>
-
-        </g>
+        </text>
 
       </svg>
-
-
-      <div class="brillito-linea brillito1">
-        ✦
-      </div>
-
-      <div class="brillito-linea brillito2">
-        ✧
-      </div>
-
-      <div class="brillito-linea brillito3">
-        ✦
-      </div>
-
-      <div class="brillito-linea brillito4">
-        ✧
-      </div>
-
 
       <div class="kilometros">
         ✈️ ≈ 8.700 km
       </div>
-
 
       <p class="frase-mapa frase-1">
         “La distancia puede medir kilómetros,
@@ -2635,21 +2201,17 @@ body{
       </p>
 
       <p class="frase-mapa frase-4">
-        “Y las ganas de seguir
-        eligiéndonos.”
+        “Y las ganas de seguir eligiéndonos.”
       </p>
 
     </div>
 
-
     <p class="distancia-frase-final">
-
       Separados por kilómetros.
 
       <strong>
         Unidos por elección. ❤️
       </strong>
-
     </p>
 
     <br>
@@ -2663,9 +2225,9 @@ body{
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      CARTA YU-GI-OH!
-========================================= -->
+===================================================== -->
 
 <section id="carta-yugioh">
 
@@ -2674,16 +2236,11 @@ body{
   <span class="yg-estrella" style="top:9%;left:48%"></span>
   <span class="yg-estrella" style="top:16%;left:77%"></span>
   <span class="yg-estrella" style="top:8%;left:93%"></span>
-
   <span class="yg-estrella" style="top:34%;left:5%"></span>
   <span class="yg-estrella" style="top:42%;left:94%"></span>
-
   <span class="yg-estrella" style="top:70%;left:8%"></span>
   <span class="yg-estrella" style="top:78%;left:25%"></span>
   <span class="yg-estrella" style="top:68%;left:90%"></span>
-
-  <span class="yg-estrella" style="top:91%;left:50%"></span>
-
 
   <div class="yugioh-contenido">
 
@@ -2694,7 +2251,6 @@ body{
     <p class="yugioh-subtitulo">
       Porque algunas personas no llegan a tu vida por casualidad...
     </p>
-
 
     <div class="carta-holografica">
 
@@ -2712,16 +2268,14 @@ body{
 
         </div>
 
-
         <div class="carta-ilustracion">
 
           <img
             src="carta-yugioh.png"
-            alt="Carta galáctica de Coco y su fantasmita estelar"
+            alt="Carta galáctica de Coco"
           >
 
         </div>
-
 
         <div class="carta-info">
 
@@ -2752,11 +2306,7 @@ body{
 
             Si uno de los dos se siente débil,
             puedes sacrificar un
-
-            <strong>
-              “Abrazo pendiente”
-            </strong>
-
+            <strong>“Abrazo pendiente”</strong>
             para restaurar toda su felicidad
             cuando ambos vuelvan a encontrarse.
 
@@ -2767,7 +2317,6 @@ body{
             por la distancia.
 
           </div>
-
 
           <div class="carta-stats">
 
@@ -2787,29 +2336,22 @@ body{
 
     </div>
 
-
     <div class="frases-yugioh">
 
       <div class="frase-ygo">
-
         “Prometo invocarte con una sonrisa
         y robarte puntos de vida a base
         de abrazos sorpresa.”
-
       </div>
 
-
       <div class="frase-ygo">
-
         “Si esto fuera un duelo,
         igual tiro todo mi mazo por ti,
         porque prefiero perder cartas
         que perderte a ti.”
-
       </div>
 
     </div>
-
 
     <p class="yugioh-final">
 
@@ -2824,7 +2366,6 @@ body{
 
     </p>
 
-
     <button
       class="boton"
       id="irFotos"
@@ -2837,45 +2378,136 @@ body{
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
+     GALERÍA
+===================================================== -->
+
+<section id="galeria">
+
+  <span class="estrella" style="top:8%;left:10%"></span>
+  <span class="estrella" style="top:15%;left:30%"></span>
+  <span class="estrella" style="top:10%;left:70%"></span>
+  <span class="estrella" style="top:25%;left:90%"></span>
+  <span class="estrella" style="top:70%;left:8%"></span>
+  <span class="estrella" style="top:85%;left:85%"></span>
+
+  <div class="galeria-contenido">
+
+    <h2 class="galeria-titulo">
+      Nuestros recuerdos 📸❤️
+    </h2>
+
+    <p class="galeria-subtitulo">
+      Y aquí es donde guardaremos todas esas pequeñas partes de nuestra historia.
+    </p>
+
+    <div class="fotos">
+
+      <!--
+        AQUÍ VAMOS A PONER LAS FOTOS REALES.
+
+        Ejemplo:
+
+        <div class="foto">
+          <img src="foto1.jpg" alt="Nuestro recuerdo">
+        </div>
+      -->
+
+      <div class="foto">
+        <span>📸</span>
+      </div>
+
+      <div class="foto">
+        <span>🌙</span>
+      </div>
+
+      <div class="foto">
+        <span>❤️</span>
+      </div>
+
+      <div class="foto">
+        <span>✨</span>
+      </div>
+
+    </div>
+
+    <div class="corazones-finales">
+      ❤️ 💜 ❤️
+    </div>
+
+    <p class="final-galeria">
+
+      Y si tuviera que volver a comenzar
+      nuestra historia...
+
+      <br><br>
+
+      <strong>
+        volvería a elegirte. ❤️
+      </strong>
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      JAVASCRIPT
-========================================= -->
+===================================================== -->
 
 <script>
 
-/* =========================================
-   PORTADA → CARTA
-========================================= */
+/* =====================================================
+   FUNCIÓN PARA CAMBIAR DE SECCIÓN
+===================================================== */
+
+function mostrar(seccion){
+
+  document.querySelectorAll(
+    "#inicio,#carta,#razones,#carta-coco,#juego,#distancia,#carta-yugioh,#galeria"
+  ).forEach(function(elemento){
+
+    elemento.style.display="none";
+
+  });
+
+  document.getElementById(seccion).style.display="block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
 
 document.getElementById("entrar").addEventListener("click",function(){
 
-  document.getElementById("inicio").style.display="none";
-
-  document.getElementById("carta").style.display="block";
-
-  window.scrollTo(0,0);
+  mostrar("carta");
 
 });
 
 
-/* =========================================
-   CARTA → 50 ESTRELLAS
-========================================= */
+/* =====================================================
+   CARTA → ESTRELLAS
+===================================================== */
 
 document.getElementById("irRazones").addEventListener("click",function(){
 
-  document.getElementById("carta").style.display="none";
-
-  document.getElementById("razones").style.display="block";
-
-  window.scrollTo(0,0);
+  mostrar("razones");
 
 });
 
 
-/* =========================================
-   ABRIR RAZÓN
-========================================= */
+/* =====================================================
+   RAZONES
+===================================================== */
 
 document.querySelectorAll(".estrella-razon").forEach(function(estrella){
 
@@ -2891,10 +2523,6 @@ document.querySelectorAll(".estrella-razon").forEach(function(estrella){
 });
 
 
-/* =========================================
-   CERRAR RAZÓN
-========================================= */
-
 document.getElementById("cerrarRazon").addEventListener("click",function(){
 
   document.getElementById("mensaje-razon").style.display="none";
@@ -2902,60 +2530,377 @@ document.getElementById("cerrarRazon").addEventListener("click",function(){
 });
 
 
-/* =========================================
-   ESTRELLAS → COCO
-========================================= */
+/* =====================================================
+   ESTRELLAS → CARTA COCO
+===================================================== */
 
 document.getElementById("irCoco").addEventListener("click",function(){
 
-  document.getElementById("razones").style.display="none";
-
-  document.getElementById("carta-coco").style.display="block";
-
-  window.scrollTo(0,0);
+  mostrar("carta-coco");
 
 });
 
 
-/* =========================================
-   COCO → DISTANCIA
-========================================= */
+/* =====================================================
+   CARTA COCO → JUEGO
+===================================================== */
+
+document.getElementById("irJuego").addEventListener("click",function(){
+
+  mostrar("juego");
+
+  iniciarJuego();
+
+});
+
+
+/* =====================================================
+   🎮 PREGUNTAS DEL JUEGO
+===================================================== */
+
+const preguntas = [
+
+  {
+    pregunta:
+      "¿Qué apodo especial tienes en mi corazón?",
+
+    opciones:[
+      "Coco 🐊",
+      "Osito 🧸",
+      "Príncipe 🌙",
+      "Gatito 🐱"
+    ],
+
+    correcta:0,
+
+    mensaje:
+      "¡Exacto! Mi lindo Coco 🐊❤️"
+  },
+
+
+  {
+    pregunta:
+      "¿Qué animalito representa a tu conejita?",
+
+    opciones:[
+      "Un gato 🐱",
+      "Un conejo 🐰",
+      "Un zorro 🦊",
+      "Un panda 🐼"
+    ],
+
+    correcta:1,
+
+    mensaje:
+      "¡Sí! La conejita y el cocodrilo. 🐰🐊"
+  },
+
+
+  {
+    pregunta:
+      "¿Qué hacemos muchas veces durante nuestras noches?",
+
+    opciones:[
+      "Cocinamos juntos 🍳",
+      "Hablamos durante horas 🌙",
+      "Vamos a correr 🏃",
+      "Jugamos fútbol ⚽"
+    ],
+
+    correcta:1,
+
+    mensaje:
+      "Exactamente... nuestras conversaciones que duran horas. ❤️"
+  },
+
+
+  {
+    pregunta:
+      "¿Qué representa nuestro corazón viajando por el mapa?",
+
+    opciones:[
+      "Un viaje de vacaciones ✈️",
+      "La distancia entre nosotros 🌍",
+      "Una búsqueda del tesoro 🗺️",
+      "Una carrera ❤️"
+    ],
+
+    correcta:1,
+
+    mensaje:
+      "La distancia existe, pero no puede medir lo que sentimos. 🌍❤️"
+  },
+
+
+  {
+    pregunta:
+      "Si nuestra historia fuera una carta, ¿qué tendría?",
+
+    opciones:[
+      "ATK 0 / DEF 0",
+      "ATK 100 / DEF 100",
+      "ATK ∞ / DEF ∞",
+      "ATK -∞ / DEF -∞"
+    ],
+
+    correcta:2,
+
+    mensaje:
+      "Obviamente infinito. Porque lo nuestro no se mide con números. ✨"
+  },
+
+
+  {
+    pregunta:
+      "¿Qué quiero seguir creando contigo?",
+
+    opciones:[
+      "Recuerdos ❤️",
+      "Problemas 😂",
+      "Deudas 💸",
+      "Exámenes 📚"
+    ],
+
+    correcta:0,
+
+    mensaje:
+      "Recuerdos, historias, noches y muchísimas aventuras. ❤️"
+  }
+
+];
+
+
+let preguntaActual=0;
+let puntuacion=0;
+let juegoIniciado=false;
+
+
+/* =====================================================
+   INICIAR JUEGO
+===================================================== */
+
+function iniciarJuego(){
+
+  if(juegoIniciado){
+    return;
+  }
+
+  juegoIniciado=true;
+  preguntaActual=0;
+  puntuacion=0;
+
+  document.getElementById("pregunta-container").style.display="block";
+  document.getElementById("resultado-juego").style.display="none";
+
+  mostrarPregunta();
+
+}
+
+
+/* =====================================================
+   MOSTRAR PREGUNTA
+===================================================== */
+
+function mostrarPregunta(){
+
+  const datos=preguntas[preguntaActual];
+
+  document.getElementById("numeroPregunta").textContent=
+    "Pregunta " +
+    (preguntaActual+1) +
+    " de " +
+    preguntas.length;
+
+  document.getElementById("pregunta").textContent=
+    datos.pregunta;
+
+  const opciones=
+    document.getElementById("opciones");
+
+  opciones.innerHTML="";
+
+  document.getElementById("respuesta-juego").textContent="";
+
+  document.getElementById("siguientePregunta").style.display="none";
+
+  datos.opciones.forEach(function(texto,indice){
+
+    const boton=document.createElement("button");
+
+    boton.className="opcion";
+
+    boton.textContent=texto;
+
+    boton.addEventListener("click",function(){
+
+      responder(indice,boton);
+
+    });
+
+    opciones.appendChild(boton);
+
+  });
+
+
+  const progreso=
+    (preguntaActual/preguntas.length)*100;
+
+  document.getElementById("barraProgreso").style.width=
+    progreso+"%";
+
+}
+
+
+/* =====================================================
+   RESPONDER
+===================================================== */
+
+function responder(indice,botonSeleccionado){
+
+  const datos=preguntas[preguntaActual];
+
+  const botones=
+    document.querySelectorAll(".opcion");
+
+  botones.forEach(function(boton){
+    boton.disabled=true;
+  });
+
+
+  if(indice===datos.correcta){
+
+    puntuacion++;
+
+    botonSeleccionado.classList.add("correcta");
+
+    document.getElementById("respuesta-juego").innerHTML=
+      "✨ " + datos.mensaje;
+
+  }else{
+
+    botonSeleccionado.classList.add("incorrecta");
+
+    botones[datos.correcta].classList.add("correcta");
+
+    document.getElementById("respuesta-juego").innerHTML=
+      "💜 Casi... pero esta vez era otra. " +
+      datos.mensaje;
+
+  }
+
+
+  document.getElementById("siguientePregunta").style.display=
+    "inline-block";
+
+}
+
+
+/* =====================================================
+   SIGUIENTE PREGUNTA
+===================================================== */
+
+document.getElementById("siguientePregunta").addEventListener(
+  "click",
+  function(){
+
+    preguntaActual++;
+
+    if(preguntaActual>=preguntas.length){
+
+      terminarJuego();
+
+    }else{
+
+      mostrarPregunta();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   FINAL DEL JUEGO
+===================================================== */
+
+function terminarJuego(){
+
+  document.getElementById("pregunta-container").style.display="none";
+
+  document.getElementById("resultado-juego").style.display="block";
+
+  document.getElementById("barraProgreso").style.width="100%";
+
+
+  let mensaje="";
+
+  if(puntuacion===preguntas.length){
+
+    mensaje=
+      "¡Perfecto! ❤️ " +
+      "Sabía que conocías nuestra historia. " +
+      "Pero hay algo que no podías responder con ninguna pregunta: " +
+      "cuánto te quiero.";
+
+  }else if(puntuacion>=4){
+
+    mensaje=
+      "Muy bien, Coco. 🐊❤️ " +
+      "Conoces bastante bien nuestra pequeña historia. " +
+      "Aunque todavía me quedan muchas cosas que quiero descubrir de ti.";
+
+  }else{
+
+    mensaje=
+      "Creo que tendremos que tener muchas más citas para que puedas estudiar. 😂❤️ " +
+      "Pero no importa la puntuación... " +
+      "sigues teniendo el premio más importante: mi corazón.";
+
+  }
+
+
+  mensaje+=
+    "<br><br>" +
+    "Resultado: " +
+    puntuacion +
+    " / " +
+    preguntas.length;
+
+  document.getElementById("textoResultado").innerHTML=
+    mensaje;
+
+}
+
+
+/* =====================================================
+   JUEGO → DISTANCIA
+===================================================== */
 
 document.getElementById("irDistancia").addEventListener("click",function(){
 
-  document.getElementById("carta-coco").style.display="none";
-
-  document.getElementById("distancia").style.display="block";
-
-  window.scrollTo(0,0);
+  mostrar("distancia");
 
 });
 
 
-/* =========================================
-   DISTANCIA → CARTA YU-GI-OH!
-========================================= */
+/* =====================================================
+   DISTANCIA → YU-GI-OH!
+===================================================== */
 
 document.getElementById("finActual").addEventListener("click",function(){
 
-  document.getElementById("distancia").style.display="none";
-
-  document.getElementById("carta-yugioh").style.display="block";
-
-  window.scrollTo(0,0);
+  mostrar("carta-yugioh");
 
 });
 
 
-/* =========================================
-   CARTA YU-GI-OH! → FOTOS
-========================================= */
+/* =====================================================
+   YU-GI-OH! → GALERÍA
+===================================================== */
 
 document.getElementById("irFotos").addEventListener("click",function(){
 
-  alert(
-    "Nuestra siguiente carta está llena de recuerdos... 📸❤️"
-  );
+  mostrar("galeria");
 
 });
 
