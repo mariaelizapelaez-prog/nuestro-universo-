@@ -3,506 +3,1693 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestro pequeño universo</title>
+
+<title>Nuestro pequeño universo ❤️</title>
 
 <style>
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background:
-        radial-gradient(circle at 50% 20%, #35145c 0%, #160c2b 35%, #07040f 75%);
+html {
+    scroll-behavior: smooth;
 }
 
-/* ESTRELLAS */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080410;
+    color: white;
+    overflow-x: hidden;
+}
 
-body::before {
+button {
+    font-family: inherit;
+}
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+body::before,
+body::after {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
+    z-index: 999;
+}
+
+body::before {
     background-image:
         radial-gradient(circle, white 1px, transparent 1px),
-        radial-gradient(circle, #b99cff 1px, transparent 1px);
-    background-size: 70px 70px, 110px 110px;
+        radial-gradient(circle, #c8a7ff 1px, transparent 1px);
+    background-size: 75px 75px, 120px 120px;
     background-position: 10px 20px, 40px 60px;
-    opacity: .35;
-    animation: stars 12s linear infinite;
+    opacity: .28;
+    animation: starsMove 18s linear infinite;
 }
 
-@keyframes stars {
-    from { transform: translateY(0); }
-    to { transform: translateY(70px); }
+body::after {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(116, 52, 190, .2), transparent 45%);
 }
 
-/* PANTALLA */
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
 
-.screen {
-    width: 100%;
+    to {
+        transform: translateY(75px);
+    }
+}
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+section {
     min-height: 100vh;
-    padding: 35px 20px 80px;
+    padding: 70px 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.header {
+.section-content {
+    width: min(950px, 95%);
     text-align: center;
+}
+
+.section-title {
+    font-size: clamp(30px, 7vw, 55px);
+    margin-bottom: 18px;
+    text-shadow:
+        0 0 10px #9b5de5,
+        0 0 30px rgba(155, 93, 229, .7);
+}
+
+.section-subtitle {
+    color: #d3c5df;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+#inicio {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #48206d 0%,
+            #1b0d32 35%,
+            #080410 75%
+        );
+
+    text-align: center;
+}
+
+.moon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    background: #eee4ff;
+
+    box-shadow:
+        0 0 20px #fff,
+        0 0 60px rgba(208, 171, 255, .8);
+
+    margin: 0 auto 35px;
+
+    position: relative;
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: #160b28;
+
+    left: 35px;
+    top: -10px;
+}
+
+.intro-small {
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: #bda1e5;
+    margin-bottom: 15px;
+}
+
+.intro-title {
+    font-size: clamp(38px, 9vw, 75px);
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 0 15px #a65cff,
+        0 0 45px rgba(166, 92, 255, .7);
+
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    max-width: 600px;
+    margin: 0 auto 35px;
+
+    color: #d9cee2;
+    line-height: 1.7;
+}
+
+.main-button {
+    padding: 15px 35px;
+
+    border: 1px solid #c694ff;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7138a8,
+            #a25de0
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(174, 103, 242, .7);
+
+    transition: .3s;
+}
+
+.main-button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(174, 103, 242, 1);
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+#carta {
+    background:
+        radial-gradient(
+            circle at center,
+            #241139,
+            #0b0613 70%
+        );
+}
+
+.letter {
     max-width: 700px;
+
+    margin: auto;
+
+    padding: 45px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+
+    border:
+        1px solid rgba(201, 157, 255, .35);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 50px rgba(121, 55, 175, .25);
+
+    text-align: left;
+}
+
+.letter h3 {
+    color: #e4c8ff;
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.letter p {
+    color: #ded3e6;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    color: #c697ff !important;
+    margin-top: 30px;
+}
+
+/* =========================================================
+   50 RAZONES
+========================================================= */
+
+#razones {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #30154c,
+            #080410 70%
+        );
+}
+
+.reasons-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(145px, 1fr));
+
+    gap: 14px;
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    padding: 10px;
+}
+
+.reason {
+    min-height: 105px;
+
+    padding: 18px 10px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(136, 72, 188, .25),
+            rgba(40, 18, 63, .6)
+        );
+
+    border:
+        1px solid rgba(185, 132, 231, .3);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #eee2f6;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    transition: .3s;
+
+    cursor: default;
+}
+
+.reason:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    border-color: #c999ff;
+
+    box-shadow:
+        0 0 20px rgba(170, 96, 240, .4);
+}
+
+.reason-number {
+    display: block;
+
+    color: #bd83f3;
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   VIDEOJUEGO
+========================================================= */
+
+#aventura {
+    background:
+        radial-gradient(
+            circle at center,
+            #271039,
+            #06030b 75%
+        );
+
+    flex-direction: column;
+}
+
+.game-intro {
+    text-align: center;
     margin-bottom: 25px;
 }
 
-.small-title {
-    font-size: 12px;
+.game-label {
+    color: #a77be2;
     letter-spacing: 4px;
-    color: #a994ff;
-    margin-bottom: 12px;
+    font-size: 11px;
+    margin-bottom: 10px;
 }
 
-h1 {
-    font-size: clamp(28px, 7vw, 52px);
+.game-title {
+    font-size: clamp(30px, 7vw, 55px);
+
     text-shadow:
-        0 0 10px #9d68ff,
-        0 0 25px #673ab7;
+        0 0 15px #9c55e7;
 }
 
-.subtitle {
+.game-description {
+    color: #c7bad3;
     margin-top: 12px;
-    color: #cfc4e8;
-    font-size: 15px;
-    line-height: 1.6;
 }
 
-/* MAPA */
+/* =========================================================
+   MAPA
+========================================================= */
 
-.game-area {
-    position: relative;
+.game-map {
     width: min(900px, 96vw);
     height: 620px;
-    margin-top: 10px;
-    border: 2px solid rgba(177, 123, 255, .45);
-    border-radius: 25px;
-    background:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-        rgba(5,3,15,.65);
-    background-size: 35px 35px;
-    box-shadow:
-        0 0 40px rgba(117, 61, 220, .25),
-        inset 0 0 50px rgba(0,0,0,.6);
+
+    position: relative;
+
     overflow: hidden;
+
+    border-radius: 25px;
+
+    border:
+        2px solid rgba(171, 109, 234, .45);
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        #08050f;
+
+    background-size: 35px 35px;
+
+    box-shadow:
+        inset 0 0 70px rgba(0,0,0,.8),
+        0 0 50px rgba(112, 53, 172, .3);
 }
 
 /* CAMINO */
 
 .path {
     position: absolute;
-    left: 12%;
+
+    left: 10%;
     top: 50%;
-    width: 76%;
+
+    width: 80%;
     height: 8px;
-    background: #7650b7;
-    box-shadow: 0 0 15px #8f5cff;
+
     transform: translateY(-50%);
+
+    background: #7749ad;
+
     border-radius: 20px;
+
+    box-shadow:
+        0 0 12px #9b5de5,
+        0 0 25px rgba(155,93,229,.5);
 }
 
-.path::before,
-.path::after {
-    content: "";
+.path-vertical {
     position: absolute;
+
     width: 8px;
-    height: 190px;
-    background: #7650b7;
-    box-shadow: 0 0 15px #8f5cff;
+    height: 230px;
+
+    background: #7749ad;
+
     border-radius: 20px;
+
+    box-shadow:
+        0 0 12px #9b5de5;
 }
 
-.path::before {
-    left: 20%;
-    top: -95px;
+.vertical-left {
+    left: 28%;
+    top: 18%;
 }
 
-.path::after {
-    right: 20%;
-    top: -95px;
+.vertical-right {
+    right: 28%;
+    top: 50%;
 }
 
-/* PAREDES DEL LABERINTO */
+/* PAREDES */
 
 .wall {
     position: absolute;
-    background: linear-gradient(90deg, #211235, #47246c, #211235);
-    border: 1px solid #71449c;
-    box-shadow: 0 0 10px rgba(142, 76, 210, .5);
+
+    background:
+        linear-gradient(
+            90deg,
+            #241132,
+            #54287c,
+            #241132
+        );
+
+    border:
+        1px solid #814ca8;
+
     border-radius: 5px;
+
+    box-shadow:
+        0 0 12px rgba(139, 73, 196, .45);
 }
 
-.wall.one {
-    width: 150px;
+.wall1 {
+    width: 140px;
     height: 18px;
     left: 5%;
     top: 20%;
 }
 
-.wall.two {
+.wall2 {
     width: 18px;
     height: 120px;
-    left: 30%;
+    left: 45%;
     top: 8%;
 }
 
-.wall.three {
-    width: 150px;
+.wall3 {
+    width: 140px;
     height: 18px;
     right: 5%;
-    top: 22%;
+    top: 20%;
 }
 
-.wall.four {
+.wall4 {
     width: 18px;
     height: 120px;
-    right: 30%;
+    right: 45%;
     bottom: 8%;
 }
 
-.wall.five {
-    width: 140px;
+.wall5 {
+    width: 130px;
     height: 18px;
     left: 10%;
     bottom: 17%;
 }
 
-.wall.six {
-    width: 140px;
+.wall6 {
+    width: 130px;
     height: 18px;
     right: 10%;
     bottom: 17%;
 }
 
-/* PUNTOS */
+/* =========================================================
+   PUNTOS DEL MAPA
+========================================================= */
 
-.point {
+.map-point {
     position: absolute;
-    width: 64px;
-    height: 64px;
+
+    width: 62px;
+    height: 62px;
+
     border-radius: 50%;
-    border: 2px solid #d6bcff;
-    background: radial-gradient(circle, #a765ff, #4b1f76);
-    box-shadow:
-        0 0 10px #a765ff,
-        0 0 25px rgba(167,101,255,.7);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
-    cursor: pointer;
-    transition: .3s;
-    z-index: 5;
-}
 
-.point:hover {
-    transform: scale(1.18);
+    background:
+        radial-gradient(
+            circle,
+            #a85ee9,
+            #461a6b
+        );
+
+    border:
+        2px solid #d8b7ff;
+
     box-shadow:
-        0 0 15px white,
-        0 0 35px #b06cff;
+        0 0 12px #a35de1,
+        0 0 30px rgba(163,93,225,.65);
+
+    cursor: pointer;
+
+    font-size: 23px;
+
+    transition: .3s;
+
+    z-index: 10;
 }
 
-.point span {
+.map-point:hover {
+    transform: scale(1.18);
+
+    box-shadow:
+        0 0 20px white,
+        0 0 40px #a65cff;
+}
+
+.map-label {
     position: absolute;
-    top: 72px;
+
+    top: 70px;
+
     white-space: nowrap;
-    font-size: 11px;
-    color: #d9cced;
-    letter-spacing: 1px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #d9c8e8;
 }
 
-.start {
-    left: 6%;
+/* POSICIONES */
+
+.point-start {
+    left: 5%;
     top: 45%;
 }
 
-.memory1 {
-    left: 25%;
-    top: 18%;
+.point-one {
+    left: 24%;
+    top: 15%;
 }
 
-.memory2 {
+.point-two {
     left: 43%;
     top: 45%;
 }
 
-.memory3 {
-    right: 25%;
-    top: 18%;
+.point-three {
+    right: 24%;
+    top: 15%;
 }
 
-.memory4 {
-    right: 6%;
+.point-four {
+    right: 5%;
     top: 45%;
 }
 
-/* REGALO FINAL */
+/* =========================================================
+   REGALO
+========================================================= */
 
-.gift {
+.final-gift {
     position: absolute;
+
     left: 50%;
     bottom: 7%;
+
     transform: translateX(-50%);
+
     width: 90px;
-    height: 80px;
+    height: 90px;
+
     cursor: pointer;
-    z-index: 6;
+
+    z-index: 15;
 }
 
-.gift-box {
+.gift-body {
     position: absolute;
+
     bottom: 0;
+
     width: 90px;
     height: 60px;
-    background: linear-gradient(135deg, #5b267e, #9c4dcc);
-    border: 2px solid #d9a8ff;
-    box-shadow: 0 0 25px #9b4ddd;
+
+    background:
+        linear-gradient(
+            135deg,
+            #65278d,
+            #a44cd0
+        );
+
+    border:
+        2px solid #dfb7ff;
+
     border-radius: 5px;
+
+    box-shadow:
+        0 0 25px #a64bd7;
 }
 
-.gift-box::before {
+.gift-body::before {
     content: "";
+
     position: absolute;
+
     left: 39px;
+
     width: 12px;
     height: 60px;
-    background: #e6c5ff;
+
+    background: #ebcaff;
 }
 
 .gift-lid {
     position: absolute;
-    top: 5px;
+
+    top: 12px;
     left: -5px;
+
     width: 100px;
     height: 18px;
-    background: #b75ee5;
-    border: 2px solid #e3b8ff;
-    border-radius: 4px;
-}
 
-.gift:hover {
-    animation: giftShake .5s infinite;
-}
+    background: #b958dc;
 
-@keyframes giftShake {
-    0%,100% { transform: translateX(-50%) rotate(0); }
-    25% { transform: translateX(-50%) rotate(-3deg); }
-    75% { transform: translateX(-50%) rotate(3deg); }
+    border:
+        2px solid #e2b5ff;
+
+    border-radius: 5px;
 }
 
 .gift-label {
     position: absolute;
-    top: -28px;
+
+    top: -25px;
+
     left: 50%;
+
     transform: translateX(-50%);
+
     white-space: nowrap;
-    font-size: 11px;
-    color: #e5d5ff;
+
+    color: #e5d4f5;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
 }
 
-/* VENTANA */
+.final-gift:hover {
+    animation: shakeGift .45s infinite;
+}
+
+@keyframes shakeGift {
+    0%,100% {
+        transform: translateX(-50%) rotate(0);
+    }
+
+    25% {
+        transform: translateX(-50%) rotate(-4deg);
+    }
+
+    75% {
+        transform: translateX(-50%) rotate(4deg);
+    }
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
 
 .modal {
     position: fixed;
+
     inset: 0;
-    background: rgba(3,1,10,.82);
-    backdrop-filter: blur(7px);
+
     display: none;
+
     align-items: center;
     justify-content: center;
+
     padding: 20px;
-    z-index: 50;
+
+    background:
+        rgba(3,1,9,.85);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 500;
 }
 
 .modal.active {
     display: flex;
 }
 
-.card {
-    width: min(520px, 94vw);
+.modal-card {
+    width: min(530px, 94vw);
+
     padding: 35px 25px;
+
     text-align: center;
-    border-radius: 22px;
-    border: 1px solid #9d69d8;
-    background: linear-gradient(145deg, #160d25, #291344);
-    box-shadow: 0 0 45px rgba(151, 79, 225, .5);
-    animation: appear .4s ease;
+
+    border-radius: 25px;
+
+    border:
+        1px solid #a76ad3;
+
+    background:
+        linear-gradient(
+            145deg,
+            #150b23,
+            #2a1241
+        );
+
+    box-shadow:
+        0 0 50px rgba(156,82,213,.5);
+
+    animation: modalAppear .35s ease;
 }
 
-@keyframes appear {
+@keyframes modalAppear {
     from {
         opacity: 0;
-        transform: scale(.85);
+        transform: scale(.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-.card h2 {
-    color: #e4c8ff;
-    margin-bottom: 18px;
+.modal-card h2 {
+    color: #e4c9ff;
+    margin-bottom: 20px;
 }
 
-.card p {
-    color: #d4c9df;
-    line-height: 1.7;
+.modal-card p {
+    color: #d4c8df;
+    line-height: 1.8;
 }
 
-.close {
+.modal-button {
     margin-top: 25px;
+
     padding: 11px 25px;
+
     border: none;
+
     border-radius: 30px;
-    background: #8c4bd1;
+
+    background: #8d4bc9;
+
     color: white;
+
     cursor: pointer;
-    font-weight: bold;
 }
 
-.close:hover {
-    background: #aa65ed;
+/* =========================================================
+   FINAL
+========================================================= */
+
+#final {
+    background:
+        radial-gradient(
+            circle at center,
+            #42145e,
+            #080410 70%
+        );
+
+    text-align: center;
 }
 
-/* MOVIL */
+.final-heart {
+    font-size: 80px;
 
-@media (max-width: 600px) {
-    .game-area {
+    animation:
+        heartBeat 1.4s infinite;
+
+    margin-bottom: 20px;
+}
+
+@keyframes heartBeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final-text {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d9cce4;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   MOVIL
+========================================================= */
+
+@media(max-width:600px) {
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .game-map {
         height: 570px;
     }
 
-    .point {
-        width: 54px;
-        height: 54px;
-        font-size: 20px;
+    .map-point {
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
     }
 
-    .wall.one,
-    .wall.three,
-    .wall.five,
-    .wall.six {
-        width: 90px;
+    .map-label {
+        top: 60px;
+        font-size: 7px;
     }
 
-    .path {
-        width: 80%;
+    .wall1,
+    .wall3,
+    .wall5,
+    .wall6 {
+        width: 85px;
     }
 
-    .point span {
-        font-size: 9px;
+    .reasons-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 }
 </style>
 </head>
 
+
 <body>
 
-<div class="screen">
+<!-- =====================================================
+     INICIO
+===================================================== -->
 
-    <div class="header">
-        <div class="small-title">PLAYER 01 • BIRTHDAY QUEST</div>
+<section id="inicio">
 
-        <h1>Nuestro pequeño universo 🌙</h1>
+    <div class="section-content">
 
-        <p class="subtitle">
-            Hay algo especial esperándote al final...
-            pero primero tendrás que encontrar el camino. ✨
+        <div class="moon"></div>
+
+        <div class="intro-small">
+            PARA TI ✦
+        </div>
+
+        <h1 class="intro-title">
+            Nuestro pequeño universo
+        </h1>
+
+        <p class="intro-text">
+            Hay algo que preparé especialmente para ti...
+            pero no quería simplemente entregártelo.
+            Quiero que lo descubras poco a poco. ❤️
         </p>
+
+        <button
+            class="main-button"
+            onclick="goTo('carta')">
+
+            ENTRAR ❤️
+
+        </button>
+
     </div>
 
-    <div class="game-area">
+</section>
 
-        <div class="path"></div>
 
-        <div class="wall one"></div>
-        <div class="wall two"></div>
-        <div class="wall three"></div>
-        <div class="wall four"></div>
-        <div class="wall five"></div>
-        <div class="wall six"></div>
+<!-- =====================================================
+     CARTA
+===================================================== -->
 
-        <!-- INICIO -->
+<section id="carta">
 
-        <div class="point start" onclick="openMemory('Comienza aquí ✨', 'Tu aventura empieza justo aquí. No tengas prisa... quiero que descubras cada pequeño secreto.')">
-            ▶
-            <span>COMENZAR</span>
+    <div class="section-content">
+
+        <h2 class="section-title">
+            Una pequeña carta 💌
+        </h2>
+
+        <p class="section-subtitle">
+            Antes de comenzar la aventura,
+            quería decirte algo.
+        </p>
+
+        <div class="letter">
+
+            <h3>
+                Para ti, cumpleañero ❤️
+            </h3>
+
+            <p>
+                No sabía muy bien cómo regalarte algo que
+                realmente pudiera representar todo lo que
+                significas para mí.
+            </p>
+
+            <p>
+                Así que pensé que, en lugar de comprarte
+                simplemente un regalo, podía construirte
+                un pequeño lugar que fuera solamente
+                nuestro.
+            </p>
+
+            <p>
+                Aquí hay recuerdos, palabras, pequeñas
+                sorpresas y muchas cosas que me hacen
+                pensar en ti.
+            </p>
+
+            <p>
+                Y aunque todavía quedan muchas cosas por
+                descubrir, espero que disfrutes el camino
+                tanto como yo disfruté preparándolo.
+            </p>
+
+            <p class="signature">
+                Con mucho cariño ❤️
+            </p>
+
         </div>
 
-        <!-- RECUERDO 1 -->
+        <br>
 
-        <div class="point memory1" onclick="openMemory('Nivel 01 ❤️', 'Aquí aparecerá uno de nuestros primeros recuerdos. Podemos poner una foto, una fecha o una pequeña historia de nosotros.')">
+        <button
+            class="main-button"
+            onclick="goTo('razones')">
+
+            CONTINUAR ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     50 RAZONES
+===================================================== -->
+
+<section id="razones">
+
+    <div class="section-content">
+
+        <h2 class="section-title">
+            50 razones ❤️
+        </h2>
+
+        <p class="section-subtitle">
+            Porque una sola razón nunca habría sido
+            suficiente.
+        </p>
+
+        <div class="reasons-grid">
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">01</span>
+                    Porque me haces sonreír.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">02</span>
+                    Porque contigo puedo ser yo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">03</span>
+                    Porque me encanta hablar contigo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">04</span>
+                    Porque siempre consigues sorprenderme.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">05</span>
+                    Porque me haces sentir especial.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">06</span>
+                    Porque me gusta tu forma de ser.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">07</span>
+                    Porque nuestras conversaciones pueden durar horas.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">08</span>
+                    Porque tienes una manera muy bonita de tratarme.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">09</span>
+                    Porque me haces sentir escuchada.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">10</span>
+                    Porque contigo todo se siente más divertido.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">11</span>
+                    Porque me gusta tu sentido del humor.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">12</span>
+                    Porque eres una persona agradable.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">13</span>
+                    Porque confío en ti.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">14</span>
+                    Porque me encanta conocerte cada día más.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">15</span>
+                    Porque me haces ilusión.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">16</span>
+                    Porque me gusta cómo pensamos juntos.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">17</span>
+                    Porque tienes algo que me atrae muchísimo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">18</span>
+                    Porque me gusta compartir cosas contigo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">19</span>
+                    Porque haces especiales los momentos simples.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">20</span>
+                    Porque me gusta tu forma de hablar conmigo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">21</span>
+                    Porque me haces sentir querida.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">22</span>
+                    Porque tenemos una comunicación bonita.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">23</span>
+                    Porque me encanta escucharte.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">24</span>
+                    Porque siempre hay algo de qué hablar.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">25</span>
+                    Porque me gusta tu personalidad.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">26</span>
+                    Porque me haces sentir cómoda.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">27</span>
+                    Porque me gusta cuando te emocionas con algo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">28</span>
+                    Porque me gusta descubrir tus gustos.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">29</span>
+                    Porque tienes detalles que adoro.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">30</span>
+                    Porque contigo puedo reírme de cualquier tontería.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">31</span>
+                    Porque haces que quiera seguir conociéndote.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">32</span>
+                    Porque me encanta nuestra complicidad.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">33</span>
+                    Porque me gusta nuestra forma de entendernos.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">34</span>
+                    Porque eres tú.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">35</span>
+                    Porque me haces sentir afortunada.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">36</span>
+                    Porque me gusta pensar en nosotros.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">37</span>
+                    Porque me encanta tu manera de expresarte.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">38</span>
+                    Porque siempre consigues sacarme una sonrisa.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">39</span>
+                    Porque contigo puedo hablar de cualquier cosa.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">40</span>
+                    Porque me encanta lo que estamos construyendo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">41</span>
+                    Porque me gusta tenerte en mi vida.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">42</span>
+                    Porque eres importante para mí.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">43</span>
+                    Porque me gusta compartir mis días contigo.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">44</span>
+                    Porque me haces ilusión.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">45</span>
+                    Porque me gusta cómo nos llevamos.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">46</span>
+                    Porque contigo siento una conexión especial.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">47</span>
+                    Porque me encanta nuestra historia.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">48</span>
+                    Porque todavía nos quedan muchísimas cosas por vivir.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">49</span>
+                    Porque elegiría volver a conocerte.
+                </div>
+            </div>
+
+            <div class="reason">
+                <div>
+                    <span class="reason-number">50</span>
+                    Porque simplemente me encantas. ❤️
+                </div>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <button
+            class="main-button"
+            onclick="goTo('aventura')">
+
+            SIGUIENTE NIVEL 🎮
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AVENTURA RETRO
+===================================================== -->
+
+<section id="aventura">
+
+    <div class="section-content">
+
+        <div class="game-intro">
+
+            <div class="game-label">
+                PLAYER 01 • SPECIAL QUEST
+            </div>
+
+            <h2 class="game-title">
+                La aventura continúa 🎮
+            </h2>
+
+            <p class="game-description">
+                Hay algo escondido al final del mapa...
+                tendrás que encontrar el camino. ✨
+            </p>
+
+        </div>
+
+
+        <div class="game-map">
+
+            <!-- CAMINO -->
+
+            <div class="path"></div>
+
+            <div class="path-vertical vertical-left"></div>
+
+            <div class="path-vertical vertical-right"></div>
+
+
+            <!-- PAREDES -->
+
+            <div class="wall wall1"></div>
+            <div class="wall wall2"></div>
+            <div class="wall wall3"></div>
+            <div class="wall wall4"></div>
+            <div class="wall wall5"></div>
+            <div class="wall wall6"></div>
+
+
+            <!-- INICIO -->
+
+            <div
+                class="map-point point-start"
+                onclick="openModal(
+                    'COMIENZA AQUÍ ✨',
+                    'Bienvenido a tu pequeña aventura. No tengas prisa. Hay pequeños secretos escondidos por todo el camino.'
+                )">
+
+                ▶
+
+                <span class="map-label">
+                    COMENZAR
+                </span>
+
+            </div>
+
+
+            <!-- RECUERDO 1 -->
+
+            <div
+                class="map-point point-one"
+                onclick="openModal(
+                    'NIVEL 01 ❤️',
+                    'Aquí podemos poner uno de nuestros primeros recuerdos, una foto o una historia que solamente nosotros entendamos.'
+                )">
+
+                ❤️
+
+                <span class="map-label">
+                    RECUERDO
+                </span>
+
+            </div>
+
+
+            <!-- RECUERDO 2 -->
+
+            <div
+                class="map-point point-two"
+                onclick="openModal(
+                    'NIVEL 02 🎮',
+                    'Este punto puede esconder una pequeña pista, una frase, una foto o incluso un mini acertijo.'
+                )">
+
+                🎮
+
+                <span class="map-label">
+                    NIVEL 02
+                </span>
+
+            </div>
+
+
+            <!-- CARTA -->
+
+            <div
+                class="map-point point-three"
+                onclick="openModal(
+                    'NIVEL 03 💌',
+                    'Aquí tendremos una carta especial. Más adelante podemos cambiar este texto por la carta que tú quieras.'
+                )">
+
+                💌
+
+                <span class="map-label">
+                    CARTA
+                </span>
+
+            </div>
+
+
+            <!-- CASI FINAL -->
+
+            <div
+                class="map-point point-four"
+                onclick="openModal(
+                    'YA CASI... 👀',
+                    'Has llegado muy lejos. Pero todavía queda una última sorpresa escondida en este pequeño universo.'
+                )">
+
+                ⭐
+
+                <span class="map-label">
+                    CASI FINAL
+                </span>
+
+            </div>
+
+
+            <!-- REGALO -->
+
+            <div
+                class="final-gift"
+                onclick="openModal(
+                    '🎁 RECOMPENSA',
+                    'Has encontrado el regalo. ❤️ Esta parte la dejaremos preparada para colocar aquí la gran sorpresa final más adelante.'
+                )">
+
+                <div class="gift-label">
+                    RECOMPENSA FINAL
+                </div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-body"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL TEMPORAL
+===================================================== -->
+
+<section id="final">
+
+    <div class="section-content">
+
+        <div class="final-heart">
             ❤️
-            <span>RECUERDO</span>
         </div>
 
-        <!-- RECUERDO 2 -->
+        <h2 class="section-title">
+            Esto todavía no termina...
+        </h2>
 
-        <div class="point memory2" onclick="openMemory('Nivel 02 🎮', 'Aquí podemos poner otro recuerdo especial. Incluso podemos hacer que tengas que descubrir una pequeña pista para continuar.')">
-            🎮
-            <span>NIVEL 02</span>
-        </div>
+        <p class="final-text">
+            Has llegado hasta aquí, pero todavía quedan
+            sorpresas por descubrir.
 
-        <!-- RECUERDO 3 -->
+            <br><br>
 
-        <div class="point memory3" onclick="openMemory('Nivel 03 💌', 'Un pequeño mensaje solo para ti. Esta parte la personalizaremos con algo que solamente nosotros entendamos.')">
-            💌
-            <span>CARTA</span>
-        </div>
+            Esta página seguirá creciendo contigo,
+            porque todavía tenemos muchas cosas que
+            añadir a nuestra historia. ✨
+        </p>
 
-        <!-- FINAL -->
+    </div>
 
-        <div class="point memory4" onclick="openMemory('Ya casi... 👀', 'Has llegado muy lejos. Pero todavía queda una última sorpresa escondida en el mapa.')">
-            ⭐
-            <span>CASI AL FINAL</span>
-        </div>
+</section>
 
-        <!-- REGALO -->
 
-        <div class="gift" onclick="openMemory('🎁 EL REGALO', 'Aquí estará la gran recompensa. Más adelante vamos a colocar aquí la carta de Yu-Gi-Oh! ❤️')">
-            <div class="gift-label">RECOMPENSA FINAL</div>
-            <div class="gift-lid"></div>
-            <div class="gift-box"></div>
-        </div>
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="modal">
+
+    <div class="modal-card">
+
+        <h2 id="modalTitle">
+            Título
+        </h2>
+
+        <p id="modalText">
+            Texto
+        </p>
+
+        <button
+            class="modal-button"
+            onclick="closeModal()">
+
+            CONTINUAR ❤️
+
+        </button>
 
     </div>
 
 </div>
 
-<!-- VENTANA -->
 
-<div class="modal" id="modal">
-    <div class="card">
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-        <button class="close" onclick="closeMemory()">CONTINUAR ❤️</button>
-    </div>
-</div>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-function openMemory(title, text) {
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalText").textContent = text;
-    document.getElementById("modal").classList.add("active");
+/* IR A UNA SECCIÓN */
+
+function goTo(sectionId) {
+
+    document
+        .getElementById(sectionId)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
 }
 
-function closeMemory() {
-    document.getElementById("modal").classList.remove("active");
+
+/* ABRIR CARTITA */
+
+function openModal(title, text) {
+
+    document.getElementById("modalTitle").textContent = title;
+
+    document.getElementById("modalText").textContent = text;
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("active");
+
 }
+
+
+/* CERRAR CARTITA */
+
+function closeModal() {
+
+    document
+        .getElementById("modal")
+        .classList
+        .remove("active");
+
+}
+
+
+/* CERRAR AL TOCAR FUERA */
+
+document
+    .getElementById("modal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeModal();
+        }
+
+    });
 
 </script>
 
