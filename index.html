@@ -605,3 +605,972 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para ti ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #03050f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* =========================================
+       PANTALLA INICIAL
+    ========================================= */
+
+    #inicio {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 30px;
+
+      background:
+        radial-gradient(
+          circle at 50% 38%,
+          #202b58 0%,
+          #101631 30%,
+          #070a19 60%,
+          #02030a 100%
+        );
+    }
+
+    .luna-grande {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #ffffff,
+          #fffef0 40%,
+          #eee8c9 75%,
+          #c9c19e
+        );
+
+      box-shadow:
+        0 0 25px #ffffff,
+        0 0 55px rgba(255,255,255,0.8),
+        0 0 100px rgba(170,190,255,0.5);
+
+      margin-bottom: 40px;
+
+      animation: brilloLuna 4s ease-in-out infinite;
+    }
+
+    @keyframes brilloLuna {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+    }
+
+    .texto-inicio h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+
+      text-shadow:
+        0 0 12px white,
+        0 0 30px rgba(160,180,255,0.5);
+    }
+
+    .texto-inicio p {
+      font-size: 22px;
+      opacity: 0.9;
+      margin-bottom: 38px;
+    }
+
+    #entrar {
+      border: none;
+
+      padding: 16px 38px;
+
+      border-radius: 40px;
+
+      background: white;
+      color: #11152b;
+
+      font-size: 19px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 18px rgba(255,255,255,0.8),
+        0 0 40px rgba(170,190,255,0.4);
+
+      transition: 0.3s;
+    }
+
+    #entrar:hover {
+      transform: scale(1.08);
+    }
+
+    /* =========================================
+       ESTRELLAS
+    ========================================= */
+
+    .estrella {
+      position: absolute;
+
+      width: 3px;
+      height: 3px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 7px white,
+        0 0 14px rgba(180,200,255,0.8);
+
+      animation: parpadear 2.5s infinite alternate;
+    }
+
+    @keyframes parpadear {
+      from {
+        opacity: 0.2;
+        transform: scale(0.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+
+    /* =========================================
+       CARTA
+    ========================================= */
+
+    #carta {
+      display: none;
+
+      min-height: 100vh;
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 70px 20px;
+
+      background:
+        radial-gradient(
+          circle at 75% 15%,
+          #20264c,
+          #10142d 30%,
+          #080a19 60%,
+          #02030a 100%
+        );
+    }
+
+    .contenido-carta {
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    /* =========================================
+       MEDIA LUNA
+    ========================================= */
+
+    .media-luna {
+      width: 120px;
+      height: 120px;
+
+      border-radius: 50%;
+
+      background: #fffbe8;
+
+      box-shadow:
+        0 0 20px white,
+        0 0 50px rgba(255,255,255,0.5);
+
+      position: relative;
+
+      margin: 0 auto 35px;
+
+      overflow: hidden;
+    }
+
+    .media-luna::after {
+      content: "";
+
+      position: absolute;
+
+      width: 125px;
+      height: 125px;
+
+      border-radius: 50%;
+
+      background: #10142d;
+
+      left: 38px;
+      top: -8px;
+    }
+
+    .contenido-carta h1 {
+      font-size: 44px;
+
+      margin-bottom: 15px;
+
+      text-shadow:
+        0 0 12px rgba(255,255,255,0.7),
+        0 0 25px rgba(160,180,255,0.4);
+    }
+
+    .subtitulo-carta {
+      font-size: 20px;
+
+      opacity: 0.85;
+
+      margin-bottom: 35px;
+    }
+
+    .texto-carta {
+      background: rgba(255,255,255,0.07);
+
+      border: 1px solid rgba(255,255,255,0.16);
+
+      border-radius: 25px;
+
+      padding: 35px;
+
+      line-height: 1.9;
+
+      font-size: 18px;
+
+      text-align: left;
+
+      box-shadow:
+        0 0 30px rgba(0,0,0,0.25);
+
+      backdrop-filter: blur(5px);
+    }
+
+    .texto-carta p {
+      margin-bottom: 20px;
+    }
+
+    .firma {
+      text-align: center;
+
+      font-size: 22px;
+
+      margin-top: 30px;
+
+      font-style: italic;
+    }
+
+    /* =========================================
+       BOTÓN VOLVER
+    ========================================= */
+
+    #volver {
+      margin-top: 35px;
+
+      padding: 13px 28px;
+
+      border-radius: 30px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+
+      background: rgba(255,255,255,0.06);
+
+      color: white;
+
+      font-size: 16px;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       SECCIÓN 50 RAZONES
+    ========================================= */
+
+    #razones {
+      display: none;
+
+      min-height: 100vh;
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 80px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #070a19,
+          #111936,
+          #080b1c
+        );
+    }
+
+    .razones-contenido {
+      position: relative;
+
+      z-index: 5;
+
+      max-width: 1000px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .razones-contenido h2 {
+      font-size: 42px;
+
+      margin-bottom: 12px;
+
+      text-shadow:
+        0 0 15px white,
+        0 0 30px rgba(160,180,255,0.5);
+    }
+
+    .razones-subtitulo {
+      font-size: 19px;
+
+      opacity: 0.85;
+
+      margin-bottom: 50px;
+    }
+
+    /* =========================================
+       NUBES
+    ========================================= */
+
+    .nube {
+      position: absolute;
+
+      width: 220px;
+      height: 70px;
+
+      background: rgba(255,255,255,0.08);
+
+      border-radius: 50%;
+
+      filter: blur(8px);
+
+      opacity: 0.7;
+
+      z-index: 1;
+
+      animation: moverNube 25s linear infinite;
+    }
+
+    .nube::before,
+    .nube::after {
+      content: "";
+
+      position: absolute;
+
+      background: rgba(255,255,255,0.08);
+
+      border-radius: 50%;
+    }
+
+    .nube::before {
+      width: 100px;
+      height: 100px;
+
+      left: 35px;
+      bottom: 15px;
+    }
+
+    .nube::after {
+      width: 120px;
+      height: 120px;
+
+      right: 25px;
+      bottom: 10px;
+    }
+
+    .nube1 {
+      top: 15%;
+      left: -250px;
+    }
+
+    .nube2 {
+      top: 55%;
+      left: -300px;
+
+      transform: scale(0.7);
+
+      animation-duration: 35s;
+      animation-delay: 5s;
+    }
+
+    .nube3 {
+      top: 75%;
+      left: -250px;
+
+      transform: scale(1.2);
+
+      animation-duration: 30s;
+      animation-delay: 10s;
+    }
+
+    @keyframes moverNube {
+      from {
+        left: -300px;
+      }
+
+      to {
+        left: 110%;
+      }
+    }
+
+    /* =========================================
+       ESTRELLAS CLICABLES
+    ========================================= */
+
+    .estrellas-razones {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(70px, 1fr));
+
+      gap: 28px;
+
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .estrella-razon {
+      width: 55px;
+      height: 55px;
+
+      margin: auto;
+
+      border: none;
+
+      background: transparent;
+
+      color: white;
+
+      font-size: 35px;
+
+      cursor: pointer;
+
+      text-shadow:
+        0 0 8px white,
+        0 0 18px #aabfff,
+        0 0 35px #7289d8;
+
+      animation:
+        brilloEstrella 2.5s ease-in-out infinite alternate;
+
+      transition: 0.3s;
+    }
+
+    .estrella-razon:hover {
+      transform: scale(1.3);
+
+      text-shadow:
+        0 0 12px white,
+        0 0 30px #aabfff,
+        0 0 55px #7289d8;
+    }
+
+    @keyframes brilloEstrella {
+      from {
+        opacity: 0.45;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* =========================================
+       VENTANA DE LA RAZÓN
+    ========================================= */
+
+    #mensaje-razon {
+      display: none;
+
+      position: fixed;
+
+      z-index: 100;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: min(90%, 500px);
+
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(24,32,70,0.98),
+          rgba(7,10,28,0.98)
+        );
+
+      border: 1px solid rgba(255,255,255,0.2);
+
+      border-radius: 25px;
+
+      text-align: center;
+
+      box-shadow:
+        0 0 40px rgba(100,130,220,0.35);
+
+      animation: aparecer 0.35s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+
+        transform:
+          translate(-50%, -45%)
+          scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+      }
+    }
+
+    #mensaje-razon .estrella-grande {
+      font-size: 50px;
+
+      margin-bottom: 15px;
+    }
+
+    #texto-razon {
+      font-size: 21px;
+
+      line-height: 1.6;
+
+      margin-bottom: 25px;
+    }
+
+    #cerrar-razon {
+      border: 1px solid rgba(255,255,255,0.3);
+
+      background: rgba(255,255,255,0.08);
+
+      color: white;
+
+      padding: 10px 25px;
+
+      border-radius: 25px;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 600px) {
+
+      .luna-grande {
+        width: 155px;
+        height: 155px;
+      }
+
+      .texto-inicio h1 {
+        font-size: 36px;
+      }
+
+      .texto-inicio p {
+        font-size: 19px;
+      }
+
+      .contenido-carta h1 {
+        font-size: 34px;
+      }
+
+      .texto-carta {
+        padding: 25px;
+        font-size: 17px;
+      }
+
+      .razones-contenido h2 {
+        font-size: 32px;
+      }
+
+      .estrellas-razones {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- =========================================
+       PANTALLA DE INICIO
+  ========================================= -->
+
+  <section id="inicio">
+
+    <span class="estrella" style="top:8%; left:12%;"></span>
+    <span class="estrella" style="top:15%; left:30%;"></span>
+    <span class="estrella" style="top:10%; left:65%;"></span>
+    <span class="estrella" style="top:20%; left:85%;"></span>
+
+    <span class="estrella" style="top:32%; left:8%;"></span>
+    <span class="estrella" style="top:28%; left:22%;"></span>
+    <span class="estrella" style="top:35%; left:78%;"></span>
+    <span class="estrella" style="top:42%; left:91%;"></span>
+
+    <span class="estrella" style="top:55%; left:7%;"></span>
+    <span class="estrella" style="top:65%; left:17%;"></span>
+    <span class="estrella" style="top:72%; left:84%;"></span>
+    <span class="estrella" style="top:82%; left:68%;"></span>
+
+    <span class="estrella" style="top:88%; left:25%;"></span>
+    <span class="estrella" style="top:75%; left:48%;"></span>
+
+    <div class="luna-grande"></div>
+
+    <div class="texto-inicio">
+
+      <h1>Para ti ❤️</h1>
+
+      <p>
+        Hay algo que quiero enseñarte...
+      </p>
+
+      <button id="entrar">
+        Entrar ❤️
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CARTA
+  ========================================= -->
+
+  <section id="carta">
+
+    <div class="contenido-carta">
+
+      <div class="media-luna"></div>
+
+      <h1>
+        Feliz cumpleaños, mi amor ❤️
+      </h1>
+
+      <p class="subtitulo-carta">
+        Esta noche quiero celebrar algo muy especial: tu existencia.
+      </p>
+
+      <div class="texto-carta">
+
+        <p>
+          Quiero que sepas que preparé este pequeño espacio
+          especialmente para ti.
+        </p>
+
+        <p>
+          Hoy no quiero celebrar solamente tu cumpleaños.
+          Quiero celebrar que existes, que llegaste a mi vida
+          y todos esos momentos que poco a poco se han convertido
+          en recuerdos que guardo con muchísimo cariño.
+        </p>
+
+        <p>
+          Nuestras noches, nuestras conversaciones,
+          nuestras risas y cada pequeño momento compartido
+          tienen un lugar especial en mi corazón.
+        </p>
+
+        <p>
+          Porque esto apenas comienza.
+          Todavía nos quedan muchas noches,
+          muchas historias y muchos recuerdos por crear.
+        </p>
+
+        <p class="firma">
+          Feliz cumpleaños ❤️
+        </p>
+
+      </div>
+
+      <button id="ir-razones">
+        ✨ Seguir
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       50 ESTRELLAS EN MI CIELO
+  ========================================= -->
+
+  <section id="razones">
+
+    <div class="nube nube1"></div>
+    <div class="nube nube2"></div>
+    <div class="nube nube3"></div>
+
+    <div class="razones-contenido">
+
+      <h2>
+        50 estrellas en mi cielo ✨
+      </h2>
+
+      <p class="razones-subtitulo">
+        Toca una estrella y descubre una razón.
+      </p>
+
+      <div class="estrellas-razones">
+
+        <button class="estrella-razon" data-razon="Porque contigo hasta una noche sencilla puede convertirse en un recuerdo precioso.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque tu sonrisa tiene una forma muy especial de alegrarme el día.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta escuchar lo que tienes para contarme.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque nuestras conversaciones hacen que el tiempo pase demasiado rápido.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo las noches tienen otro significado.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me haces sonreír incluso cuando no lo estoy buscando.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque cada recuerdo contigo tiene un lugar especial en mi corazón.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta la tranquilidad que siento cuando estoy contigo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque haces que los pequeños momentos importen.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo puedo ser yo misma.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta descubrir nuevas cosas de ti.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque tienes una manera única de hacerme sentir especial.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque nuestras risas son de mis sonidos favoritos.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta imaginar todas las historias que todavía nos faltan por vivir.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo incluso el silencio puede sentirse bonito.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque cada cita nocturna tiene algo que quiero guardar para siempre.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me haces apreciar detalles que antes quizá pasaban desapercibidos.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta cómo eres cuando estás feliz.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me haces querer crear más recuerdos contigo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque hay momentos contigo que quisiera poder guardar en una cajita.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta la persona que soy cuando estoy contigo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque haces que esperar el próximo encuentro valga la pena.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque tu existencia merece ser celebrada.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta compartir mis pensamientos contigo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo siempre parece haber algo nuevo que descubrir.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque nuestros recuerdos son pequeñas luces que siempre puedo volver a mirar.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta cuando una conversación termina convirtiéndose en horas de hablar.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque haces que una noche cualquiera pueda sentirse extraordinaria.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta conocer tus sueños y lo que quieres para tu futuro.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque quiero seguir conociendo todas esas pequeñas partes de ti.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque tu forma de ser tiene algo que me atrae muchísimo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta cuando conseguimos reírnos por cualquier tontería.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo puedo convertir momentos simples en historias que quiero recordar.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta sentir que estamos construyendo algo bonito.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque tu cumpleaños me da una excusa más para celebrar que llegaste al mundo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta la magia que tienen nuestras noches.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque hay miradas que dicen más que muchas palabras.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me haces tener ganas de vivir más momentos especiales.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta pensar en todos los lugares que todavía podríamos conocer juntos.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque cada nuevo recuerdo contigo se siente como otra estrella en nuestro cielo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta cómo nuestras historias se van escribiendo poco a poco.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque quiero seguir compartiendo noches, risas y conversaciones contigo.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque contigo siento que todavía quedan muchísimas aventuras por vivir.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me gusta tener recuerdos que llevan tu nombre.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque haces que quiera guardar cada pequeño detalle.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me encanta esa sensación de saber que todavía tenemos mucho por descubrir.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque quiero que esta sea solamente una de muchas noches especiales.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque me haces valorar el presente y al mismo tiempo ilusionarme con el futuro.">★</button>
+
+        <button class="estrella-razon" data-razon="Porque simplemente me encanta que seas tú.">★</button>
+
+        <button class="estrella-razon" data-razon="Y porque, entre tantas estrellas, siempre terminaría eligiéndote a ti. ❤️">★</button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Ventana emergente -->
+
+    <div id="mensaje-razon">
+
+      <div class="estrella-grande">
+        ✨
+      </div>
+
+      <p id="texto-razon"></p>
+
+      <button id="cerrar-razon">
+        Cerrar
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script>
+
+    const inicio = document.getElementById("inicio");
+
+    const carta = document.getElementById("carta");
+
+    const razones = document.getElementById("razones");
+
+    const entrar = document.getElementById("entrar");
+
+    const irRazones = document.getElementById("ir-razones");
+
+    const estrellas = document.querySelectorAll(".estrella-razon");
+
+    const mensaje = document.getElementById("mensaje-razon");
+
+    const textoRazon = document.getElementById("texto-razon");
+
+    const cerrarRazon = document.getElementById("cerrar-razon");
+
+
+    /* Entrar a la carta */
+
+    entrar.addEventListener("click", function() {
+
+      inicio.style.display = "none";
+
+      carta.style.display = "block";
+
+      window.scrollTo(0, 0);
+
+    });
+
+
+    /* Ir a las 50 razones */
+
+    irRazones.addEventListener("click", function() {
+
+      carta.style.display = "none";
+
+      razones.style.display = "block";
+
+      window.scrollTo(0, 0);
+
+    });
+
+
+    /* Abrir una razón */
+
+    estrellas.forEach(function(estrella) {
+
+      estrella.addEventListener("click", function() {
+
+        const razon = estrella.getAttribute("data-razon");
+
+        textoRazon.textContent = razon;
+
+        mensaje.style.display = "block";
+
+      });
+
+    });
+
+
+    /* Cerrar la razón */
+
+    cerrarRazon.addEventListener("click", function() {
+
+      mensaje.style.display = "none";
+
+    });
+
+  </script>
+
+</body>
+</html>
