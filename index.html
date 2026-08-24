@@ -39,55 +39,176 @@ section{
 }
 
 /* =========================================================
-   FONDO GENERAL
+   UNIVERSO GENERAL
 ========================================================= */
 
-#inicio,
-#carta,
-#razones,
-#carta-coco,
-#distancia,
-#juego,
-#galeria,
-#final{
+section{
   background:
-    radial-gradient(circle at 50% 20%,rgba(120,80,190,.28),transparent 35%),
-    linear-gradient(180deg,#09051c,#160d32 45%,#050315);
+    radial-gradient(circle at 50% 15%,rgba(143,91,210,.30),transparent 32%),
+    radial-gradient(circle at 15% 80%,rgba(103,66,160,.18),transparent 30%),
+    linear-gradient(180deg,#070313,#120827 45%,#04020e);
 }
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
 
 .estrellas{
   position:absolute;
   inset:0;
   pointer-events:none;
   overflow:hidden;
+  z-index:1;
 }
 
 .estrellas span{
   position:absolute;
   width:3px;
   height:3px;
-  background:white;
+  background:#fff;
   border-radius:50%;
-  box-shadow:0 0 8px white;
-  animation:parpadear 2.5s infinite alternate;
+  box-shadow:
+    0 0 6px #fff,
+    0 0 13px rgba(207,173,255,.9);
+  animation:
+    parpadear 2.5s infinite alternate,
+    flotarEstrella 5s ease-in-out infinite;
+}
+
+.estrellas span.grande{
+  width:5px;
+  height:5px;
+  box-shadow:
+    0 0 8px #fff,
+    0 0 20px #d6b5ff,
+    0 0 35px rgba(190,130,255,.8);
 }
 
 @keyframes parpadear{
-  from{opacity:.25;transform:scale(.7)}
-  to{opacity:1;transform:scale(1.5)}
+  0%{
+    opacity:.2;
+    transform:scale(.65);
+  }
+  50%{
+    opacity:.75;
+  }
+  100%{
+    opacity:1;
+    transform:scale(1.5);
+  }
 }
+
+@keyframes flotarEstrella{
+  0%,100%{
+    margin-top:0;
+  }
+  50%{
+    margin-top:-7px;
+  }
+}
+
+/* =========================================================
+   NUBECITAS MORADAS
+========================================================= */
+
+.nubes{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+
+.nube{
+  position:absolute;
+  width:180px;
+  height:55px;
+  background:rgba(126,76,177,.14);
+  border-radius:100px;
+  filter:blur(13px);
+  box-shadow:
+    0 0 35px rgba(154,101,218,.15);
+  animation:moverNube 24s linear infinite;
+}
+
+.nube:before,
+.nube:after{
+  content:"";
+  position:absolute;
+  background:inherit;
+  border-radius:50%;
+}
+
+.nube:before{
+  width:85px;
+  height:85px;
+  left:25px;
+  bottom:5px;
+}
+
+.nube:after{
+  width:105px;
+  height:105px;
+  right:20px;
+  bottom:0;
+}
+
+.nube:nth-child(1){
+  top:18%;
+  left:-220px;
+  animation-duration:32s;
+}
+
+.nube:nth-child(2){
+  top:46%;
+  left:-300px;
+  transform:scale(.7);
+  animation-duration:38s;
+  animation-delay:6s;
+}
+
+.nube:nth-child(3){
+  top:72%;
+  left:-250px;
+  transform:scale(.9);
+  animation-duration:42s;
+  animation-delay:12s;
+}
+
+.nube:nth-child(4){
+  top:30%;
+  left:-250px;
+  transform:scale(.55);
+  animation-duration:46s;
+  animation-delay:18s;
+}
+
+@keyframes moverNube{
+  from{
+    transform:translateX(0) scale(1);
+  }
+  to{
+    transform:translateX(calc(100vw + 500px)) scale(1);
+  }
+}
+
+/* =========================================================
+   LUNA
+========================================================= */
 
 .luna{
   width:130px;
   height:130px;
   border-radius:50%;
-  background:#fffbe9;
-  box-shadow:
-    0 0 25px white,
-    0 0 70px rgba(210,180,255,.7);
+  background:#fffbea;
   position:absolute;
-  top:90px;
-  right:12%;
+  top:75px;
+  right:11%;
+  box-shadow:
+    0 0 25px #fff,
+    0 0 55px rgba(217,182,255,.75),
+    0 0 100px rgba(161,107,227,.3);
+  z-index:2;
 }
 
 .luna:after{
@@ -96,9 +217,9 @@ section{
   width:140px;
   height:140px;
   border-radius:50%;
-  background:#09051c;
-  left:42px;
-  top:-10px;
+  background:#09051b;
+  left:43px;
+  top:-9px;
 }
 
 /* =========================================================
@@ -108,20 +229,27 @@ section{
 .boton{
   display:inline-block;
   margin-top:28px;
-  padding:14px 28px;
-  border:none;
+  padding:14px 30px;
+  border:1px solid rgba(255,255,255,.22);
   border-radius:999px;
-  color:white;
-  background:linear-gradient(135deg,#8e63d8,#5e3c9c);
-  box-shadow:0 0 20px rgba(177,130,255,.4);
+  color:#fff;
+  background:
+    linear-gradient(135deg,
+    rgba(145,94,210,.95),
+    rgba(81,50,139,.95));
+  box-shadow:
+    0 0 15px rgba(169,117,238,.35),
+    inset 0 0 12px rgba(255,255,255,.08);
   cursor:pointer;
   font-size:17px;
   transition:.3s;
 }
 
 .boton:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 0 30px rgba(210,180,255,.7);
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:
+    0 0 25px rgba(207,164,255,.65),
+    inset 0 0 15px rgba(255,255,255,.1);
 }
 
 /* =========================================================
@@ -149,8 +277,9 @@ section{
 .inicio-contenido h1{
   font-size:clamp(42px,10vw,76px);
   text-shadow:
-    0 0 15px white,
-    0 0 35px #a875ff;
+    0 0 15px #fff,
+    0 0 35px #a875ff,
+    0 0 65px rgba(170,105,255,.5);
   margin-bottom:18px;
 }
 
@@ -162,14 +291,14 @@ section{
 }
 
 /* =========================================================
-   CARTA
+   CARTAS
 ========================================================= */
 
 .contenido-carta,
 .carta-coco-contenido,
 .distancia-contenido{
   position:relative;
-  z-index:2;
+  z-index:3;
   max-width:800px;
   margin:auto;
   text-align:center;
@@ -179,8 +308,10 @@ section{
   width:130px;
   height:130px;
   border-radius:50%;
-  background:#fffbe8;
-  box-shadow:0 0 25px white,0 0 55px rgba(255,255,255,.55);
+  background:#fffbea;
+  box-shadow:
+    0 0 25px #fff,
+    0 0 60px rgba(214,177,255,.7);
   position:relative;
   margin:0 auto 35px;
   overflow:hidden;
@@ -192,7 +323,7 @@ section{
   width:135px;
   height:135px;
   border-radius:50%;
-  background:#241c49;
+  background:#241841;
   left:42px;
   top:-8px;
 }
@@ -203,7 +334,9 @@ section{
 .galeria-titulo{
   font-size:clamp(32px,7vw,48px);
   margin-bottom:15px;
-  text-shadow:0 0 15px white,0 0 35px #c49aff;
+  text-shadow:
+    0 0 15px #fff,
+    0 0 35px #c49aff;
 }
 
 .subtitulo-carta,
@@ -216,19 +349,22 @@ section{
 
 .texto-carta,
 .carta-coco-texto{
-  background:linear-gradient(
-    135deg,
-    rgba(255,255,255,.11),
-    rgba(180,130,255,.08)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.10),
+      rgba(146,93,201,.10)
+    );
   border:1px solid rgba(255,255,255,.18);
   border-radius:25px;
   padding:35px;
   line-height:1.9;
   font-size:18px;
   text-align:left;
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 35px rgba(0,0,0,.3);
+  backdrop-filter:blur(10px);
+  box-shadow:
+    0 0 35px rgba(0,0,0,.35),
+    inset 0 0 30px rgba(176,120,240,.04);
 }
 
 .texto-carta p,
@@ -260,6 +396,14 @@ section{
   text-align:center;
 }
 
+.razones-contenido h2{
+  font-size:clamp(32px,7vw,48px);
+  text-shadow:
+    0 0 15px #fff,
+    0 0 35px #c49aff;
+  margin-bottom:15px;
+}
+
 .razones-subtitulo{
   font-size:19px;
   opacity:.85;
@@ -280,7 +424,9 @@ section{
   color:#fff;
   font-size:38px;
   cursor:pointer;
-  text-shadow:0 0 10px white,0 0 25px #b987ff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 25px #b987ff;
   transition:.3s;
 }
 
@@ -293,7 +439,7 @@ section{
   margin:35px auto 0;
   max-width:650px;
   padding:30px;
-  background:rgba(20,10,45,.8);
+  background:rgba(20,10,45,.85);
   border:1px solid rgba(255,255,255,.2);
   border-radius:25px;
 }
@@ -304,7 +450,7 @@ section{
 }
 
 /* =========================================================
-   CARTA COCO
+   COCO
 ========================================================= */
 
 .coco-luna{
@@ -395,7 +541,7 @@ section{
 
 #juego{
   background:
-    radial-gradient(circle at 50% 20%,#654a94,#21143f 45%,#070414);
+    radial-gradient(circle at 50% 15%,#7255a0,#261744 45%,#070414);
 }
 
 .juego-contenido{
@@ -408,7 +554,9 @@ section{
 
 .juego-titulo{
   font-size:clamp(32px,7vw,48px);
-  text-shadow:0 0 15px white,0 0 35px #c49aff;
+  text-shadow:
+    0 0 15px #fff,
+    0 0 35px #c49aff;
 }
 
 .juego-subtitulo{
@@ -417,6 +565,113 @@ section{
   font-size:18px;
   line-height:1.6;
   opacity:.85;
+}
+
+/* CAMINITO */
+
+.camino{
+  position:relative;
+  width:100%;
+  max-width:700px;
+  height:90px;
+  margin:10px auto 20px;
+}
+
+.camino-linea{
+  position:absolute;
+  left:5%;
+  right:5%;
+  top:45px;
+  height:3px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(221,188,255,.7) 0 10px,
+      transparent 10px 20px
+    );
+  box-shadow:0 0 10px rgba(201,158,255,.5);
+}
+
+.corazon-caminando{
+  position:absolute;
+  top:22px;
+  left:5%;
+  font-size:25px;
+  animation:caminar 5s linear infinite;
+  filter:drop-shadow(0 0 8px #ffbfff);
+}
+
+@keyframes caminar{
+  0%{left:5%}
+  50%{left:48%}
+  100%{left:90%}
+}
+
+/* FUEGO NUEVO */
+
+.fuego{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:65px;
+  height:70px;
+  z-index:2;
+}
+
+.fuego:before{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:45px;
+  height:55px;
+  background:
+    radial-gradient(
+      ellipse at center bottom,
+      #fff4b0 0 14%,
+      #ffc56b 15% 30%,
+      #bd63e8 31% 60%,
+      transparent 61%
+    );
+  border-radius:50% 50% 45% 45%;
+  filter:
+    drop-shadow(0 0 9px #ffb65e)
+    drop-shadow(0 0 20px rgba(176,96,235,.75));
+  animation:llama 1s infinite alternate;
+}
+
+.fuego:after{
+  content:"";
+  position:absolute;
+  bottom:3px;
+  left:50%;
+  transform:translateX(-50%);
+  width:18px;
+  height:28px;
+  background:#fff8d1;
+  border-radius:50% 50% 45% 45%;
+  filter:blur(1px);
+  animation:llama2 .7s infinite alternate;
+}
+
+@keyframes llama{
+  from{
+    transform:translateX(-50%) scale(.9) rotate(-3deg);
+  }
+  to{
+    transform:translateX(-50%) scale(1.08) rotate(3deg);
+  }
+}
+
+@keyframes llama2{
+  from{
+    transform:translateX(-50%) scale(.8);
+  }
+  to{
+    transform:translateX(-50%) scale(1.1);
+  }
 }
 
 .consolas{
@@ -428,18 +683,24 @@ section{
 }
 
 .consola{
+  position:relative;
   padding:25px 10px;
   border-radius:18px;
   border:1px solid rgba(255,255,255,.2);
-  background:linear-gradient(145deg,#25203f,#100b24);
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  background:
+    linear-gradient(145deg,#29213f,#100b24);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.4),
+    inset 0 0 15px rgba(176,119,240,.04);
   cursor:pointer;
   transition:.3s;
 }
 
 .consola:hover{
   transform:translateY(-7px);
-  box-shadow:0 0 25px rgba(195,155,255,.5);
+  box-shadow:
+    0 0 25px rgba(195,155,255,.5),
+    0 10px 25px rgba(0,0,0,.4);
 }
 
 .consola-icono{
@@ -463,8 +724,9 @@ section{
   margin:35px auto 0;
   padding:30px;
   border-radius:25px;
-  background:rgba(10,6,30,.8);
+  background:rgba(10,6,30,.85);
   border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 0 35px rgba(121,72,184,.15);
 }
 
 .pregunta{
@@ -479,7 +741,7 @@ section{
 }
 
 .opcion{
-  border:none;
+  border:1px solid rgba(255,255,255,.12);
   border-radius:15px;
   padding:14px;
   background:#342558;
@@ -514,7 +776,8 @@ section{
   display:block;
   height:100%;
   width:0%;
-  background:linear-gradient(90deg,#8f63d2,#e3cfff);
+  background:
+    linear-gradient(90deg,#8f63d2,#e3cfff);
   transition:.5s;
 }
 
@@ -524,7 +787,7 @@ section{
 }
 
 /* =========================================================
-   GALERÍA
+   GALERÍA NUEVA
 ========================================================= */
 
 #galeria{
@@ -535,64 +798,206 @@ section{
 .galeria-contenido{
   position:relative;
   z-index:3;
-  max-width:1100px;
+  max-width:1000px;
   margin:auto;
   text-align:center;
 }
 
 .galeria-subtitulo{
   max-width:700px;
-  margin:0 auto 35px;
+  margin:0 auto 40px;
   line-height:1.7;
   opacity:.85;
 }
 
+/* TARJETAS PEQUEÑAS */
+
 .gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  max-width:850px;
+  margin:auto;
 }
 
 .recuerdo{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:25px;
-  overflow:hidden;
-  backdrop-filter:blur(10px);
-  box-shadow:0 15px 35px rgba(0,0,0,.35);
+  position:relative;
+  padding:10px 10px 14px;
+  background:
+    linear-gradient(
+      145deg,
+      #f4ecff,
+      #e9dcf7
+    );
+  border-radius:4px;
+  box-shadow:
+    0 15px 30px rgba(0,0,0,.35),
+    0 0 18px rgba(191,139,240,.12);
+  cursor:pointer;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+  transform:rotate(var(--rotacion));
+}
+
+.recuerdo:nth-child(1){
+  --rotacion:-2deg;
+}
+
+.recuerdo:nth-child(2){
+  --rotacion:2deg;
+}
+
+.recuerdo:nth-child(3){
+  --rotacion:-1deg;
+}
+
+.recuerdo:nth-child(4){
+  --rotacion:2deg;
+}
+
+.recuerdo:nth-child(5){
+  --rotacion:-2deg;
+}
+
+.recuerdo:nth-child(6){
+  --rotacion:1deg;
+}
+
+.recuerdo:hover{
+  transform:
+    translateY(-8px)
+    rotate(0deg)
+    scale(1.03);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.45),
+    0 0 30px rgba(202,157,247,.4);
 }
 
 .recuerdo img{
   display:block;
   width:100%;
-  aspect-ratio:4/3;
+  aspect-ratio:1/1;
   object-fit:cover;
+  border-radius:2px;
 }
 
-.recuerdo-texto{
-  padding:25px;
+.recuerdo-mini{
+  color:#4b345f;
+  font-size:14px;
+  padding:12px 4px 2px;
+  font-style:italic;
+}
+
+/* BRILLITO SOBRE LA FOTO */
+
+.recuerdo:after{
+  content:"✦";
+  position:absolute;
+  top:5px;
+  right:8px;
+  color:#fff;
+  font-size:20px;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 15px #c493ff;
+  opacity:.8;
+}
+
+/* MODAL DE FOTO */
+
+.modal-foto{
+  position:fixed;
+  inset:0;
+  background:rgba(5,2,15,.88);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-foto.abierto{
+  display:flex;
+  animation:aparecer .35s ease;
+}
+
+@keyframes aparecer{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+.modal-contenido{
+  position:relative;
+  width:min(92vw,760px);
+  max-height:92vh;
+  overflow-y:auto;
+  padding:15px;
+  background:
+    linear-gradient(
+      145deg,
+      #f5edff,
+      #e6d6f5
+    );
+  color:#33253f;
+  border-radius:8px;
+  box-shadow:
+    0 0 50px rgba(206,163,255,.35),
+    0 20px 60px rgba(0,0,0,.6);
+}
+
+.modal-contenido img{
+  display:block;
+  width:100%;
+  max-height:55vh;
+  object-fit:contain;
+  background:#08050e;
+  border-radius:4px;
+}
+
+.cerrar-modal{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:rgba(28,16,45,.9);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  z-index:2;
+}
+
+.modal-texto{
+  padding:25px 12px 15px;
   text-align:left;
 }
 
-.recuerdo-texto h3{
+.modal-texto h3{
   text-align:center;
-  color:#eadbff;
-  font-size:22px;
+  font-size:25px;
+  color:#5c3a76;
   margin-bottom:18px;
-  text-shadow:0 0 10px #a879e8;
 }
 
-.recuerdo-texto p{
-  line-height:1.8;
+.modal-texto p{
   font-size:17px;
+  line-height:1.8;
   white-space:pre-line;
 }
 
-.frase-final-foto{
+.modal-final{
   text-align:center!important;
   font-style:italic;
-  margin-top:22px;
-  font-size:18px!important;
+  margin-top:20px;
+  color:#603d79;
 }
 
 /* =========================================================
@@ -615,19 +1020,27 @@ section{
 .final-corazon{
   font-size:90px;
   animation:latir 1.5s infinite;
-  filter:drop-shadow(0 0 20px #ffb9ff);
+  filter:
+    drop-shadow(0 0 12px #ffb9ff)
+    drop-shadow(0 0 30px rgba(202,127,255,.5));
 }
 
 @keyframes latir{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.15);
+  }
 }
 
 .final-contenido h2{
   font-size:clamp(32px,7vw,52px);
   line-height:1.3;
   margin:20px 0;
-  text-shadow:0 0 15px white,0 0 35px #c49aff;
+  text-shadow:
+    0 0 15px #fff,
+    0 0 35px #c49aff;
 }
 
 .final-contenido p{
@@ -639,7 +1052,7 @@ section{
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
   section{
     padding:55px 15px;
@@ -664,6 +1077,24 @@ section{
     font-size:17px;
   }
 
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    max-width:650px;
+  }
+
+  .recuerdo{
+    padding:7px 7px 10px;
+  }
+
+  .recuerdo-mini{
+    font-size:12px;
+  }
+
+}
+
+@media(max-width:500px){
+
   .estrellas-razones{
     grid-template-columns:repeat(5,1fr);
     gap:7px;
@@ -678,20 +1109,38 @@ section{
   }
 
   .gallery{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
   }
 
-  .recuerdo-texto{
-    padding:20px;
+  .modal-texto{
+    padding:20px 8px 10px;
   }
+
+  .modal-texto p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- ESTRELLAS -->
+<!-- =========================================================
+     ESTRELLAS + NUBES
+========================================================= -->
+
 <div class="estrellas" id="estrellas"></div>
+
+<div class="nubes">
+  <div class="nube"></div>
+  <div class="nube"></div>
+  <div class="nube"></div>
+  <div class="nube"></div>
+</div>
+
 
 <!-- =========================================================
      PORTADA
@@ -703,7 +1152,9 @@ section{
 
   <div class="inicio-contenido">
 
-    <div class="mini">PARA ALGUIEN MUY ESPECIAL</div>
+    <div class="mini">
+      PARA ALGUIEN MUY ESPECIAL
+    </div>
 
     <h1>✨ Nuestro Universo ✨</h1>
 
@@ -721,11 +1172,14 @@ section{
 
 </section>
 
+
 <!-- =========================================================
-     CARTA DE CUMPLEAÑOS
+     CARTA
 ========================================================= -->
 
 <section id="carta" class="hidden">
+
+  <div class="luna"></div>
 
   <div class="contenido-carta">
 
@@ -788,6 +1242,7 @@ section{
 
 </section>
 
+
 <!-- =========================================================
      50 RAZONES
 ========================================================= -->
@@ -824,8 +1279,9 @@ section{
 
 </section>
 
+
 <!-- =========================================================
-     CARTA PARA COCO
+     CARTA COCO
 ========================================================= -->
 
 <section id="carta-coco" class="hidden">
@@ -887,6 +1343,7 @@ section{
 
 </section>
 
+
 <!-- =========================================================
      DISTANCIA
 ========================================================= -->
@@ -908,6 +1365,7 @@ section{
       <svg viewBox="0 0 500 250">
 
         <path
+          id="rutaAmor"
           class="ruta"
           d="M 55 190 C 150 230,205 40,300 90 C 370 125,410 35,475 45"
         />
@@ -992,8 +1450,9 @@ section{
 
 </section>
 
+
 <!-- =========================================================
-     JUEGO DE CONSOLITAS
+     JUEGO
 ========================================================= -->
 
 <section id="juego" class="hidden">
@@ -1009,6 +1468,18 @@ section{
       y cada respuesta desbloquea un pedacito
       de lo que siento por ti. ✨
     </p>
+
+    <div class="camino">
+
+      <div class="camino-linea"></div>
+
+      <div class="corazon-caminando">
+        ❤️
+      </div>
+
+      <div class="fuego"></div>
+
+    </div>
 
     <div class="consolas" id="consolas"></div>
 
@@ -1049,8 +1520,9 @@ section{
 
 </section>
 
+
 <!-- =========================================================
-     GALERÍA — LAS 6 FOTOS
+     GALERÍA
 ========================================================= -->
 
 <section id="galeria" class="hidden">
@@ -1062,136 +1534,101 @@ section{
     </h2>
 
     <p class="galeria-subtitulo">
-      Seis pequeños momentos que guardan mucho más
-      de lo que parece a simple vista. ❤️
+      Toca una foto...
+      algunas historias solo aparecen cuando decides acercarte. ❤️
     </p>
 
     <div class="gallery">
 
-      <!-- FOTO 1 -->
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto1.jpg',
+          '🌙 Tus constelaciones',
+          `Hay pequeños detalles tuyos que me encantan simplemente porque son tuyos. Tus lunares, por ejemplo… yo los veo como pequeñas constelaciones dibujadas sobre ti. Y algún día quisiera poder recorrerlas todas, una por una, descubrir cada pequeño punto y perderme en tu espalda como quien mira el cielo buscando estrellas. Porque si están en ti, para mí ya tienen algo especial. ✨❤️`
+        )">
 
-      <article class="recuerdo">
+        <img src="foto1.jpg" alt="Tus constelaciones">
 
-        <img
-          src="foto1.jpg"
-          alt="Foto 1 - Tus constelaciones"
-        >
-
-        <div class="recuerdo-texto">
-
-          <h3>🌙 Tus constelaciones</h3>
-
-          <p>
-Hay pequeños detalles tuyos que me encantan simplemente porque son tuyos. Tus lunares, por ejemplo… yo los veo como pequeñas constelaciones dibujadas sobre ti. Y algún día quisiera poder recorrerlas todas, una por una, descubrir cada pequeño punto y perderme en tu espalda como quien mira el cielo buscando estrellas. Porque si están en ti, para mí ya tienen algo especial. ✨❤️
-          </p>
-
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
 
-      <!-- FOTO 2 -->
 
-      <article class="recuerdo">
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto2.jpg',
+          '🌙 Un día para recordar',
+          `Quería regalarte un pequeño recuerdo de un día en el que fuiste muy feliz. Quiero que lo tengas siempre presente, porque deseo que, en cada etapa y en cada momento de tu vida, la felicidad encuentre siempre un lugar a tu lado. Y si algún día necesitas recordar cómo se siente ser feliz, espero que esta pequeña foto te lleve de vuelta a ese momento. ❤️`
+        )">
 
-        <img
-          src="foto2.jpg"
-          alt="Foto 2 - Un día para recordar"
-        >
+        <img src="foto2.jpg" alt="Un día para recordar">
 
-        <div class="recuerdo-texto">
-
-          <h3>🌙 Un día para recordar</h3>
-
-          <p>
-Quería regalarte un pequeño recuerdo de un día en el que fuiste muy feliz. Quiero que lo tengas siempre presente, porque deseo que, en cada etapa y en cada momento de tu vida, la felicidad encuentre siempre un lugar a tu lado. Y si algún día necesitas recordar cómo se siente ser feliz, espero que esta pequeña foto te lleve de vuelta a ese momento. ❤️
-          </p>
-
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
 
-      <!-- FOTO 3 -->
 
-      <article class="recuerdo">
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto3.jpg',
+          '✨ Lo bonito de encontrarte',
+          `Este día es especial porque estuvimos haciendo algo juntos, pero terminó convirtiéndose en un recuerdo inolvidable. Quizás para alguien más hubiera sido un momento cualquiera, pero para mí significó mucho más: me hizo pensar en lo diferente, extraño y hermoso que es tenerte en mi vida. A veces todavía me sorprende cómo alguien puede llegar y hacer que momentos tan sencillos se vuelvan recuerdos que quiero guardar para siempre. ✨❤️`
+        )">
 
-        <img
-          src="foto3.jpg"
-          alt="Foto 3 - Lo bonito de encontrarte"
-        >
+        <img src="foto3.jpg" alt="Lo bonito de encontrarte">
 
-        <div class="recuerdo-texto">
-
-          <h3>✨ Lo bonito de encontrarte</h3>
-
-          <p>
-Este día es especial porque estuvimos haciendo algo juntos, pero terminó convirtiéndose en un recuerdo inolvidable. Quizás para alguien más hubiera sido un momento cualquiera, pero para mí significó mucho más: me hizo pensar en lo diferente, extraño y hermoso que es tenerte en mi vida. A veces todavía me sorprende cómo alguien puede llegar y hacer que momentos tan sencillos se vuelvan recuerdos que quiero guardar para siempre. ✨❤️
-          </p>
-
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
 
-      <!-- FOTO 4 -->
 
-      <article class="recuerdo">
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto4.jpg',
+          '💭 ¿Qué pasa por esa cabecita?',
+          `Hay algo especialmente lindo en ti cuando estás concentrado, cuando te pierdes un poquito en tus pensamientos y parece que el mundo deja de existir por un momento. Te ves tan tierno y encantador que no puedo evitar quedarme mirándote y preguntarme qué estará pasando por esa cabecita. Qué estarás pensando, qué historias estarán pasando por tu mente… Me gustaría poder entrar un ratito en tus pensamientos y descubrir ese pequeño mundo que llevas dentro. ✨❤️`
+        )">
 
-        <img
-          src="foto4.jpg"
-          alt="Foto 4 - ¿Qué pasa por esa cabecita?"
-        >
+        <img src="foto4.jpg" alt="Qué pasa por esa cabecita">
 
-        <div class="recuerdo-texto">
-
-          <h3>💭 ¿Qué pasa por esa cabecita?</h3>
-
-          <p>
-Hay algo especialmente lindo en ti cuando estás concentrado, cuando te pierdes un poquito en tus pensamientos y parece que el mundo deja de existir por un momento. Te ves tan tierno y encantador que no puedo evitar quedarme mirándote y preguntarme qué estará pasando por esa cabecita. Qué estarás pensando, qué historias estarán pasando por tu mente… Me gustaría poder entrar un ratito en tus pensamientos y descubrir ese pequeño mundo que llevas dentro. ✨❤️
-          </p>
-
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
 
-      <!-- FOTO 5 -->
 
-      <article class="recuerdo">
-
-        <img
-          src="foto5.jpg"
-          alt="Foto 5 - Un lugar seguro"
-        >
-
-        <div class="recuerdo-texto">
-
-          <h3>🫂 Un lugar seguro</h3>
-
-          <p>
-Este fue uno de esos días que voy a guardar de una manera diferente. Fue el día en que, después de muchísimo tiempo, me permití ser vulnerable delante de alguien. Y aunque estabas lejos, encontraste la manera de hacerme sentir que no estaba sola; que había alguien ahí, escuchándome, acompañándome y abrazándome incluso a la distancia.
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto5.jpg',
+          '🫂 Un lugar seguro',
+          `Este fue uno de esos días que voy a guardar de una manera diferente. Fue el día en que, después de muchísimo tiempo, me permití ser vulnerable delante de alguien. Y aunque estabas lejos, encontraste la manera de hacerme sentir que no estaba sola; que había alguien ahí, escuchándome, acompañándome y abrazándome incluso a la distancia.
 
 Me escondía, tenía miedo de dejarme ver así, pero tú te quedaste. Y ese hermoso detalle que tuviste conmigo significó muchísimo más de lo que quizá puedas imaginar. Porque detrás de ese momento había miedos que llevaba conmigo desde hacía mucho tiempo, y aun así, contigo no sentí que tuviera que esconderme.
 
-No quiero que mis miedos del pasado definan lo que estamos construyendo, porque contigo he descubierto algo que no esperaba encontrar: la tranquilidad de sentirme especial, escuchada y cuidada. Y quizás sin darte cuenta, poco a poco te has convertido en algo que para mí significa muchísimo más de lo que puedo explicar… te has convertido en un lugar seguro. 🫂❤️💜
-          </p>
+No quiero que mis miedos del pasado definan lo que estamos construyendo, porque contigo he descubierto algo que no esperaba encontrar: la tranquilidad de sentirme especial, escuchada y cuidada. Y quizás sin darte cuenta, poco a poco te has convertido en algo que para mí significa muchísimo más de lo que puedo explicar… te has convertido en un lugar seguro. 🫂❤️💜`
+        )">
 
+        <img src="foto5.jpg" alt="Un lugar seguro">
+
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
 
-      <!-- FOTO 6 -->
 
-      <article class="recuerdo">
-
-        <img
-          src="foto6.jpg"
-          alt="Foto 6 - Un día que también se volvió mío"
-        >
-
-        <div class="recuerdo-texto">
-
-          <h3>❤️ Un día que también se volvió mío</h3>
-
-          <p>
-Y llegamos a esta foto… nosotros dos, haciendo un corazón con las manos. Quizás parece un gesto pequeño, pero para mí representa mucho de lo que hemos ido construyendo.
+      <article class="recuerdo"
+        onclick="abrirFoto(
+          'foto6.jpg',
+          '❤️ Un día que también se volvió mío',
+          `Y llegamos a esta foto… nosotros dos, haciendo un corazón con las manos. Quizás parece un gesto pequeño, pero para mí representa mucho de lo que hemos ido construyendo.
 
 Porque desde que llegaste a mi vida, has conseguido hacer especiales cosas que antes simplemente eran días normales. Tu forma de escucharme, de estar pendiente de mí, de hacerme reír, de darme tranquilidad y de hacerme sentir acompañada incluso cuando estás lejos… son pequeñas cosas que han ido dejando un lugar enorme en mi corazón.
 
@@ -1199,13 +1636,13 @@ Por eso tu cumpleaños dejó de ser solamente el día en que nació una persona 
 
 Quiero que sepas que me alegra muchísimo que hayas nacido. Me alegra que exista esa persona que puede ser tan seria y, al mismo tiempo, tan encantadora; esa persona que me hace sentir tranquila, que tiene sus pequeños detalles, sus lunares que para mí parecen constelaciones, sus pensamientos en los que me encanta imaginar qué estará pasando, y esa manera tan tuya de hacerme sentir especial.
 
-Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solamente porque celebro tu vida, sino porque celebro la suerte de haberte conocido y todos los recuerdos que todavía nos quedan por crear. Y si este pequeño corazón representa algo, quiero que represente precisamente eso: dos personas que, aunque estén lejos, encontraron una manera de estar cerquita. ❤️
-          </p>
+Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solamente porque celebro tu vida, sino porque celebro la suerte de haberte conocido y todos los recuerdos que todavía nos quedan por crear. Y si este pequeño corazón representa algo, quiero que represente precisamente eso: dos personas que, aunque estén lejos, encontraron una manera de estar cerquita. ❤️`
+        )">
 
-          <p class="frase-final-foto">
-            Feliz cumpleaños a una de mis personas favoritas en este mundo. ❤️
-          </p>
+        <img src="foto6.jpg" alt="Un día que también se volvió mío">
 
+        <div class="recuerdo-mini">
+          ✦ toca para descubrir ✦
         </div>
 
       </article>
@@ -1220,6 +1657,47 @@ Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solame
 
 </section>
 
+
+<!-- =========================================================
+     MODAL DE LAS FOTOS
+========================================================= -->
+
+<div class="modal-foto" id="modalFoto">
+
+  <div class="modal-contenido">
+
+    <button
+      class="cerrar-modal"
+      onclick="cerrarFoto()"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+    <img id="modalImagen" src="" alt="">
+
+    <div class="modal-texto">
+
+      <h3 id="modalTitulo"></h3>
+
+      <p id="modalMensaje"></p>
+
+      <p
+        id="modalFraseFinal"
+        class="modal-final"
+        style="display:none"
+      >
+        Feliz cumpleaños a una de mis personas favoritas
+        en este mundo. ❤️
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 <!-- =========================================================
      FINAL
 ========================================================= -->
@@ -1228,7 +1706,9 @@ Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solame
 
   <div class="final-contenido">
 
-    <div class="final-corazon">❤️</div>
+    <div class="final-corazon">
+      ❤️
+    </div>
 
     <h2>
       Por más cumpleaños a tu lado.
@@ -1256,25 +1736,41 @@ Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solame
 
 </section>
 
+
 <script>
 
 /* =========================================================
-   ESTRELLAS DEL FONDO
+   ESTRELLAS
 ========================================================= */
 
-const fondoEstrellas = document.getElementById("estrellas");
+const fondoEstrellas =
+  document.getElementById("estrellas");
 
-for(let i=0;i<90;i++){
+for(let i=0;i<130;i++){
 
-  const estrella=document.createElement("span");
+  const estrella=
+    document.createElement("span");
 
-  estrella.style.top=Math.random()*100+"%";
-  estrella.style.left=Math.random()*100+"%";
+  estrella.style.top=
+    Math.random()*100+"%";
 
-  estrella.style.animationDelay=(Math.random()*3)+"s";
+  estrella.style.left=
+    Math.random()*100+"%";
+
+  estrella.style.animationDelay=
+    (Math.random()*4)+"s";
+
+  estrella.style.animationDuration=
+    (2+Math.random()*4)+"s";
+
+  if(Math.random()<.15){
+    estrella.classList.add("grande");
+  }
 
   fondoEstrellas.appendChild(estrella);
+
 }
+
 
 /* =========================================================
    NAVEGACIÓN
@@ -1282,21 +1778,27 @@ for(let i=0;i<90;i++){
 
 function mostrarSeccion(id){
 
-  document.querySelectorAll("section").forEach(section=>{
-    section.classList.add("hidden");
-  });
+  document.querySelectorAll("section")
+    .forEach(section=>{
+      section.classList.add("hidden");
+    });
 
-  const seccion=document.getElementById(id);
+  const seccion=
+    document.getElementById(id);
 
   if(seccion){
+
     seccion.classList.remove("hidden");
+
     window.scrollTo({
       top:0,
       behavior:"smooth"
     });
+
   }
 
 }
+
 
 /* =========================================================
    50 RAZONES
@@ -1320,7 +1822,7 @@ const razones = [
 "Porque me gusta tener recuerdos que llevan tu nombre.",
 "Porque haces que quiera guardar cada pequeño detalle.",
 "Porque todavía tenemos muchísimo por descubrir.",
-"Porque quiero que esta sea solamente una de muchas noches especiales.",
+"Porque me gusta pensar en todo lo que todavía nos queda por vivir.",
 "Porque me haces ilusionarme con el futuro.",
 "Porque simplemente me encanta que seas tú. ❤️",
 "Porque tu manera de hablar tiene algo que siempre consigue llamar mi atención.",
@@ -1362,7 +1864,8 @@ const contenedorRazones =
 
 razones.forEach((razon,index)=>{
 
-  const boton=document.createElement("button");
+  const boton=
+    document.createElement("button");
 
   boton.className="estrella-razon";
   boton.innerHTML="★";
@@ -1370,9 +1873,11 @@ razones.forEach((razon,index)=>{
 
   boton.addEventListener("click",()=>{
 
-    document.getElementById("texto-razon").textContent=razon;
+    document.getElementById("texto-razon")
+      .textContent=razon;
 
-    document.getElementById("mensaje-razon").style.display="block";
+    document.getElementById("mensaje-razon")
+      .style.display="block";
 
     document.getElementById("mensaje-razon")
       .scrollIntoView({
@@ -1393,8 +1898,9 @@ function cerrarRazon(){
 
 }
 
+
 /* =========================================================
-   SONIDO RETRO
+   SONIDOS RETRO
 ========================================================= */
 
 let audioCtx;
@@ -1408,10 +1914,11 @@ function beep(
 
   try{
 
-    audioCtx ||= new(
-      window.AudioContext ||
-      window.webkitAudioContext
-    )();
+    audioCtx ||=
+      new(
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
 
     const oscilador=
       audioCtx.createOscillator();
@@ -1420,12 +1927,18 @@ function beep(
       audioCtx.createGain();
 
     oscilador.type=tipo;
-    oscilador.frequency.value=frecuencia;
 
-    ganancia.gain.value=volumen;
+    oscilador.frequency.value=
+      frecuencia;
+
+    ganancia.gain.value=
+      volumen;
 
     oscilador.connect(ganancia);
-    ganancia.connect(audioCtx.destination);
+
+    ganancia.connect(
+      audioCtx.destination
+    );
 
     oscilador.start();
 
@@ -1472,6 +1985,7 @@ function sonidoVictoria(){
 
 }
 
+
 /* =========================================================
    JUEGO
 ========================================================= */
@@ -1486,62 +2000,73 @@ const preguntasJuego=[
       "En una consola"
     ],
     correcta:0,
-    recuerdo:"En tus ojos, porque tienen esa mirada que puede hacerme olvidar todo lo demás. ❤️"
+    recuerdo:
+      "En tus ojos, porque tienen esa mirada que puede hacerme olvidar todo lo demás. ❤️"
   },
 
   {
-    pregunta:"¿Qué es eso que tienes y que yo veo como pequeñas constelaciones?",
+    pregunta:
+      "¿Qué es eso que tienes y que yo veo como pequeñas constelaciones?",
     opciones:[
       "Tus lunares",
       "Tus botones",
       "Tus audífonos"
     ],
     correcta:0,
-    recuerdo:"Tus lunares. Pequeñas constelaciones que algún día quisiera recorrer una por una. ✨"
+    recuerdo:
+      "Tus lunares. Pequeñas constelaciones que algún día quisiera recorrer una por una. ✨"
   },
 
   {
-    pregunta:"¿Qué me encanta descubrir de ti?",
+    pregunta:
+      "¿Qué me encanta descubrir de ti?",
     opciones:[
       "Tus pensamientos",
       "Tus contraseñas",
       "Tu lista de compras"
     ],
     correcta:0,
-    recuerdo:"Tus pensamientos. Me da muchísima curiosidad descubrir ese pequeño mundo que llevas dentro. 💭"
+    recuerdo:
+      "Tus pensamientos. Me da muchísima curiosidad descubrir ese pequeño mundo que llevas dentro. 💭"
   },
 
   {
-    pregunta:"¿Qué siento incluso cuando estás lejos?",
+    pregunta:
+      "¿Qué siento incluso cuando estás lejos?",
     opciones:[
       "Que estás cerca",
       "Que desapareciste",
       "Que estamos en planetas distintos"
     ],
     correcta:0,
-    recuerdo:"Que estás cerca. Porque hay distancias que existen en el mapa, pero no en el corazón. 🌍❤️"
+    recuerdo:
+      "Que estás cerca. Porque hay distancias que existen en el mapa, pero no en el corazón. 🌍❤️"
   },
 
   {
-    pregunta:"¿Qué me haces sentir cuando te quedas conmigo en los momentos difíciles?",
+    pregunta:
+      "¿Qué me haces sentir cuando te quedas conmigo en los momentos difíciles?",
     opciones:[
       "Que estoy acompañada",
       "Que estoy perdida",
       "Que debo esconderme"
     ],
     correcta:0,
-    recuerdo:"Me haces sentir acompañada, escuchada y cuidada. Eso significa muchísimo para mí. 🫂"
+    recuerdo:
+      "Me haces sentir acompañada, escuchada y cuidada. Eso significa muchísimo para mí. 🫂"
   },
 
   {
-    pregunta:"¿Qué quiero seguir creando contigo?",
+    pregunta:
+      "¿Qué quiero seguir creando contigo?",
     opciones:[
       "Recuerdos",
       "Problemas",
       "Excusas"
     ],
     correcta:0,
-    recuerdo:"Recuerdos. Muchos más recuerdos, momentos, risas y días que algún día podamos mirar hacia atrás y recordar juntos. ❤️"
+    recuerdo:
+      "Recuerdos. Muchos más recuerdos, momentos, risas y días que algún día podamos mirar hacia atrás y recordar juntos. ❤️"
   }
 
 ];
@@ -1554,14 +2079,17 @@ const contenedorConsolas=
 
 preguntasJuego.forEach((juego,index)=>{
 
-  const consola=document.createElement("div");
+  const consola=
+    document.createElement("div");
 
   consola.className="consola";
 
   consola.innerHTML=`
     <div class="consola-icono">🎮</div>
     <strong>Consolita ${index+1}</strong>
-    <small>${index===0?"Disponible":"Bloqueada"}</small>
+    <small>
+      ${index===0?"Disponible":"Bloqueada"}
+    </small>
   `;
 
   if(index!==0){
@@ -1582,6 +2110,7 @@ preguntasJuego.forEach((juego,index)=>{
   contenedorConsolas.appendChild(consola);
 
 });
+
 
 function abrirPregunta(index){
 
@@ -1611,7 +2140,9 @@ function abrirPregunta(index){
         document.createElement("button");
 
       boton.className="opcion";
-      boton.textContent=opcion;
+
+      boton.textContent=
+        opcion;
 
       boton.addEventListener(
         "click",
@@ -1624,6 +2155,7 @@ function abrirPregunta(index){
   );
 
 }
+
 
 function responder(indice){
 
@@ -1671,17 +2203,20 @@ function responder(indice){
 
 }
 
+
 function actualizarProgreso(){
 
   const porcentaje=
     (progreso/preguntasJuego.length)*100;
 
   document.getElementById("barraProgreso")
-    .style.width=porcentaje+"%";
+    .style.width=
+    porcentaje+"%";
 
   document.getElementById("progresoTexto")
     .textContent=
-    progreso+" de "+
+    progreso+
+    " de "+
     preguntasJuego.length+
     " recuerdos desbloqueados";
 
@@ -1690,13 +2225,16 @@ function actualizarProgreso(){
 
       if(index<=progreso){
 
-        consola.classList.remove("bloqueada");
+        consola.classList.remove(
+          "bloqueada"
+        );
 
         const small=
           consola.querySelector("small");
 
         if(small){
-          small.textContent="Disponible";
+          small.textContent=
+            "Disponible";
         }
 
       }
@@ -1704,6 +2242,82 @@ function actualizarProgreso(){
     });
 
 }
+
+
+/* =========================================================
+   GALERÍA / MODAL
+========================================================= */
+
+function abrirFoto(
+  imagen,
+  titulo,
+  mensaje
+){
+
+  const modal=
+    document.getElementById("modalFoto");
+
+  document.getElementById("modalImagen")
+    .src=imagen;
+
+  document.getElementById("modalImagen")
+    .alt=titulo;
+
+  document.getElementById("modalTitulo")
+    .textContent=titulo;
+
+  document.getElementById("modalMensaje")
+    .textContent=mensaje;
+
+  const fraseFinal=
+    document.getElementById(
+      "modalFraseFinal"
+    );
+
+  if(imagen==="foto6.jpg"){
+    fraseFinal.style.display="block";
+  }else{
+    fraseFinal.style.display="none";
+  }
+
+  modal.classList.add("abierto");
+
+  document.body.style.overflow="hidden";
+
+}
+
+
+function cerrarFoto(){
+
+  document.getElementById("modalFoto")
+    .classList.remove("abierto");
+
+  document.body.style.overflow="";
+
+}
+
+
+document.getElementById("modalFoto")
+  .addEventListener("click",(evento)=>{
+
+    if(evento.target.id==="modalFoto"){
+      cerrarFoto();
+    }
+
+  });
+
+
+document.addEventListener(
+  "keydown",
+  (evento)=>{
+
+    if(evento.key==="Escape"){
+      cerrarFoto();
+    }
+
+  }
+);
+
 
 /* =========================================================
    INICIO
