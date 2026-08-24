@@ -607,7 +607,7 @@ section{
   100%{left:90%}
 }
 
-/* FUEGO NUEVO */
+/* FUEGO */
 
 .fuego{
   position:absolute;
@@ -787,7 +787,223 @@ section{
 }
 
 /* =========================================================
-   GALERÍA NUEVA
+   CARTA YU-GI-OH!
+========================================================= */
+
+#premio{
+  background:
+    radial-gradient(circle at 50% 10%,#74539e,#291844 45%,#070313);
+}
+
+.premio-contenido{
+  position:relative;
+  z-index:4;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.premio-titulo{
+  font-size:clamp(32px,7vw,48px);
+  margin-bottom:12px;
+  text-shadow:
+    0 0 15px #fff,
+    0 0 35px #d0a8ff,
+    0 0 60px rgba(173,107,255,.5);
+}
+
+.premio-subtitulo{
+  font-size:18px;
+  opacity:.85;
+  margin-bottom:35px;
+  line-height:1.6;
+}
+
+/* CARTA */
+
+.yugioh-carta{
+  position:relative;
+  width:min(92vw,390px);
+  margin:0 auto;
+  padding:12px;
+  border-radius:13px;
+  background:
+    linear-gradient(
+      145deg,
+      #d8b66d,
+      #8d6627 45%,
+      #e4c77d 70%,
+      #75501d
+    );
+  box-shadow:
+    0 0 20px rgba(255,215,130,.35),
+    0 25px 55px rgba(0,0,0,.65);
+  transform:rotate(-1deg);
+  transition:.4s;
+}
+
+.yugioh-carta:hover{
+  transform:rotate(0deg) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(255,219,143,.55),
+    0 25px 60px rgba(0,0,0,.7);
+}
+
+.yugioh-marco{
+  padding:8px;
+  background:
+    linear-gradient(
+      145deg,
+      #6e461b,
+      #c49342,
+      #5b3915
+    );
+  border-radius:7px;
+}
+
+.yugioh-cabecera{
+  background:
+    linear-gradient(
+      180deg,
+      #f4e0a3,
+      #cda85a
+    );
+  color:#24170b;
+  border:2px solid #4b2d0b;
+  padding:8px 9px;
+  font-weight:bold;
+  text-align:left;
+  font-size:18px;
+  box-shadow:inset 0 0 8px rgba(255,255,255,.5);
+}
+
+.yugioh-nivel{
+  text-align:right;
+  letter-spacing:3px;
+  color:#5c2700;
+  font-size:17px;
+  margin-top:5px;
+}
+
+.yugioh-ilustracion{
+  position:relative;
+  height:220px;
+  margin-top:7px;
+  border:3px solid #3c250e;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 50% 40%,#d7b2ff 0 8%,#8b56b5 25%,#33205b 60%,#090512 100%);
+}
+
+.yugioh-ilustracion:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:2px solid rgba(255,238,182,.45);
+  box-shadow:
+    0 0 25px rgba(244,211,133,.4),
+    inset 0 0 30px rgba(255,230,159,.15);
+}
+
+.yugioh-ilustracion:after{
+  content:"✦";
+  position:absolute;
+  top:18px;
+  left:25px;
+  color:#fff;
+  font-size:24px;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #d6b0ff;
+}
+
+.yugioh-corazones{
+  position:relative;
+  z-index:2;
+  font-size:65px;
+  filter:
+    drop-shadow(0 0 8px #fff)
+    drop-shadow(0 0 25px #c98dff);
+  animation:latirCarta 1.5s infinite;
+}
+
+@keyframes latirCarta{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.08);
+  }
+}
+
+.yugioh-tipo{
+  color:#24170b;
+  background:#dcb96d;
+  border:2px solid #4b2d0b;
+  margin-top:7px;
+  padding:6px 8px;
+  text-align:right;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.yugioh-efecto{
+  color:#25170b;
+  background:
+    linear-gradient(
+      180deg,
+      #ead493,
+      #c9a85a
+    );
+  border:2px solid #4b2d0b;
+  margin-top:5px;
+  padding:12px;
+  text-align:left;
+  font-size:13px;
+  line-height:1.5;
+  min-height:145px;
+}
+
+.yugioh-stats{
+  display:flex;
+  justify-content:flex-end;
+  gap:18px;
+  margin-top:8px;
+  font-weight:bold;
+}
+
+.yugioh-pie{
+  color:#24170b;
+  font-size:9px;
+  margin-top:8px;
+  text-align:left;
+}
+
+.premio-mensaje{
+  max-width:650px;
+  margin:35px auto 0;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:24px;
+  background:rgba(15,7,35,.75);
+  line-height:1.8;
+  font-size:18px;
+}
+
+.premio-mensaje strong{
+  display:block;
+  font-size:23px;
+  margin-bottom:12px;
+  color:#ead7ff;
+}
+
+/* =========================================================
+   GALERÍA
 ========================================================= */
 
 #galeria{
@@ -809,8 +1025,6 @@ section{
   line-height:1.7;
   opacity:.85;
 }
-
-/* TARJETAS PEQUEÑAS */
 
 .gallery{
   display:grid;
@@ -889,8 +1103,6 @@ section{
   font-style:italic;
 }
 
-/* BRILLITO SOBRE LA FOTO */
-
 .recuerdo:after{
   content:"✦";
   position:absolute;
@@ -904,7 +1116,9 @@ section{
   opacity:.8;
 }
 
-/* MODAL DE FOTO */
+/* =========================================================
+   MODAL FOTO
+========================================================= */
 
 .modal-foto{
   position:fixed;
@@ -1091,6 +1305,10 @@ section{
     font-size:12px;
   }
 
+  .yugioh-ilustracion{
+    height:190px;
+  }
+
 }
 
 @media(max-width:500px){
@@ -1122,15 +1340,23 @@ section{
     line-height:1.7;
   }
 
+  .yugioh-carta{
+    width:min(94vw,370px);
+  }
+
+  .yugioh-ilustracion{
+    height:180px;
+  }
+
+  .yugioh-corazones{
+    font-size:55px;
+  }
+
 }
 </style>
 </head>
 
 <body>
-
-<!-- =========================================================
-     ESTRELLAS + NUBES
-========================================================= -->
 
 <div class="estrellas" id="estrellas"></div>
 
@@ -1507,13 +1733,142 @@ section{
 
     </div>
 
+    <!-- ESTE BOTÓN AHORA LLEVA A LA CARTA DE YU-GI-OH! -->
     <button
       class="boton"
       id="continuarJuego"
       style="display:none"
+      onclick="mostrarSeccion('premio')"
+    >
+      🏆 Reclamar mi premio
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PREMIO — CARTA YU-GI-OH!
+========================================================= -->
+
+<section id="premio" class="hidden">
+
+  <div class="premio-contenido">
+
+    <h2 class="premio-titulo">
+      🏆 ¡Premio desbloqueado! 🏆
+    </h2>
+
+    <p class="premio-subtitulo">
+      Has conseguido superar nuestro pequeño juego...
+      <br>
+      así que ahora puedes reclamar tu carta especial. ❤️
+    </p>
+
+
+    <div class="yugioh-carta">
+
+      <div class="yugioh-marco">
+
+        <div class="yugioh-cabecera">
+          NUESTRO VÍNCULO
+        </div>
+
+        <div class="yugioh-nivel">
+          ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐
+        </div>
+
+        <div class="yugioh-ilustracion">
+
+          <div class="yugioh-corazones">
+            ❤️🐊❤️
+          </div>
+
+        </div>
+
+        <div class="yugioh-tipo">
+          ✨ CARTA DE VÍNCULO / AMOR ✨
+        </div>
+
+        <div class="yugioh-efecto">
+
+          <strong>
+            EFECTO ESPECIAL — “DISTANCIA NO SIGNIFICA SEPARACIÓN”
+          </strong>
+
+          <br><br>
+
+          Esta carta representa dos corazones que,
+          aunque se encuentren a kilómetros de distancia,
+          continúan eligiéndose.
+
+          <br><br>
+
+          Cada conversación, cada llamada,
+          cada risa y cada recuerdo aumenta
+          el poder de este vínculo.
+
+          <br><br>
+
+          <strong>
+            Esta carta no puede ser destruida por la distancia.
+          </strong>
+
+          <div class="yugioh-stats">
+            <span>ATK ∞</span>
+            <span>DEF ∞</span>
+          </div>
+
+        </div>
+
+        <div class="yugioh-pie">
+          Una carta única creada para dos personas
+          que encontraron una manera de estar cerca
+          incluso estando lejos. ❤️
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="premio-mensaje">
+
+      <strong>
+        Esta carta no existe en ningún otro duelo. ❤️
+      </strong>
+
+      Porque no es una carta cualquiera.
+
+      Es nuestra pequeña forma de decir que,
+      entre todas las posibilidades,
+      hubo dos personas que se encontraron.
+
+      Tú y yo.
+
+      Y aunque todavía nos queden kilómetros,
+      conversaciones, momentos y recuerdos por vivir,
+      quiero seguir construyendo este pequeño universo contigo.
+
+      <br><br>
+
+      Así que...
+
+      <br>
+
+      <strong>
+        Felicidades, duelista. 🃏❤️
+      </strong>
+
+    </div>
+
+
+    <button
+      class="boton"
       onclick="mostrarSeccion('galeria')"
     >
-      📸 Ver nuestros recuerdos
+      📸 Ahora sí... nuestros recuerdos
     </button>
 
   </div>
@@ -1659,7 +2014,7 @@ Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solame
 
 
 <!-- =========================================================
-     MODAL DE LAS FOTOS
+     MODAL FOTOS
 ========================================================= -->
 
 <div class="modal-foto" id="modalFoto">
