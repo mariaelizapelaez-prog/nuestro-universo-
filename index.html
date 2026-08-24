@@ -116,12 +116,8 @@ z-index:2
 }
 
 @keyframes brilloLuna{
-0%,100%{
-transform:scale(1)
-}
-50%{
-transform:scale(1.05)
-}
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.05)}
 }
 
 .texto-inicio{
@@ -375,12 +371,8 @@ animation-delay:10s
 }
 
 @keyframes moverNube{
-from{
-left:-350px
-}
-to{
-left:110%
-}
+from{left:-350px}
+to{left:110%}
 }
 
 .estrellas-razones{
@@ -411,12 +403,8 @@ transform:scale(1.35)
 }
 
 @keyframes brilloEstrella{
-from{
-opacity:.45
-}
-to{
-opacity:1
-}
+from{opacity:.45}
+to{opacity:1}
 }
 
 #mensaje-razon{
@@ -479,12 +467,8 @@ animation:lunaCoco 4s ease-in-out infinite
 }
 
 @keyframes lunaCoco{
-0%,100%{
-transform:translateY(0)
-}
-50%{
-transform:translateY(-8px)
-}
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
 }
 
 .carta-coco-contenido h2{
@@ -596,12 +580,8 @@ animation-delay:8s
 }
 
 @keyframes nubeDistancia{
-from{
-left:-350px
-}
-to{
-left:110%
-}
+from{left:-350px}
+to{left:110%}
 }
 
 .estrella-distancia{
@@ -875,12 +855,8 @@ drop-shadow(0 0 18px rgba(174,135,255,.8))
 }
 
 @keyframes flotarPersonaje{
-0%,100%{
-transform:translateY(0)
-}
-50%{
-transform:translateY(-9px)
-}
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-9px)}
 }
 
 .lugar-maria{
@@ -1487,21 +1463,13 @@ animation-name:caminarConejo
 }
 
 @keyframes caminarCoco{
-0%,100%{
-transform:translateX(-10px)
-}
-50%{
-transform:translateX(35px)
-}
+0%,100%{transform:translateX(-10px)}
+50%{transform:translateX(35px)}
 }
 
 @keyframes caminarConejo{
-0%,100%{
-transform:translateX(10px)
-}
-50%{
-transform:translateX(-35px)
-}
+0%,100%{transform:translateX(10px)}
+50%{transform:translateX(-35px)}
 }
 
 .corazon-premio{
@@ -1667,12 +1635,23 @@ display:block;
 border-radius:18px
 }
 
-.placeholder-yugioh{
-padding:45px 25px;
-font-size:18px;
-line-height:1.7;
-opacity:.75;
-font-style:italic
+/* =========================================================
+   LA CARTA REAL ESTÁ AQUÍ
+   Archivo: yuss.jpeg
+========================================================= */
+
+.imagen-yugioh img{
+max-width:100%;
+object-fit:contain;
+box-shadow:
+0 0 25px rgba(210,170,255,.25);
+transition:.3s
+}
+
+.imagen-yugioh img:hover{
+transform:scale(1.02);
+box-shadow:
+0 0 35px rgba(220,180,255,.45)
 }
 
 .carta-yugioh-texto{
@@ -1758,12 +1737,8 @@ animation:lunaFinal 4s ease-in-out infinite
 }
 
 @keyframes lunaFinal{
-0%,100%{
-transform:translateY(0)
-}
-50%{
-transform:translateY(-8px)
-}
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
 }
 
 .banca{
@@ -1785,13 +1760,8 @@ background:#1a1127;
 border-radius:5px
 }
 
-.banca:before{
-left:18%
-}
-
-.banca:after{
-right:18%
-}
+.banca:before{left:18%}
+.banca:after{right:18%}
 
 .asiento-banca{
 position:absolute;
@@ -1834,13 +1804,8 @@ drop-shadow(0 0 8px white)
 drop-shadow(0 0 18px #b995ff)
 }
 
-.sentado-coco{
-left:29%
-}
-
-.sentado-conejo{
-right:29%
-}
+.sentado-coco{left:29%}
+.sentado-conejo{right:29%}
 
 .final-titulo{
 font-size:42px;
@@ -2066,6 +2031,11 @@ font-size:17px
 
 .marco-carta-yugioh{
 padding:22px 15px
+}
+
+.imagen-yugioh img{
+width:100%;
+height:auto
 }
 
 .final-titulo{
@@ -2639,8 +2609,6 @@ MEMORY UNLOCKED!
 
 </div>
 
-<!-- PREMIO -->
-
 <div class="juego-final" id="juegoFinal">
 
 <div class="premio-retro">
@@ -2709,7 +2677,7 @@ Feliz cumpleaños, Coco, te quiero muchísimo. ❤️
 
 
 <!-- =========================================================
-     NUESTRA CARTA
+     NUESTRA CARTA / YU-GI-OH
 ========================================================= -->
 
 <section id="nuestra-carta">
@@ -2744,27 +2712,7 @@ Hay cosas que solamente nosotros dos podemos entender...
 
 <div class="imagen-yugioh">
 
-<!--
-=========================================================
-AQUÍ VA LA IMAGEN DE YU-GI-OH
-=========================================================
-
-Cuando tengas la imagen, pon el nombre del archivo aquí.
-
-Ejemplo:
-
-<img src="yugioh.png" alt="Nuestra carta">
-
-Si tu imagen se llama "carta.jpg":
-
-<img src="carta.jpg" alt="Nuestra carta">
-
-=========================================================
--->
-
-<div class="placeholder-yugioh">
-Aquí colocaremos nuestra imagen especial. ❤️
-</div>
+<img src="yuss.jpeg" alt="Nuestra carta de Yu-Gi-Oh">
 
 </div>
 
@@ -3226,22 +3174,6 @@ desbloqueados.size+
 " / "+
 niveles.length+
 " recuerdos desbloqueados";
-
-
-/*
-=========================================================
-CAMBIO IMPORTANTE
-
-ANTES:
-Al terminar el juego volvía automáticamente a distancia.
-
-AHORA:
-Se queda aquí y muestra el PREMIO.
-
-Después el botón "NUESTRA CARTA"
-lleva a la carta especial.
-=========================================================
-*/
 
 if(desbloqueados.size===niveles.length){
 
