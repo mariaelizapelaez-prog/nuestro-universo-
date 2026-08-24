@@ -1,264 +1,247 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para ti ❤️</title>
+<title>Nuestro Universo 💜</title>
 
 <style>
 *{
-box-sizing:border-box;
-margin:0;
-padding:0
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Georgia,"Times New Roman",serif;
-background:#03030d;
-color:white;
-overflow-x:hidden
+  font-family:Georgia,"Times New Roman",serif;
+  background:#050315;
+  color:#fff;
+  overflow-x:hidden;
 }
 
-.boton{
-border:none;
-padding:15px 36px;
-border-radius:40px;
-background:linear-gradient(135deg,#fff,#eadfff);
-color:#17102c;
-font:18px Georgia,"Times New Roman",serif;
-cursor:pointer;
-box-shadow:
-0 0 20px rgba(255,255,255,.8),
-0 0 45px rgba(190,130,255,.45);
-transition:.3s
-}
-
-.boton:hover{
-transform:scale(1.08)
+button{
+  font-family:inherit;
 }
 
 section{
-display:none;
-min-height:100vh
+  position:relative;
+  min-height:100vh;
+  padding:70px 20px;
+  overflow:hidden;
+}
+
+.hidden{
+  display:none!important;
 }
 
 /* =========================================================
-   INICIO
+   FONDO GENERAL
 ========================================================= */
 
-#inicio{
-display:flex;
-position:relative;
-overflow:hidden;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
-background:
-radial-gradient(
-circle at 50% 40%,
-#594a91 0%,
-#292052 30%,
-#100d29 62%,
-#03030d 100%
-)
+#inicio,
+#carta,
+#razones,
+#carta-coco,
+#distancia,
+#juego,
+#galeria,
+#final{
+  background:
+    radial-gradient(circle at 50% 20%,rgba(120,80,190,.28),transparent 35%),
+    linear-gradient(180deg,#09051c,#160d32 45%,#050315);
 }
 
-#inicio:before,
-#inicio:after{
-content:"";
-position:absolute;
-border-radius:50%;
-filter:blur(80px)
+.estrellas{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
 }
 
-#inicio:before{
-width:420px;
-height:420px;
-background:rgba(190,120,255,.12);
-top:-100px;
-right:-100px
-}
-
-#inicio:after{
-width:350px;
-height:350px;
-background:rgba(100,120,255,.12);
-bottom:-100px;
-left:-100px
-}
-
-.luna-grande{
-width:200px;
-height:200px;
-border-radius:50%;
-background:
-radial-gradient(
-circle at 35% 30%,
-#fff,
-#fffde9 42%,
-#e7dfbd 75%,
-#bdb58f
-);
-box-shadow:
-0 0 25px white,
-0 0 60px rgba(255,255,255,.75),
-0 0 110px rgba(210,160,255,.45);
-margin-bottom:42px;
-animation:brilloLuna 4s ease-in-out infinite;
-position:relative;
-z-index:2
-}
-
-@keyframes brilloLuna{
-0%,100%{transform:scale(1)}
-50%{transform:scale(1.05)}
-}
-
-.texto-inicio{
-position:relative;
-z-index:2
-}
-
-.texto-inicio h1{
-font-size:48px;
-margin-bottom:18px;
-text-shadow:
-0 0 15px white,
-0 0 35px #c49aff
-}
-
-.texto-inicio p{
-font-size:22px;
-opacity:.9;
-margin-bottom:38px
-}
-
-.estrella,
-.estrella-carta{
-position:absolute;
-width:3px;
-height:3px;
-background:white;
-border-radius:50%;
-box-shadow:
-0 0 8px white,
-0 0 16px #cbb2ff;
-animation:parpadear 2.5s infinite alternate
+.estrellas span{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  box-shadow:0 0 8px white;
+  animation:parpadear 2.5s infinite alternate;
 }
 
 @keyframes parpadear{
-from{
-opacity:.2;
-transform:scale(.7)
+  from{opacity:.25;transform:scale(.7)}
+  to{opacity:1;transform:scale(1.5)}
 }
-to{
-opacity:1;
-transform:scale(1.4)
+
+.luna{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:#fffbe9;
+  box-shadow:
+    0 0 25px white,
+    0 0 70px rgba(210,180,255,.7);
+  position:absolute;
+  top:90px;
+  right:12%;
 }
+
+.luna:after{
+  content:"";
+  position:absolute;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:#09051c;
+  left:42px;
+  top:-10px;
 }
 
 /* =========================================================
-   CARTA DE CUMPLEAÑOS
+   BOTONES
 ========================================================= */
 
-#carta{
-position:relative;
-overflow:hidden;
-padding:70px 20px;
-background:
-radial-gradient(
-circle at 75% 15%,
-#4c3d78,
-#241c49 35%,
-#0d0a24 70%,
-#03030d
-)
+.boton{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  border:none;
+  border-radius:999px;
+  color:white;
+  background:linear-gradient(135deg,#8e63d8,#5e3c9c);
+  box-shadow:0 0 20px rgba(177,130,255,.4);
+  cursor:pointer;
+  font-size:17px;
+  transition:.3s;
 }
+
+.boton:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 30px rgba(210,180,255,.7);
+}
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+.inicio-contenido{
+  min-height:100vh;
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.inicio-contenido .mini{
+  letter-spacing:4px;
+  font-size:13px;
+  opacity:.7;
+  margin-bottom:20px;
+}
+
+.inicio-contenido h1{
+  font-size:clamp(42px,10vw,76px);
+  text-shadow:
+    0 0 15px white,
+    0 0 35px #a875ff;
+  margin-bottom:18px;
+}
+
+.inicio-contenido p{
+  max-width:600px;
+  font-size:20px;
+  line-height:1.7;
+  opacity:.88;
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
 
 .contenido-carta,
 .carta-coco-contenido,
 .distancia-contenido{
-position:relative;
-z-index:2;
-max-width:760px;
-margin:auto;
-text-align:center
+  position:relative;
+  z-index:2;
+  max-width:800px;
+  margin:auto;
+  text-align:center;
 }
 
 .media-luna{
-width:130px;
-height:130px;
-border-radius:50%;
-background:#fffbe8;
-box-shadow:
-0 0 25px white,
-0 0 55px rgba(255,255,255,.55);
-position:relative;
-margin:0 auto 35px;
-overflow:hidden
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:#fffbe8;
+  box-shadow:0 0 25px white,0 0 55px rgba(255,255,255,.55);
+  position:relative;
+  margin:0 auto 35px;
+  overflow:hidden;
 }
 
 .media-luna:after{
-content:"";
-position:absolute;
-width:135px;
-height:135px;
-border-radius:50%;
-background:#241c49;
-left:42px;
-top:-8px
+  content:"";
+  position:absolute;
+  width:135px;
+  height:135px;
+  border-radius:50%;
+  background:#241c49;
+  left:42px;
+  top:-8px;
 }
 
-.contenido-carta h1{
-font-size:43px;
-margin-bottom:15px;
-text-shadow:
-0 0 14px white,
-0 0 30px #c49aff
+.contenido-carta h2,
+.carta-coco-contenido h2,
+.distancia-titulo,
+.galeria-titulo{
+  font-size:clamp(32px,7vw,48px);
+  margin-bottom:15px;
+  text-shadow:0 0 15px white,0 0 35px #c49aff;
 }
 
-.subtitulo-carta{
-font-size:20px;
-opacity:.85;
-margin-bottom:35px
+.subtitulo-carta,
+.coco-intro,
+.distancia-subtitulo{
+  font-size:19px;
+  opacity:.85;
+  margin-bottom:35px;
 }
 
 .texto-carta,
 .carta-coco-texto{
-background:
-linear-gradient(
-135deg,
-rgba(255,255,255,.11),
-rgba(180,130,255,.08)
-);
-border:1px solid rgba(255,255,255,.18);
-border-radius:25px;
-padding:35px;
-line-height:1.9;
-font-size:18px;
-text-align:left;
-backdrop-filter:blur(8px);
-box-shadow:
-0 0 35px rgba(0,0,0,.3),
-0 0 30px rgba(180,120,255,.08)
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,.11),
+    rgba(180,130,255,.08)
+  );
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:25px;
+  padding:35px;
+  line-height:1.9;
+  font-size:18px;
+  text-align:left;
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 35px rgba(0,0,0,.3);
 }
 
 .texto-carta p,
 .carta-coco-texto p{
-margin-bottom:20px
+  margin-bottom:20px;
 }
 
 .firma,
 .despedida-coco{
-text-align:center;
-font-size:23px;
-font-style:italic
+  text-align:center;
+  font-size:23px;
+  font-style:italic;
 }
 
 /* =========================================================
@@ -266,1407 +249,351 @@ font-style:italic
 ========================================================= */
 
 #razones{
-position:relative;
-overflow:hidden;
-padding:75px 20px;
-background:
-radial-gradient(
-circle at 50% 0%,
-#594b88,
-#28204e 30%,
-#0d0a25 68%,
-#03030d
-)
+  background:
+    radial-gradient(circle at 50% 0%,#594b88,#28204e 30%,#0d0a25 68%,#03030d);
 }
 
 .razones-contenido{
-position:relative;
-z-index:5;
-max-width:950px;
-margin:auto;
-text-align:center
+  position:relative;
+  z-index:5;
+  max-width:950px;
+  margin:auto;
+  text-align:center;
 }
 
-.razones-contenido h2,
-.carta-coco-contenido h2,
-.distancia-titulo{
-font-size:43px;
-margin-bottom:12px;
-text-shadow:
-0 0 15px white,
-0 0 35px #c49aff
-}
-
-.razones-subtitulo,
-.coco-intro,
-.distancia-subtitulo{
-font-size:19px;
-opacity:.85;
-margin-bottom:45px
-}
-
-.nube,
-.nube-distancia{
-position:absolute;
-width:230px;
-height:70px;
-background:
-linear-gradient(
-90deg,
-rgba(255,255,255,.06),
-rgba(210,170,255,.13),
-rgba(255,255,255,.06)
-);
-border-radius:50%;
-filter:blur(8px);
-opacity:.7;
-animation:moverNube 28s linear infinite
-}
-
-.nube:before,
-.nube:after,
-.nube-distancia:before,
-.nube-distancia:after{
-content:"";
-position:absolute;
-background:rgba(220,190,255,.10);
-border-radius:50%
-}
-
-.nube:before,
-.nube-distancia:before{
-width:100px;
-height:100px;
-left:35px;
-bottom:15px
-}
-
-.nube:after,
-.nube-distancia:after{
-width:120px;
-height:120px;
-right:25px;
-bottom:10px
-}
-
-.nube1{
-top:15%;
-left:-300px
-}
-
-.nube2{
-top:55%;
-left:-350px;
-transform:scale(.7);
-animation-duration:36s;
-animation-delay:5s
-}
-
-.nube3{
-top:78%;
-left:-300px;
-transform:scale(1.2);
-animation-duration:32s;
-animation-delay:10s
-}
-
-@keyframes moverNube{
-from{left:-350px}
-to{left:110%}
+.razones-subtitulo{
+  font-size:19px;
+  opacity:.85;
+  margin-bottom:40px;
 }
 
 .estrellas-razones{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:28px;
-max-width:800px;
-margin:auto
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+  max-width:650px;
+  margin:auto;
 }
 
 .estrella-razon{
-border:none;
-background:none;
-color:white;
-font-size:35px;
-cursor:pointer;
-text-shadow:
-0 0 8px white,
-0 0 20px #d4b9ff,
-0 0 40px #8d69d8;
-animation:
-brilloEstrella 2.5s ease-in-out infinite alternate;
-transition:.3s
+  border:none;
+  background:transparent;
+  color:#fff;
+  font-size:38px;
+  cursor:pointer;
+  text-shadow:0 0 10px white,0 0 25px #b987ff;
+  transition:.3s;
 }
 
 .estrella-razon:hover{
-transform:scale(1.35)
-}
-
-@keyframes brilloEstrella{
-from{opacity:.45}
-to{opacity:1}
+  transform:scale(1.35) rotate(8deg);
 }
 
 #mensaje-razon{
-display:none;
-position:fixed;
-z-index:100;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-width:min(90%,500px);
-padding:35px;
-background:
-linear-gradient(
-145deg,
-#3b2c63,
-#0a081d
-);
-border:1px solid rgba(255,255,255,.2);
-border-radius:25px;
-text-align:center;
-box-shadow:0 0 45px rgba(170,120,255,.45)
+  display:none;
+  margin:35px auto 0;
+  max-width:650px;
+  padding:30px;
+  background:rgba(20,10,45,.8);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:25px;
 }
 
 .estrella-grande{
-font-size:50px;
-margin-bottom:15px
-}
-
-#texto-razon{
-font-size:21px;
-line-height:1.6;
-margin-bottom:25px
+  font-size:55px;
+  margin-bottom:15px;
 }
 
 /* =========================================================
-   CARTA DE COCO
+   CARTA COCO
 ========================================================= */
 
-#carta-coco{
-position:relative;
-overflow:hidden;
-padding:75px 20px;
-background:
-radial-gradient(
-circle at 50% 15%,
-#594a88 0%,
-#2b214f 35%,
-#0d0a24 70%,
-#03030d 100%
-)
-}
-
 .coco-luna{
-font-size:75px;
-margin-bottom:15px;
-filter:
-drop-shadow(0 0 12px white)
-drop-shadow(0 0 30px #c59aff);
-animation:lunaCoco 4s ease-in-out infinite
-}
-
-@keyframes lunaCoco{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-}
-
-.carta-coco-contenido h2{
-font-size:42px
-}
-
-.carta-coco-texto{
-max-width:760px;
-margin:auto
-}
-
-.carta-coco-texto p{
-margin-bottom:22px
+  font-size:70px;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 15px #c49aff);
 }
 
 .cocodrilo-coco{
-font-size:65px;
-margin-top:35px;
-filter:
-drop-shadow(0 0 10px #c5a1ff)
-drop-shadow(0 0 25px rgba(255,255,255,.5));
-animation:cocodriloFlota 3s ease-in-out infinite
+  font-size:70px;
+  margin-top:25px;
+  animation:flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
 }
 
 .coco-final{
-margin-top:10px;
-margin-bottom:25px;
-font-size:17px;
-opacity:.75;
-font-style:italic
-}
-
-@keyframes cocodriloFlota{
-0%,100%{
-transform:translateY(0) rotate(-2deg)
-}
-50%{
-transform:translateY(-7px) rotate(2deg)
-}
+  font-size:23px;
+  font-style:italic;
+  margin-top:10px;
 }
 
 /* =========================================================
    DISTANCIA
 ========================================================= */
 
-#distancia{
-position:relative;
-overflow:hidden;
-padding:70px 18px;
-background:
-radial-gradient(
-circle at 50% 15%,
-#64518f 0%,
-#35275d 28%,
-#17112f 62%,
-#05040f 100%
-)
-}
-
-#distancia:before,
-#distancia:after{
-content:"";
-position:absolute;
-border-radius:50%;
-filter:blur(90px)
-}
-
-#distancia:before{
-width:400px;
-height:400px;
-background:rgba(216,155,255,.10);
-top:-150px;
-left:-150px
-}
-
-#distancia:after{
-width:350px;
-height:350px;
-background:rgba(115,135,255,.10);
-bottom:-150px;
-right:-100px
-}
-
 .distancia-contenido{
-max-width:950px
+  max-width:900px;
 }
 
-.distancia-titulo{
-font-size:43px
+.mapa-amor{
+  position:relative;
+  max-width:650px;
+  height:300px;
+  margin:35px auto;
 }
 
-.nube-distancia{
-width:240px;
-height:75px;
-animation:nubeDistancia 32s linear infinite
+.mapa-amor svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
 }
 
-.nube-d1{
-top:14%;
-left:-300px
-}
-
-.nube-d2{
-top:68%;
-left:-350px;
-transform:scale(.75);
-animation-duration:40s;
-animation-delay:8s
-}
-
-@keyframes nubeDistancia{
-from{left:-350px}
-to{left:110%}
-}
-
-.estrella-distancia{
-position:absolute;
-width:4px;
-height:4px;
-border-radius:50%;
-background:white;
-box-shadow:
-0 0 8px white,
-0 0 18px #d8b7ff,
-0 0 30px rgba(190,140,255,.7);
-animation:
-estrellaDistancia 2.8s ease-in-out infinite alternate;
-pointer-events:none
-}
-
-.estrella-distancia:after{
-content:"✦";
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:13px;
-color:white;
-text-shadow:
-0 0 8px white,
-0 0 18px #cda8ff
-}
-
-@keyframes estrellaDistancia{
-from{
-opacity:.25;
-transform:scale(.7)
-}
-to{
-opacity:1;
-transform:scale(1.35)
-}
-}
-
-.mapa-card{
-position:relative;
-min-height:510px;
-border-radius:35px;
-overflow:hidden;
-padding:30px;
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.12),
-rgba(135,95,200,.08)
-);
-border:1px solid rgba(255,255,255,.20);
-backdrop-filter:blur(9px);
-box-shadow:
-0 0 50px rgba(0,0,0,.35),
-inset 0 0 45px rgba(210,170,255,.05)
-}
-
-.mapa-grid{
-position:absolute;
-inset:0;
-opacity:.09;
-background-image:
-linear-gradient(
-rgba(255,255,255,.5) 1px,
-transparent 1px
-),
-linear-gradient(
-90deg,
-rgba(255,255,255,.5) 1px,
-transparent 1px
-);
-background-size:50px 50px;
-transform:
-perspective(500px)
-rotateX(35deg)
-scale(1.3)
-}
-
-.mapamundi{
-position:absolute;
-left:50%;
-top:51%;
-transform:translate(-50%,-50%);
-width:min(850px,95%);
-height:310px;
-border-radius:50%;
-background:
-radial-gradient(
-ellipse at center,
-rgba(164,145,255,.12),
-rgba(92,80,170,.08) 48%,
-transparent 72%
-);
-opacity:.8
-}
-
-.continente{
-position:absolute;
-background:
-linear-gradient(
-135deg,
-rgba(219,190,255,.20),
-rgba(128,104,185,.10)
-);
-border:1px solid rgba(255,255,255,.07);
-filter:blur(1px);
-opacity:.65
-}
-
-.europa{
-width:105px;
-height:60px;
-top:48px;
-left:51%;
-border-radius:55% 40% 45% 30%;
-transform:rotate(-12deg)
-}
-
-.america-norte{
-width:165px;
-height:110px;
-top:65px;
-left:9%;
-border-radius:60% 35% 55% 40%;
-transform:rotate(15deg)
-}
-
-.america-sur{
-width:105px;
-height:180px;
-top:145px;
-left:29%;
-border-radius:60% 45% 55% 35%;
-transform:rotate(18deg)
-}
-
-.africa{
-width:120px;
-height:155px;
-top:130px;
-left:51%;
-border-radius:45% 55% 45% 50%;
-transform:rotate(8deg)
-}
-
-.asia{
-width:245px;
-height:105px;
-top:60px;
-right:8%;
-border-radius:45% 55% 35% 50%;
-transform:rotate(8deg)
-}
-
-.australia{
-width:100px;
-height:55px;
-bottom:45px;
-right:15%;
-border-radius:50% 45% 55% 40%;
-transform:rotate(12deg)
-}
-
-.lugar{
-position:absolute;
-z-index:30;
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:17px;
-font-weight:bold;
-text-shadow:
-0 2px 10px #05030e,
-0 0 10px rgba(255,255,255,.5)
-}
-
-.personaje{
-position:relative;
-width:88px;
-height:100px;
-display:flex;
-justify-content:center;
-align-items:center;
-margin-bottom:5px;
-animation:flotarPersonaje 3.5s ease-in-out infinite;
-filter:
-drop-shadow(0 0 8px rgba(255,255,255,.9))
-drop-shadow(0 0 22px rgba(202,155,255,.75))
-}
-
-.conejita{
-position:relative;
-width:60px;
-height:68px;
-animation:respirarConejita 3.5s ease-in-out infinite;
-background:
-radial-gradient(
-circle at 22px 40px,
-#4b355d 0 2px,
-transparent 3px
-),
-radial-gradient(
-circle at 40px 40px,
-#4b355d 0 2px,
-transparent 3px
-),
-radial-gradient(
-circle at 31px 48px,
-#c78dbd 0 3px,
-transparent 4px
-)
-}
-
-.conejita:before{
-content:"";
-position:absolute;
-width:54px;
-height:50px;
-left:3px;
-top:18px;
-border-radius:50% 50% 46% 46%;
-background:
-radial-gradient(
-circle at 35% 30%,
-#fff,
-#f6eaff 55%,
-#d8c4ef
-);
-box-shadow:
-inset -5px -6px 8px rgba(120,80,150,.13),
-0 0 8px rgba(255,255,255,.8)
-}
-
-.conejita:after{
-content:"";
-position:absolute;
-width:17px;
-height:43px;
-left:8px;
-top:-3px;
-border-radius:60% 60% 45% 45%;
-background:linear-gradient(
-90deg,
-#eee2ff,
-#f9f0ff
-);
-box-shadow:
-27px 0 0 -1px #eee2ff,
-27px 0 0 0 #eee2ff;
-transform:rotate(-8deg)
-}
-
-@keyframes respirarConejita{
-0%,100%{
-transform:translateY(0) scale(1)
-}
-50%{
-transform:translateY(-4px) scale(1.03)
-}
-}
-
-.cocodrilo-distancia{
-font-size:68px;
-line-height:1;
-filter:
-drop-shadow(0 0 7px rgba(255,255,255,.9))
-drop-shadow(0 0 18px rgba(174,135,255,.8))
-}
-
-@keyframes flotarPersonaje{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-9px)}
-}
-
-.lugar-maria{
-top:75px;
-left:57%;
-transform:translateX(-50%)
-}
-
-.lugar-coco{
-top:285px;
-left:29%;
-transform:translateX(-50%)
-}
-
-.ruta-corazon{
-position:absolute;
-z-index:22;
-width:520px;
-height:250px;
-left:18%;
-top:115px;
-overflow:visible;
-pointer-events:none
-}
-
-.ruta-base{
-fill:none;
-stroke:rgba(232,204,255,.78);
-stroke-width:3;
-stroke-linecap:round;
-filter:
-drop-shadow(0 0 5px #e7c7ff)
-drop-shadow(0 0 12px rgba(200,145,255,.9))
+.ruta{
+  fill:none;
+  stroke:rgba(218,184,255,.55);
+  stroke-width:3;
+  stroke-dasharray:8 8;
 }
 
 .ruta-brillo{
-fill:none;
-stroke:rgba(255,255,255,.55);
-stroke-width:1.2;
-stroke-linecap:round
-}
-
-.corazon-svg{
-filter:
-drop-shadow(0 0 5px white)
-drop-shadow(0 0 10px #ff9fdf)
-}
-
-.brillito-linea{
-position:absolute;
-z-index:25;
-color:#f5ddff;
-font-size:15px;
-animation:
-brillarLinea 2s ease-in-out infinite alternate;
-pointer-events:none
-}
-
-.brillito1{
-top:215px;
-left:46%
-}
-
-.brillito2{
-top:270px;
-left:39%;
-animation-delay:.8s
-}
-
-.brillito3{
-top:185px;
-left:59%;
-animation-delay:1.4s
-}
-
-.brillito4{
-top:320px;
-left:49%;
-animation-delay:.4s
-}
-
-@keyframes brillarLinea{
-from{
-opacity:.2;
-transform:scale(.7)
-}
-to{
-opacity:1;
-transform:scale(1.3)
-}
+  fill:none;
+  stroke:#fff;
+  stroke-width:1;
+  opacity:.45;
 }
 
 .kilometros{
-position:absolute;
-z-index:40;
-left:50%;
-top:245px;
-transform:translateX(-50%);
-padding:8px 18px;
-border-radius:30px;
-background:rgba(20,12,45,.72);
-border:1px solid rgba(255,255,255,.18);
-backdrop-filter:blur(6px);
-font-size:16px;
-box-shadow:0 0 20px rgba(190,130,255,.18)
+  font-size:18px;
+  margin-top:15px;
+  opacity:.85;
 }
 
 .frase-mapa{
-position:absolute;
-z-index:9;
-max-width:220px;
-font-size:14px;
-line-height:1.5;
-font-style:italic;
-opacity:.82;
-text-shadow:0 0 10px rgba(255,190,255,.45)
-}
-
-.frase-1{
-top:35px;
-left:8%
-}
-
-.frase-2{
-top:55px;
-right:7%
-}
-
-.frase-3{
-bottom:45px;
-left:7%
-}
-
-.frase-4{
-bottom:30px;
-right:7%
+  font-size:18px;
+  line-height:1.7;
+  margin:18px auto;
+  max-width:700px;
 }
 
 .distancia-frase-final{
-margin-top:30px;
-font-size:24px;
-font-style:italic;
-text-shadow:
-0 0 12px white,
-0 0 25px #d3a6ff
+  margin-top:30px;
+  font-size:22px;
+  line-height:1.7;
 }
 
 .distancia-frase-final strong{
-display:block;
-font-size:28px;
-margin-top:10px
+  display:block;
+  font-size:28px;
 }
 
 /* =========================================================
-   JUEGO RETRO
+   JUEGO
 ========================================================= */
 
 #juego{
-position:relative;
-overflow:hidden;
-padding:40px 18px 70px;
-background:
-radial-gradient(
-circle at 50% 20%,
-#26264d 0%,
-#101027 45%,
-#05050d 100%
-);
-font-family:"Courier New",monospace
-}
-
-#juego:before{
-content:"";
-position:absolute;
-inset:0;
-pointer-events:none;
-background:
-linear-gradient(
-rgba(255,255,255,.025) 50%,
-transparent 50%
-);
-background-size:100% 4px;
-opacity:.55
-}
-
-#juego:after{
-content:"";
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-background:rgba(80,255,210,.06);
-filter:blur(120px);
-top:-250px;
-left:-150px
+  background:
+    radial-gradient(circle at 50% 20%,#654a94,#21143f 45%,#070414);
 }
 
 .juego-contenido{
-position:relative;
-z-index:5;
-max-width:900px;
-margin:auto;
-text-align:center
+  position:relative;
+  z-index:3;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
 }
 
 .juego-titulo{
-font-family:"Courier New",monospace;
-font-size:38px;
-color:#8affd8;
-margin-bottom:8px;
-text-shadow:
-3px 3px 0 #172f35,
-0 0 12px #54ffd0
+  font-size:clamp(32px,7vw,48px);
+  text-shadow:0 0 15px white,0 0 35px #c49aff;
 }
 
 .juego-subtitulo{
-font-size:15px;
-color:#d7fff3;
-opacity:.8;
-margin-bottom:25px
-}
-
-.consola-retro{
-max-width:760px;
-margin:0 auto;
-padding:14px;
-background:#68686f;
-border:5px solid #29292e;
-border-radius:18px;
-box-shadow:
-inset 0 0 0 3px #a4a4a9,
-inset 0 0 0 7px #444449,
-0 12px 30px rgba(0,0,0,.6);
-text-align:left
-}
-
-.consola-superior{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:8px 12px;
-margin-bottom:12px;
-font-size:12px;
-font-weight:bold;
-letter-spacing:2px;
-color:#e5e5e5
-}
-
-.luz-retro{
-width:9px;
-height:9px;
-border-radius:50%;
-background:#ff466d;
-box-shadow:0 0 8px #ff466d;
-display:inline-block;
-margin-right:6px
-}
-
-.pantalla-retro{
-background:#07151a;
-border:7px solid #222227;
-box-shadow:
-inset 0 0 25px rgba(0,255,190,.18),
-0 0 0 2px #8c8c91;
-padding:28px 22px;
-min-height:360px;
-position:relative;
-overflow:hidden
-}
-
-.pantalla-retro:after{
-content:"";
-position:absolute;
-inset:0;
-pointer-events:none;
-background:
-repeating-linear-gradient(
-to bottom,
-transparent 0,
-transparent 3px,
-rgba(255,255,255,.025) 4px
-)
-}
-
-.retro-cargando{
-font-size:13px;
-color:#7dffd7;
-margin-bottom:18px;
-letter-spacing:2px
-}
-
-.pregunta{
-position:relative;
-z-index:2;
-font-family:"Courier New",monospace;
-font-size:22px;
-line-height:1.5;
-color:#eafff8;
-margin-bottom:25px;
-text-shadow:0 0 7px rgba(120,255,220,.5)
-}
-
-.opciones{
-position:relative;
-z-index:2;
-display:grid;
-gap:10px
-}
-
-.opcion{
-font-family:"Courier New",monospace;
-font-size:16px;
-text-align:left;
-border:2px solid #426c65;
-background:#102a2a;
-color:#cffff0;
-padding:13px 16px;
-border-radius:4px;
-cursor:pointer;
-transition:.2s;
-box-shadow:inset 0 0 10px rgba(0,255,190,.04)
-}
-
-.opcion:hover{
-background:#17403c;
-border-color:#7affd8;
-transform:translateX(4px)
-}
-
-.opcion.correcta{
-background:#194c3d;
-border-color:#8affd8;
-color:#fff
-}
-
-.opcion.incorrecta{
-background:#4b202e;
-border-color:#ff718f;
-color:#fff
-}
-
-.mensaje-erroneo{
-display:none;
-position:relative;
-z-index:3;
-margin-top:15px;
-font-size:13px;
-color:#ff91aa
-}
-
-.mensaje-erroneo.visible{
-display:block
-}
-
-.resultado{
-display:none;
-position:relative;
-z-index:3;
-margin-top:22px;
-padding:20px;
-background:#102b27;
-border:2px solid #62dcbf;
-color:#dffff6;
-box-shadow:0 0 15px rgba(90,255,210,.15)
-}
-
-.resultado.visible{
-display:block
-}
-
-.estrella-desbloqueo{
-font-size:30px;
-margin-bottom:8px
-}
-
-.resultado h4{
-font-family:"Courier New",monospace;
-font-size:20px;
-color:#8affd8;
-margin-bottom:10px
-}
-
-.resultado p{
-font-family:Georgia,"Times New Roman",serif;
-font-size:17px;
-line-height:1.6
-}
-
-.retro-boton{
-font-family:"Courier New",monospace;
-border:2px solid #8affd8;
-background:#163832;
-color:#cffff0;
-padding:11px 18px;
-cursor:pointer;
-margin-top:14px;
-font-weight:bold;
-transition:.2s
-}
-
-.retro-boton:hover{
-background:#23564c;
-box-shadow:0 0 12px rgba(100,255,215,.3)
-}
-
-.progreso-juego{
-margin:18px auto 0;
-max-width:760px
-}
-
-.barra{
-height:12px;
-border:2px solid #55555b;
-background:#16161b;
-padding:2px
-}
-
-.barra span{
-display:block;
-height:100%;
-width:0;
-background:#8affd8;
-box-shadow:0 0 8px #8affd8;
-transition:.5s
-}
-
-.progreso-texto{
-font-size:12px;
-color:#aee8da;
-margin-top:7px
+  margin:15px auto 35px;
+  max-width:650px;
+  font-size:18px;
+  line-height:1.6;
+  opacity:.85;
 }
 
 .consolas{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
-max-width:760px;
-margin:22px auto
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:650px;
+  margin:auto;
 }
 
 .consola{
-position:relative;
-padding:12px 7px;
-background:#505056;
-border:3px solid #29292e;
-border-radius:8px;
-box-shadow:
-inset 0 0 0 2px #87878c,
-0 5px 10px rgba(0,0,0,.45);
-cursor:pointer;
-transition:.25s;
-text-align:center
+  padding:25px 10px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.2);
+  background:linear-gradient(145deg,#25203f,#100b24);
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  cursor:pointer;
+  transition:.3s;
 }
 
 .consola:hover{
-transform:translateY(-5px)
-}
-
-.consola.desbloqueada{
-background:#536f6a;
-border-color:#9affdf;
-box-shadow:
-inset 0 0 0 2px #b8fff0,
-0 0 14px rgba(100,255,215,.3)
+  transform:translateY(-7px);
+  box-shadow:0 0 25px rgba(195,155,255,.5);
 }
 
 .consola-icono{
-font-size:32px;
-margin-bottom:4px
+  font-size:45px;
 }
 
-.consola h3{
-font-family:"Courier New",monospace;
-font-size:11px;
-color:#fff;
-margin-bottom:4px
+.consola small{
+  display:block;
+  margin-top:8px;
+  opacity:.7;
 }
 
-.consola p{
-font-family:"Courier New",monospace;
-font-size:9px;
-color:#d4d4d4
+.consola.bloqueada{
+  opacity:.4;
+  filter:grayscale(1);
 }
 
-/* =========================================================
-   PREMIO DEL JUEGO
-========================================================= */
-
-.juego-final{
-display:none;
-max-width:760px;
-margin:30px auto 0;
-padding:30px 22px;
-background:
-linear-gradient(
-145deg,
-#25243b,
-#11101f
-);
-border:4px solid #69696f;
-box-shadow:
-inset 0 0 0 3px #34343a,
-0 8px 25px rgba(0,0,0,.5);
-text-align:center
+.pantalla-juego{
+  display:none;
+  max-width:650px;
+  margin:35px auto 0;
+  padding:30px;
+  border-radius:25px;
+  background:rgba(10,6,30,.8);
+  border:1px solid rgba(255,255,255,.18);
 }
 
-.juego-final.visible{
-display:block;
-animation:entradaJuego .7s ease
+.pregunta{
+  font-size:22px;
+  line-height:1.5;
+  margin-bottom:25px;
 }
 
-@keyframes entradaJuego{
-from{
-opacity:0;
-transform:translateY(15px)
-}
-to{
-opacity:1;
-transform:translateY(0)
-}
+.opciones{
+  display:grid;
+  gap:12px;
 }
 
-.premio-retro{
-height:270px;
-position:relative;
-overflow:hidden;
-margin-bottom:20px;
-background:
-radial-gradient(
-circle at 78% 18%,
-rgba(255,255,220,.20) 0 22px,
-transparent 23px
-),
-linear-gradient(
-180deg,
-#17162b,
-#0b0b17
-);
-border:3px solid #41414a;
-box-shadow:
-inset 0 0 35px rgba(150,120,255,.12);
-image-rendering:pixelated
+.opcion{
+  border:none;
+  border-radius:15px;
+  padding:14px;
+  background:#342558;
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
 }
 
-.premio-retro:before{
-content:"";
-position:absolute;
-inset:0;
-background:
-repeating-linear-gradient(
-to bottom,
-rgba(255,255,255,.02) 0,
-rgba(255,255,255,.02) 2px,
-transparent 3px,
-transparent 5px
-);
-pointer-events:none
+.opcion:hover{
+  background:#5b3d8c;
 }
 
-.luna-premio{
-position:absolute;
-right:45px;
-top:25px;
-font-size:55px;
-filter:
-drop-shadow(0 0 8px white)
-drop-shadow(0 0 20px #c9a6ff)
+.mensaje-error{
+  margin-top:20px;
+  display:none;
+  color:#e7ccff;
 }
 
-.estrellita-premio{
-position:absolute;
-color:#fff;
-font-size:16px;
-text-shadow:
-0 0 8px white,
-0 0 15px #c9a6ff;
-animation:parpadear 1.8s infinite alternate
+.progreso-juego{
+  max-width:600px;
+  margin:30px auto 0;
 }
 
-.ep1{left:12%;top:22%}
-.ep2{left:25%;top:68%}
-.ep3{left:58%;top:18%}
-.ep4{left:76%;top:72%}
-.ep5{left:45%;top:52%}
-
-.personaje-premio{
-position:absolute;
-bottom:42px;
-font-size:48px;
-filter:
-drop-shadow(0 0 7px white)
-drop-shadow(0 0 14px #b993ff);
-animation:caminarPremio 3.5s ease-in-out infinite
+.barra{
+  height:10px;
+  background:rgba(255,255,255,.12);
+  border-radius:20px;
+  overflow:hidden;
 }
 
-.coco-premio{
-left:24%;
-animation-name:caminarCoco
+.barra span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#8f63d2,#e3cfff);
+  transition:.5s;
 }
 
-.conejo-premio{
-right:24%;
-animation-name:caminarConejo
-}
-
-@keyframes caminarCoco{
-0%,100%{transform:translateX(-10px)}
-50%{transform:translateX(35px)}
-}
-
-@keyframes caminarConejo{
-0%,100%{transform:translateX(10px)}
-50%{transform:translateX(-35px)}
-}
-
-.corazon-premio{
-position:absolute;
-left:50%;
-top:53%;
-transform:translate(-50%,-50%);
-font-size:34px;
-filter:
-drop-shadow(0 0 7px #fff)
-drop-shadow(0 0 18px #ff9fdf);
-animation:latidoPremio 1.3s ease-in-out infinite
-}
-
-@keyframes latidoPremio{
-0%,100%{
-transform:translate(-50%,-50%) scale(.9)
-}
-50%{
-transform:translate(-50%,-50%) scale(1.25)
-}
-}
-
-.frase-premio{
-font-family:Georgia,"Times New Roman",serif;
-font-size:19px;
-line-height:1.7;
-font-style:italic;
-margin-bottom:18px;
-text-shadow:
-0 0 8px rgba(255,255,255,.5),
-0 0 20px rgba(190,140,255,.5)
-}
-
-.juego-final h3{
-font-family:"Courier New",monospace;
-font-size:22px;
-color:#8affd8;
-margin:10px 0
+.progreso-texto{
+  margin-top:10px;
+  opacity:.75;
 }
 
 /* =========================================================
-   NUESTRA CARTA / YU-GI-OH
+   GALERÍA
 ========================================================= */
 
-#nuestra-carta{
-position:relative;
-overflow:hidden;
-padding:75px 20px;
-background:
-radial-gradient(
-circle at 50% 15%,
-#64518f 0%,
-#332653 35%,
-#100c28 72%,
-#03030d 100%
-)
+#galeria{
+  background:
+    radial-gradient(circle at 50% 10%,#70559c,#241744 40%,#070414);
 }
 
-#nuestra-carta:before,
-#nuestra-carta:after{
-content:"";
-position:absolute;
-border-radius:50%;
-filter:blur(90px);
-pointer-events:none
+.galeria-contenido{
+  position:relative;
+  z-index:3;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
 }
 
-#nuestra-carta:before{
-width:400px;
-height:400px;
-background:rgba(196,140,255,.12);
-top:-160px;
-right:-100px
+.galeria-subtitulo{
+  max-width:700px;
+  margin:0 auto 35px;
+  line-height:1.7;
+  opacity:.85;
 }
 
-#nuestra-carta:after{
-width:350px;
-height:350px;
-background:rgba(100,120,255,.10);
-bottom:-140px;
-left:-100px
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
 }
 
-.carta-final-contenido{
-position:relative;
-z-index:5;
-max-width:800px;
-margin:auto;
-text-align:center
+.recuerdo{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:25px;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
-.carta-final-titulo{
-font-size:43px;
-margin-bottom:12px;
-text-shadow:
-0 0 15px white,
-0 0 35px #c49aff
+.recuerdo img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
 }
 
-.carta-final-subtitulo{
-font-size:19px;
-opacity:.85;
-margin-bottom:35px
+.recuerdo-texto{
+  padding:25px;
+  text-align:left;
 }
 
-.marco-carta-yugioh{
-position:relative;
-padding:35px;
-border-radius:30px;
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.12),
-rgba(170,120,255,.08)
-);
-border:1px solid rgba(255,255,255,.2);
-box-shadow:
-0 0 40px rgba(0,0,0,.35),
-0 0 35px rgba(190,130,255,.12);
-backdrop-filter:blur(10px)
+.recuerdo-texto h3{
+  text-align:center;
+  color:#eadbff;
+  font-size:22px;
+  margin-bottom:18px;
+  text-shadow:0 0 10px #a879e8;
 }
 
-.marco-carta-yugioh:before{
-content:"✦     ✧     ✦     ✧     ✦";
-display:block;
-font-size:18px;
-letter-spacing:10px;
-color:#ead9ff;
-margin-bottom:25px;
-text-shadow:0 0 10px white
+.recuerdo-texto p{
+  line-height:1.8;
+  font-size:17px;
+  white-space:pre-line;
 }
 
-.marco-carta-yugioh:after{
-content:"✦     ✧     ✦     ✧     ✦";
-display:block;
-font-size:18px;
-letter-spacing:10px;
-color:#ead9ff;
-margin-top:25px;
-text-shadow:0 0 10px white
-}
-
-.imagen-yugioh{
-width:100%;
-max-width:600px;
-min-height:250px;
-margin:auto;
-border-radius:20px;
-border:2px dashed rgba(255,255,255,.25);
-display:flex;
-align-items:center;
-justify-content:center;
-background:
-rgba(20,12,45,.35);
-overflow:hidden
-}
-
-.imagen-yugioh img{
-width:100%;
-height:auto;
-display:block;
-border-radius:18px
-}
-
-/* =========================================================
-   LA CARTA REAL ESTÁ AQUÍ
-   Archivo: yuss.jpeg
-========================================================= */
-
-.imagen-yugioh img{
-max-width:100%;
-object-fit:contain;
-box-shadow:
-0 0 25px rgba(210,170,255,.25);
-transition:.3s
-}
-
-.imagen-yugioh img:hover{
-transform:scale(1.02);
-box-shadow:
-0 0 35px rgba(220,180,255,.45)
-}
-
-.carta-yugioh-texto{
-margin-top:30px;
-font-size:19px;
-line-height:1.8;
-font-style:italic
-}
-
-.carta-yugioh-firma{
-margin-top:25px;
-font-size:24px;
-text-shadow:
-0 0 12px white,
-0 0 25px #c49aff
+.frase-final-foto{
+  text-align:center!important;
+  font-style:italic;
+  margin-top:22px;
+  font-size:18px!important;
 }
 
 /* =========================================================
@@ -1674,162 +601,39 @@ text-shadow:
 ========================================================= */
 
 #final{
-position:relative;
-overflow:hidden;
-display:none;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
-background:
-radial-gradient(
-circle at 50% 30%,
-#6d579c 0%,
-#432d6d 27%,
-#21143e 57%,
-#090619 100%
-)
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-#final:before{
-content:"";
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-background:rgba(202,151,255,.13);
-filter:blur(100px);
-top:-250px;
-left:50%;
-transform:translateX(-50%)
-}
-
-.final-estrellas{
-position:absolute;
-inset:0;
-pointer-events:none
-}
-
-.final-estrellas span{
-position:absolute;
-color:white;
-font-size:14px;
-text-shadow:
-0 0 8px white,
-0 0 18px #d6b5ff;
-animation:parpadear 2.4s infinite alternate
-}
-
-.final-escena{
-position:relative;
-z-index:5;
-width:min(850px,100%);
-padding:35px 20px
-}
-
-.luna-final{
-font-size:105px;
-margin-bottom:10px;
-filter:
-drop-shadow(0 0 10px white)
-drop-shadow(0 0 30px #d1aaff);
-animation:lunaFinal 4s ease-in-out infinite
-}
-
-@keyframes lunaFinal{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-}
-
-.banca{
-position:relative;
-height:230px;
-max-width:550px;
-margin:0 auto 30px;
-border-bottom:10px solid #20132d
-}
-
-.banca:before,
-.banca:after{
-content:"";
-position:absolute;
-bottom:25px;
-width:20px;
-height:100px;
-background:#1a1127;
-border-radius:5px
-}
-
-.banca:before{left:18%}
-.banca:after{right:18%}
-
-.asiento-banca{
-position:absolute;
-bottom:90px;
-left:10%;
-right:10%;
-height:22px;
-border-radius:8px;
-background:
-linear-gradient(
-180deg,
-#4d3260,
-#291a39
-);
-box-shadow:
-0 0 15px rgba(0,0,0,.5)
-}
-
-.respaldo-banca{
-position:absolute;
-bottom:135px;
-left:10%;
-right:10%;
-height:20px;
-border-radius:8px;
-background:
-linear-gradient(
-180deg,
-#4d3260,
-#291a39
-)
-}
-
-.personaje-sentado{
-position:absolute;
-bottom:102px;
-font-size:55px;
-filter:
-drop-shadow(0 0 8px white)
-drop-shadow(0 0 18px #b995ff)
-}
-
-.sentado-coco{left:29%}
-.sentado-conejo{right:29%}
-
-.final-titulo{
-font-size:42px;
-line-height:1.3;
-text-shadow:
-0 0 15px white,
-0 0 35px #d2a7ff;
-margin-bottom:18px
-}
-
-.final-subtitulo{
-font-size:24px;
-font-style:italic;
-line-height:1.6;
-text-shadow:
-0 0 12px rgba(255,255,255,.65)
+.final-contenido{
+  position:relative;
+  z-index:3;
+  max-width:750px;
 }
 
 .final-corazon{
-font-size:35px;
-margin-top:20px;
-filter:
-drop-shadow(0 0 8px white)
-drop-shadow(0 0 18px #ff9fdc)
+  font-size:90px;
+  animation:latir 1.5s infinite;
+  filter:drop-shadow(0 0 20px #ffb9ff);
+}
+
+@keyframes latir{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+
+.final-contenido h2{
+  font-size:clamp(32px,7vw,52px);
+  line-height:1.3;
+  margin:20px 0;
+  text-shadow:0 0 15px white,0 0 35px #c49aff;
+}
+
+.final-contenido p{
+  font-size:20px;
+  line-height:1.8;
 }
 
 /* =========================================================
@@ -1838,253 +642,57 @@ drop-shadow(0 0 18px #ff9fdc)
 
 @media(max-width:700px){
 
-.luna-grande{
-width:160px;
-height:160px
-}
+  section{
+    padding:55px 15px;
+  }
 
-.texto-inicio h1{
-font-size:37px
-}
+  .luna{
+    width:90px;
+    height:90px;
+    right:7%;
+    top:50px;
+  }
 
-.contenido-carta h1{
-font-size:34px
-}
+  .luna:after{
+    width:100px;
+    height:100px;
+    left:28px;
+  }
 
-.texto-carta,
-.carta-coco-texto{
-padding:25px;
-font-size:17px
-}
+  .texto-carta,
+  .carta-coco-texto{
+    padding:23px;
+    font-size:17px;
+  }
 
-.razones-contenido h2,
-.distancia-titulo,
-.juego-titulo,
-.carta-final-titulo{
-font-size:33px
-}
+  .estrellas-razones{
+    grid-template-columns:repeat(5,1fr);
+    gap:7px;
+  }
 
-.estrellas-razones{
-grid-template-columns:repeat(4,1fr);
-gap:22px
-}
+  .estrella-razon{
+    font-size:29px;
+  }
 
-.carta-coco-contenido h2{
-font-size:34px
-}
+  .consolas{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.cocodrilo-coco{
-font-size:58px
-}
+  .gallery{
+    grid-template-columns:1fr;
+  }
 
-.distancia-subtitulo{
-font-size:18px
+  .recuerdo-texto{
+    padding:20px;
+  }
 }
-
-.mapa-card{
-min-height:620px;
-padding:10px
-}
-
-.mapamundi{
-width:700px;
-height:300px;
-transform:
-translate(-50%,-50%)
-scale(.72)
-}
-
-.lugar-maria{
-top:105px;
-left:69%
-}
-
-.lugar-coco{
-top:355px;
-left:25%
-}
-
-.personaje{
-width:72px;
-height:85px
-}
-
-.conejita{
-transform:scale(.9)
-}
-
-.cocodrilo-distancia{
-font-size:58px
-}
-
-.ruta-corazon{
-width:340px;
-height:240px;
-left:7%;
-top:205px
-}
-
-.kilometros{
-top:300px;
-font-size:14px;
-white-space:nowrap
-}
-
-.brillito1{
-top:270px;
-left:45%
-}
-
-.brillito2{
-top:325px;
-left:35%
-}
-
-.brillito3{
-top:255px;
-left:60%
-}
-
-.brillito4{
-top:370px;
-left:48%
-}
-
-.frase-mapa{
-font-size:12px;
-max-width:145px
-}
-
-.frase-1{
-top:25px;
-left:5%
-}
-
-.frase-2{
-top:25px;
-right:5%
-}
-
-.frase-3{
-bottom:20px;
-left:5%
-}
-
-.frase-4{
-bottom:20px;
-right:5%
-}
-
-.distancia-frase-final{
-font-size:20px
-}
-
-.distancia-frase-final strong{
-font-size:23px
-}
-
-.consolas{
-grid-template-columns:repeat(2,1fr)
-}
-
-.pantalla-retro{
-padding:22px 14px;
-min-height:390px
-}
-
-.pregunta{
-font-size:18px
-}
-
-.opcion{
-font-size:14px
-}
-
-.consola-superior{
-font-size:9px
-}
-
-.premio-retro{
-height:240px
-}
-
-.personaje-premio{
-font-size:40px
-}
-
-.coco-premio{
-left:16%
-}
-
-.conejo-premio{
-right:16%
-}
-
-.luna-premio{
-right:20px;
-font-size:45px
-}
-
-.frase-premio{
-font-size:17px
-}
-
-.marco-carta-yugioh{
-padding:22px 15px
-}
-
-.imagen-yugioh img{
-width:100%;
-height:auto
-}
-
-.final-titulo{
-font-size:31px
-}
-
-.final-subtitulo{
-font-size:20px
-}
-
-.luna-final{
-font-size:80px
-}
-
-.banca{
-height:190px
-}
-
-.personaje-sentado{
-font-size:43px;
-bottom:82px
-}
-
-.sentado-coco{
-left:23%
-}
-
-.sentado-conejo{
-right:23%
-}
-
-.asiento-banca{
-bottom:70px
-}
-
-.respaldo-banca{
-bottom:108px
-}
-
-.banca:before,
-.banca:after{
-bottom:10px
-}
-}
-
 </style>
 </head>
 
 <body>
+
+<!-- ESTRELLAS -->
+<div class="estrellas" id="estrellas"></div>
 
 <!-- =========================================================
      PORTADA
@@ -2092,1163 +700,1017 @@ bottom:10px
 
 <section id="inicio">
 
-<span class="estrella" style="top:8%;left:12%"></span>
-<span class="estrella" style="top:15%;left:30%"></span>
-<span class="estrella" style="top:10%;left:65%"></span>
-<span class="estrella" style="top:20%;left:85%"></span>
-<span class="estrella" style="top:32%;left:8%"></span>
-<span class="estrella" style="top:28%;left:22%"></span>
-<span class="estrella" style="top:35%;left:78%"></span>
-<span class="estrella" style="top:42%;left:91%"></span>
-<span class="estrella" style="top:55%;left:7%"></span>
-<span class="estrella" style="top:65%;left:17%"></span>
-<span class="estrella" style="top:72%;left:84%"></span>
-<span class="estrella" style="top:82%;left:68%"></span>
+  <div class="luna"></div>
 
-<div class="luna-grande"></div>
+  <div class="inicio-contenido">
 
-<div class="texto-inicio">
+    <div class="mini">PARA ALGUIEN MUY ESPECIAL</div>
 
-<h1>Para ti ❤️</h1>
+    <h1>✨ Nuestro Universo ✨</h1>
 
-<p>
-Hay algo que quiero enseñarte...
-</p>
+    <p>
+      Hay historias que comienzan con una conversación,
+      continúan a kilómetros de distancia
+      y terminan construyendo su propio universo.
+    </p>
 
-<button class="boton" id="entrar">
-Entrar ❤️
-</button>
+    <button class="boton" onclick="mostrarSeccion('carta')">
+      Entrar ❤️
+    </button>
 
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
      CARTA DE CUMPLEAÑOS
 ========================================================= -->
 
-<section id="carta">
+<section id="carta" class="hidden">
 
-<span class="estrella-carta" style="top:8%;left:10%"></span>
-<span class="estrella-carta" style="top:18%;left:25%"></span>
-<span class="estrella-carta" style="top:12%;left:55%"></span>
-<span class="estrella-carta" style="top:25%;left:90%"></span>
-<span class="estrella-carta" style="top:50%;left:7%"></span>
-<span class="estrella-carta" style="top:65%;left:15%"></span>
-<span class="estrella-carta" style="top:78%;left:88%"></span>
-<span class="estrella-carta" style="top:90%;left:45%"></span>
+  <div class="contenido-carta">
 
-<div class="contenido-carta">
+    <div class="media-luna"></div>
 
-<div class="media-luna"></div>
+    <h2>Para ti, Coco ❤️</h2>
 
-<h1>
-Feliz cumpleaños, mi amor ❤️
-</h1>
+    <p class="subtitulo-carta">
+      Una pequeña parte de todo lo que quería decirte.
+    </p>
 
-<p class="subtitulo-carta">
-Esta noche quiero celebrar algo muy especial: tu existencia.
-</p>
+    <div class="texto-carta">
 
-<div class="texto-carta">
+      <p>
+        Hoy es un día especial porque nació una persona que,
+        sin saberlo, terminaría formando parte de mi vida de una
+        manera muy bonita.
+      </p>
 
-<p>
-Quiero que sepas que preparé este pequeño espacio especialmente para ti.
-</p>
+      <p>
+        Quizás cuando nos conocimos ninguno de los dos imaginaba
+        todo lo que vendría después. Las conversaciones, las risas,
+        las noches hablando, los pequeños detalles y todas esas
+        cosas que poco a poco fueron haciendo que te sintiera
+        cada vez más cerca.
+      </p>
 
-<p>
-Hoy no quiero celebrar solamente tu cumpleaños. Quiero celebrar que existes, que llegaste a mi vida y todos esos momentos que poco a poco se han convertido en recuerdos que guardo con muchísimo cariño.
-</p>
+      <p>
+        Y aunque exista distancia, hay momentos en los que siento
+        que estás muchísimo más cerca de lo que parece.
+      </p>
 
-<p>
-Nuestras noches, nuestras conversaciones, nuestras risas y cada pequeño momento compartido tienen un lugar especial en mi corazón.
-</p>
+      <p>
+        Hoy quiero celebrar tu vida, pero también quiero celebrar
+        la suerte de haberte encontrado.
+      </p>
 
-<p>
-Y esto apenas comienza... Porque todavía nos quedan muchas noches, muchas historias y muchos recuerdos por crear.
-</p>
+      <p>
+        Deseo que este nuevo año de tu vida esté lleno de momentos
+        bonitos, sueños cumplidos, tranquilidad, personas que te
+        quieran de verdad y muchísimas razones para sonreír.
+      </p>
 
-<p class="firma">
-Feliz cumpleaños ❤️
-</p>
+      <p>
+        Y espero poder seguir estando presente para muchos de esos
+        momentos.
+      </p>
 
-</div>
+      <p class="firma">
+        Feliz cumpleaños, mi Coco. ❤️
+      </p>
 
-<br>
+    </div>
 
-<button class="boton" id="irRazones">
-✨ Continuar
-</button>
+    <button class="boton" onclick="mostrarSeccion('razones')">
+      50 razones para quererte ⭐
+    </button>
 
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
      50 RAZONES
 ========================================================= -->
 
-<section id="razones">
+<section id="razones" class="hidden">
 
-<div class="nube nube1"></div>
-<div class="nube nube2"></div>
-<div class="nube nube3"></div>
+  <div class="razones-contenido">
 
-<div class="razones-contenido">
+    <h2>⭐ 50 razones para quererte</h2>
 
-<h2>
-50 estrellas en mi cielo ✨
-</h2>
+    <p class="razones-subtitulo">
+      Toca cada estrella. Cada una guarda una pequeña razón. ✨
+    </p>
 
-<p class="razones-subtitulo">
-Toca una estrella y descubre una razón.
-</p>
+    <div class="estrellas-razones" id="estrellasRazones"></div>
 
-<div class="estrellas-razones">
+    <div id="mensaje-razon">
 
-<button class="estrella-razon" data-razon="Porque contigo hasta una noche sencilla puede convertirse en un recuerdo precioso.">★</button>
-<button class="estrella-razon" data-razon="Porque tu sonrisa tiene una forma muy especial de alegrarme el día.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta escuchar todo lo que tienes para contarme.">★</button>
-<button class="estrella-razon" data-razon="Porque nuestras conversaciones hacen que el tiempo pase demasiado rápido.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo las noches tienen otro significado.">★</button>
-<button class="estrella-razon" data-razon="Porque me haces sonreír incluso sin darte cuenta.">★</button>
-<button class="estrella-razon" data-razon="Porque cada recuerdo contigo tiene un lugar especial en mi corazón.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta la tranquilidad que siento cuando estoy contigo.">★</button>
-<button class="estrella-razon" data-razon="Porque haces que los pequeños momentos importen.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo puedo ser yo misma.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta descubrir nuevas cosas de ti.">★</button>
-<button class="estrella-razon" data-razon="Porque tienes una manera única de hacerme sentir especial.">★</button>
-<button class="estrella-razon" data-razon="Porque nuestras risas son de mis sonidos favoritos.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta imaginar todas las historias que todavía nos faltan por vivir.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo incluso el silencio puede sentirse bonito.">★</button>
-<button class="estrella-razon" data-razon="Porque cada cita nocturna tiene algo que quiero guardar para siempre.">★</button>
-<button class="estrella-razon" data-razon="Porque me haces apreciar los pequeños detalles.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta cómo eres cuando estás feliz.">★</button>
-<button class="estrella-razon" data-razon="Porque me haces querer crear más recuerdos contigo.">★</button>
-<button class="estrella-razon" data-razon="Porque hay momentos contigo que quisiera guardar en una cajita.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta la persona que soy cuando estoy contigo.">★</button>
-<button class="estrella-razon" data-razon="Porque haces que esperar el próximo encuentro valga la pena.">★</button>
-<button class="estrella-razon" data-razon="Porque tu existencia merece ser celebrada.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta compartir mis pensamientos contigo.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo siempre hay algo nuevo que descubrir.">★</button>
-<button class="estrella-razon" data-razon="Porque nuestros recuerdos son pequeñas luces que puedo volver a mirar.">★</button>
-<button class="estrella-razon" data-razon="Porque una conversación contigo puede convertirse en horas sin darnos cuenta.">★</button>
-<button class="estrella-razon" data-razon="Porque haces que una noche cualquiera pueda sentirse extraordinaria.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta conocer tus sueños.">★</button>
-<button class="estrella-razon" data-razon="Porque quiero seguir conociendo cada pequeña parte de ti.">★</button>
-<button class="estrella-razon" data-razon="Porque tu forma de ser tiene algo que me atrae muchísimo.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta cuando nos reímos por cualquier tontería.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo los momentos simples se convierten en historias.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta sentir que estamos construyendo algo bonito.">★</button>
-<button class="estrella-razon" data-razon="Porque tu cumpleaños es una oportunidad para celebrar que llegaste al mundo.">★</button>
-<button class="estrella-razon" data-razon="Porque me encanta la magia que tienen nuestras noches.">★</button>
-<button class="estrella-razon" data-razon="Porque hay miradas que dicen más que muchas palabras.">★</button>
-<button class="estrella-razon" data-razon="Porque me haces tener ganas de vivir más momentos especiales.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta imaginar todos los lugares que todavía podríamos conocer juntos.">★</button>
-<button class="estrella-razon" data-razon="Porque cada nuevo recuerdo contigo es otra estrella en nuestro cielo.">★</button>
-<button class="estrella-razon" data-razon="Porque nuestras historias se van escribiendo poquito a poquito.">★</button>
-<button class="estrella-razon" data-razon="Porque quiero seguir compartiendo noches, risas y conversaciones contigo.">★</button>
-<button class="estrella-razon" data-razon="Porque contigo todavía quedan muchísimas aventuras por vivir.">★</button>
-<button class="estrella-razon" data-razon="Porque me gusta tener recuerdos que llevan tu nombre.">★</button>
-<button class="estrella-razon" data-razon="Porque haces que quiera guardar cada pequeño detalle.">★</button>
-<button class="estrella-razon" data-razon="Porque todavía tenemos muchísimo por descubrir.">★</button>
-<button class="estrella-razon" data-razon="Porque quiero que esta sea solamente una de muchas noches especiales.">★</button>
-<button class="estrella-razon" data-razon="Porque me haces ilusionarme con el futuro.">★</button>
-<button class="estrella-razon" data-razon="Porque simplemente me encanta que seas tú. ❤️">★</button>
+      <div class="estrella-grande">✨</div>
 
-</div>
+      <p id="texto-razon"></p>
 
-<br><br>
+      <button class="boton" onclick="cerrarRazon()">
+        Cerrar
+      </button>
 
-<button class="boton" id="irCoco">
-🐊 Continuar
-</button>
+    </div>
 
-</div>
+    <button class="boton" onclick="mostrarSeccion('carta-coco')">
+      🐊 Continuar
+    </button>
 
-<div id="mensaje-razon">
-
-<div class="estrella-grande">
-✨
-</div>
-
-<p id="texto-razon"></p>
-
-<br>
-
-<button class="boton" id="cerrarRazon">
-Cerrar
-</button>
-
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
      CARTA PARA COCO
 ========================================================= -->
 
-<section id="carta-coco">
+<section id="carta-coco" class="hidden">
 
-<div class="carta-coco-contenido">
+  <div class="carta-coco-contenido">
 
-<div class="coco-luna">
-🌙
-</div>
+    <div class="coco-luna">🌙</div>
 
-<h2>
-Una carta para ti ❤️
-</h2>
+    <h2>Una carta para ti ❤️</h2>
 
-<p class="coco-intro">
-Porque hay cosas que simplemente quiero que sepas...
-</p>
+    <p class="coco-intro">
+      Porque hay cosas que simplemente quiero que sepas...
+    </p>
 
-<div class="carta-coco-texto">
+    <div class="carta-coco-texto">
 
-<p>
-No hay persona más rara, encantadora y linda como tú. Eres especial y único, y me encanta cada detalle que tienes. Eres todo un mundo desconocido que me encanta seguir descubriendo.
-</p>
+      <p>
+        No hay persona más rara, encantadora y linda como tú.
+        Eres especial y único, y me encanta cada detalle que tienes.
+        Eres todo un mundo desconocido que me encanta seguir descubriendo.
+      </p>
 
-<p>
-Tu sola existencia me hace querer compartir más días a tu lado. No sabes lo feliz que soy de poder tener a alguien como tú en mi vida, y no hablo solamente de ahora. Siempre fuiste diferente.
-</p>
+      <p>
+        Tu sola existencia me hace querer compartir más días a tu lado.
+        No sabes lo feliz que soy de poder tener a alguien como tú en mi vida,
+        y no hablo solamente de ahora. Siempre fuiste diferente.
+      </p>
 
-<p>
-Eres una persona única, y me encantan tus locuras. Eres todo eso que todavía no termino de descubrir: una persona fuerte, valiente y muy capaz de hacer todo lo que se propone.
-</p>
+      <p>
+        Eres una persona única, y me encantan tus locuras.
+        Eres todo eso que todavía no termino de descubrir:
+        una persona fuerte, valiente y muy capaz de hacer todo lo que se propone.
+      </p>
 
-<p>
-Quiero que descubras por qué eres alguien tan especial y que puedas ver lo feliz que me hace el hecho de que estés aquí, en este mundo terrenal, donde para mí resaltas sobre el resto.
-</p>
+      <p>
+        Quiero que descubras por qué eres alguien tan especial
+        y que puedas ver lo feliz que me hace el hecho de que estés aquí,
+        en este mundo terrenal, donde para mí resaltas sobre el resto.
+      </p>
 
-<p class="despedida-coco">
-Te quiero muchísimo, mi lindo y encantador Coco.<br>
-❤️ 🐊
-</p>
+      <p class="despedida-coco">
+        Te quiero muchísimo, mi lindo y encantador Coco.<br>
+        ❤️ 🐊
+      </p>
 
-</div>
+    </div>
 
-<div class="cocodrilo-coco">
-🐊
-</div>
+    <div class="cocodrilo-coco">🐊</div>
 
-<p class="coco-final">
-Mi pequeño Coco...
-</p>
+    <p class="coco-final">
+      Mi pequeño Coco...
+    </p>
 
-<button class="boton" id="irDistancia">
-🌍 Nuestra distancia
-</button>
+    <button class="boton" onclick="mostrarSeccion('distancia')">
+      🌍 Nuestra distancia
+    </button>
 
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
      DISTANCIA
 ========================================================= -->
 
-<section id="distancia">
+<section id="distancia" class="hidden">
 
-<span class="estrella-distancia" style="top:8%;left:9%"></span>
-<span class="estrella-distancia" style="top:14%;left:22%"></span>
-<span class="estrella-distancia" style="top:7%;left:45%"></span>
-<span class="estrella-distancia" style="top:19%;left:72%"></span>
-<span class="estrella-distancia" style="top:11%;left:91%"></span>
-<span class="estrella-distancia" style="top:36%;left:5%"></span>
-<span class="estrella-distancia" style="top:42%;left:17%"></span>
-<span class="estrella-distancia" style="top:47%;left:87%"></span>
-<span class="estrella-distancia" style="top:67%;left:10%"></span>
-<span class="estrella-distancia" style="top:76%;left:26%"></span>
-<span class="estrella-distancia" style="top:70%;left:75%"></span>
-<span class="estrella-distancia" style="top:84%;left:92%"></span>
+  <div class="distancia-contenido">
 
-<div class="nube-distancia nube-d1"></div>
-<div class="nube-distancia nube-d2"></div>
+    <h2 class="distancia-titulo">
+      Dos lugares, un mismo corazón ❤️
+    </h2>
 
-<div class="distancia-contenido">
+    <p class="distancia-subtitulo">
+      Porque la distancia nunca contó toda nuestra historia.
+    </p>
 
-<h2 class="distancia-titulo">
-Dos lugares, un mismo corazón 🌍❤️
-</h2>
+    <div class="mapa-amor">
 
-<p class="distancia-subtitulo">
-Porque estar lejos no significa estar separados.
-</p>
+      <svg viewBox="0 0 500 250">
 
-<div class="mapa-card">
+        <path
+          class="ruta"
+          d="M 55 190 C 150 230,205 40,300 90 C 370 125,410 35,475 45"
+        />
 
-<div class="mapa-grid"></div>
+        <path
+          class="ruta-brillo"
+          d="M 55 190 C 150 230,205 40,300 90 C 370 125,410 35,475 45"
+        />
 
-<div class="mapamundi">
+        <text
+          x="55"
+          y="210"
+          fill="white"
+          font-size="28"
+          text-anchor="middle"
+        >
+          ❤️
+        </text>
 
-<div class="continente america-norte"></div>
-<div class="continente america-sur"></div>
-<div class="continente europa"></div>
-<div class="continente africa"></div>
-<div class="continente asia"></div>
-<div class="continente australia"></div>
+        <text
+          x="475"
+          y="35"
+          fill="white"
+          font-size="28"
+          text-anchor="middle"
+        >
+          ❤️
+        </text>
 
-</div>
+        <text
+          font-size="25"
+          text-anchor="middle"
+          dominant-baseline="middle"
+        >
+          ❤️
+          <animateMotion
+            dur="4.8s"
+            repeatCount="indefinite"
+            rotate="auto"
+          >
+            <mpath href="#rutaAmor"></mpath>
+          </animateMotion>
+        </text>
 
-<div class="lugar lugar-coco">
+      </svg>
 
-<div class="personaje">
-<div class="cocodrilo-distancia">
-🐊
-</div>
-</div>
+    </div>
 
-<div>
-🇨🇴 Colombia
-</div>
+    <div class="kilometros">
+      ✈️ ≈ 8.700 km
+    </div>
 
-</div>
+    <p class="frase-mapa">
+      “La distancia puede medir kilómetros,
+      pero no puede medir lo que sentimos.”
+    </p>
 
-<div class="lugar lugar-maria">
+    <p class="frase-mapa">
+      “Estamos lejos en el mapa,
+      pero cerca en el corazón.”
+    </p>
 
-<div class="personaje">
-<div class="conejita"></div>
-</div>
+    <p class="frase-mapa">
+      “Nos unen nuestro amor, nuestra paciencia
+      y nuestro entendimiento.”
+    </p>
 
-<div>
-🇧🇪 Bélgica
-</div>
+    <p class="frase-mapa">
+      “Y las ganas de seguir eligiéndonos.”
+    </p>
 
-</div>
+    <p class="distancia-frase-final">
+      Separados por kilómetros.
+      <strong>Unidos por elección. ❤️</strong>
+    </p>
 
-<svg
-class="ruta-corazon"
-viewBox="0 0 520 250"
-preserveAspectRatio="none"
-aria-hidden="true">
+    <button class="boton" onclick="mostrarSeccion('juego')">
+      🎮 Entrar a nuestro juego
+    </button>
 
-<path
-id="rutaAmor"
-class="ruta-base"
-d="M 55 190 C 150 230,205 40,300 90 C 370 125,410 35,475 45">
-</path>
-
-<path
-class="ruta-brillo"
-d="M 55 190 C 150 230,205 40,300 90 C 370 125,410 35,475 45">
-</path>
-
-<g class="corazon-svg">
-
-<text
-font-size="25"
-text-anchor="middle"
-dominant-baseline="middle">
-
-❤️
-
-<animateMotion
-dur="4.8s"
-repeatCount="indefinite"
-rotate="auto">
-
-<mpath href="#rutaAmor"></mpath>
-
-</animateMotion>
-
-</text>
-
-</g>
-
-</svg>
-
-<div class="brillito-linea brillito1">
-✦
-</div>
-
-<div class="brillito-linea brillito2">
-✧
-</div>
-
-<div class="brillito-linea brillito3">
-✦
-</div>
-
-<div class="brillito-linea brillito4">
-✧
-</div>
-
-<div class="kilometros">
-✈️ ≈ 8.700 km
-</div>
-
-<p class="frase-mapa frase-1">
-“La distancia puede medir kilómetros, pero no puede medir lo que sentimos.”
-</p>
-
-<p class="frase-mapa frase-2">
-“Estamos lejos en el mapa, pero cerca en el corazón.”
-</p>
-
-<p class="frase-mapa frase-3">
-“Nos unen nuestro amor, nuestra paciencia y nuestro entendimiento.”
-</p>
-
-<p class="frase-mapa frase-4">
-“Y las ganas de seguir eligiéndonos.”
-</p>
-
-</div>
-
-<p class="distancia-frase-final">
-Separados por kilómetros.
-<strong>
-Unidos por elección. ❤️
-</strong>
-</p>
-
-<br>
-
-<button class="boton" id="irJuego">
-🎮 Entrar a nuestro juego
-</button>
-
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
-     JUEGO RETRO
+     JUEGO DE CONSOLITAS
 ========================================================= -->
 
-<section id="juego">
+<section id="juego" class="hidden">
 
-<span class="estrella" style="top:8%;left:10%"></span>
-<span class="estrella" style="top:15%;left:30%"></span>
-<span class="estrella" style="top:9%;left:52%"></span>
-<span class="estrella" style="top:18%;left:78%"></span>
-<span class="estrella" style="top:11%;left:92%"></span>
-<span class="estrella" style="top:73%;left:8%"></span>
-<span class="estrella" style="top:82%;left:27%"></span>
-<span class="estrella" style="top:70%;left:88%"></span>
+  <div class="juego-contenido">
 
-<div class="juego-contenido">
+    <h2 class="juego-titulo">
+      🎮 Nuestro pequeño universo
+    </h2>
 
-<h2 class="juego-titulo">
-&gt; NUESTRO PEQUEÑO JUEGO_
-</h2>
+    <p class="juego-subtitulo">
+      Cada consolita guarda una pregunta...
+      y cada respuesta desbloquea un pedacito
+      de lo que siento por ti. ✨
+    </p>
 
-<p class="juego-subtitulo">
-INSERT COIN ♥ Cada respuesta desbloquea un recuerdo.
-</p>
+    <div class="consolas" id="consolas"></div>
 
-<div class="consola-retro">
+    <div class="progreso-juego">
 
-<div class="consola-superior">
+      <div class="barra">
+        <span id="barraProgreso"></span>
+      </div>
 
-<span>
-<span class="luz-retro"></span>
-LOVE SYSTEM
-</span>
+      <div class="progreso-texto" id="progresoTexto">
+        0 de 6 recuerdos desbloqueados
+      </div>
 
-<span>
-♡ PLAYER 1 ♡
-</span>
+    </div>
 
-</div>
+    <div class="pantalla-juego" id="pantallaJuego">
 
-<div class="pantalla-retro">
+      <div class="pregunta" id="preguntaJuego"></div>
 
-<div class="retro-cargando">
-&gt;&gt; MEMORY GAME v.1.0
-</div>
+      <div class="opciones" id="opcionesJuego"></div>
 
-<div class="pregunta" id="preguntaJuego"></div>
+      <div class="mensaje-error" id="mensajeError">
+        Casi... 💜 Pero esa no era.
+      </div>
 
-<div class="opciones" id="opcionesJuego"></div>
+    </div>
 
-<div class="mensaje-erroneo" id="mensajeError">
-&gt; ERROR: Esa no era... inténtalo otra vez ♡
-</div>
+    <button
+      class="boton"
+      id="continuarJuego"
+      style="display:none"
+      onclick="mostrarSeccion('galeria')"
+    >
+      📸 Ver nuestros recuerdos
+    </button>
 
-<div class="resultado" id="resultado">
-
-<div class="estrella-desbloqueo">
-★
-</div>
-
-<h4>
-MEMORY UNLOCKED!
-</h4>
-
-<p id="notaDesbloqueada"></p>
-
-<button class="retro-boton" id="cerrarJuego">
-&gt; CONTINUAR
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="consolas" id="consolas"></div>
-
-<div class="progreso-juego">
-
-<div class="barra">
-<span id="barraProgreso"></span>
-</div>
-
-<div class="progreso-texto" id="progresoTexto">
-0 / 5 recuerdos desbloqueados
-</div>
-
-</div>
-
-<div class="juego-final" id="juegoFinal">
-
-<div class="premio-retro">
-
-<div class="luna-premio">
-🌙
-</div>
-
-<span class="estrellita-premio ep1">
-✦
-</span>
-
-<span class="estrellita-premio ep2">
-✧
-</span>
-
-<span class="estrellita-premio ep3">
-✦
-</span>
-
-<span class="estrellita-premio ep4">
-✧
-</span>
-
-<span class="estrellita-premio ep5">
-✦
-</span>
-
-<div class="personaje-premio coco-premio">
-🐊
-</div>
-
-<div class="corazon-premio">
-❤️
-</div>
-
-<div class="personaje-premio conejo-premio">
-🐰
-</div>
-
-</div>
-
-<h3>
-&gt; ALL LEVELS COMPLETE!
-</h3>
-
-<p class="frase-premio">
-No importa cuántos kilómetros nos separan,
-siempre encontraremos el camino de regreso
-al corazón del otro.
-</p>
-
-<p class="frase-premio">
-Feliz cumpleaños, Coco, te quiero muchísimo. ❤️
-</p>
-
-<button class="retro-boton" id="irNuestraCarta">
-&gt; NUESTRA CARTA
-</button>
-
-</div>
-
-</div>
+  </div>
 
 </section>
-
 
 <!-- =========================================================
-     NUESTRA CARTA / YU-GI-OH
+     GALERÍA — LAS 6 FOTOS
 ========================================================= -->
 
-<section id="nuestra-carta">
+<section id="galeria" class="hidden">
 
-<div class="final-estrellas">
+  <div class="galeria-contenido">
 
-<span style="top:8%;left:10%">✦</span>
-<span style="top:15%;left:25%">✧</span>
-<span style="top:10%;left:48%">✦</span>
-<span style="top:18%;left:76%">✧</span>
-<span style="top:9%;left:91%">✦</span>
-<span style="top:42%;left:7%">✧</span>
-<span style="top:52%;left:90%">✦</span>
-<span style="top:74%;left:13%">✦</span>
-<span style="top:82%;left:30%">✧</span>
-<span style="top:76%;left:73%">✦</span>
-<span style="top:88%;left:91%">✧</span>
+    <h2 class="galeria-titulo">
+      📸 Nuestros recuerdos
+    </h2>
 
-</div>
+    <p class="galeria-subtitulo">
+      Seis pequeños momentos que guardan mucho más
+      de lo que parece a simple vista. ❤️
+    </p>
 
-<div class="carta-final-contenido">
+    <div class="gallery">
 
-<h2 class="carta-final-titulo">
-Nuestra carta ❤️
-</h2>
+      <!-- FOTO 1 -->
 
-<p class="carta-final-subtitulo">
-Hay cosas que solamente nosotros dos podemos entender...
-</p>
+      <article class="recuerdo">
 
-<div class="marco-carta-yugioh">
+        <img
+          src="foto1.jpg"
+          alt="Foto 1 - Tus constelaciones"
+        >
 
-<div class="imagen-yugioh">
+        <div class="recuerdo-texto">
 
-<img src="yuss.jpeg" alt="Nuestra carta de Yu-Gi-Oh">
+          <h3>🌙 Tus constelaciones</h3>
 
-</div>
+          <p>
+Hay pequeños detalles tuyos que me encantan simplemente porque son tuyos. Tus lunares, por ejemplo… yo los veo como pequeñas constelaciones dibujadas sobre ti. Y algún día quisiera poder recorrerlas todas, una por una, descubrir cada pequeño punto y perderme en tu espalda como quien mira el cielo buscando estrellas. Porque si están en ti, para mí ya tienen algo especial. ✨❤️
+          </p>
 
-<p class="carta-yugioh-texto">
-Porque hay historias que no necesitan explicarse demasiado.
-Solo necesitan dos personas que sepan lo que significan.
-</p>
+        </div>
 
-<p class="carta-yugioh-firma">
-Tú y yo. ❤️
-</p>
+      </article>
 
-</div>
+      <!-- FOTO 2 -->
 
-<br>
+      <article class="recuerdo">
 
-<button class="boton" id="irFinal">
-🌙 Continuar
-</button>
+        <img
+          src="foto2.jpg"
+          alt="Foto 2 - Un día para recordar"
+        >
 
-</div>
+        <div class="recuerdo-texto">
+
+          <h3>🌙 Un día para recordar</h3>
+
+          <p>
+Quería regalarte un pequeño recuerdo de un día en el que fuiste muy feliz. Quiero que lo tengas siempre presente, porque deseo que, en cada etapa y en cada momento de tu vida, la felicidad encuentre siempre un lugar a tu lado. Y si algún día necesitas recordar cómo se siente ser feliz, espero que esta pequeña foto te lleve de vuelta a ese momento. ❤️
+          </p>
+
+        </div>
+
+      </article>
+
+      <!-- FOTO 3 -->
+
+      <article class="recuerdo">
+
+        <img
+          src="foto3.jpg"
+          alt="Foto 3 - Lo bonito de encontrarte"
+        >
+
+        <div class="recuerdo-texto">
+
+          <h3>✨ Lo bonito de encontrarte</h3>
+
+          <p>
+Este día es especial porque estuvimos haciendo algo juntos, pero terminó convirtiéndose en un recuerdo inolvidable. Quizás para alguien más hubiera sido un momento cualquiera, pero para mí significó mucho más: me hizo pensar en lo diferente, extraño y hermoso que es tenerte en mi vida. A veces todavía me sorprende cómo alguien puede llegar y hacer que momentos tan sencillos se vuelvan recuerdos que quiero guardar para siempre. ✨❤️
+          </p>
+
+        </div>
+
+      </article>
+
+      <!-- FOTO 4 -->
+
+      <article class="recuerdo">
+
+        <img
+          src="foto4.jpg"
+          alt="Foto 4 - ¿Qué pasa por esa cabecita?"
+        >
+
+        <div class="recuerdo-texto">
+
+          <h3>💭 ¿Qué pasa por esa cabecita?</h3>
+
+          <p>
+Hay algo especialmente lindo en ti cuando estás concentrado, cuando te pierdes un poquito en tus pensamientos y parece que el mundo deja de existir por un momento. Te ves tan tierno y encantador que no puedo evitar quedarme mirándote y preguntarme qué estará pasando por esa cabecita. Qué estarás pensando, qué historias estarán pasando por tu mente… Me gustaría poder entrar un ratito en tus pensamientos y descubrir ese pequeño mundo que llevas dentro. ✨❤️
+          </p>
+
+        </div>
+
+      </article>
+
+      <!-- FOTO 5 -->
+
+      <article class="recuerdo">
+
+        <img
+          src="foto5.jpg"
+          alt="Foto 5 - Un lugar seguro"
+        >
+
+        <div class="recuerdo-texto">
+
+          <h3>🫂 Un lugar seguro</h3>
+
+          <p>
+Este fue uno de esos días que voy a guardar de una manera diferente. Fue el día en que, después de muchísimo tiempo, me permití ser vulnerable delante de alguien. Y aunque estabas lejos, encontraste la manera de hacerme sentir que no estaba sola; que había alguien ahí, escuchándome, acompañándome y abrazándome incluso a la distancia.
+
+Me escondía, tenía miedo de dejarme ver así, pero tú te quedaste. Y ese hermoso detalle que tuviste conmigo significó muchísimo más de lo que quizá puedas imaginar. Porque detrás de ese momento había miedos que llevaba conmigo desde hacía mucho tiempo, y aun así, contigo no sentí que tuviera que esconderme.
+
+No quiero que mis miedos del pasado definan lo que estamos construyendo, porque contigo he descubierto algo que no esperaba encontrar: la tranquilidad de sentirme especial, escuchada y cuidada. Y quizás sin darte cuenta, poco a poco te has convertido en algo que para mí significa muchísimo más de lo que puedo explicar… te has convertido en un lugar seguro. 🫂❤️💜
+          </p>
+
+        </div>
+
+      </article>
+
+      <!-- FOTO 6 -->
+
+      <article class="recuerdo">
+
+        <img
+          src="foto6.jpg"
+          alt="Foto 6 - Un día que también se volvió mío"
+        >
+
+        <div class="recuerdo-texto">
+
+          <h3>❤️ Un día que también se volvió mío</h3>
+
+          <p>
+Y llegamos a esta foto… nosotros dos, haciendo un corazón con las manos. Quizás parece un gesto pequeño, pero para mí representa mucho de lo que hemos ido construyendo.
+
+Porque desde que llegaste a mi vida, has conseguido hacer especiales cosas que antes simplemente eran días normales. Tu forma de escucharme, de estar pendiente de mí, de hacerme reír, de darme tranquilidad y de hacerme sentir acompañada incluso cuando estás lejos… son pequeñas cosas que han ido dejando un lugar enorme en mi corazón.
+
+Por eso tu cumpleaños dejó de ser solamente el día en que nació una persona que quiero. Se convirtió también en un día que quiero celebrar porque existes, porque nuestros caminos se encontraron y porque, de alguna manera tan inesperada, terminaste formando parte de mi vida.
+
+Quiero que sepas que me alegra muchísimo que hayas nacido. Me alegra que exista esa persona que puede ser tan seria y, al mismo tiempo, tan encantadora; esa persona que me hace sentir tranquila, que tiene sus pequeños detalles, sus lunares que para mí parecen constelaciones, sus pensamientos en los que me encanta imaginar qué estará pasando, y esa manera tan tuya de hacerme sentir especial.
+
+Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solamente porque celebro tu vida, sino porque celebro la suerte de haberte conocido y todos los recuerdos que todavía nos quedan por crear. Y si este pequeño corazón representa algo, quiero que represente precisamente eso: dos personas que, aunque estén lejos, encontraron una manera de estar cerquita. ❤️
+          </p>
+
+          <p class="frase-final-foto">
+            Feliz cumpleaños a una de mis personas favoritas en este mundo. ❤️
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <button class="boton" onclick="mostrarSeccion('final')">
+      ✨ Última sorpresa
+    </button>
+
+  </div>
 
 </section>
-
 
 <!-- =========================================================
      FINAL
 ========================================================= -->
 
-<section id="final">
+<section id="final" class="hidden">
 
-<div class="final-estrellas">
+  <div class="final-contenido">
 
-<span style="top:7%;left:8%">✦</span>
-<span style="top:13%;left:21%">✧</span>
-<span style="top:9%;left:40%">✦</span>
-<span style="top:17%;left:63%">✧</span>
-<span style="top:10%;left:87%">✦</span>
+    <div class="final-corazon">❤️</div>
 
-<span style="top:32%;left:13%">✧</span>
-<span style="top:38%;left:82%">✦</span>
+    <h2>
+      Por más cumpleaños a tu lado.
+      <br>
+      Espero que este sea el primero de muchos.
+    </h2>
 
-<span style="top:67%;left:8%">✦</span>
-<span style="top:73%;left:25%">✧</span>
-<span style="top:80%;left:74%">✦</span>
-<span style="top:70%;left:91%">✧</span>
+    <p>
+      Gracias por formar parte de mi vida, Coco.
+      💜
+    </p>
 
-<span style="top:88%;left:48%">✦</span>
+    <p style="margin-top:25px">
+      No importa cuántos kilómetros nos separen.
+      <br>
+      Siempre encontraremos el camino de regreso
+      al corazón del otro.
+    </p>
 
-</div>
+    <p style="margin-top:35px;font-size:25px">
+      Feliz cumpleaños, mi Coco. 🐊🌙✨
+    </p>
 
-<div class="final-escena">
-
-<div class="luna-final">
-🌙
-</div>
-
-<div class="banca">
-
-<div class="respaldo-banca"></div>
-
-<div class="asiento-banca"></div>
-
-<div class="personaje-sentado sentado-coco">
-🐊
-</div>
-
-<div class="personaje-sentado sentado-conejo">
-🐰
-</div>
-
-</div>
-
-<h1 class="final-titulo">
-Por más cumpleaños a tu lado. ❤️
-</h1>
-
-<p class="final-subtitulo">
-Espero que este sea el primero de muchos.
-</p>
-
-<div class="final-corazon">
-❤️
-</div>
-
-</div>
+  </div>
 
 </section>
 
-
 <script>
+
+/* =========================================================
+   ESTRELLAS DEL FONDO
+========================================================= */
+
+const fondoEstrellas = document.getElementById("estrellas");
+
+for(let i=0;i<90;i++){
+
+  const estrella=document.createElement("span");
+
+  estrella.style.top=Math.random()*100+"%";
+  estrella.style.left=Math.random()*100+"%";
+
+  estrella.style.animationDelay=(Math.random()*3)+"s";
+
+  fondoEstrellas.appendChild(estrella);
+}
 
 /* =========================================================
    NAVEGACIÓN
 ========================================================= */
 
-const secciones=[
-"inicio",
-"carta",
-"razones",
-"carta-coco",
-"distancia",
-"juego",
-"nuestra-carta",
-"final"
-];
+function mostrarSeccion(id){
 
-function mostrar(id){
+  document.querySelectorAll("section").forEach(section=>{
+    section.classList.add("hidden");
+  });
 
-secciones.forEach(s=>{
+  const seccion=document.getElementById(id);
 
-const elemento=document.getElementById(s);
-
-if(elemento){
-elemento.style.display="none";
-}
-
-});
-
-const destino=document.getElementById(id);
-
-if(id==="inicio" || id==="final"){
-destino.style.display="flex";
-}else{
-destino.style.display="block";
-}
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  if(seccion){
+    seccion.classList.remove("hidden");
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+  }
 
 }
-
-
-/* =========================================================
-   PORTADA
-========================================================= */
-
-document.getElementById("entrar").onclick=()=>{
-mostrar("carta");
-};
-
-
-/* =========================================================
-   CARTA
-========================================================= */
-
-document.getElementById("irRazones").onclick=()=>{
-mostrar("razones");
-};
-
 
 /* =========================================================
    50 RAZONES
 ========================================================= */
 
-document.querySelectorAll(".estrella-razon").forEach(e=>{
+const razones = [
 
-e.onclick=()=>{
+"Porque tu forma de ser tiene algo que me atrae muchísimo.",
+"Porque me encanta cuando nos reímos por cualquier tontería.",
+"Porque contigo los momentos simples se convierten en historias.",
+"Porque me gusta sentir que estamos construyendo algo bonito.",
+"Porque tu cumpleaños es una oportunidad para celebrar que llegaste al mundo.",
+"Porque me encanta la magia que tienen nuestras noches.",
+"Porque hay miradas que dicen más que muchas palabras.",
+"Porque me haces tener ganas de vivir más momentos especiales.",
+"Porque me gusta imaginar todos los lugares que todavía podríamos conocer juntos.",
+"Porque cada nuevo recuerdo contigo es otra estrella en nuestro cielo.",
+"Porque nuestras historias se van escribiendo poquito a poquito.",
+"Porque quiero seguir compartiendo noches, risas y conversaciones contigo.",
+"Porque contigo todavía quedan muchísimas aventuras por vivir.",
+"Porque me gusta tener recuerdos que llevan tu nombre.",
+"Porque haces que quiera guardar cada pequeño detalle.",
+"Porque todavía tenemos muchísimo por descubrir.",
+"Porque quiero que esta sea solamente una de muchas noches especiales.",
+"Porque me haces ilusionarme con el futuro.",
+"Porque simplemente me encanta que seas tú. ❤️",
+"Porque tu manera de hablar tiene algo que siempre consigue llamar mi atención.",
+"Porque me gusta escucharte incluso cuando hablamos de cosas pequeñas.",
+"Porque contigo puedo ser yo misma.",
+"Porque me haces sonreír sin darte cuenta.",
+"Porque tus pequeños detalles significan muchísimo.",
+"Porque tienes una manera muy tuya de hacerme sentir especial.",
+"Porque me gusta descubrir cada parte de tu personalidad.",
+"Porque incluso estando lejos consigues sentirte cerca.",
+"Porque nuestras conversaciones se han convertido en parte de mis días.",
+"Porque me gusta cuando me haces reír.",
+"Porque tienes una forma muy bonita de cuidar a las personas que quieres.",
+"Porque me encanta conocer tus pensamientos.",
+"Porque me gusta imaginar lo que estás haciendo cuando estamos lejos.",
+"Porque cada llamada contigo puede cambiarme el día.",
+"Porque me gusta la tranquilidad que siento cuando estoy contigo.",
+"Porque eres alguien que quiero seguir conociendo.",
+"Porque tienes una mezcla extraña entre seriedad y ternura que me encanta.",
+"Porque me gusta cuando dejas salir tu lado más encantador.",
+"Porque contigo siento que siempre hay algo nuevo que descubrir.",
+"Porque tus pequeños gestos pueden quedarse conmigo todo el día.",
+"Porque me gusta cuando simplemente estás.",
+"Porque me haces valorar más los momentos pequeños.",
+"Porque contigo aprendí que la distancia no siempre significa ausencia.",
+"Porque me gusta la forma en que nuestros caminos se encontraron.",
+"Porque eres parte de recuerdos que quiero conservar.",
+"Porque me gusta pensar en todo lo que todavía nos queda por vivir.",
+"Porque quiero seguir creando recuerdos contigo.",
+"Porque hay partes de ti que todavía quiero descubrir.",
+"Porque me haces sentir que algunas coincidencias no son tan casuales.",
+"Porque me encanta que seas exactamente tú.",
+"Porque tenerte en mi vida se convirtió en algo muy especial."
 
-document.getElementById("texto-razon").textContent=
-e.dataset.razon;
+];
 
-document.getElementById("mensaje-razon").style.display="block";
+const contenedorRazones =
+  document.getElementById("estrellasRazones");
 
-};
+razones.forEach((razon,index)=>{
+
+  const boton=document.createElement("button");
+
+  boton.className="estrella-razon";
+  boton.innerHTML="★";
+  boton.title="Razón "+(index+1);
+
+  boton.addEventListener("click",()=>{
+
+    document.getElementById("texto-razon").textContent=razon;
+
+    document.getElementById("mensaje-razon").style.display="block";
+
+    document.getElementById("mensaje-razon")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+  });
+
+  contenedorRazones.appendChild(boton);
 
 });
 
-document.getElementById("cerrarRazon").onclick=()=>{
-document.getElementById("mensaje-razon").style.display="none";
-};
+function cerrarRazon(){
 
+  document.getElementById("mensaje-razon")
+    .style.display="none";
 
-/* =========================================================
-   COCO
-========================================================= */
-
-document.getElementById("irCoco").onclick=()=>{
-mostrar("carta-coco");
-};
-
+}
 
 /* =========================================================
-   DISTANCIA
+   SONIDO RETRO
 ========================================================= */
 
-document.getElementById("irDistancia").onclick=()=>{
-mostrar("distancia");
-};
+let audioCtx;
 
+function beep(
+  frecuencia,
+  duracion=.09,
+  tipo="square",
+  volumen=.035
+){
+
+  try{
+
+    audioCtx ||= new(
+      window.AudioContext ||
+      window.webkitAudioContext
+    )();
+
+    const oscilador=
+      audioCtx.createOscillator();
+
+    const ganancia=
+      audioCtx.createGain();
+
+    oscilador.type=tipo;
+    oscilador.frequency.value=frecuencia;
+
+    ganancia.gain.value=volumen;
+
+    oscilador.connect(ganancia);
+    ganancia.connect(audioCtx.destination);
+
+    oscilador.start();
+
+    ganancia.gain.exponentialRampToValueAtTime(
+      .0001,
+      audioCtx.currentTime+duracion
+    );
+
+    oscilador.stop(
+      audioCtx.currentTime+duracion
+    );
+
+  }catch(e){}
+
+}
+
+function sonidoBueno(){
+
+  beep(523,.09);
+
+  setTimeout(()=>{
+    beep(659,.09);
+  },100);
+
+  setTimeout(()=>{
+    beep(784,.16);
+  },200);
+
+}
+
+function sonidoMalo(){
+  beep(180,.18,"sawtooth",.025);
+}
+
+function sonidoVictoria(){
+
+  [523,659,784,1047].forEach(
+    (f,i)=>{
+      setTimeout(()=>{
+        beep(f,.18);
+      },i*120);
+    }
+  );
+
+}
 
 /* =========================================================
    JUEGO
 ========================================================= */
 
-document.getElementById("irJuego").onclick=()=>{
-mostrar("juego");
-};
+const preguntasJuego=[
 
+  {
+    pregunta:"¿Dónde se puede perder uno al mirarte?",
+    opciones:[
+      "En tus ojos",
+      "En tus zapatos",
+      "En una consola"
+    ],
+    correcta:0,
+    recuerdo:"En tus ojos, porque tienen esa mirada que puede hacerme olvidar todo lo demás. ❤️"
+  },
 
-/* =========================================================
-   LAS 5 PREGUNTAS
-========================================================= */
+  {
+    pregunta:"¿Qué es eso que tienes y que yo veo como pequeñas constelaciones?",
+    opciones:[
+      "Tus lunares",
+      "Tus botones",
+      "Tus audífonos"
+    ],
+    correcta:0,
+    recuerdo:"Tus lunares. Pequeñas constelaciones que algún día quisiera recorrer una por una. ✨"
+  },
 
-const niveles=[
+  {
+    pregunta:"¿Qué me encanta descubrir de ti?",
+    opciones:[
+      "Tus pensamientos",
+      "Tus contraseñas",
+      "Tu lista de compras"
+    ],
+    correcta:0,
+    recuerdo:"Tus pensamientos. Me da muchísima curiosidad descubrir ese pequeño mundo que llevas dentro. 💭"
+  },
 
-{
-icon:"👀",
-titulo:"TUS OJOS",
+  {
+    pregunta:"¿Qué siento incluso cuando estás lejos?",
+    opciones:[
+      "Que estás cerca",
+      "Que desapareciste",
+      "Que estamos en planetas distintos"
+    ],
+    correcta:0,
+    recuerdo:"Que estás cerca. Porque hay distancias que existen en el mapa, pero no en el corazón. 🌍❤️"
+  },
 
-pregunta:
-"¿Sabías cuál es el lugar en el cual me puedo perder solo con mirarte?",
+  {
+    pregunta:"¿Qué me haces sentir cuando te quedas conmigo en los momentos difíciles?",
+    opciones:[
+      "Que estoy acompañada",
+      "Que estoy perdida",
+      "Que debo esconderme"
+    ],
+    correcta:0,
+    recuerdo:"Me haces sentir acompañada, escuchada y cuidada. Eso significa muchísimo para mí. 🫂"
+  },
 
-opciones:[
-"Tu nariz",
-"Tu boca",
-"Tus ojos"
-],
-
-correcta:2,
-
-nota:
-"Sí, tus ojos. ❤️ Son uno de mis lugares favoritos para perderme."
-},
-
-{
-icon:"✨",
-titulo:"CONSTELACIONES",
-
-pregunta:
-"¿Sabías cuáles son mis constelaciones favoritas?",
-
-opciones:[
-"Las estrellas del cielo",
-"Las luces de la ciudad",
-"Tus lunares"
-],
-
-correcta:2,
-
-nota:
-"Tus lunares. ✨ Porque parecen pequeñas constelaciones dibujadas sobre ti."
-},
-
-{
-icon:"🐰",
-titulo:"CONEJITA",
-
-pregunta:
-"¿Sabes exactamente qué es 'conejita'?",
-
-opciones:[
-"El apodo que tú me tienes",
-"Un personaje de un videojuego",
-"El nombre de una estrella"
-],
-
-correcta:0,
-
-nota:
-"Es el apodo que tú me tienes. 🐰❤️ Y no sé por qué, pero me encanta que venga de ti."
-},
-
-{
-icon:"🌙",
-titulo:"NUESTRAS NOCHES",
-
-pregunta:
-"¿Qué es algo que me encanta de nuestras noches?",
-
-opciones:[
-"Que hablamos durante horas y el tiempo desaparece",
-"Que nunca tenemos nada que decir",
-"Que siempre terminamos hablando de lo mismo"
-],
-
-correcta:0,
-
-nota:
-"Que podemos hablar durante horas y hacer que una noche cualquiera se convierta en uno de nuestros recuerdos."
-},
-
-{
-icon:"🌍",
-titulo:"¿DÓNDE ESTARÍA?",
-
-pregunta:
-"¿Sabes en qué lugar me gustaría estar?",
-
-opciones:[
-"Bélgica",
-"Colombia",
-"Tú"
-],
-
-correcta:2,
-
-nota:
-"No importa si es Bélgica o Colombia. Si pudiera elegir de verdad, elegiría estar contigo. ❤️"
-}
+  {
+    pregunta:"¿Qué quiero seguir creando contigo?",
+    opciones:[
+      "Recuerdos",
+      "Problemas",
+      "Excusas"
+    ],
+    correcta:0,
+    recuerdo:"Recuerdos. Muchos más recuerdos, momentos, risas y días que algún día podamos mirar hacia atrás y recordar juntos. ❤️"
+  }
 
 ];
 
+let progreso=0;
+let preguntaActual=0;
 
-const cont=document.getElementById("consolas");
+const contenedorConsolas=
+  document.getElementById("consolas");
 
-const pantalla=
-document.getElementById("preguntaJuego").parentElement;
+preguntasJuego.forEach((juego,index)=>{
 
-const pregunta=
-document.getElementById("preguntaJuego");
+  const consola=document.createElement("div");
 
-const opciones=
-document.getElementById("opcionesJuego");
+  consola.className="consola";
 
-const error=
-document.getElementById("mensajeError");
+  consola.innerHTML=`
+    <div class="consola-icono">🎮</div>
+    <strong>Consolita ${index+1}</strong>
+    <small>${index===0?"Disponible":"Bloqueada"}</small>
+  `;
 
-const resultado=
-document.getElementById("resultado");
+  if(index!==0){
+    consola.classList.add("bloqueada");
+  }
 
-const nota=
-document.getElementById("notaDesbloqueada");
+  consola.addEventListener("click",()=>{
 
-const barra=
-document.getElementById("barraProgreso");
+    if(index>progreso){
+      sonidoMalo();
+      return;
+    }
 
-const progreso=
-document.getElementById("progresoTexto");
+    abrirPregunta(index);
 
-let desbloqueados=new Set();
+  });
 
-let nivelActual=0;
-
-
-/* =========================================================
-   CREAR LAS 5 CONSOLAS
-========================================================= */
-
-niveles.forEach((n,i)=>{
-
-const card=document.createElement("div");
-
-card.className="consola";
-
-card.id="consola-"+i;
-
-card.innerHTML=`
-
-<div class="consola-icono">
-${n.icon}
-</div>
-
-<h3>
-LEVEL ${i+1}
-</h3>
-
-<p>
-${i===0 ? "▶ START" : "🔒 LOCKED"}
-</p>
-
-`;
-
-card.onclick=()=>{
-abrirNivel(i);
-};
-
-cont.appendChild(card);
+  contenedorConsolas.appendChild(consola);
 
 });
 
+function abrirPregunta(index){
 
-/* =========================================================
-   ABRIR NIVEL
-========================================================= */
+  preguntaActual=index;
 
-function abrirNivel(i){
+  const pregunta=
+    preguntasJuego[index];
 
-if(i>0 && !desbloqueados.has(i-1)){
-return;
-}
+  document.getElementById("pantallaJuego")
+    .style.display="block";
 
-nivelActual=i;
+  document.getElementById("preguntaJuego")
+    .textContent=pregunta.pregunta;
 
-const n=niveles[i];
+  const opciones=
+    document.getElementById("opcionesJuego");
 
-pantalla.classList.add("visible");
+  opciones.innerHTML="";
 
-resultado.classList.remove("visible");
+  document.getElementById("mensajeError")
+    .style.display="none";
 
-error.classList.remove("visible");
+  pregunta.opciones.forEach(
+    (opcion,indexOpcion)=>{
 
-pregunta.textContent=
-"> "+n.pregunta;
+      const boton=
+        document.createElement("button");
 
-opciones.innerHTML="";
+      boton.className="opcion";
+      boton.textContent=opcion;
 
-n.opciones.forEach((op,j)=>{
+      boton.addEventListener(
+        "click",
+        ()=>responder(indexOpcion)
+      );
 
-const b=document.createElement("button");
+      opciones.appendChild(boton);
 
-b.className="opcion";
-
-b.textContent=
-"["+(j+1)+"] "+op;
-
-b.onclick=()=>{
-comprobar(j,b);
-};
-
-opciones.appendChild(b);
-
-});
-
-pantalla.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
+    }
+  );
 
 }
 
+function responder(indice){
 
-/* =========================================================
-   COMPROBAR RESPUESTA
-========================================================= */
+  const pregunta=
+    preguntasJuego[preguntaActual];
 
-function comprobar(j,b){
+  if(indice!==pregunta.correcta){
 
-const n=niveles[nivelActual];
+    sonidoMalo();
 
-if(j===n.correcta){
+    document.getElementById("mensajeError")
+      .style.display="block";
 
-b.classList.add("correcta");
+    return;
+  }
 
-desbloqueados.add(nivelActual);
+  sonidoBueno();
 
-nota.textContent=n.nota;
+  document.getElementById("preguntaJuego")
+    .textContent=pregunta.recuerdo;
 
-resultado.classList.add("visible");
+  document.getElementById("opcionesJuego")
+    .innerHTML="";
 
-error.classList.remove("visible");
+  if(preguntaActual===progreso){
 
-document
-.getElementById("consola-"+nivelActual)
-.classList.add("desbloqueada");
+    progreso++;
 
-document
-.getElementById("consola-"+nivelActual)
-.querySelector("p")
-.textContent="★ UNLOCKED";
+    actualizarProgreso();
 
-barra.style.width=
-(desbloqueados.size/niveles.length*100)+"%";
+  }
 
-progreso.textContent=
-desbloqueados.size+
-" / "+
-niveles.length+
-" recuerdos desbloqueados";
+  if(progreso>=preguntasJuego.length){
 
-if(desbloqueados.size===niveles.length){
+    sonidoVictoria();
 
-document
-.getElementById("juegoFinal")
-.classList.add("visible");
+    document.getElementById("continuarJuego")
+      .style.display="inline-block";
 
-setTimeout(()=>{
+    document.getElementById("preguntaJuego")
+      .textContent=
+      "🎉 ¡Lo lograste! Desbloqueaste todos nuestros recuerdos. ❤️";
 
-document
-.getElementById("juegoFinal")
-.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-},500);
+  }
 
 }
 
-}else{
+function actualizarProgreso(){
 
-b.classList.add("incorrecta");
+  const porcentaje=
+    (progreso/preguntasJuego.length)*100;
 
-error.classList.add("visible");
+  document.getElementById("barraProgreso")
+    .style.width=porcentaje+"%";
 
-setTimeout(()=>{
+  document.getElementById("progresoTexto")
+    .textContent=
+    progreso+" de "+
+    preguntasJuego.length+
+    " recuerdos desbloqueados";
 
-b.classList.remove("incorrecta");
+  document.querySelectorAll(".consola")
+    .forEach((consola,index)=>{
 
-},600);
+      if(index<=progreso){
+
+        consola.classList.remove("bloqueada");
+
+        const small=
+          consola.querySelector("small");
+
+        if(small){
+          small.textContent="Disponible";
+        }
+
+      }
+
+    });
 
 }
 
-}
-
-
 /* =========================================================
-   CONTINUAR DESPUÉS DE CADA RESPUESTA
+   INICIO
 ========================================================= */
 
-document.getElementById("cerrarJuego").onclick=()=>{
-
-pantalla.classList.remove("visible");
-
-document
-.getElementById("consolas")
-.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-};
-
-
-/* =========================================================
-   PREMIO → NUESTRA CARTA
-========================================================= */
-
-document.getElementById("irNuestraCarta").onclick=()=>{
-
-mostrar("nuestra-carta");
-
-};
-
-
-/* =========================================================
-   NUESTRA CARTA → FINAL
-========================================================= */
-
-document.getElementById("irFinal").onclick=()=>{
-
-mostrar("final");
-
-};
+mostrarSeccion("inicio");
 
 </script>
 
