@@ -607,7 +607,7 @@ section{
   100%{left:90%}
 }
 
-/* FUEGO */
+/* FUEGO NUEVO */
 
 .fuego{
   position:absolute;
@@ -787,223 +787,131 @@ section{
 }
 
 /* =========================================================
-   CARTA YU-GI-OH!
+   PREMIO - CARTAS YU-GI-OH
 ========================================================= */
 
-#premio{
-  background:
-    radial-gradient(circle at 50% 10%,#74539e,#291844 45%,#070313);
-}
-
-.premio-contenido{
-  position:relative;
-  z-index:4;
-  max-width:900px;
-  margin:auto;
-  text-align:center;
+#premioCartas{
+  display:none;
+  margin:45px auto 0;
+  max-width:650px;
+  animation:aparecer .8s ease;
 }
 
 .premio-titulo{
-  font-size:clamp(32px,7vw,48px);
-  margin-bottom:12px;
+  font-size:clamp(30px,7vw,44px);
+  margin-bottom:15px;
   text-shadow:
     0 0 15px #fff,
-    0 0 35px #d0a8ff,
-    0 0 60px rgba(173,107,255,.5);
+    0 0 35px #c49aff;
 }
 
 .premio-subtitulo{
   font-size:18px;
-  opacity:.85;
-  margin-bottom:35px;
-  line-height:1.6;
+  line-height:1.7;
+  opacity:.9;
+  margin-bottom:30px;
 }
 
-/* CARTA */
+.carta-premio{
+  max-width:420px;
+  margin:25px auto;
+}
 
-.yugioh-carta{
-  position:relative;
-  width:min(92vw,390px);
-  margin:0 auto;
-  padding:12px;
-  border-radius:13px;
-  background:
-    linear-gradient(
-      145deg,
-      #d8b66d,
-      #8d6627 45%,
-      #e4c77d 70%,
-      #75501d
-    );
+.carta-premio img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
   box-shadow:
-    0 0 20px rgba(255,215,130,.35),
-    0 25px 55px rgba(0,0,0,.65);
-  transform:rotate(-1deg);
-  transition:.4s;
+    0 0 25px rgba(199,157,255,.55),
+    0 20px 45px rgba(0,0,0,.6);
 }
 
-.yugioh-carta:hover{
-  transform:rotate(0deg) scale(1.02);
-  box-shadow:
-    0 0 35px rgba(255,219,143,.55),
-    0 25px 60px rgba(0,0,0,.7);
+.poder-especial{
+  margin-top:25px;
 }
 
-.yugioh-marco{
-  padding:8px;
-  background:
-    linear-gradient(
-      145deg,
-      #6e461b,
-      #c49342,
-      #5b3915
-    );
-  border-radius:7px;
+#cartaYuss{
+  display:none;
+  margin:35px auto 0;
+  animation:aparecerCarta .9s ease;
 }
 
-.yugioh-cabecera{
-  background:
-    linear-gradient(
-      180deg,
-      #f4e0a3,
-      #cda85a
-    );
-  color:#24170b;
-  border:2px solid #4b2d0b;
-  padding:8px 9px;
-  font-weight:bold;
-  text-align:left;
-  font-size:18px;
-  box-shadow:inset 0 0 8px rgba(255,255,255,.5);
-}
-
-.yugioh-nivel{
-  text-align:right;
-  letter-spacing:3px;
-  color:#5c2700;
-  font-size:17px;
-  margin-top:5px;
-}
-
-.yugioh-ilustracion{
-  position:relative;
-  height:220px;
-  margin-top:7px;
-  border:3px solid #3c250e;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle at 50% 40%,#d7b2ff 0 8%,#8b56b5 25%,#33205b 60%,#090512 100%);
-}
-
-.yugioh-ilustracion:before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  border:2px solid rgba(255,238,182,.45);
-  box-shadow:
-    0 0 25px rgba(244,211,133,.4),
-    inset 0 0 30px rgba(255,230,159,.15);
-}
-
-.yugioh-ilustracion:after{
-  content:"✦";
-  position:absolute;
-  top:18px;
-  left:25px;
-  color:#fff;
-  font-size:24px;
+.fusion-titulo{
+  font-size:25px;
+  line-height:1.5;
+  margin-bottom:22px;
   text-shadow:
     0 0 10px #fff,
-    0 0 20px #d6b0ff;
+    0 0 25px #c49aff;
+  animation:latir 1.3s infinite;
 }
 
-.yugioh-corazones{
-  position:relative;
-  z-index:2;
-  font-size:65px;
-  filter:
-    drop-shadow(0 0 8px #fff)
-    drop-shadow(0 0 25px #c98dff);
-  animation:latirCarta 1.5s infinite;
-}
-
-@keyframes latirCarta{
-  0%,100%{
-    transform:scale(1);
-  }
-  50%{
-    transform:scale(1.08);
-  }
-}
-
-.yugioh-tipo{
-  color:#24170b;
-  background:#dcb96d;
-  border:2px solid #4b2d0b;
-  margin-top:7px;
-  padding:6px 8px;
-  text-align:right;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.yugioh-efecto{
-  color:#25170b;
-  background:
-    linear-gradient(
-      180deg,
-      #ead493,
-      #c9a85a
-    );
-  border:2px solid #4b2d0b;
-  margin-top:5px;
-  padding:12px;
-  text-align:left;
-  font-size:13px;
-  line-height:1.5;
-  min-height:145px;
-}
-
-.yugioh-stats{
-  display:flex;
-  justify-content:flex-end;
-  gap:18px;
-  margin-top:8px;
-  font-weight:bold;
-}
-
-.yugioh-pie{
-  color:#24170b;
-  font-size:9px;
-  margin-top:8px;
-  text-align:left;
-}
-
-.premio-mensaje{
-  max-width:650px;
-  margin:35px auto 0;
-  padding:28px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:24px;
-  background:rgba(15,7,35,.75);
-  line-height:1.8;
-  font-size:18px;
-}
-
-.premio-mensaje strong{
+#cartaYuss img{
   display:block;
-  font-size:23px;
-  margin-bottom:12px;
-  color:#ead7ff;
+  width:100%;
+  max-width:420px;
+  margin:auto;
+  height:auto;
+  border-radius:12px;
+  box-shadow:
+    0 0 35px rgba(210,170,255,.85),
+    0 0 80px rgba(142,86,220,.55),
+    0 20px 50px rgba(0,0,0,.65);
+}
+
+.frase-fusion{
+  margin:25px auto;
+  max-width:620px;
+  font-size:20px;
+  line-height:1.7;
+  font-style:italic;
+}
+
+.nosotros-fusion{
+  font-size:26px;
+  font-weight:bold;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 25px #c49aff;
 }
 
 /* =========================================================
-   GALERÍA
+   ANIMACIÓN CARTA
+========================================================= */
+
+@keyframes aparecerCarta{
+  0%{
+    opacity:0;
+    transform:
+      scale(.3)
+      rotate(-8deg);
+    filter:
+      brightness(2)
+      drop-shadow(0 0 40px #fff);
+  }
+
+  50%{
+    opacity:1;
+    transform:
+      scale(1.08)
+      rotate(2deg);
+    filter:
+      brightness(1.5)
+      drop-shadow(0 0 35px #d6b5ff);
+  }
+
+  100%{
+    opacity:1;
+    transform:
+      scale(1)
+      rotate(0);
+    filter:none;
+  }
+}
+
+/* =========================================================
+   GALERÍA NUEVA
 ========================================================= */
 
 #galeria{
@@ -1025,6 +933,8 @@ section{
   line-height:1.7;
   opacity:.85;
 }
+
+/* TARJETAS PEQUEÑAS */
 
 .gallery{
   display:grid;
@@ -1116,9 +1026,7 @@ section{
   opacity:.8;
 }
 
-/* =========================================================
-   MODAL FOTO
-========================================================= */
+/* MODAL DE FOTO */
 
 .modal-foto{
   position:fixed;
@@ -1305,10 +1213,6 @@ section{
     font-size:12px;
   }
 
-  .yugioh-ilustracion{
-    height:190px;
-  }
-
 }
 
 @media(max-width:500px){
@@ -1340,16 +1244,12 @@ section{
     line-height:1.7;
   }
 
-  .yugioh-carta{
-    width:min(94vw,370px);
+  .carta-premio{
+    max-width:340px;
   }
 
-  .yugioh-ilustracion{
-    height:180px;
-  }
-
-  .yugioh-corazones{
-    font-size:55px;
+  #cartaYuss img{
+    max-width:340px;
   }
 
 }
@@ -1357,6 +1257,10 @@ section{
 </head>
 
 <body>
+
+<!-- =========================================================
+     ESTRELLAS + NUBES
+========================================================= -->
 
 <div class="estrellas" id="estrellas"></div>
 
@@ -1733,143 +1637,75 @@ section{
 
     </div>
 
-    <!-- ESTE BOTÓN AHORA LLEVA A LA CARTA DE YU-GI-OH! -->
-    <button
-      class="boton"
-      id="continuarJuego"
-      style="display:none"
-      onclick="mostrarSeccion('premio')"
-    >
-      🏆 Reclamar mi premio
-    </button>
 
-  </div>
+    <!-- =====================================================
+         PREMIO Y CARTAS
+    ===================================================== -->
 
-</section>
+    <div id="premioCartas">
 
+      <h2 class="premio-titulo">
+        🏆 ¡Premio desbloqueado! 🏆
+      </h2>
 
-<!-- =========================================================
-     PREMIO — CARTA YU-GI-OH!
-========================================================= -->
-
-<section id="premio" class="hidden">
-
-  <div class="premio-contenido">
-
-    <h2 class="premio-titulo">
-      🏆 ¡Premio desbloqueado! 🏆
-    </h2>
-
-    <p class="premio-subtitulo">
-      Has conseguido superar nuestro pequeño juego...
-      <br>
-      así que ahora puedes reclamar tu carta especial. ❤️
-    </p>
+      <p class="premio-subtitulo">
+        Has conseguido llegar hasta aquí...
+        pero todavía queda un poder por descubrir. ✨
+      </p>
 
 
-    <div class="yugioh-carta">
+      <!-- PRIMERA CARTA -->
 
-      <div class="yugioh-marco">
+      <div class="carta-premio">
 
-        <div class="yugioh-cabecera">
-          NUESTRO VÍNCULO
+        <img
+          src="yuss2.jpeg"
+          alt="Coco, Hechicero de las Estrellas"
+        >
+
+        <button
+          class="boton poder-especial"
+          onclick="activarPoderEspecial()"
+        >
+          ✨ SACAR PODER ESPECIAL ✨
+        </button>
+
+      </div>
+
+
+      <!-- SEGUNDA CARTA -->
+
+      <div id="cartaYuss">
+
+        <div class="fusion-titulo">
+          ✨💥 FUSIÓN ESPECIAL ACTIVADA 💥✨
         </div>
 
-        <div class="yugioh-nivel">
-          ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐
-        </div>
+        <img
+          src="yuss.jpeg"
+          alt="Nuestra carta"
+        >
 
-        <div class="yugioh-ilustracion">
+        <p class="frase-fusion">
+          Una carta puede tener un héroe...
+          <br>
+          pero mi historia siempre necesitó dos. ❤️
+        </p>
 
-          <div class="yugioh-corazones">
-            ❤️🐊❤️
-          </div>
+        <p class="nosotros-fusion">
+          Coco + Juz = Nosotros ❤️
+        </p>
 
-        </div>
-
-        <div class="yugioh-tipo">
-          ✨ CARTA DE VÍNCULO / AMOR ✨
-        </div>
-
-        <div class="yugioh-efecto">
-
-          <strong>
-            EFECTO ESPECIAL — “DISTANCIA NO SIGNIFICA SEPARACIÓN”
-          </strong>
-
-          <br><br>
-
-          Esta carta representa dos corazones que,
-          aunque se encuentren a kilómetros de distancia,
-          continúan eligiéndose.
-
-          <br><br>
-
-          Cada conversación, cada llamada,
-          cada risa y cada recuerdo aumenta
-          el poder de este vínculo.
-
-          <br><br>
-
-          <strong>
-            Esta carta no puede ser destruida por la distancia.
-          </strong>
-
-          <div class="yugioh-stats">
-            <span>ATK ∞</span>
-            <span>DEF ∞</span>
-          </div>
-
-        </div>
-
-        <div class="yugioh-pie">
-          Una carta única creada para dos personas
-          que encontraron una manera de estar cerca
-          incluso estando lejos. ❤️
-        </div>
+        <button
+          class="boton"
+          onclick="mostrarSeccion('galeria')"
+        >
+          📸 Ver nuestros recuerdos
+        </button>
 
       </div>
 
     </div>
-
-
-    <div class="premio-mensaje">
-
-      <strong>
-        Esta carta no existe en ningún otro duelo. ❤️
-      </strong>
-
-      Porque no es una carta cualquiera.
-
-      Es nuestra pequeña forma de decir que,
-      entre todas las posibilidades,
-      hubo dos personas que se encontraron.
-
-      Tú y yo.
-
-      Y aunque todavía nos queden kilómetros,
-      conversaciones, momentos y recuerdos por vivir,
-      quiero seguir construyendo este pequeño universo contigo.
-
-      <br><br>
-
-      Así que...
-
-      <br>
-
-      <strong>
-        Felicidades, duelista. 🃏❤️
-      </strong>
-
-    </div>
-
-
-    <button
-      class="boton"
-      onclick="mostrarSeccion('galeria')"
-    >
-      📸 Ahora sí... nuestros recuerdos
-    </button>
 
   </div>
 
@@ -2014,7 +1850,7 @@ Así que sí… tu cumpleaños se volvió uno de mis días especiales. No solame
 
 
 <!-- =========================================================
-     MODAL FOTOS
+     MODAL DE LAS FOTOS
 ========================================================= -->
 
 <div class="modal-foto" id="modalFoto">
@@ -2103,19 +1939,19 @@ const fondoEstrellas =
 
 for(let i=0;i<130;i++){
 
-  const estrella=
+  const estrella =
     document.createElement("span");
 
-  estrella.style.top=
+  estrella.style.top =
     Math.random()*100+"%";
 
-  estrella.style.left=
+  estrella.style.left =
     Math.random()*100+"%";
 
-  estrella.style.animationDelay=
+  estrella.style.animationDelay =
     (Math.random()*4)+"s";
 
-  estrella.style.animationDuration=
+  estrella.style.animationDuration =
     (2+Math.random()*4)+"s";
 
   if(Math.random()<.15){
@@ -2138,7 +1974,7 @@ function mostrarSeccion(id){
       section.classList.add("hidden");
     });
 
-  const seccion=
+  const seccion =
     document.getElementById(id);
 
   if(seccion){
@@ -2219,7 +2055,7 @@ const contenedorRazones =
 
 razones.forEach((razon,index)=>{
 
-  const boton=
+  const boton =
     document.createElement("button");
 
   boton.className="estrella-razon";
@@ -2275,18 +2111,18 @@ function beep(
         window.webkitAudioContext
       )();
 
-    const oscilador=
+    const oscilador =
       audioCtx.createOscillator();
 
-    const ganancia=
+    const ganancia =
       audioCtx.createGain();
 
     oscilador.type=tipo;
 
-    oscilador.frequency.value=
+    oscilador.frequency.value =
       frecuencia;
 
-    ganancia.gain.value=
+    ganancia.gain.value =
       volumen;
 
     oscilador.connect(ganancia);
@@ -2429,12 +2265,12 @@ const preguntasJuego=[
 let progreso=0;
 let preguntaActual=0;
 
-const contenedorConsolas=
+const contenedorConsolas =
   document.getElementById("consolas");
 
 preguntasJuego.forEach((juego,index)=>{
 
-  const consola=
+  const consola =
     document.createElement("div");
 
   consola.className="consola";
@@ -2471,7 +2307,7 @@ function abrirPregunta(index){
 
   preguntaActual=index;
 
-  const pregunta=
+  const pregunta =
     preguntasJuego[index];
 
   document.getElementById("pantallaJuego")
@@ -2480,7 +2316,7 @@ function abrirPregunta(index){
   document.getElementById("preguntaJuego")
     .textContent=pregunta.pregunta;
 
-  const opciones=
+  const opciones =
     document.getElementById("opcionesJuego");
 
   opciones.innerHTML="";
@@ -2491,12 +2327,12 @@ function abrirPregunta(index){
   pregunta.opciones.forEach(
     (opcion,indexOpcion)=>{
 
-      const boton=
+      const boton =
         document.createElement("button");
 
       boton.className="opcion";
 
-      boton.textContent=
+      boton.textContent =
         opcion;
 
       boton.addEventListener(
@@ -2514,7 +2350,7 @@ function abrirPregunta(index){
 
 function responder(indice){
 
-  const pregunta=
+  const pregunta =
     preguntasJuego[preguntaActual];
 
   if(indice!==pregunta.correcta){
@@ -2547,12 +2383,19 @@ function responder(indice){
 
     sonidoVictoria();
 
-    document.getElementById("continuarJuego")
-      .style.display="inline-block";
-
     document.getElementById("preguntaJuego")
-      .textContent=
+      .textContent =
       "🎉 ¡Lo lograste! Desbloqueaste todos nuestros recuerdos. ❤️";
+
+    const premio =
+      document.getElementById("premioCartas");
+
+    premio.style.display="block";
+
+    premio.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
 
   }
 
@@ -2561,15 +2404,15 @@ function responder(indice){
 
 function actualizarProgreso(){
 
-  const porcentaje=
+  const porcentaje =
     (progreso/preguntasJuego.length)*100;
 
   document.getElementById("barraProgreso")
-    .style.width=
+    .style.width =
     porcentaje+"%";
 
   document.getElementById("progresoTexto")
-    .textContent=
+    .textContent =
     progreso+
     " de "+
     preguntasJuego.length+
@@ -2584,17 +2427,38 @@ function actualizarProgreso(){
           "bloqueada"
         );
 
-        const small=
+        const small =
           consola.querySelector("small");
 
         if(small){
-          small.textContent=
+          small.textContent =
             "Disponible";
         }
 
       }
 
     });
+
+}
+
+
+/* =========================================================
+   PODER ESPECIAL DE LA CARTA
+========================================================= */
+
+function activarPoderEspecial(){
+
+  sonidoVictoria();
+
+  const cartaFinal =
+    document.getElementById("cartaYuss");
+
+  cartaFinal.style.display="block";
+
+  cartaFinal.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
 
 }
 
@@ -2609,7 +2473,7 @@ function abrirFoto(
   mensaje
 ){
 
-  const modal=
+  const modal =
     document.getElementById("modalFoto");
 
   document.getElementById("modalImagen")
@@ -2624,7 +2488,7 @@ function abrirFoto(
   document.getElementById("modalMensaje")
     .textContent=mensaje;
 
-  const fraseFinal=
+  const fraseFinal =
     document.getElementById(
       "modalFraseFinal"
     );
