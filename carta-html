@@ -1,1 +1,196 @@
-<!DOCTYPE html>, html lang="es", head,
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un pequeño universo para Coco</title>
+<style>
+:root {
+  --night: #100d12;
+  --paper: #21171d;
+  --paper-light: #2a1b22;
+  --red: #d74655;
+  --soft-red: #ff8791;
+  --purple: #9b78bc;
+  --cream: #fff0e8;
+  --muted: #d1bfc5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  background: radial-gradient(ellipse at top, #39202b 0%, var(--night) 65%);
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  display: flex;
+  justify-content: center;
+  padding: 22px 12px 40px;
+}
+.book { width: min(100%, 720px); }
+.topline {
+  text-align: center; color: var(--soft-red); letter-spacing: .18em;
+  text-transform: uppercase; font: 11px/1.6 system-ui, sans-serif; margin-bottom: 14px;
+}
+.page {
+  display: none; position: relative; overflow: hidden;
+  min-height: 590px; padding: clamp(25px, 6vw, 52px);
+  border: 1px solid #75404c; border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.025), transparent 45%),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 30px, rgba(255,135,145,.07) 31px, transparent 32px),
+    var(--paper);
+  box-shadow: 0 22px 60px #0008, inset 0 0 0 7px rgba(215,70,85,.035);
+}
+.page.active { display: flex; flex-direction: column; animation: appear .35s ease; }
+@keyframes appear { from {opacity:0; transform:translateY(6px)} to {opacity:1; transform:translateY(0)} }
+.page:before {
+  content: "♥"; position: absolute; right: 22px; top: 16px;
+  color: #d7465540; font-size: 24px;
+}
+.cover { text-align: center; align-items: center; justify-content: center; }
+.kicker { color: var(--soft-red); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
+h1 { font-size: clamp(34px, 7vw, 58px); line-height: 1.05; margin: 15px 0; font-weight: normal; }
+h2 { font-size: clamp(27px, 5vw, 39px); font-weight: normal; margin: 0 0 20px; color: var(--soft-red); }
+p { font-size: 17px; line-height: 1.85; margin: 9px 0; }
+.small { font-size: 14px; color: var(--muted); }
+.critters { font-size: clamp(47px, 9vw, 72px); margin: 22px 0; letter-spacing: 12px; }
+.heartline { color: var(--red); letter-spacing: .45em; margin: 18px 0; }
+.quote {
+  padding: 17px 18px; margin: 12px 0; border-left: 2px solid var(--red);
+  background: #d746550d; font-size: clamp(19px, 4vw, 24px); font-style: italic; line-height: 1.5;
+}
+.letter { white-space: pre-line; }
+.signature { color: var(--soft-red); font-style: italic; font-size: 21px; margin-top: 18px; }
+.album { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 12px; }
+.photo {
+  aspect-ratio: 4 / 4.6; border: 1px dashed #b86a78; border-radius: 5px;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  text-align: center; padding: 10px; background: #110d12aa; color: var(--muted);
+  font: 13px/1.6 system-ui, sans-serif; overflow: hidden;
+}
+.photo .symbol { font-size: 29px; color: var(--soft-red); margin-bottom: 7px; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.photo input { width: 100%; font-size: 10px; margin-top: 8px; }
+.controls { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; }
+button {
+  border: 1px solid var(--red); border-radius: 999px; padding: 12px 19px;
+  color: var(--cream); background: #6b2632; font: 14px system-ui, sans-serif; cursor:pointer;
+}
+button:hover { background:#8a3040; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+#counter { color: var(--muted); font: 12px system-ui, sans-serif; }
+.footer { text-align:center; color:#b89da7; font:12px system-ui,sans-serif; margin-top:17px; }
+@media(max-width:480px) {
+ .page { min-height: 570px; padding: 29px 21px; }
+ p { font-size:16px; }
+ .album { gap:9px; }
+ .controls button { padding:11px 14px; }
+}
+</style>
+</head>
+<body>
+<main class="book">
+  <div class="topline">Un pequeño libro hecho con cariño</div>
+
+  <section class="page cover active" aria-label="Portada">
+    <div class="kicker">Para mi Coco guapo</div>
+    <div class="critters" aria-label="Conejita y cocodrilito">🐰 ♥ 🐊</div>
+    <h1>Un lugarcito<br>para nosotros</h1>
+    <div class="heartline">♡ ♥ ♡</div>
+    <p>Porque hay personas que, incluso estando lejos,<br>se sienten cerquita del corazón.</p>
+    <p class="small">Una pequeña historia de dos mundos que se encontraron.</p>
+  </section>
+
+  <section class="page" aria-label="Lo que quiero recordarte">
+    <div class="kicker">Página 02 · Cositas que siento</div>
+    <h2>Para que no lo olvides</h2>
+    <div class="quote">“Estés donde estés, aquí te pienso.”</div>
+    <div class="quote">“Porque contigo todo se siente más bonito.”</div>
+    <div class="quote">“Tú y yo nos complementamos, cada uno a su manera.”</div>
+    <p>Entre Colombia y Bélgica hay kilómetros, horarios distintos y días ocupados… pero también hay conversaciones, risas y ganas de compartir un pedacito del día.</p>
+    <div class="heartline">♡ 🐰 ♥ 🐊 ♡</div>
+  </section>
+
+  <section class="page" aria-label="La carta">
+    <div class="kicker">Página 03 · Mi carta para ti</div>
+    <h2>Sabes, amor…</h2>
+    <p class="letter">Sabes, amor, eres importante para mí y te has convertido en alguien a quien quisiera no perder.
+
+A veces me agobio un poquito pensando en la distancia y en que algún día puedas arrepentirte de esto que estamos construyendo. No te lo digo para ponerte presión, sino porque estoy aprendiendo a abrirte mi corazón y, a veces, eso también da miedo.
+
+Me gusta hablar contigo, compartir nuestras noches, ver películas juntos aunque sea desde lejos y encontrar maneras de estar presentes en la vida del otro. Hay momentos en los que quisiera simplemente poder abrazarte, quedarme cerquita de ti y hacerte sentir todo el cariño que a veces no me cabe en los mensajes.
+
+Me daba miedo volver a sentir algo tan bonito, pero contigo quiero ir paso a paso, cuidando esto que tenemos. Quiero darte más de mí, consentirte, escucharte y que también puedas sentirte querido conmigo. No necesito que todo sea perfecto; me basta con que podamos hablarnos con sinceridad, tener paciencia y seguir eligiendo conocernos.
+
+Gracias por ser tú, por los ratitos que compartimos y por hacerte un lugar tan especial en mi vida. Ojalá este pequeño libro te recuerde que, aunque nos separen kilómetros, hay una conejita que piensa mucho en su cocodrilito.</p>
+    <div class="signature">Te quiero muchísimo, mi Coco guapo. ♡</div>
+  </section>
+
+  <section class="page" aria-label="Nuestro mini álbum">
+    <div class="kicker">Página 04 · Nuestro mini álbum</div>
+    <h2>Pedacitos de nosotros</h2>
+    <p class="small">Toca “Elegir foto” en cada espacio para añadir tus propias imágenes. Se quedan en esta página mientras la tengas abierta.</p>
+    <div class="album">
+      <label class="photo"><span class="symbol">♡</span><span class="hint">Nuestro recuerdo 1</span><input type="file" accept="image/*" aria-label="Elegir foto 1"><img alt="Foto 1"></label>
+      <label class="photo"><span class="symbol">🐰</span><span class="hint">Nuestro recuerdo 2</span><input type="file" accept="image/*" aria-label="Elegir foto 2"><img alt="Foto 2"></label>
+      <label class="photo"><span class="symbol">♥</span><span class="hint">Nuestro recuerdo 3</span><input type="file" accept="image/*" aria-label="Elegir foto 3"><img alt="Foto 3"></label>
+      <label class="photo"><span class="symbol">🐊</span><span class="hint">Nuestro recuerdo 4</span><input type="file" accept="image/*" aria-label="Elegir foto 4"><img alt="Foto 4"></label>
+    </div>
+    <p class="signature">Felices 3 meses, Coco. ♡</p>
+    <p class="small">Que esto siga llenándose de recuerdos bonitos, a nuestro ritmo.</p>
+  </section>
+
+  <nav class="controls" aria-label="Navegación del libro">
+    <button id="prev" type="button">← Anterior</button>
+    <span id="counter">Página 1 de 4</span>
+    <button id="next" type="button">Siguiente →</button>
+  </nav>
+  <div class="footer">Hecho con cariño, para Coco · 🖤 ❤️ 💜</div>
+</main>
+<script>
+const pages = Array.from(document.querySelectorAll('.page'));
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const counter = document.getElementById('counter');
+let current = 0;
+
+function showPage(index) {
+  current = Math.max(0, Math.min(pages.length - 1, index));
+  pages.forEach((page, i) => page.classList.toggle('active', i === current));
+  counter.textContent = `Página ${current + 1} de ${pages.length}`;
+  prev.disabled = current === 0;
+  next.disabled = current === pages.length - 1;
+  prev.style.opacity = prev.disabled ? '.45' : '1';
+  next.style.opacity = next.disabled ? '.45' : '1';
+}
+prev.addEventListener('click', () => showPage(current - 1));
+next.addEventListener('click', () => showPage(current + 1));
+
+document.querySelectorAll('.photo input').forEach(input => {
+  input.addEventListener('change', event => {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    const holder = event.target.closest('.photo');
+    const img = holder.querySelector('img');
+    const hint = holder.querySelector('.hint');
+    const symbol = holder.querySelector('.symbol');
+    const reader = new FileReader();
+    reader.onload = () => {
+      img.src = reader.result;
+      img.style.display = 'block';
+      hint.style.display = 'none';
+      symbol.style.display = 'none';
+      holder.style.padding = '4px';
+      event.target.style.display = 'none';
+      holder.appendChild(event.target);
+      event.target.style.position = 'absolute';
+      event.target.style.opacity = '0';
+      event.target.style.width = '1px';
+    };
+    reader.readAsDataURL(file);
+  });
+});
+showPage(0);
+</script>
+</body>
+</html>
